@@ -9,23 +9,30 @@ export default function MainMenu() {
           style={styles.roundImage} 
         />
       </View>
-      <br/>
+      <Text>{"\n"}</Text>
       <Text style={styles.paragraph}>
 Психологічна допомога:
       </Text>
-      <br/> <br/>
+      <Text>{"\n\n"}</Text>
       <Button title="Собі" />
-      <br/>
+      <Text>{"\n"}</Text>
       <Button title="Дитині" />
-      <br/>
+      <Text>{"\n"}</Text>
       <Button title="Іншому дорослому" />
-      <br/>
+      <Text>{"\n"}</Text>
 
       <Text style={styles.paragraph}>
 Підготуватись до надзвичайної ситуації. Перші дії:
       </Text>
       <Button title="Вимкнули телебачення" />
-      <br/>
+      <Text>{"\n"}</Text>
+      <Button title="Повітряна тривога" />
+      <Text>{"\n"}</Text>
+      <Button title="Евакуація" />
+      <Text>{"\n"}</Text>
+      <Button title="Вибухонебезпечні знахідки" />
+      <Text>{"\n"}</Text>
+      <Button title="Артілерійський обстріл" />
     </View>
 )}
 const styles = StyleSheet.create({
@@ -45,5 +52,8 @@ const styles = StyleSheet.create({
     width: 200, 
     height: 200, 
     borderRadius: 200/ 2
+  },
+  Button:{
+    padding:4
   }
 });

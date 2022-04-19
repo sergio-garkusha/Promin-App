@@ -9,7 +9,7 @@ export default function WelcomeScreen() {
           style={styles.roundImage} 
         />
       </View>
-      <br/>
+      <Text>{"\n"}</Text>
       <Text style={styles.paragraph}>
 Вітаємо вас, любі!
       </Text>
@@ -23,7 +23,7 @@ export default function WelcomeScreen() {
       <Text style={styles.paragraph}>
 Тримаймося.
       </Text>
-      <br/> <br/>
+      <Text>{"\n\n"}</Text>
     <Button title="Далі" />
     </View>
 )}
