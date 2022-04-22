@@ -48,39 +48,51 @@ After this, you should be able to run the app in web view or on phone by running
 --------
 
 ### I am a beginner
-It's easy to participate in this project even if you are just a beginner!
+It's easy to try out and/or participate in this project even if you are just a beginner!
 
 To download the code and try it out for your self, follow these steps:
 
 #### Create GitHub account
 If you don't have a github account, you'll have to create one.
+
 Go here: [https://github.com/join](https://github.com/join) and follow the steps.
 
 #### Install GitHub Desktop
 If you don't have installed:
-Download it from here: [https://desktop.github.com/](https://desktop.github.com/)
-Then install.
+
+Download it from here: [https://desktop.github.com/](https://desktop.github.com/), then install it.
 
 #### Clone Repository
 Open up Github Desktop (you will be automatically logged in, or promptet to log in with browser).
+
 Click "Clone Repository"
+
 Select "URL" Tab
+
 Paste this URL: https://github.com/Cu7ious/Promin-App.git
+
 You will be prompted to enter local path. I usually store repositories in Documents/GitHub/[repo name]
+
 Click clone.
+
 
 You now have all files needed to build the app.
 
 #### Download Node.JS
 Download LTS build of Node from here: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+
 Then install it.
 
 #### Install code editor - VSCode
 Download and install VS Code: [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
+
 Open VSCode.
+
 Click File > Open Folder, then select the folder where you downloaded the repository.
+
 You should see all repository files in the left pane.
 
+#### Last Step
 Finally: in VSCode click Terminal > New Terminal.
 
 Let's make sure we have everything we need - in Terminal, type (copypaste):
@@ -89,9 +101,9 @@ Let's make sure we have everything we need - in Terminal, type (copypaste):
 
 You should see something like `8.5.0`
 
-If you get `'npm' is not recognized as the name`, means you didn't install Node.JS properly. Try reinstalling it and/or restarting your computer.
+If you get something like `'npm' is not recognized as the name ...` - it means you didn't install Node.JS properly. Try reinstalling it and/or restarting your computer.
 
-You are set! Now in Terminal, run commands from Run section above
+You are set! Now in Terminal, run commands from __Run__ section above
 
 
 
