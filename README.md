@@ -11,7 +11,7 @@ Figma: [https://www.figma.com/file/tOHjTlZEEdiY1rdRiodocn/Promin-app?node-id=0%3
 `npm run start` then w for web view
 
 The app makes use of Expo XDE. This allows to run app in many ways, including in browser for ease of development.
-Download "Expo Go" to run it on your phone, then scan a barcode that is generated when you run the app.
+Download "Expo" app to run it on Androin, or open Camera on iPhone - then scan a barcode that is generated when you run the app.
 
 ------
 ### Develop and try components
