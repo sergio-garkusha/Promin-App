@@ -12,7 +12,3 @@ export default function App() {
     <MainMenu/>
   );
 }
-
-function navigation(){
-  
-}

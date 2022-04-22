@@ -1,39 +1,38 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Button, Image } from 'react-native';
+import { Text, View, StyleSheet, ScrollView, Image } from 'react-native';
+
+import ListItem from '../components/ListItem';
+
+var navigateAway = () => {console.log("navigation")}
+
 export default function MainMenu() { 
   return (
+    <ScrollView>
     <View style={styles.container}>
+
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
         <Image 
           source={require("../assets/snack-icon.png")} 
           style={styles.roundImage} 
         />
       </View>
-      <Text>{"\n"}</Text>
-      <Text style={styles.paragraph}>
-Психологічна допомога:
-      </Text>
-      <Text>{"\n\n"}</Text>
-      <Button title="Собі" />
-      <Text>{"\n"}</Text>
-      <Button title="Дитині" />
-      <Text>{"\n"}</Text>
-      <Button title="Іншому дорослому" />
-      <Text>{"\n"}</Text>
 
-      <Text style={styles.paragraph}>
-Підготуватись до надзвичайної ситуації. Перші дії:
-      </Text>
-      <Button title="Вимкнули телебачення" />
-      <Text>{"\n"}</Text>
-      <Button title="Повітряна тривога" />
-      <Text>{"\n"}</Text>
-      <Button title="Евакуація" />
-      <Text>{"\n"}</Text>
-      <Button title="Вибухонебезпечні знахідки" />
-      <Text>{"\n"}</Text>
-      <Button title="Артілерійський обстріл" />
+      <Text style={styles.paragraph}> Психологічна допомога: </Text>
+
+      <ListItem title="Собі" onPress={navigateAway}/>
+      <ListItem title="Дитині" onPress={navigateAway}/>
+      <ListItem title="Іншому дорослому" onPress={navigateAway}/>
+
+      <Text style={styles.paragraph}> Підготуватись до надзвичайної ситуації. Перші дії: </Text>
+
+      <ListItem title="Вимкнули телебачення" onPress={navigateAway}/>
+      <ListItem title="Повітряна тривога" onPress={navigateAway}/>
+      <ListItem title="Евакуація" onPress={navigateAway}/>
+      <ListItem title="Вибухонебезпечні знахідки" onPress={navigateAway}/>
+      <ListItem title="Артілерійський обстріл" onPress={navigateAway}/>
+
     </View>
+    </ScrollView>
 )}
 const styles = StyleSheet.create({
   container: {
