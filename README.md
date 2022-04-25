@@ -73,6 +73,8 @@ Paste this URL: https://github.com/Cu7ious/Promin-App.git
 
 You will be prompted to enter local path. I usually store repositories in Documents/GitHub/[repo name]
 
+Example: `Documents/GitHub/Promin-app`
+
 Click clone.
 
 
@@ -92,7 +94,7 @@ Click File > Open Folder, then select the folder where you downloaded the reposi
 
 You should see all repository files in the left pane.
 
-#### I don't want to edit code - just launch
+#### I don't want to edit code - just launch using command line
 If you are using Mac - open Terminal:
 
 `⌘ + Space`, then type `terminal`, hit enter.
@@ -101,9 +103,18 @@ Windows: Open cmd
 
 `⊞ Win key + R`, then in opened "Run" dialog enter `cmd`, hit enter.
 
-Then navigate to your file directory by entering following command:
+You just have opened command line on your computer. By default, command line is set to `User` directory, which you can see named to the left.
+You new need to navigate to your file directory by entering following command:
 
 `cd Documents/GitHub/Promin-app`
+
+If you got `cannot find path` error - do following:
+1. Make sure you are in `User` folder - run `pwd`. It will show you current directory - like `\Users\Documents`
+2. To go up in directory, use `cd ..` command, then run `pwd`
+3. Don't worry - you will get used to this soon and feel like a hacker:) 
+4. `cd` means `change directory`, `pwd` means `print working directory`, and `\` vs `/` usually don't matter.
+
+You can now skip opening VS code in last step, and just enter commands into command line.
 
 #### Last Step
 Finally: in VSCode click Terminal > New Terminal.
