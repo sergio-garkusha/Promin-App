@@ -83,7 +83,7 @@ Download LTS build of Node from here: [https://nodejs.org/en/download/](https://
 
 Then install it.
 
-#### Install code editor - VSCode
+#### I want to edit code! - Install code editor - VSCode
 Download and install VS Code: [https://code.visualstudio.com/Download](https://code.visualstudio.com/Download)
 
 Open VSCode.
@@ -91,6 +91,19 @@ Open VSCode.
 Click File > Open Folder, then select the folder where you downloaded the repository.
 
 You should see all repository files in the left pane.
+
+#### I don't want to edit code - just launch
+If you are using Mac - open Terminal:
+
+`⌘ + Space`, then type `terminal`, hit enter.
+
+Windows: Open cmd
+
+`⊞ Win key + R`, then in opened "Run" dialog enter `cmd`, hit enter.
+
+Then navigate to your file directory by entering following command:
+
+`cd Documents/GitHub/Promin-app`
 
 #### Last Step
 Finally: in VSCode click Terminal > New Terminal.
