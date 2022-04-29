@@ -19,17 +19,17 @@ export default function MainMenu() {
 
       <Text style={styles.paragraph}> Психологічна допомога: </Text>
 
-      <ListItem title="Собі" onPress={navigateAway}/>
+      <ListItem title="Екстренна психологічна допомога" onPress={navigateAway}/>
+      <ListItem title="Для себе" onPress={navigateAway}/>
       <ListItem title="Дитині" onPress={navigateAway}/>
-      <ListItem title="Іншому дорослому" onPress={navigateAway}/>
 
-      <Text style={styles.paragraph}> Підготуватись до надзвичайної ситуації. Перші дії: </Text>
+      <Text style={styles.paragraph}> Надзвичайна ситуація: </Text>
 
       <ListItem title="Вимкнули телебачення" onPress={navigateAway}/>
       <ListItem title="Повітряна тривога" onPress={navigateAway}/>
       <ListItem title="Евакуація" onPress={navigateAway}/>
       <ListItem title="Вибухонебезпечні знахідки" onPress={navigateAway}/>
-      <ListItem title="Артілерійський обстріл" onPress={navigateAway}/>
+      <ListItem title="Артілерійський обстріл" onPress={navigateAway}/>np
 
     </View>
     </ScrollView>

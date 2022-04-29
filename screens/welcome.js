@@ -21,7 +21,7 @@ export default function WelcomeScreen() {
 
         <Text>{"\n\n"}</Text>
 
-        <Button title="Далі" />
+        <Button title="Далі" onPress={() => this.props.navigation.navigate('MainMenu')}/>
 
       </View>
     </ScrollView>
