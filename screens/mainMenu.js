@@ -29,7 +29,7 @@ export default function MainMenu() {
       <ListItem title="Повітряна тривога" onPress={navigateAway}/>
       <ListItem title="Евакуація" onPress={navigateAway}/>
       <ListItem title="Вибухонебезпечні знахідки" onPress={navigateAway}/>
-      <ListItem title="Артілерійський обстріл" onPress={navigateAway}/>np
+      <ListItem title="Артілерійський обстріл" onPress={navigateAway}/>
 
     </View>
     </ScrollView>

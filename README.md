@@ -8,7 +8,9 @@ Figma: [https://www.figma.com/file/tOHjTlZEEdiY1rdRiodocn/Promin-app?node-id=0%3
 
 `npm install`
 
-`npm run start` then w for web view
+`expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view`
+
+`expo start` then w for web view
 
 The app makes use of Expo XDE. This allows to run app in many ways, including in browser for ease of development.
 Download "Expo" app to run it on Androin, or open Camera on iPhone - then scan a barcode that is generated when you run the app.
