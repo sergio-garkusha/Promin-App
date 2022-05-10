@@ -10,14 +10,14 @@ const WelcomeScreen = ({ navigation }) => {
     <ScrollView>
       <View style={styles.container}>
 
-        <View style={{justifyContent: 'center', alignItems: 'center'}}>
-          <Image 
-            source={require("../assets/snack-icon.png")} 
-            style={styles.roundImage} 
-          />
+        <View style={styles.topHalf}>
+          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+            <Image 
+              source={require("../assets/Logo-large.png")} 
+              style={styles.logo} 
+            />
+          </View>
         </View>
-
-        <Text>{"\n"}</Text>
 
         <Text style={styles.paragraph}> Вітаємо вас, любі! </Text>
         <Text style={styles.paragraph}> Промінь - це ваш кишеньковий довідник психологічної допомоги у кризових ситуаціях. </Text>
@@ -33,11 +33,14 @@ const WelcomeScreen = ({ navigation }) => {
 )}
 
 const styles = StyleSheet.create({
+  topHalf: {
+    height: 300,
+    backgroundColor: '#5f7bfc'
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: 'paleturquoise',
-    padding: 8,
+    backgroundColor: '#f3f3f3'
   },
   paragraph: {
     margin: 5,
@@ -45,10 +48,10 @@ const styles = StyleSheet.create({
     fontWeight: 'normal',
     textAlign: 'center',
   },
-  roundImage: {
-    width: 200, 
-    height: 200, 
-    borderRadius: 200/ 2
+  logo: {
+    width: 136, 
+    height: 205,
+    marginTop: 50
   }
 });
 

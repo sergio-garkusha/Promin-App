@@ -4,13 +4,13 @@ import MainMenu from '../screens/mainMenu'
 import React from 'react';
 
 const Stack = createStackNavigator();
-const MyStack = () => {
+const MainStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }} >
       <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
       <Stack.Screen name="MainMenu" component={MainMenu} />
     </Stack.Navigator>
   )
 }
 
-export default MyStack
+export default MainStack

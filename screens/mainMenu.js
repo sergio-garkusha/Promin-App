@@ -5,7 +5,7 @@ import ListItem from '../components/ListItem';
 
 var navigateAway = () => {console.log("navigation")}
 
-export default function MainMenu() { 
+export default function MainMenu({ navigation: { goBack } }) { 
   return (
     <ScrollView>
     <View style={styles.container}>
@@ -16,6 +16,8 @@ export default function MainMenu() {
           style={styles.roundImage} 
         />
       </View>
+
+      <ListItem title="Go Back" onPress={goBack}/>
 
       <Text style={styles.paragraph}> Психологічна допомога: </Text>
 
