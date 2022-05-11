@@ -12,8 +12,5 @@ web-build/
 
 # macOS
 .DS_Store
-.idea/Promin-App.iml
-.idea/vcs.xml
-.idea/modules.xml
-.idea/misc.xml
+.idea/
 
