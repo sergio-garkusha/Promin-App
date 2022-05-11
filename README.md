@@ -39,6 +39,11 @@ export default function App() {
 After this, you should be able to run the app in web view or on phone by running the app (see "Run" section)
 
 -------
+### Simplified GitHub Flow
+Let's adopt simplified GitHub Flow to develop our app in team. Please make yourself familiar with the diagram below.
+![alt text](https://github.com/Cu7ious/Promin-App/blob/main/documentation/simplified_git_flow.png)
+
+-------
 ### Roadmap
 1. Let's develop bare screens first
 2. I will add react-navigation component later
