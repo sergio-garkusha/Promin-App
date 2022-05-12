@@ -5,31 +5,34 @@ import ListItem from '../components/ListItem';
 
 var navigateAway = () => {console.log("navigation")}
 
-export default function MainMenu() { 
+export default function MainMenu() {
   return (
     <ScrollView>
     <View style={styles.container}>
 
       <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <Image 
-          source={require("../assets/snack-icon.png")} 
-          style={styles.roundImage} 
+        <Image
+          source={require("../assets/snack-icon.png")}
+          style={styles.roundImage}
         />
       </View>
-
       <Text style={styles.paragraph}> Психологічна допомога: </Text>
 
       <ListItem title="Екстренна психологічна допомога" onPress={navigateAway}/>
       <ListItem title="Для себе" onPress={navigateAway}/>
       <ListItem title="Дитині" onPress={navigateAway}/>
 
-      <Text style={styles.paragraph}> Надзвичайна ситуація: </Text>
+      <Text style={styles.paragraph}> Надзвичайна ситуaація: </Text>
 
-      <ListItem title="Вимкнули телебачення" onPress={navigateAway}/>
-      <ListItem title="Повітряна тривога" onPress={navigateAway}/>
-      <ListItem title="Евакуація" onPress={navigateAway}/>
-      <ListItem title="Вибухонебезпечні знахідки" onPress={navigateAway}/>
-      <ListItem title="Артілерійський обстріл" onPress={navigateAway}/>
+      <ListItem title="Контакти служб порятунку" onPress={navigateAway}/>
+      <ListItem title="Дії у надзвичайних ситуаціях" onPress={navigateAway}/>
+
+
+      {/*<ListItem title="Вимкнули телебачення" onPress={navigateAway}/>*/}
+      {/*<ListItem title="Повітряна тривога" onPress={navigateAway}/>*/}
+      {/*<ListItem title="Евакуація" onPress={navigateAway}/>*/}
+      {/*<ListItem title="Вибухонебезпечні знахідки" onPress={navigateAway}/>*/}
+      {/*<ListItem title="Артілерійський обстріл" onPress={navigateAway}/>*/}
 
     </View>
     </ScrollView>
@@ -48,8 +51,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   roundImage: {
-    width: 200, 
-    height: 200, 
+    width: 200,
+    height: 200,
     borderRadius: 200/ 2
   },
   Button:{
