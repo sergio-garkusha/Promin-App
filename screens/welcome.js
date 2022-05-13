@@ -1,5 +1,10 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Button, Image, ScrollView } from 'react-native';
+import Logo from '../components/Logo'
+import NextButton from '../components/NextButton'
+import { responsiveHeight, responsiveWidth, responsiveFontSize} from "react-native-responsive-dimensions";
+
+const topHalfHeight = 300
 
 const WelcomeScreen = ({ navigation }) => {
   const toMainMenu = () => {
@@ -11,13 +16,10 @@ const WelcomeScreen = ({ navigation }) => {
       <View style={styles.container}>
 
         <View style={styles.topHalf}>
-          <View style={{justifyContent: 'center', alignItems: 'center'}}>
-            <Image 
-              source={require("../assets/Logo-large.png")} 
-              style={styles.logo} 
-            />
-          </View>
+          <Logo width="32.8" style={{ marginTop: 30 }}/>
+          <NextButton width="30" style={{marginTop: topHalfHeight}} onPress={toMainMenu}/>
         </View>
+
 
         <Text style={styles.paragraph}> Вітаємо вас, любі! </Text>
         <Text style={styles.paragraph}> Промінь - це ваш кишеньковий довідник психологічної допомоги у кризових ситуаціях. </Text>
@@ -26,15 +28,13 @@ const WelcomeScreen = ({ navigation }) => {
 
         <Text>{"\n\n"}</Text>
 
-        <Button title="Далі" onPress={toMainMenu}/>
-
       </View>
     </ScrollView>
 )}
 
 const styles = StyleSheet.create({
   topHalf: {
-    height: 300,
+    height: topHalfHeight,
     backgroundColor: '#5f7bfc'
   },
   container: {
@@ -47,11 +47,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: 'normal',
     textAlign: 'center',
-  },
-  logo: {
-    width: 136, 
-    height: 205,
-    marginTop: 50
   }
 });
 
