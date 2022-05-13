@@ -35,7 +35,7 @@ const WelcomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   topHalf: {
     height: topHalfHeight,
-    backgroundColor: '#5f7bfc'
+    backgroundColor: '#5177ff'
   },
   container: {
     flex: 1,
