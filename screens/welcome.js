@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: '#f3f3f3'
+    backgroundColor: '#F3F3F3'
   },
   paragraph: {
     marginTop: 15,

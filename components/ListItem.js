@@ -3,7 +3,11 @@ import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
 
 export default function ListItem(props) {
   return (
-    <View style={styles.container}>
+    <View style={[
+      styles.container, 
+      props.roundTop && styles.roundTop,
+      props.roundBottom ? styles.roundBottom : styles.spacer
+    ] }>
       <TouchableOpacity style={styles.button} onPress={props.onPress}>
         <Text style={styles.text}>{props.title}</Text>
       </TouchableOpacity>
@@ -15,20 +19,28 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     backgroundColor: '#FFFFFF',
-    padding:10,
-    marginTop:4,
-    marginBottom:4
+  },
+  roundTop:{
+    borderTopLeftRadius: 12,
+    borderTopRightRadius: 12,
+  },
+  roundBottom:{
+    borderBottomLeftRadius: 12,
+    borderBottomRightRadius: 12
+  },
+  spacer: {
+    marginBottom: 1
   },
   button:{
-    backgroundColor: '#2233DD',
     width: '100%',
     minHeight: 72,
-    justifyContent: 'center'
+    justifyContent: 'center',
+    padding: 10
   },
   text: {
-    fontSize: 22,
-    color: 'white',
-    fontWeight: 'bold',
-    textAlign: 'center',
+    fontSize: 17,
+    color: '#000000',
+    textAlign: 'left',
+    fontFamily: 'Ubuntu'
   }
 });
