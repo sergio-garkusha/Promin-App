@@ -2,13 +2,22 @@ import * as React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { responsiveHeight, responsiveWidth, responsiveFontSize} from "react-native-responsive-dimensions";
 
-export default function Logo(props) {
+export default function FullLogo(props) {
+
   const logoAspect = 408 / 615;
-  const logoWidth = responsiveWidth(props.width);
+  var logoWidth
+
+  if(props.widthPercent)  // responsive
+    logoWidth = responsiveWidth(props.widthPercent);
+  else // static
+    logoWidth = 128
+
   const logoHeight = logoWidth / logoAspect
 
+  const logoMarginTop = (responsiveHeight(50) - logoHeight) / 2
+
   return (
-    <View style={[ props.style, { justifyContent: 'center', alignItems: 'center'}]}>
+    <View style={[ props.style, { marginTop: logoMarginTop, justifyContent: 'center', alignItems: 'center'}]}>
       <Image 
         source={require("../assets/logo-large.png")} 
         style={{

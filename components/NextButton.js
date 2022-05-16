@@ -4,14 +4,18 @@ import { responsiveHeight, responsiveWidth, responsiveFontSize} from "react-nati
 
 export default function NextButton(props) {
   const buttonAspect = 294 / 204;
-  const buttonWidth = responsiveWidth(props.width);
+  var buttonWidth
+
+  if(props.widthPrecent)
+    buttonWidth = responsiveWidth(props.widthPrecent);
+  else
+    buttonWidth = 96
   const buttonHeight = buttonWidth / buttonAspect
 
-  const marginTop = props.style.marginTop - buttonHeight / 2
-  delete props.style.marginTop
+  const marginTop = - buttonHeight / 2
 
   return (
-    <View style={[ props.style, { marginTop: marginTop, position: 'absolute', right: 0 }] }>
+    <View style={[ props.style, { marginTop: marginTop, alignItems: 'flex-end' }] }>
       <TouchableOpacity onPress={props.onPress}>
         <Image 
           source={require("../assets/button_next-large.png")} 
