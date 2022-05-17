@@ -4,7 +4,6 @@ import { Text, View, StyleSheet, Button, Image } from 'react-native';
 import { useFonts } from 'expo-font';
 
 import WelcomeScreen from './screens/welcome'
-// import MainMenu from './screens/mainMenu'
 import MainStack from './Routes/MainStack';
 
 export default function App() {
@@ -17,7 +16,7 @@ export default function App() {
   // Do not replace below with your screen anymore! Please refer to comment in MainStack
   return (
     <NavigationContainer>
-      <MainStack />
+      <MainStack/>
     </NavigationContainer>
   );
 }

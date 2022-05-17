@@ -6,8 +6,6 @@ import ListItem from '../components/ListItem';
 
 var navigateAway = () => {console.log("navigation")}
 
-// <ListItem title="Go Back" onPress={goBack}/>
-
 export default function MainMenu({ navigation: { goBack } }) { 
   return (
     <ScrollView>
@@ -55,8 +53,8 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
   roundImage: {
-    width: 200, 
-    height: 200, 
+    width: 200,
+    height: 200,
     borderRadius: 200/ 2
   },
   Button:{
