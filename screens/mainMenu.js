@@ -19,16 +19,13 @@ export default function MainMenu({ navigation: { goBack } }) {
           <ListItem icon="🚨" roundTop roundBottom title="Екстренна психологічна допомога" onPress={navigateAway}/>
 
           <Text style={styles.title}>Психічна підтримка</Text>
-          <ListItem icon="🚨" roundTop title="Для себе" onPress={navigateAway}/>
-          <ListItem icon="🚨" roundBottom title="Дитині" onPress={navigateAway}/>
+          <ListItem icon="👩" roundTop title="Для себе" onPress={navigateAway}/>
+          <ListItem icon="👦" roundBottom title="Дитині" onPress={navigateAway}/>
 
-          <Text style={styles.paragraph}> Надзвичайна ситуація: </Text>
+          <Text style={styles.title}>Надзвичайна ситуація</Text>
+          <ListItem icon="🚑" roundTop title="Контакти служб порятунку" onPress={navigateAway}/>
+          <ListItem icon="👉" roundBottom title="Дії у різних ситуаціях" onPress={navigateAway}/>
 
-          <ListItem title="Вимкнули телебачення" onPress={navigateAway}/>
-          <ListItem title="Повітряна тривога" onPress={navigateAway}/>
-          <ListItem title="Евакуація" onPress={navigateAway}/>
-          <ListItem title="Вибухонебезпечні знахідки" onPress={navigateAway}/>
-          <ListItem title="Артілерійський обстріл" onPress={navigateAway}/>
         </View>
       </View>
     </ScrollView>
@@ -40,11 +37,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#F3F3F3',
   },
   title: {
-    marginTop:30,
-    marginBottom:5,
+    marginTop:32,
+    marginBottom:16,
     fontFamily: 'Ubuntu',
     fontSize: 18,
-    fontWeight: 500,
     lineHeight: 21,
     textAlign: 'left',
     color: '#666666'

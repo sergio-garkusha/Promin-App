@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 export default function ListItem(props) {
   return (
@@ -9,7 +9,9 @@ export default function ListItem(props) {
       props.roundBottom ? styles.roundBottom : styles.spacer
     ] }>
       <TouchableOpacity style={styles.button} onPress={props.onPress}>
+        {props.icon && <Text style={styles.icon}>{props.icon}</Text> }
         <Text style={styles.text}>{props.title}</Text>
+        <Image style={styles.caret} source={ require('../assets/carrot_light_large.png') } />
       </TouchableOpacity>
     </View>
   );
@@ -18,7 +20,7 @@ export default function ListItem(props) {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFFFFF'
   },
   roundTop:{
     borderTopLeftRadius: 12,
@@ -33,14 +35,29 @@ const styles = StyleSheet.create({
   },
   button:{
     width: '100%',
-    minHeight: 72,
-    justifyContent: 'center',
-    padding: 10
+    minHeight: 60,
+    alignItems: 'center',
+    padding: 5,
+    paddingLeft: 10,
+    paddingRight: 10,
+    flexDirection: 'row'
+  },
+  icon: {
+    fontSize: 19,
+    width: 20,
+    marginRight: 15,
+    flex: 3
   },
   text: {
     fontSize: 17,
     color: '#000000',
     textAlign: 'left',
-    fontFamily: 'Ubuntu'
+    fontFamily: 'Ubuntu',
+    flex: 25
+  },
+  caret: {
+    height: 15,
+    width: 2,
+    flex: 1
   }
 });

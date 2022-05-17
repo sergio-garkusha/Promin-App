@@ -48,7 +48,6 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     textAlign: 'left',
     fontFamily: 'Ubuntu',
-    fontWeight: '400',
     fontStyle: 'normal',
     fontSize: 17,
     lineHeight: 24
