@@ -103,7 +103,9 @@ Click File > Open Folder, then select the folder where you downloaded the reposi
 
 You should see all repository files in the left pane.
 
-#### I don't want to edit code - just launch using command line
+#### I don't want to edit code - just launch using command line (NOT PREFFERED) - May have issues on windows with PowerShell execution for npm and expo binaries, requires allowing permissions
+and I don't remember how I did it
+
 If you are using Mac - open Terminal:
 
 `⌘ + Space`, then type `terminal`, hit enter.
