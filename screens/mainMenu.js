@@ -4,25 +4,27 @@ import { Text, View, StyleSheet, ScrollView, Image } from 'react-native';
 import Header from '../components/Header'
 import ListItem from '../components/ListItem';
 
-var navigateAway = () => {console.log("navigation")}
+export default function MainMenu({ navigation }) {  // navigation: { goBack }
+  const navigateTo = ( destination ) => {
+    navigation.push( destination )
+  }
 
-export default function MainMenu({ navigation: { goBack } }) { 
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Header/>
+        <Header navigation={navigation}/>
 
         <View style={{padding: 20}}>
           <Text style={styles.title}>Екстрена допомога</Text>
-          <ListItem icon="🚨" roundTop roundBottom title="Екстренна психологічна допомога" onPress={navigateAway}/>
+          <ListItem icon="🚨" roundTop roundBottom title="Екстренна психологічна допомога" onPress={()=>navigateTo("EkstrennaDopomoga")}/>
 
           <Text style={styles.title}>Психічна підтримка</Text>
-          <ListItem icon="👩" roundTop title="Для себе" onPress={navigateAway}/>
-          <ListItem icon="👦" roundBottom title="Дитині" onPress={navigateAway}/>
+          <ListItem icon="👩" roundTop title="Для себе" onPress={()=>navigateTo("DlyaSebe")}/>
+          <ListItem icon="👦" roundBottom title="Дитині" onPress={()=>navigateTo("Dytuni")}/>
 
           <Text style={styles.title}>Надзвичайна ситуація</Text>
-          <ListItem icon="🚑" roundTop title="Контакти служб порятунку" onPress={navigateAway}/>
-          <ListItem icon="👉" roundBottom title="Дії у різних ситуаціях" onPress={navigateAway}/>
+          <ListItem icon="🚑" roundTop title="Контакти служб порятунку" onPress={()=>navigateTo("Kontakty")}/>
+          <ListItem icon="👉" roundBottom title="Дії у різних ситуаціях" onPress={()=>navigateTo("Diyi")}/>
 
         </View>
       </View>
