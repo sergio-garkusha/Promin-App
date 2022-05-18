@@ -45,12 +45,14 @@ Let's adopt simplified GitHub Flow to develop our app in team. Please make yours
 
 -------
 ### Roadmap
-1. Let's develop bare screens first
-2. I will add react-navigation component later
-3. Let's use hard-coded text, then we can source it from somewhere
-4. Use designs and graphics similar to official Ukrainian sites
-5. After all text screens are done, let's work on caching and sourcing
-6. Videos for kids
+1. Let's develop bare screens first ✔️
+2. I will add react-navigation component later ✔️
+3. Let's use hard-coded text, then we can source it from somewhere ✔️
+4. Use designs and graphics similar to official Ukrainian sites ✔️
+5. After finish all the screens ⬅️ YOU ARE HERE
+6. Caching and sourcing for texts
+7. 🔜 Release 1 
+8. Videos for kids
 
 --------
 
