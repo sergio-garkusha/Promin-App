@@ -1,48 +1,50 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, ScrollView, Image } from 'react-native';
 
+import Header from '../components/Header'
 import ListItem from '../components/ListItem';
 
 var navigateAway = () => {console.log("navigation")}
 
-export default function MainMenu() {
+export default function MainMenu({ navigation: { goBack } }) { 
   return (
     <ScrollView>
-    <View style={styles.container}>
+      <View style={styles.container}>
+        <Header/>
 
-      <View style={{justifyContent: 'center', alignItems: 'center'}}>
-        <Image
-          source={require("../assets/snack-icon.png")}
-          style={styles.roundImage}
-        />
+        <View style={{padding: 20}}>
+          <Text style={styles.title}>Екстрена допомога</Text>
+          <ListItem icon="🚨" roundTop roundBottom title="Екстренна психологічна допомога" onPress={navigateAway}/>
+
+          <Text style={styles.title}>Психічна підтримка</Text>
+          <ListItem icon="👩" roundTop title="Для себе" onPress={navigateAway}/>
+          <ListItem icon="👦" roundBottom title="Дитині" onPress={navigateAway}/>
+
+          <Text style={styles.title}>Надзвичайна ситуація</Text>
+          <ListItem icon="🚑" roundTop title="Контакти служб порятунку" onPress={navigateAway}/>
+          <ListItem icon="👉" roundBottom title="Дії у різних ситуаціях" onPress={navigateAway}/>
+
+        </View>
       </View>
-      <Text style={styles.paragraph}> Психологічна допомога: </Text>
-
-      <ListItem title="Екстренна психологічна допомога" onPress={navigateAway}/>
-      <ListItem title="Для себе" onPress={navigateAway}/>
-      <ListItem title="Дитині" onPress={navigateAway}/>
-
-      <Text style={styles.paragraph}> Надзвичайна ситуaація: </Text>
-
-      <ListItem title="Контакти служб порятунку" onPress={navigateAway}/>
-      <ListItem title="Дії у надзвичайних ситуаціях" onPress={navigateAway}/>
-
-
-      {/*<ListItem title="Вимкнули телебачення" onPress={navigateAway}/>*/}
-      {/*<ListItem title="Повітряна тривога" onPress={navigateAway}/>*/}
-      {/*<ListItem title="Евакуація" onPress={navigateAway}/>*/}
-      {/*<ListItem title="Вибухонебезпечні знахідки" onPress={navigateAway}/>*/}
-      {/*<ListItem title="Артілерійський обстріл" onPress={navigateAway}/>*/}
-
-    </View>
     </ScrollView>
 )}
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    backgroundColor: 'paleturquoise',
-    padding: 8,
+    backgroundColor: '#F3F3F3',
+  },
+  title: {
+    marginTop:32,
+    marginBottom:16,
+    fontFamily: 'Ubuntu',
+    fontSize: 18,
+    lineHeight: 21,
+    textAlign: 'left',
+    color: '#666666'
+  },
+  listGroup: {
+    borderRadius: 12
   },
   paragraph: {
     margin: 5,

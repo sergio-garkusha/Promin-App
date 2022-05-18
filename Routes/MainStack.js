@@ -22,9 +22,13 @@ import Kontakty from "../screens/nadzvychaynaSytuaziya/kontakty/kontakty";
 import Diyi from "../screens/nadzvychaynaSytuaziya/diyi/diyi";
 
 const Stack = createStackNavigator();
+
+// To set a test screen to be first, add below property to Stack.Navigator. TODO: PROD: remove that property
+// initialRouteName="MainMenu"
+
 const MainStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
       <Stack.Screen name="MainMenu" component={MainMenu}/>
       <Stack.Screen name="dlyaSebe" component={DlyaSebe}/>
