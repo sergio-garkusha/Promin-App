@@ -8,7 +8,8 @@ import MainStack from './Routes/MainStack';
 
 export default function App() {
   const [fontsLoaded] = useFonts({  //TODO: Use 
-    'Ubuntu': require('./assets/fonts/Ubuntu-R.ttf')
+    'Ubuntu': require('./assets/fonts/Ubuntu-R.ttf'),
+    'Ubuntu_M': require('./assets/fonts/Ubuntu-M.ttf')
   });
 
   if (!fontsLoaded)

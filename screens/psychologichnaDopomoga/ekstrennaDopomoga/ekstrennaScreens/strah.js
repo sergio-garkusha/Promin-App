@@ -1,24 +1,27 @@
 import * as React from 'react';
 import {Text, View, StyleSheet, Button, Image, ScrollView} from 'react-native';
 
-export default function Strah() {
+import Bullet from '../../../../components/Bullet'
+import Header from '../../../../components/Header'
+
+export default function Strah({ navigation }) {
     return (
         <ScrollView>
             <View style={styles.container}>
-                <Text style={styles.paragraph}>Назад</Text>
+                <Header backButton navigation={navigation} />
 
                 <Text style={styles.header}>Страх </Text>
 
-                <Text style={styles.paragraph}>В цій ситуації: </Text>
-
-                <Text style={styles.paragraph}> 1. Покладіть руку постраждалого собі на зап’ястя, щоб він відчув ваш
-                    спокійний пульс. Це буде сигналом: “Я зараз поряд, ти не один!”. </Text>
-                <Text style={styles.paragraph}> 2. Дихайте глибоко і рівно. Заохочуйте постраждалого дихати з вами в
-                    одному ритмі. </Text>
-                <Text style={styles.paragraph}> 3. Якщо постраждалий щось говорить, слухайте його, виражайте
-                    зацікавленість, розуміння, співчуття. </Text>
-                <Text style={styles.paragraph}> 4. Зробіть постраждалому легкий масаж найбільш напружених м’язів
-                    тіла. </Text>
+                <Text style={styles.header2}>В цій ситуації: </Text>
+                
+                <Bullet symbol='1.' style={styles.listItem}>Покладіть руку постраждалого собі на зап’ястя, щоб він відчув ваш
+                    спокійний пульс. Це буде сигналом: “Я зараз поряд, ти не один!”. </Bullet>
+                <Bullet symbol='2.'  style={styles.listItem}>Дихайте глибоко і рівно. Заохочуйте постраждалого дихати з вами в
+                    одному ритмі. </Bullet>
+                <Bullet symbol='3.'  style={styles.listItem}>Якщо постраждалий щось говорить, слухайте його, виражайте
+                    зацікавленість, розуміння, співчуття. </Bullet>
+                <Bullet symbol='4.'  style={styles.listItem}>Зробіть постраждалому легкий масаж найбільш напружених м’язів
+                    тіла. </Bullet>
             </View>
         </ScrollView>
     )
@@ -27,20 +30,30 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: 'paleturquoise',
-        padding: 8,
+        backgroundColor: '#F3F3F3',
     },
-    paragraph: {
+    listItem: {
         margin: 5,
-        fontSize: 14,
+        fontFamily: 'Ubuntu',
+        fontSize: 17,
         fontWeight: 'normal',
-        textAlign: 'center',
+        textAlign: 'left',
+        marginBottom: 15
     },
     header: {
-        margin: 5,
-        fontSize: 22,
+        margin: 15,
+        marginTop: 40,
+        fontFamily: 'Ubuntu_M',
+        fontSize: 25,
         fontWeight: 'normal',
-        textAlign: 'center',
+        textAlign: 'left',
+    },
+    header2: {
+        margin: 15,
+        fontFamily: 'Ubuntu_M',
+        fontSize: 19,
+        fontWeight: 'normal',
+        textAlign: 'left',
     },
     roundImage: {
         width: 200,
