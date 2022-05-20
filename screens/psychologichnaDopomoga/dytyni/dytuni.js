@@ -1,23 +1,25 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, ScrollView, Image } from 'react-native';
 
+import Header from '../../../components/Header'
 import ListItem from "../../../components/ListItem";
 
 var navigateAway = () => {console.log("navigation")}
 
-export default function Dytuni() {
+export default function Dytuni({ navigation }) {
     return (
         <ScrollView>
             <View style={styles.container}>
+                <Header backButton navigation={navigation} />
 
-                <Text style={styles.paragraph}>Назад</Text>
-                <Text style={styles.header}>Дитині </Text>
+                <View style={{padding: 20}}>
+                    <Text style={styles.title}>Дитині </Text>
 
-                <ListItem title="Ігри" onPress={navigateAway}/>
-                <ListItem title="Мультфільми" onPress={navigateAway}/>
-                <ListItem title="Антистресова активність" onPress={navigateAway}/>
-                <ListItem title="Часті запитання" onPress={navigateAway}/>
-
+                    <ListItem roundTop title="Ігри" onPress={navigateAway}/>
+                    <ListItem title="Мультфільми" onPress={navigateAway}/>
+                    <ListItem title="Антистресова активність" onPress={navigateAway}/>
+                    <ListItem roundBottom title="Часті запитання" onPress={navigateAway}/>
+                </View>
             </View>
         </ScrollView>
     )}
@@ -25,14 +27,16 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: 'paleturquoise',
-        padding: 8,
+        backgroundColor: '#F3F3F3',
     },
-    paragraph: {
-        margin: 5,
-        fontSize: 14,
-        fontWeight: 'normal',
-        textAlign: 'center',
+    title: {
+        marginTop:32,
+        marginBottom:16,
+        fontFamily: 'Ubuntu',
+        fontSize: 18,
+        lineHeight: 21,
+        textAlign: 'left',
+        color: '#666666'
     },
     roundImage: {
         width: 200,

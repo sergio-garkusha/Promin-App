@@ -1,24 +1,26 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, ScrollView, Image } from 'react-native';
 
+import Header from '../../../components/Header'
 import ListItem from "../../../components/ListItem";
 
 var navigateAway = () => {console.log("navigation")}
 
-export default function Kontakty() {
+export default function Kontakty({ navigation }) {
     return (
         <ScrollView>
             <View style={styles.container}>
+                <Header backButton navigation={navigation} />
 
-                <Text style={styles.paragraph}>Назад</Text>
+                <View style={{padding: 20}}>
+                    <Text style={styles.title}>Контакти служб порятунку </Text>
 
-                <Text style={styles.header}>Контакти служб порятунку </Text>
-
-                <ListItem title="Пожежна" onPress={navigateAway}/>
-                <ListItem title="Поліція" onPress={navigateAway}/>
-                <ListItem title="Швидка допомога" onPress={navigateAway}/>
-                <ListItem title="Аварійна служба газу" onPress={navigateAway}/>
-                <ListItem title="Екстренна психолог допомога" onPress={navigateAway}/>
+                    <ListItem roundTop title="Пожежна" onPress={navigateAway}/>
+                    <ListItem title="Поліція" onPress={navigateAway}/>
+                    <ListItem title="Швидка допомога" onPress={navigateAway}/>
+                    <ListItem title="Аварійна служба газу" onPress={navigateAway}/>
+                    <ListItem roundBottom title="Екстренна психолог допомога" onPress={navigateAway}/>
+                </View>
             </View>
         </ScrollView>
     )}
@@ -26,14 +28,16 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: 'paleturquoise',
-        padding: 8,
+        backgroundColor: '#F3F3F3',
     },
-    paragraph: {
-        margin: 5,
-        fontSize: 14,
-        fontWeight: 'normal',
-        textAlign: 'center',
+    title: {
+        marginTop:32,
+        marginBottom:16,
+        fontFamily: 'Ubuntu',
+        fontSize: 18,
+        lineHeight: 21,
+        textAlign: 'left',
+        color: '#666666'
     },
     header: {
         margin: 5,
