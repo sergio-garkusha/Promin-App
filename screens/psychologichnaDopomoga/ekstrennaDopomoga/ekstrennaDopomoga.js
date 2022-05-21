@@ -20,14 +20,14 @@ export default function EkstrennaDopomoga({ navigation }) {
                     
                     <Text style={styles.title}> Психологічна допомога: </Text>
 
-                    <ListItem roundTop title="Страх" onPress={navigateAway}/>
-                    <ListItem title="Істерика" onPress={navigateAway}/>
-                    <ListItem title="Плач" onPress={navigateAway}/>
-                    <ListItem title="Ступор" onPress={navigateAway}/>
-                    <ListItem title="Нервове тремтіння" onPress={navigateAway}/>
-                    <ListItem title="Агресія" onPress={navigateAway}/>
-                    <ListItem title="Марення і галюцинації" onPress={navigateAway}/>
-                    <ListItem roundBottom title="Перезбудження" onPress={navigateAway}/>
+                    <ListItem roundTop title="Страх" onPress={()=>navigateTo("Strah")}/>
+                    <ListItem title="Істерика" onPress={()=>navigateTo("Isteryka")}/>
+                    <ListItem title="Плач" onPress={()=>navigateTo("Plach")}/>
+                    <ListItem title="Ступор" onPress={()=>navigateTo("Stupor")}/>
+                    <ListItem title="Нервове тремтіння" onPress={()=>navigateTo("NervoveTremtinnya")}/>
+                    <ListItem title="Агресія" onPress={()=>navigateTo("Agresiya")}/>
+                    <ListItem title="Марення і галюцинації" onPress={()=>navigateTo("Marennya")}/>
+                    <ListItem roundBottom title="Перезбудження" onPress={()=>navigateTo("Perezbudzennya")}/>
                 </View>
             </View>
         </ScrollView>
