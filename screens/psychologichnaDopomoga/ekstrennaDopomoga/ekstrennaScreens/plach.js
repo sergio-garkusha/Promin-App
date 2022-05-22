@@ -1,25 +1,28 @@
 import * as React from 'react';
 import {Text, View, StyleSheet, Button, Image, ScrollView} from 'react-native';
 
-export default function Plach() {
+import Bullet from '../../../../components/Bullet';
+import Header from '../../../../components/Header';
+
+export default function Plach({ navigation }) {
     return (
         <ScrollView>
             <View style={styles.container}>
-                <Text style={styles.paragraph}>Назад</Text>
+                <Header backButton navigation={navigation} />
 
                 <Text style={styles.header}>Плач </Text>
 
-                <Text style={styles.paragraph}>В цій ситуації: </Text>
+                <Text style={styles.header2}>В цій ситуації:</Text>
 
-                <Text style={styles.paragraph}> 1. Не залишайте потерпілого одного. </Text>
+                <Bullet symbol='1.' style={styles.listItem}>Не залишайте потерпілого одного. </Bullet>
 
-                <Text style={styles.paragraph}> 2. Встановіть фізичний контакт з потерпілим (візьміть за руку, покладіть
+                <Bullet symbol='2.' style={styles.listItem}>Встановіть фізичний контакт з потерпілим (візьміть за руку, покладіть
                     свою руку йому на плече або спину, погладьте його по голові). Дайте потерпілому відчути, що ви
-                    поряд. </Text>
-                <Text style={styles.paragraph}> 3. Не намагайтесь заспокоїти потерпілого що. Дайте йому можливість
-                    виплакатись і виговоритись, “виплеснути” із себе горе, страх, образу. </Text>
-                <Text style={styles.paragraph}> 4. Нічого не питайте, на давайте порад. Ваше завдання -
-                    вислухати. </Text>
+                    поряд. </Bullet>
+                <Bullet symbol='3.' style={styles.listItem}>Не намагайтесь заспокоїти потерпілого що. Дайте йому можливість
+                    виплакатись і виговоритись, “виплеснути” із себе горе, страх, образу. </Bullet>
+                <Bullet symbol='1.' style={styles.listItem}>Нічого не питайте, на давайте порад. Ваше завдання -
+                    вислухати. </Bullet>
             </View>
         </ScrollView>
     )
@@ -28,20 +31,30 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: 'paleturquoise',
-        padding: 8,
+        backgroundColor: '#F3F3F3',
     },
-    paragraph: {
+    listItem: {
         margin: 5,
-        fontSize: 14,
+        fontFamily: 'Ubuntu',
+        fontSize: 17,
         fontWeight: 'normal',
-        textAlign: 'center',
+        textAlign: 'left',
+        marginBottom: 15
     },
     header: {
-        margin: 5,
-        fontSize: 22,
+        margin: 15,
+        marginTop: 40,
+        fontFamily: 'Ubuntu_M',
+        fontSize: 25,
         fontWeight: 'normal',
-        textAlign: 'center',
+        textAlign: 'left',
+    },
+    header2: {
+        margin: 15,
+        fontFamily: 'Ubuntu_M',
+        fontSize: 19,
+        fontWeight: 'normal',
+        textAlign: 'left',
     },
     roundImage: {
         width: 200,
