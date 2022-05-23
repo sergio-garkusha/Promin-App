@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {Text, View, StyleSheet, Button, Image, ScrollView} from 'react-native';
 
-import Bullet from '../../../../components/Bullet'
-import Header from '../../../../components/Header'
+import Bullet from '../../../../components/Bullet';
+import Header from '../../../../components/Header';
 
 export default function Strah({ navigation }) {
     return (
@@ -10,9 +10,9 @@ export default function Strah({ navigation }) {
             <View style={styles.container}>
                 <Header backButton navigation={navigation} />
 
-                <Text style={styles.header}>Страх </Text>
+                <Text style={styles.header}>Страх</Text>
 
-                <Text style={styles.header2}>В цій ситуації: </Text>
+                <Text style={styles.header2}>В цій ситуації:</Text>
                 
                 <Bullet symbol='1.' style={styles.listItem}>Покладіть руку постраждалого собі на зап’ястя, щоб він відчув ваш
                     спокійний пульс. Це буде сигналом: “Я зараз поряд, ти не один!”. </Bullet>
@@ -24,7 +24,7 @@ export default function Strah({ navigation }) {
                     тіла. </Bullet>
             </View>
         </ScrollView>
-    )
+    );
 }
 const styles = StyleSheet.create({
     container: {
