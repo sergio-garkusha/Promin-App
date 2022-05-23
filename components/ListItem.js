@@ -3,16 +3,19 @@ import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
 
 export default function ListItem(props) {
   return (
-    <View style={[
-      styles.container, 
-      props.roundTop && styles.roundTop,
-      props.roundBottom ? styles.roundBottom : styles.spacer
-    ] }>
-      <TouchableOpacity style={styles.button} onPress={props.onPress}>
-        {props.icon && <Text style={styles.icon}>{props.icon}</Text> }
-        <Text style={styles.text}>{props.title}</Text>
-        <Image style={styles.caret} source={ require('../assets/carrot_light_large.png') } />
-      </TouchableOpacity>
+    <View style={props.padded && styles.padded}>
+      <View style={[
+        styles.container, 
+        props.padded && styles.padded,
+        props.roundTop && styles.roundTop,
+        props.roundBottom ? styles.roundBottom : styles.spacer
+      ] }>
+        <TouchableOpacity style={styles.button} onPress={props.onPress}>
+          {props.icon && <Text style={styles.icon}>{props.icon}</Text> }
+          <Text style={styles.text}>{props.title}</Text>
+          <Image style={styles.caret} source={ require('../assets/carrot_light_large.png') } />
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -59,5 +62,9 @@ const styles = StyleSheet.create({
     height: 15,
     width: 2,
     flex: 1
+  },
+  padded:{
+    paddingLeft: 20,
+    paddingRight: 20
   }
 });

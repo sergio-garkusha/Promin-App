@@ -8,23 +8,25 @@ var navigateAway = () => {console.log("navigation")}
 
 export default function Dytuni({ navigation }) {
     return (
-        <ScrollView>
-            <View style={styles.container}>
-                <Header backButton navigation={navigation} />
+        <View>
+            <Header backButton navigation={navigation} />
+            <ScrollView>
+                <View style={styles.container}>
+                    <View style={{padding: 20}}>
+                        <Text style={styles.title}>Дитині </Text>
 
-                <View style={{padding: 20}}>
-                    <Text style={styles.title}>Дитині </Text>
-
-                    <ListItem roundTop title="Ігри" onPress={navigateAway}/>
-                    <ListItem title="Мультфільми" onPress={navigateAway}/>
-                    <ListItem title="Антистресова активність" onPress={navigateAway}/>
-                    <ListItem roundBottom title="Часті запитання" onPress={navigateAway}/>
+                        <ListItem roundTop title="Ігри" onPress={navigateAway}/>
+                        <ListItem title="Мультфільми" onPress={navigateAway}/>
+                        <ListItem title="Антистресова активність" onPress={navigateAway}/>
+                        <ListItem roundBottom title="Часті запитання" onPress={navigateAway}/>
+                    </View>
                 </View>
-            </View>
-        </ScrollView>
+            </ScrollView>
+        </View>
     )}
 const styles = StyleSheet.create({
     container: {
+        paddingTop: 110,
         flex: 1,
         justifyContent: 'center',
         backgroundColor: '#F3F3F3',

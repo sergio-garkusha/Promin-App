@@ -8,24 +8,26 @@ var navigateAway = () => {console.log("navigation")}
 
 export default function Kontakty({ navigation }) {
     return (
-        <ScrollView>
-            <View style={styles.container}>
-                <Header backButton navigation={navigation} />
+        <View>
+            <Header backButton navigation={navigation} />
+            <ScrollView>
+                <View style={styles.container}>
+                    <View style={{padding: 20}}>
+                        <Text style={styles.title}>Контакти служб порятунку </Text>
 
-                <View style={{padding: 20}}>
-                    <Text style={styles.title}>Контакти служб порятунку </Text>
-
-                    <ListItem roundTop title="Пожежна" onPress={navigateAway}/>
-                    <ListItem title="Поліція" onPress={navigateAway}/>
-                    <ListItem title="Швидка допомога" onPress={navigateAway}/>
-                    <ListItem title="Аварійна служба газу" onPress={navigateAway}/>
-                    <ListItem roundBottom title="Екстренна психолог допомога" onPress={navigateAway}/>
+                        <ListItem roundTop title="Пожежна" onPress={navigateAway}/>
+                        <ListItem title="Поліція" onPress={navigateAway}/>
+                        <ListItem title="Швидка допомога" onPress={navigateAway}/>
+                        <ListItem title="Аварійна служба газу" onPress={navigateAway}/>
+                        <ListItem roundBottom title="Екстренна психолог допомога" onPress={navigateAway}/>
+                    </View>
                 </View>
-            </View>
-        </ScrollView>
+            </ScrollView>
+        </View>
     )}
 const styles = StyleSheet.create({
     container: {
+        paddingTop:110,
         flex: 1,
         justifyContent: 'center',
         backgroundColor: '#F3F3F3',

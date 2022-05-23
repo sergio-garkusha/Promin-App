@@ -34,7 +34,10 @@ export default function Header(props) {
       backgroundColor: '#5177ff', 
       height: headerHeight, 
       flexDirection: 'row',
-      justifyContent: 'space-between'
+      justifyContent: 'space-between',
+      position: 'fixed',
+      width: '100%',
+      zIndex: 100,
     }]}>
 
       { props.backButton

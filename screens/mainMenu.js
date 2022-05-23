@@ -10,28 +10,31 @@ export default function MainMenu({ navigation }) {  // navigation: { goBack }
   }
 
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <Header navigation={navigation}/>
+    <View>
+      <Header navigation={navigation}/>
+      <ScrollView>
+        <View style={styles.container}>
 
-        <View style={{padding: 20}}>
-          <Text style={styles.title}>Екстрена допомога</Text>
-          <ListItem icon="🚨" roundTop roundBottom title="Екстренна психологічна допомога" onPress={()=>navigateTo("EkstrennaDopomoga")}/>
+          <View style={{padding: 20}}>
+            <Text style={styles.title}>Екстрена допомога</Text>
+            <ListItem icon="🚨" roundTop roundBottom title="Екстренна психологічна допомога" onPress={()=>navigateTo("EkstrennaDopomoga")}/>
 
-          <Text style={styles.title}>Психічна підтримка</Text>
-          <ListItem icon="👩" roundTop title="Для себе" onPress={()=>navigateTo("DlyaSebe")}/>
-          <ListItem icon="👦" roundBottom title="Дитині" onPress={()=>navigateTo("Dytuni")}/>
+            <Text style={styles.title}>Психічна підтримка</Text>
+            <ListItem icon="👩" roundTop title="Для себе" onPress={()=>navigateTo("DlyaSebe")}/>
+            <ListItem icon="👦" roundBottom title="Дитині" onPress={()=>navigateTo("Dytuni")}/>
 
-          <Text style={styles.title}>Надзвичайна ситуація</Text>
-          <ListItem icon="🚑" roundTop title="Контакти служб порятунку" onPress={()=>navigateTo("Kontakty")}/>
-          <ListItem icon="👉" roundBottom title="Дії у різних ситуаціях" onPress={()=>navigateTo("Diyi")}/>
+            <Text style={styles.title}>Надзвичайна ситуація</Text>
+            <ListItem icon="🚑" roundTop title="Контакти служб порятунку" onPress={()=>navigateTo("Kontakty")}/>
+            <ListItem icon="👉" roundBottom title="Дії у різних ситуаціях" onPress={()=>navigateTo("Diyi")}/>
 
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
 )}
 const styles = StyleSheet.create({
   container: {
+    paddingTop: 110,
     flex: 1,
     justifyContent: 'center',
     backgroundColor: '#F3F3F3',
