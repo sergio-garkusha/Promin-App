@@ -33,7 +33,7 @@ export default function Perezbudzennya({ navigation }) {
                         втікти, сховатись від того що відбувається?” ).
                     </Bullet>
 
-                    <View style={{justifyContent: 'center', alignItems: 'center', margin: '1em'}}>
+                    <View style={{justifyContent: 'center', alignItems: 'center'}}>
                         <Image source={head} style={{ width: 286, height: 352 }} />
                     </View>
 

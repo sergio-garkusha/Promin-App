@@ -5,8 +5,7 @@ export default function ListItem(props) {
   return (
     <View style={props.padded && styles.padded}>
       <View style={[
-        styles.container, 
-        props.padded && styles.padded,
+        styles.container,
         props.roundTop && styles.roundTop,
         props.roundBottom ? styles.roundBottom : styles.spacer
       ] }>

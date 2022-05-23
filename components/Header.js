@@ -35,7 +35,8 @@ export default function Header(props) {
       height: headerHeight, 
       flexDirection: 'row',
       justifyContent: 'space-between',
-      position: 'fixed',
+      position:'absolute',
+      top:0,
       width: '100%',
       zIndex: 100,
     }]}>

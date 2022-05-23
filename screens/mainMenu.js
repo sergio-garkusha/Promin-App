@@ -32,6 +32,7 @@ export default function MainMenu({ navigation }) {  // navigation: { goBack }
       </ScrollView>
     </View>
 )}
+
 const styles = StyleSheet.create({
   container: {
     paddingTop: 110,

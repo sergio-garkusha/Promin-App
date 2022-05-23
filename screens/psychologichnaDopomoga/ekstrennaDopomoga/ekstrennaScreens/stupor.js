@@ -22,7 +22,7 @@ export default function Stupor({ navigation }) {
                     <Bullet symbol='1.' style={styles.paragraph}>Загніть постраждалій усі пальці на руках окрім великих. Великі пальці
                         мають бути виставлені назовні. </Bullet>
 
-                    <View style={{justifyContent: 'center', alignItems: 'center', margin: '1em'}}>
+                    <View style={{justifyContent: 'center', alignItems: 'center'}}>
                         <Image source={thumbs} style={{ width: 490, height: 242 }} />
                     </View>
 
@@ -30,7 +30,7 @@ export default function Stupor({ navigation }) {
                         розташовані на лобі, над очима рівно посередині між лінією росту волосся і бровами, чітко над
                         зіницями.</Bullet>
 
-                    <View style={{justifyContent: 'center', alignItems: 'center', margin: '1em', width: '100%'}}>
+                    <View style={{justifyContent: 'center', alignItems: 'center'}}>
                         <Image source={head} style={{ width: 286, height: 352 }} />
                         <Image source={two} style={{ width: 352, height: 652 }} />
                     </View>

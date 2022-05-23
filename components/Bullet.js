@@ -16,9 +16,7 @@ export default function Bullet(props) {
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: 'top',
     justifyContent: 'center',
-    flexDirection: 'row',
-    height:'fit-content'
+    flexDirection: 'row'
   }
 });
