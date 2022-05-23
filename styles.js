@@ -7,7 +7,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         backgroundColor: '#F3F3F3',
     },
-    "paragraph, listItem": { // this is added for portability with text screens added prior to stylesheet import
+    paragraph: {
+        margin: 5,
+        fontFamily: 'Ubuntu',
+        fontSize: 17,
+        fontWeight: 'normal',
+        textAlign: 'left',
+        marginBottom: 15
+    },
+    listItem: { // this is added for portability with text screens added prior to stylesheet import
         margin: 5,
         fontFamily: 'Ubuntu',
         fontSize: 17,
