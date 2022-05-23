@@ -8,24 +8,26 @@ var navigateAway = () => {console.log("navigation")}
 
 export default function Diyi({ navigation }) {
     return (
-        <ScrollView>
-            <View style={styles.container}>
-                <Header backButton navigation={navigation} />
+        <View>
+            <Header backButton navigation={navigation} />
+            <ScrollView>
+                <View style={styles.container}>
+                    <View style={{padding: 20}}>
+                        <Text style={styles.title}>Надзвичайна ситуація - дії</Text>
 
-                <View style={{padding: 20}}>
-                    <Text style={styles.title}>Надзвичайна ситуація - дії</Text>
-
-                    <ListItem roundTop title="Вимкнули телебачення" onPress={navigateAway}/>
-                    <ListItem title="Повітряна тривога" onPress={navigateAway}/>
-                    <ListItem title="Евакуація" onPress={navigateAway}/>
-                    <ListItem title="Вибухонебезпечні знахідки" onPress={navigateAway}/>
-                    <ListItem roundBottom title="Артилерійський обстріл" onPress={navigateAway}/>
+                        <ListItem roundTop title="Вимкнули телебачення" onPress={navigateAway}/>
+                        <ListItem title="Повітряна тривога" onPress={navigateAway}/>
+                        <ListItem title="Евакуація" onPress={navigateAway}/>
+                        <ListItem title="Вибухонебезпечні знахідки" onPress={navigateAway}/>
+                        <ListItem roundBottom title="Артилерійський обстріл" onPress={navigateAway}/>
+                    </View>
                 </View>
-            </View>
-        </ScrollView>
+            </ScrollView>
+        </View>
     )}
 const styles = StyleSheet.create({
     container: {
+        paddingTop: 110,
         flex: 1,
         justifyContent: 'center',
         backgroundColor: '#F3F3F3',

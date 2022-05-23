@@ -8,22 +8,24 @@ var navigateAway = () => {console.log("navigation")}
 
 export default function DlyaSebe({ navigation }) {
     return (
-        <ScrollView>
-            <View style={styles.container}>
-                <Header backButton navigation={navigation} />
-                
-                <View style={{padding: 20}}>
-                    <Text style={styles.title}>Для Себе </Text>
+        <View>
+            <Header backButton navigation={navigation} />
+            <ScrollView>
+                <View style={styles.container}>
+                    <View style={{padding: 20}}>
+                        <Text style={styles.title}>Для Себе </Text>
 
-                    <ListItem roundTop title="Щоденна турбота для себе" onPress={navigateAway}/>
-                    <ListItem title="Техніки самодопомоги в моменті..." onPress={navigateAway}/>
-                    <ListItem roundBottom title="Антистресова активність" onPress={navigateAway}/>
+                        <ListItem roundTop title="Щоденна турбота для себе" onPress={navigateAway}/>
+                        <ListItem title="Техніки самодопомоги в моменті..." onPress={navigateAway}/>
+                        <ListItem roundBottom title="Антистресова активність" onPress={navigateAway}/>
+                    </View>
                 </View>
-            </View>
-        </ScrollView>
+            </ScrollView>
+        </View>
     )}
 const styles = StyleSheet.create({
     container: {
+        paddingTop: 110,
         flex: 1,
         justifyContent: 'center',
         backgroundColor: '#F3F3F3',

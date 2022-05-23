@@ -3,19 +3,12 @@ import React from 'react'
 
 const styles = StyleSheet.create({ 
     container: {
+        paddingTop: 110,
         flex: 1,
         justifyContent: 'center',
         backgroundColor: '#F3F3F3',
     },
     paragraph: {
-        margin: 5,
-        fontFamily: 'Ubuntu',
-        fontSize: 17,
-        fontWeight: 'normal',
-        textAlign: 'left',
-        marginBottom: 15
-    },
-    listItem: { // this is added for portability with text screens added prior to stylesheet import
         margin: 5,
         fontFamily: 'Ubuntu',
         fontSize: 17,
@@ -42,6 +35,9 @@ const styles = StyleSheet.create({
         width: 200,
         height: 200,
         borderRadius: 200 / 2
+    },
+    spacer: {
+        height: 50
     }
 })
 

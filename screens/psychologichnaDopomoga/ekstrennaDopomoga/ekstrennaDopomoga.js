@@ -12,28 +12,30 @@ export default function EkstrennaDopomoga({ navigation }) {
     }
 
     return (
-        <ScrollView>
-            <View style={styles.container}>
-                <Header backButton navigation={navigation} />
+        <View>
+            <Header backButton navigation={navigation} />
+            <ScrollView>
+                <View style={styles.container}>
+                    <View style={{padding: 20}}>
+                        
+                        <Text style={styles.title}> Психологічна допомога: </Text>
 
-                <View style={{padding: 20}}>
-                    
-                    <Text style={styles.title}> Психологічна допомога: </Text>
-
-                    <ListItem roundTop title="Страх" onPress={()=>navigateTo("Strah")}/>
-                    <ListItem title="Істерика" onPress={()=>navigateTo("Isteryka")}/>
-                    <ListItem title="Плач" onPress={()=>navigateTo("Plach")}/>
-                    <ListItem title="Ступор" onPress={()=>navigateTo("Stupor")}/>
-                    <ListItem title="Нервове тремтіння" onPress={()=>navigateTo("NervoveTremtinnya")}/>
-                    <ListItem title="Агресія" onPress={()=>navigateTo("Agresiya")}/>
-                    <ListItem title="Марення і галюцинації" onPress={()=>navigateTo("Marennya")}/>
-                    <ListItem roundBottom title="Перезбудження" onPress={()=>navigateTo("Perezbudzennya")}/>
+                        <ListItem roundTop title="Страх" onPress={()=>navigateTo("Strah")}/>
+                        <ListItem title="Істерика" onPress={()=>navigateTo("Isteryka")}/>
+                        <ListItem title="Плач" onPress={()=>navigateTo("Plach")}/>
+                        <ListItem title="Ступор" onPress={()=>navigateTo("Stupor")}/>
+                        <ListItem title="Нервове тремтіння" onPress={()=>navigateTo("NervoveTremtinnya")}/>
+                        <ListItem title="Агресія" onPress={()=>navigateTo("Agresiya")}/>
+                        <ListItem title="Марення і галюцинації" onPress={()=>navigateTo("Marennya")}/>
+                        <ListItem roundBottom title="Перезбудження" onPress={()=>navigateTo("Perezbudzennya")}/>
+                    </View>
                 </View>
-            </View>
-        </ScrollView>
+            </ScrollView>
+        </View>
     )}
 const styles = StyleSheet.create({
     container: {
+        paddingTop: 110,
         flex: 1,
         justifyContent: 'center',
         backgroundColor: '#F3F3F3',
