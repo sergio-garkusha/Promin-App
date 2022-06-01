@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React from 'react';
 import {Text, View, ScrollView} from 'react-native';
 import { ThemeContext } from 'ThemeProvider';
 import Bullet from 'components/Bullet';

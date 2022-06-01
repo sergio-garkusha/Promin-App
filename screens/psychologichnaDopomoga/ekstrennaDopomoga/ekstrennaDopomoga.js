@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { Text, View, StyleSheet, ScrollView } from 'react-native';
 import { ThemeContext } from 'ThemeProvider';
-import Header from 'components/Header'
+import Header from 'components/Header';
 import ListItem from "components/ListItem";
 
 var navigateAway = () => {console.log("navigation")}
@@ -21,7 +21,7 @@ export default function EkstrennaDopomoga({ navigation }) {
                 <View style={styles.container}>
                     <View style={{padding: 20}}>
                         
-                        <Text style={styles.title}> Психологічна допомога:</Text>
+                        <Text style={styles.title}>Психологічна допомога:</Text>
 
                         <ListItem roundTop title="Страх" onPress={()=>navigateTo("Strah")}/>
                         <ListItem title="Істерика" onPress={()=>navigateTo("Isteryka")}/>
