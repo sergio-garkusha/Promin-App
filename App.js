@@ -12,8 +12,7 @@ export default function App() {
 
   if (!fontsLoaded)
     return null
-  // Do not replace below with your screen anymore! Please refer to comment in MainStack
-  
+
   return (
     <NavigationContainer>
       <ThemeProvider>

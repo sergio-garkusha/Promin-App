@@ -145,6 +145,8 @@ You are set! Now in Terminal, run commands from __Run__ section above
 ### Resources
 How to write styles for React Native
 
+https://negativeepsilon.com/posts/expo-firststeps-goodpractices/
+
 https://www.bitstoliveby.com/posts/how-to-position-things-in-react-native/
 
 https://reactnative.dev/docs/height-and-width
