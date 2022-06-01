@@ -6,10 +6,6 @@ import Header from 'components/Header';
 import resolveStyles from 'styles';
 
 export default function Agresiya({ navigation }) {
-    const navigateTo = ( destination ) => {
-        navigation.push( destination )
-    }
-
     const { theme } = React.useContext(ThemeContext);
     const styles = resolveStyles(theme);
     return (

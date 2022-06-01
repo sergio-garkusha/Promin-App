@@ -4,10 +4,7 @@ import { ThemeContext } from 'ThemeProvider';
 import Header from 'components/Header'
 import ListItem from 'components/ListItem';
 
-export default function MainMenu({ navigation }) {  // navigation: { goBack }
-  const navigateTo = ( destination ) => {
-    navigation.push( destination )
-  }
+export default function MainMenu({ navigation }) {
   const { theme } = React.useContext(ThemeContext);
   const styles = resolveLocalStyles(theme);
   return (
@@ -18,15 +15,15 @@ export default function MainMenu({ navigation }) {  // navigation: { goBack }
 
           <View style={{padding: 20}}>
             <Text style={styles.title}>Екстрена допомога</Text>
-            <ListItem icon="🚨" roundTop roundBottom title="Екстренна психологічна допомога" onPress={()=>navigateTo("EkstrennaDopomoga")}/>
+            <ListItem icon="🚨" roundTop roundBottom title="Екстренна психологічна допомога" onPress={()=>navigation.push("EkstrennaDopomoga")}/>
 
             <Text style={styles.title}>Психічна підтримка</Text>
-            <ListItem icon="👩" roundTop title="Для себе" onPress={()=>navigateTo("DlyaSebe")}/>
-            <ListItem icon="👦" roundBottom title="Дитині" onPress={()=>navigateTo("Dytuni")}/>
+            <ListItem icon="👩" roundTop title="Для себе" onPress={()=>navigation.push("DlyaSebe")}/>
+            <ListItem icon="👦" roundBottom title="Дитині" onPress={()=>navigation.push("Dytuni")}/>
 
             <Text style={styles.title}>Надзвичайна ситуація</Text>
-            <ListItem icon="🚑" roundTop title="Контакти служб порятунку" onPress={()=>navigateTo("Kontakty")}/>
-            <ListItem icon="👉" roundBottom title="Дії у різних ситуаціях" onPress={()=>navigateTo("Diyi")}/>
+            <ListItem icon="🚑" roundTop title="Контакти служб порятунку" onPress={()=>navigation.push("Kontakty")}/>
+            <ListItem icon="👉" roundBottom title="Дії у різних ситуаціях" onPress={()=>navigation.push("Diyi")}/>
 
           </View>
         </View>

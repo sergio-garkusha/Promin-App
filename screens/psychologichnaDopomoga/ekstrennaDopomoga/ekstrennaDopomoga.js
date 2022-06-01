@@ -7,9 +7,6 @@ import ListItem from "components/ListItem";
 var navigateAway = () => {console.log("navigation")}
 
 export default function EkstrennaDopomoga({ navigation }) {
-    const navigateTo = ( destination ) => {
-        navigation.push( destination )
-    };
 
     const { theme } = React.useContext(ThemeContext);
     const styles = resolveLocalStyles(theme);
@@ -23,14 +20,14 @@ export default function EkstrennaDopomoga({ navigation }) {
                         
                         <Text style={styles.title}>Психологічна допомога:</Text>
 
-                        <ListItem roundTop title="Страх" onPress={()=>navigateTo("Strah")}/>
-                        <ListItem title="Істерика" onPress={()=>navigateTo("Isteryka")}/>
-                        <ListItem title="Плач" onPress={()=>navigateTo("Plach")}/>
-                        <ListItem title="Ступор" onPress={()=>navigateTo("Stupor")}/>
-                        <ListItem title="Нервове тремтіння" onPress={()=>navigateTo("NervoveTremtinnya")}/>
-                        <ListItem title="Агресія" onPress={()=>navigateTo("Agresiya")}/>
-                        <ListItem title="Марення і галюцинації" onPress={()=>navigateTo("Marennya")}/>
-                        <ListItem roundBottom title="Перезбудження" onPress={()=>navigateTo("Perezbudzennya")}/>
+                        <ListItem roundTop title="Страх" onPress={()=>navigation.push("Strah")}/>
+                        <ListItem title="Істерика" onPress={()=>navigation.push("Isteryka")}/>
+                        <ListItem title="Плач" onPress={()=>navigation.push("Plach")}/>
+                        <ListItem title="Ступор" onPress={()=>navigation.push("Stupor")}/>
+                        <ListItem title="Нервове тремтіння" onPress={()=>navigation.push("NervoveTremtinnya")}/>
+                        <ListItem title="Агресія" onPress={()=>navigation.push("Agresiya")}/>
+                        <ListItem title="Марення і галюцинації" onPress={()=>navigation.push("Marennya")}/>
+                        <ListItem roundBottom title="Перезбудження" onPress={()=>navigation.push("Perezbudzennya")}/>
                     </View>
                 </View>
             </ScrollView>

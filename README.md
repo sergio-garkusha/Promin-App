@@ -45,12 +45,14 @@ Let's adopt simplified GitHub Flow to develop our app in team. Please make yours
 
 -------
 ### Roadmap
-1. Let's develop bare screens first
-2. I will add react-navigation component later
-3. Let's use hard-coded text, then we can source it from somewhere
-4. Use designs and graphics similar to official Ukrainian sites
-5. After all text screens are done, let's work on caching and sourcing
-6. Videos for kids
+1. Let's develop bare screens first ✔️
+2. I will add react-navigation component later ✔️
+3. Let's use hard-coded text, then we can source it from somewhere ✔️
+4. Use designs and graphics similar to official Ukrainian sites ✔️
+5. After finish all the screens ⬅️ YOU ARE HERE
+6. Caching and sourcing for texts
+7. 🔜 Release 1 
+8. Videos for kids
 
 --------
 
@@ -101,7 +103,9 @@ Click File > Open Folder, then select the folder where you downloaded the reposi
 
 You should see all repository files in the left pane.
 
-#### I don't want to edit code - just launch using command line
+#### I don't want to edit code - just launch using command line (NOT PREFFERED) - May have issues on windows with PowerShell execution for npm and expo binaries, requires allowing permissions
+and I don't remember how I did it
+
 If you are using Mac - open Terminal:
 
 `⌘ + Space`, then type `terminal`, hit enter.
