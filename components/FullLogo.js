@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { responsiveHeight, responsiveWidth, responsiveFontSize} from "react-native-responsive-dimensions";
+import { View, Image } from 'react-native';
+import { responsiveHeight, responsiveWidth } from "react-native-responsive-dimensions";
 import Logo from 'assets/Logo-large.png';
 export default function FullLogo(props) {
 
