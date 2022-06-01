@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import caretLight from 'assets/carrot_light_large.png';
+import caretLight from 'assets/caret_light_large.png';
 import { ThemeContext } from 'ThemeProvider';
 
 export default function ListItem(props) {
