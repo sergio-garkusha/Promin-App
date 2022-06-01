@@ -1,6 +1,8 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 
+import { ThemeContext } from 'ThemeProvider';
+
 import WelcomeScreen from 'screens/welcome';
 import MainMenu from 'screens/mainMenu';
 
@@ -31,8 +33,14 @@ const Stack = createStackNavigator();
 // initialRouteName="MainMenu"
 
 const MainStack = () => {
+  const { theme } = React.useContext(ThemeContext);
+  const backgroundColor = theme === 'dark' ? '#18203A' : '#F3F3F3';
   return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+        cardStyle: { backgroundColor }
+    }}>
       <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
       <Stack.Screen name="MainMenu" component={MainMenu}/>
 

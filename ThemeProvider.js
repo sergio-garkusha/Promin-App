@@ -8,7 +8,7 @@ const initThemeState = {
 }
 
 export const ThemeContext = React.createContext(initThemeState);
-// AsyncStorage.setItem('theme', initThemeState.theme);
+// AsyncStorage.getItem('theme');
 
 export default function ThemeProvider ({children}) {
     const [colorScheme, setColorScheme] = React.useState(initThemeState.theme);

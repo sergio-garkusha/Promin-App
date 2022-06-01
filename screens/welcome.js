@@ -49,10 +49,10 @@ const resolveStyles = (theme) => {
     container: {
       flex: 1,
       justifyContent: 'center',
-      backgroundColor: backgroundColor
+      backgroundColor
     },
     paragraph: {
-      color: color,
+      color,
       marginTop: 15,
       marginBottom: 15,
       textAlign: 'left',

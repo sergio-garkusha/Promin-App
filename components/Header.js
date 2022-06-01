@@ -36,10 +36,11 @@ export default function Header(props) {
   const backHeight = backWidth / backAspect
   const backTop = headerHeight - backHeight / 2 - 1  // image is not even :(
 
-  const prefAspect = 76 / 45;
-  const prefWidth = 70
-  const prefHeight = prefWidth / prefAspect
-  const prefTop = headerHeight - prefHeight / 2
+  // Preferences Button Related
+  // const prefAspect = 76 / 45;
+  // const prefWidth = 70
+  // const prefHeight = prefWidth / prefAspect
+  // const prefTop = headerHeight - prefHeight / 2
 
   return (  
     <View style={[ props.style, { 
@@ -73,14 +74,14 @@ export default function Header(props) {
         />
       </TouchableOpacity>
       <View style={{ width: backWidth }} />
-
+      {/* Preferences Button Related
       <TouchableOpacity style={{ marginTop: prefTop, width: prefWidth, height: prefHeight }} onPress={setPreferences}>
         <Image
           source={prefButton}
           style={{ width: prefWidth, height: prefHeight }}
         />
       </TouchableOpacity>
-      <View style={{ width: backWidth }} />
+      <View style={{ width: backWidth }} /> */}
     </View>
   );
 }
