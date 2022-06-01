@@ -1,57 +1,40 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, Button, Image, ScrollView} from 'react-native';
+import {Text, View, ScrollView} from 'react-native';
+import { ThemeContext } from 'ThemeProvider';
+import Bullet from 'components/Bullet';
+import Header from 'components/Header';
+import resolveStyles from 'styles'
 
-export default function NervoveTremtinnya() {
+export default function NervoveTremtinnya({ navigation }) {
+    const { theme } = React.useContext(ThemeContext);
+    const styles = resolveStyles(theme);
     return (
-        <ScrollView>
-            <View style={styles.container}>
-                <Text style={styles.paragraph}>Назад</Text>
+        <View>
+            <Header backButton navigation={navigation} />
+            <ScrollView>
+                <View style={styles.container}>
+                    <Text style={styles.header}>Нервове тремтіння </Text>
 
-                <Text style={styles.header}>Нервове тремтіння </Text>
+                    <Text style={styles.header2}>В цій ситуації:</Text>
 
-                <Text style={styles.paragraph}>В цій ситуації: </Text>
+                    <Bullet symbol='1.' style={styles.paragraph}>Потрібно посилити тремтіння. </Bullet>
 
-                <Text style={styles.paragraph}> 1. Потрібно посилити тремтіння. </Text>
+                    <Bullet symbol='2.' style={styles.paragraph}>Візьміть постраждалого за плечі і сильно, різко потрясіть протягом
+                        10-15 секунд. </Bullet>
+                    <Bullet symbol='3.' style={styles.paragraph}>Продовжуйте говорити з потерпілим щоб він не сприйняв ваші дії як
+                        напад. </Bullet>
+                    <Bullet symbol='4.' style={styles.paragraph}>Після завершення реакції потрібно дати постраждалому можливість
+                        відпочити. Бажано вкласти спати. </Bullet>
 
-                <Text style={styles.paragraph}> 2. Візьміть постраждалого за плечі і сильно, різко потрясіть протягом
-                    10-15 секунд. </Text>
-                <Text style={styles.paragraph}> 3. Продовжуйте говорити з потерпілим щоб він не сприйняв ваші дії як
-                    напад. </Text>
-                <Text style={styles.paragraph}> 4. Після завершення реакції потрібно дати постраждалому можливість
-                    відпочити. Бажано вкласти спати. </Text>
+                    <Text style={styles.header2}>Не можна:</Text>
 
-                <Text style={styles.paragraph}> Не можна: </Text>
+                    <Bullet symbol='•' style={styles.paragraph}>Обіймати постраждалого або притискати до себе; </Bullet>
+                    <Bullet symbol='•' style={styles.paragraph}>Накривати постраждалого чимось теплим; </Bullet>
+                    <Bullet symbol='•' style={styles.paragraph}>Заспокоювати постраждалого, казати, щоб він взяв себе в руки. </Bullet>
 
-                <Text style={styles.paragraph}> • Обіймати постраждалого або притискати до себе; </Text>
-                <Text style={styles.paragraph}> • накривати постраждалого чимось теплим; </Text>
-                <Text style={styles.paragraph}> • заспокоювати постраждалого, казати, щоб він взяв себе в руки. </Text>
-            </View>
-        </ScrollView>
-    )
-}
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        backgroundColor: 'paleturquoise',
-        padding: 8,
-    },
-    paragraph: {
-        margin: 5,
-        fontSize: 14,
-        fontWeight: 'normal',
-        textAlign: 'center',
-    },
-    header: {
-        margin: 5,
-        fontSize: 22,
-        fontWeight: 'normal',
-        textAlign: 'center',
-    },
-    roundImage: {
-        width: 200,
-        height: 200,
-        borderRadius: 200 / 2
-    }
-});
+                    <View style={styles.spacer}/>
+                </View>
+            </ScrollView>
+        </View>
+    );
+};

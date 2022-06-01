@@ -1,73 +1,59 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, Button, Image, ScrollView} from 'react-native';
+import {Text, View, Image, ScrollView} from 'react-native';
+import { ThemeContext } from 'ThemeProvider';
+import Bullet from 'components/Bullet';
+import Header from 'components/Header';
+import resolveStyles from 'styles';
+import ListItem from 'components/ListItem'
 
-export default function Perezbudzennya() {
+import head from 'assets/images/head.png';
+
+export default function Perezbudzennya({ navigation }) {
+    const navigateTo = ( destination ) => {
+        navigation.push( destination )
+    }
+    const { theme } = React.useContext(ThemeContext);
+    const styles = resolveStyles(theme);
     return (
-        <ScrollView>
-            <View style={styles.container}>
-                <Text style={styles.paragraph}>Назад</Text>
+        <View>
+            <Header backButton navigation={navigation} />
+            <ScrollView>
+                <View style={styles.container}>
+                    <Text style={styles.header}>Перезбудження </Text>
 
-                <Text style={styles.header}>Перезбудження </Text>
+                    <Text style={styles.header2}>В цій ситуації: </Text>
 
-                <Text style={styles.paragraph}>В цій ситуації: </Text>
+                    <Bullet symbol="1." style={styles.paragraph}>Використовуйте прийом “захват”: станьте позаду постраждалого,
+                        просуньте руки під пахви постраждалого, притисніть його до себе і злегка перекиньте його на себе.
+                    </Bullet>
 
-                <Text style={styles.paragraph}> 1. Використовуйте прийом “захват”: станьте позаду постраждалого,
-                    просуньте руки під пахви постраждалого, притисніть його до себе і злегка перекиньте його на себе.
-                </Text>
+                    <Bullet symbol="2." style={styles.paragraph}>Ізолюйте постраждалого від оточуючих. </Bullet>
 
-                <Text style={styles.paragraph}> 2. Ізолюйте постраждалого від оточуючих. </Text>
+                    <Bullet symbol="3." style={styles.paragraph}>Массуйте “позитивні точки” на чолі постраждалого. Спокійним голосом
+                        обговорюйте почуття які він відчуває. (“Тобі хочеться щось зробити щоб це припинилось?” Ти хочеш
+                        втікти, сховатись від того що відбувається?” ).
+                    </Bullet>
 
-                <Text style={styles.paragraph}> 3. Массуйте “позитивні точки” на чолі постраждалого. Спокійним голосом
-                    обговорюйте почуття які він відчуває. (“Тобі хочеться щось зробити щоб це припинилось?” Ти хочеш
-                    втікти, сховатись від того що відбувається?” ).
-                </Text>
+                    <View style={{justifyContent: 'center', alignItems: 'center'}}>
+                        <Image source={head} style={{ width: 286, height: 352 }} />
+                    </View>
 
-                <View style={{justifyContent: 'center', alignItems: 'center'}}>
-                    <Image
-                        source={require("../../../../assets/images/head.png")}
-                    />
+                    <Bullet symbol="4." style={styles.paragraph}>Не сперечайтесь із постраждалим, нічого не питайте, в розмові
+                        уникайте частки “не” якщо це стосується небажаних дій (наприклад: “Не біжи”, “Не розмахуй руками”,
+                        “Не кричи”). </Bullet>
+
+                    <Bullet symbol="5." style={styles.paragraph}>Пам’ятайте що постраждалий може завдати шкоди собі та
+                        оточуючим.</Bullet>
+
+                    <Text style={styles.header2}>Перезбудження зазвичай триває недовго і може перейти у:</Text>
+
+                    <ListItem padded roundTop title="Нервове тремтіння" onPress={()=>navigateTo("NervoveTremtinnya")}/>
+                    <ListItem padded title="Плач" onPress={()=>navigateTo("Plach")}/>
+                    <ListItem padded roundBottom title="Aгресивну поведінку" onPress={()=>navigateTo("Agresiya")}/>
+                    
+                    <View style={styles.spacer}/>
                 </View>
-
-                <Text style={styles.paragraph}> 4. Не сперечайтесь із постраждалим, нічого не питайте, в розмові
-                    уникайте частки “не” якщо це стосується небажаних дій (наприклад: “Не біжи”, “Не розмахуй руками”,
-                    “Не кричи”). </Text>
-
-                <Text style={styles.paragraph}> 5. Пам’ятайте що постраждалий може завдати шкоди собі та
-                    оточуючим.</Text>
-
-                <Text style={styles.paragraph}> 6.Перезбудження зазвичай триває недовго і може перейти у:</Text>
-
-                {/*Those must be links to others screens*/}
-                <Text style={styles.paragraph}>{/*NervoveTremtinnya*/}a. нервове тремтіння, </Text>
-                <Text style={styles.paragraph}>{/*Plach*/}b. плач </Text>
-                <Text style={styles.paragraph}>{/*Agresiya*/}c. агресивну поведінку</Text>
-
-            </View>
-        </ScrollView>
+            </ScrollView>
+        </View>
     )
 }
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        backgroundColor: 'paleturquoise',
-        padding: 8,
-    },
-    paragraph: {
-        margin: 5,
-        fontSize: 14,
-        fontWeight: 'normal',
-        textAlign: 'center',
-    },
-    header: {
-        margin: 5,
-        fontSize: 22,
-        fontWeight: 'normal',
-        textAlign: 'center',
-    },
-    roundImage: {
-        width: 200,
-        height: 200,
-        borderRadius: 200 / 2
-    }
-});

@@ -1,69 +1,60 @@
-import * as React from 'react';
-import {Text, View, StyleSheet, Button, Image, ScrollView} from 'react-native';
+import React from 'react';
+import {Text, View, ScrollView} from 'react-native';
+import { ThemeContext } from 'ThemeProvider';
+import Bullet from 'components/Bullet';
+import Header from 'components/Header';
+import resolveStyles from 'styles';
 
-export default function Agresiya() {
+export default function Agresiya({ navigation }) {
+    const navigateTo = ( destination ) => {
+        navigation.push( destination )
+    }
+
+    const { theme } = React.useContext(ThemeContext);
+    const styles = resolveStyles(theme);
     return (
-        <ScrollView>
-            <View style={styles.container}>
-                <Text style={styles.paragraph}>Назад</Text>
+        <View>
+            <Header backButton navigation={navigation} />
+            <ScrollView>
+                <View style={styles.container}>
+                
+                    <Text style={styles.header}>Агресія </Text>
 
-                <Text style={styles.header}>Агресія </Text>
+                    <Text style={styles.header2}>В цій ситуації: </Text>
 
-                <Text style={styles.paragraph}>В цій ситуації: </Text>
+                    <Bullet symbol='1.'  style={styles.paragraph}>Мінімізуйте кількість людей навколо. </Bullet>
 
-                <Text style={styles.paragraph}> 1. Мінімізуйте кількість людей навколо. </Text>
+                    <Bullet symbol='2.'  style={styles.paragraph}>Дайте постраждалому можливість “випустити пару” (наприклад,
+                        виговоритись або “побити” подушку). </Bullet>
+                    <Bullet symbol='3.'  style={styles.paragraph}>Дайте йому завдання яке вимагає високого фізичного
+                        навантаження.</Bullet>
+                    <Bullet symbol='4.'  style={styles.paragraph}>
+                        Будьте доброзичливим. Навіть якщо ви не згодні з постраждалим, не спрямовуйте звинувачування на
+                        нього, висловлюйтесь тільки стосовно його дій. Інакше агресивні дії будуть направлені на
+                        вас. </Bullet>
 
-                <Text style={styles.paragraph}> 2. Дайте постраждалому можливість “випустити пару” (наприклад,
-                    виговоритись або “побити” подушку). </Text>
-                <Text style={styles.paragraph}> 3. Дайте йому завдання яке вимагає високого фізичного
-                    навантаження.</Text>
-                <Text style={styles.paragraph}> 4.
-                    Будьте доброзичливим. Навіть якщо ви не згодні з постраждалим, не спрямовуйте звинувачування на
-                    нього, висловлюйтесь тільки стосовно його дій. Інакше агресивні дії будуть направлені на
-                    вас. </Text>
+                    <Bullet symbol='5.'  style={styles.paragraph}>Не можна говорити: “Що ж ти за людина така!”. Краще сказати “Ти дуже
+                        роззлючений, тобі хочеться все рознести вщент. Давай разом спробуємо знайти вихід з цієї
+                        ситуації” </Bullet>
 
-                <Text style={styles.paragraph}> 5. Не можна говорити: “Що ж ти за людина така!”. Краще сказати “Ти дуже
-                    роззлючений, тобі хочеться все рознести вщент. Давай разом спробуємо знайти вихід з цієї
-                    ситуації” </Text>
+                    <Bullet symbol='6.'  style={styles.paragraph}>Намагайтесь зняти напругу смішними коментарями або діями. </Bullet>
 
-                <Text style={styles.paragraph}> 6. Намагайтесь зняти напругу смішними коментарями або діями. </Text>
+                    <Bullet symbol='7.'  style={styles.paragraph}>Можна погасити агресію страхом покарання: </Bullet>
+                    
+                    <Bullet>
+                        <Bullet symbol='а)'  style={styles.paragraph}>якщо нема цілі отримати вигоду від агресивної поведінки;</Bullet>
+                        <Bullet symbol='б)'  style={styles.paragraph}>якщо покарання строге і є велика імовірність що воно буде
+                            виконане.
+                        </Bullet>
+                    </Bullet>
 
-                <Text style={styles.paragraph}> 7. Можна погасити агресію страхом покарання: </Text>
-
-                <Text style={styles.paragraph}> a. якщо нема цілі отримати вигоду від агресивної поведінки;</Text>
-                <Text style={styles.paragraph}> b. якщо покарання строге і є велика імовірність що воно буде
-                    виконане.</Text>
-
-                <Text style={styles.paragraph}> 8. Якщо не допомогти розгніваній людині це призведе до небезпечних
-                    наслідків: через зниження контролю над своїми діями людина буде скоювати необдумані вчинки, може
-                    завдати шкоди собі або іншим. </Text>
-            </View>
-        </ScrollView>
+                    <Bullet symbol='8.' style={styles.paragraph}>Якщо не допомогти розгніваній людині це призведе до небезпечних
+                        наслідків: через зниження контролю над своїми діями людина буде скоювати необдумані вчинки, може
+                        завдати шкоди собі або іншим. </Bullet>
+                    
+                    <View style={styles.spacer}/>
+                </View>
+            </ScrollView>
+        </View>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        backgroundColor: 'paleturquoise',
-        padding: 8,
-    },
-    paragraph: {
-        margin: 5,
-        fontSize: 14,
-        fontWeight: 'normal',
-        textAlign: 'center',
-    },
-    header: {
-        margin: 5,
-        fontSize: 22,
-        fontWeight: 'normal',
-        textAlign: 'center',
-    },
-    roundImage: {
-        width: 200,
-        height: 200,
-        borderRadius: 200 / 2
-    }
-});

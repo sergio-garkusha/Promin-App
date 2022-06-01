@@ -140,6 +140,16 @@ If you get something like `'npm' is not recognized as the name ...` - it means y
 
 You are set! Now in Terminal, run commands from __Run__ section above
 
+--------
+
+### Resources
+How to write styles for React Native
+
+https://www.bitstoliveby.com/posts/how-to-position-things-in-react-native/
+
+https://reactnative.dev/docs/height-and-width
+
+https://medium.com/soluto-engineering/size-matters-5aeeb462900a
 
 
 
