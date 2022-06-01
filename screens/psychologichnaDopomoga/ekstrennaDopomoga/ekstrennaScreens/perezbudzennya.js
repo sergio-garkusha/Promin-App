@@ -9,9 +9,6 @@ import ListItem from 'components/ListItem'
 import head from 'assets/images/head.png';
 
 export default function Perezbudzennya({ navigation }) {
-    const navigateTo = ( destination ) => {
-        navigation.push( destination )
-    }
     const { theme } = React.useContext(ThemeContext);
     const styles = resolveStyles(theme);
     return (
@@ -47,9 +44,9 @@ export default function Perezbudzennya({ navigation }) {
 
                     <Text style={styles.header2}>Перезбудження зазвичай триває недовго і може перейти у:</Text>
 
-                    <ListItem padded roundTop title="Нервове тремтіння" onPress={()=>navigateTo("NervoveTremtinnya")}/>
-                    <ListItem padded title="Плач" onPress={()=>navigateTo("Plach")}/>
-                    <ListItem padded roundBottom title="Aгресивну поведінку" onPress={()=>navigateTo("Agresiya")}/>
+                    <ListItem padded roundTop title="Нервове тремтіння" onPress={()=>navigation.push("NervoveTremtinnya")}/>
+                    <ListItem padded title="Плач" onPress={()=>navigation.push("Plach")}/>
+                    <ListItem padded roundBottom title="Aгресивну поведінку" onPress={()=>navigation.push("Agresiya")}/>
                     
                     <View style={styles.spacer}/>
                 </View>
