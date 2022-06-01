@@ -1,8 +1,8 @@
 import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
 
-import WelcomeScreen from '../screens/welcome'
-import MainMenu from '../screens/mainMenu'
+import WelcomeScreen from 'screens/welcome';
+import MainMenu from 'screens/mainMenu';
 
 import EkstrennaDopomoga from "../screens/psychologichnaDopomoga/ekstrennaDopomoga/ekstrennaDopomoga";
 import Strah from "../screens/psychologichnaDopomoga/ekstrennaDopomoga/ekstrennaScreens/strah";
@@ -55,7 +55,6 @@ const MainStack = () => {
 
       <Stack.Screen name="Kontakty" component={Kontakty}/>
       <Stack.Screen name="Diyi" component={Diyi}/>
-
     </Stack.Navigator>
   )
 }

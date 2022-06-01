@@ -1,15 +1,19 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, Button, Image, ScrollView } from 'react-native';
-import FullLogo from '../components/FullLogo'
-import NextButton from '../components/NextButton'
-import { responsiveHeight, responsiveWidth, responsiveFontSize} from "react-native-responsive-dimensions";
+import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import FullLogo from 'components/FullLogo'
+import NextButton from 'components/NextButton'
+import { responsiveHeight} from "react-native-responsive-dimensions";
+import { ThemeContext } from 'ThemeProvider';
 
-const topHalfHeight = responsiveHeight(50)
+const topHalfHeight = responsiveHeight(50);
 
 const WelcomeScreen = ({ navigation }) => {
   const toMainMenu = () => {
     navigation.push( "MainMenu" )
   }
+
+  const { theme } = React.useContext(ThemeContext);
+  const styles = resolveStyles(theme);
 
   return (
     <ScrollView>
@@ -33,25 +37,31 @@ const WelcomeScreen = ({ navigation }) => {
     </ScrollView>
 )}
 
-const styles = StyleSheet.create({
-  topHalf: {
-    height: topHalfHeight,
-    backgroundColor: '#5177ff'
-  },
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    backgroundColor: '#F3F3F3'
-  },
-  paragraph: {
-    marginTop: 15,
-    marginBottom: 15,
-    textAlign: 'left',
-    fontFamily: 'Ubuntu',
-    fontStyle: 'normal',
-    fontSize: 17,
-    lineHeight: 24
-  }
-});
+const resolveStyles = (theme) => {
+  const backgroundColor = theme === 'dark' ? '#18203A' : '#F3F3F3';
+  const color = theme === 'dark' ? '#FFF' : '#000';
+
+  return StyleSheet.create({
+    topHalf: {
+      height: topHalfHeight,
+      backgroundColor: '#5177ff'
+    },
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      backgroundColor: backgroundColor
+    },
+    paragraph: {
+      color: color,
+      marginTop: 15,
+      marginBottom: 15,
+      textAlign: 'left',
+      fontFamily: 'Ubuntu',
+      fontStyle: 'normal',
+      fontSize: 17,
+      lineHeight: 24
+    }
+  });
+};
 
 export default WelcomeScreen

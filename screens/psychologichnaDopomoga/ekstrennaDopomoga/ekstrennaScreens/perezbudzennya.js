@@ -1,18 +1,19 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, Image, ScrollView} from 'react-native';
+import {Text, View, Image, ScrollView} from 'react-native';
+import { ThemeContext } from 'ThemeProvider';
+import Bullet from 'components/Bullet';
+import Header from 'components/Header';
+import resolveStyles from 'styles';
+import ListItem from 'components/ListItem'
 
-import Bullet from '../../../../components/Bullet';
-import Header from '../../../../components/Header';
-import ListItem from '../../../../components/ListItem'
-import styles from '../../../../styles'
-
-import head from '../../../../assets/images/head.png';
+import head from 'assets/images/head.png';
 
 export default function Perezbudzennya({ navigation }) {
     const navigateTo = ( destination ) => {
         navigation.push( destination )
     }
-    
+    const { theme } = React.useContext(ThemeContext);
+    const styles = resolveStyles(theme);
     return (
         <View>
             <Header backButton navigation={navigation} />

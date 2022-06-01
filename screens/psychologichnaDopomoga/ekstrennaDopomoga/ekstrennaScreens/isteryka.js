@@ -1,11 +1,13 @@
 import * as React from 'react';
-import {Text, View, StyleSheet, Button, Image, ScrollView} from 'react-native';
-
-import Bullet from '../../../../components/Bullet';
-import Header from '../../../../components/Header';
-import styles from '../../../../styles'
+import {Text, View, ScrollView} from 'react-native';
+import { ThemeContext } from 'ThemeProvider';
+import Bullet from 'components/Bullet';
+import Header from 'components/Header';
+import resolveStyles from 'styles'
 
 export default function Isteryka({ navigation }) {
+    const { theme } = React.useContext(ThemeContext);
+    const styles = resolveStyles(theme);
     return (
         <View>
             <Header backButton navigation={navigation} />

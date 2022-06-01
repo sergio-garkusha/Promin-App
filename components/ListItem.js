@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import caretLight from 'assets/carrot_light_large.png';
+import { ThemeContext } from 'ThemeProvider';
 
 export default function ListItem(props) {
+  const { theme } = React.useContext(ThemeContext);
+  const styles = resolveLocalStyles(theme);
   return (
     <View style={props.padded && styles.padded}>
       <View style={[
@@ -12,17 +16,20 @@ export default function ListItem(props) {
         <TouchableOpacity style={styles.button} onPress={props.onPress}>
           {props.icon && <Text style={styles.icon}>{props.icon}</Text> }
           <Text style={styles.text}>{props.title}</Text>
-          <Image style={styles.caret} source={ require('../assets/carrot_light_large.png') } />
+          <Image style={styles.caret} source={caretLight} />
         </TouchableOpacity>
       </View>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
+const resolveLocalStyles = theme => {
+  const backgroundColor = theme === 'dark' ? '#27335A' : '#FFF';
+  const color = theme === 'dark' ? '#FFF' : '#000';
+  return StyleSheet.create({
   container: {
     alignItems: 'center',
-    backgroundColor: '#FFFFFF'
+    backgroundColor
   },
   roundTop:{
     borderTopLeftRadius: 12,
@@ -52,7 +59,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 17,
-    color: '#000000',
+    color,
     textAlign: 'left',
     fontFamily: 'Ubuntu',
     flex: 25
@@ -66,4 +73,4 @@ const styles = StyleSheet.create({
     paddingLeft: 20,
     paddingRight: 20
   }
-});
+})};

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { responsiveHeight, responsiveWidth, responsiveFontSize} from "react-native-responsive-dimensions";
-
+import Logo from 'assets/Logo-large.png';
 export default function FullLogo(props) {
 
   const logoAspect = 408 / 615;
@@ -19,7 +19,7 @@ export default function FullLogo(props) {
   return (
     <View style={[ props.style, { marginTop: logoMarginTop, justifyContent: 'center', alignItems: 'center'}]}>
       <Image 
-        source={require("../assets/logo-large.png")} 
+        source={Logo} 
         style={{
           width: logoWidth,
           height: logoHeight

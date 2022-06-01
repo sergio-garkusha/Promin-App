@@ -1,12 +1,14 @@
 import * as React from 'react';
-import { Text, View, StyleSheet, ScrollView, Image } from 'react-native';
-
-import Header from '../../../components/Header'
-import ListItem from "../../../components/ListItem";
+import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import { ThemeContext } from 'ThemeProvider';
+import Header from 'components/Header';
+import ListItem from "components/ListItem";
 
 var navigateAway = () => {console.log("navigation")}
 
 export default function Dytuni({ navigation }) {
+    const { theme } = React.useContext(ThemeContext);
+    const styles = resolveLocalStyles(theme);
     return (
         <View>
             <Header backButton navigation={navigation} />
@@ -23,13 +25,17 @@ export default function Dytuni({ navigation }) {
                 </View>
             </ScrollView>
         </View>
-    )}
-const styles = StyleSheet.create({
+)};
+
+const resolveLocalStyles = theme => {
+    const backgroundColor = theme === 'dark' ? '#18203A' : '#F3F3F3';
+    const color = theme === 'dark' ? '#848EB0' : '#666';
+    return StyleSheet.create({
     container: {
         paddingTop: 110,
         flex: 1,
         justifyContent: 'center',
-        backgroundColor: '#F3F3F3',
+        backgroundColor
     },
     title: {
         marginTop:32,
@@ -38,7 +44,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         lineHeight: 21,
         textAlign: 'left',
-        color: '#666666'
+        color
     },
     roundImage: {
         width: 200,
@@ -54,4 +60,4 @@ const styles = StyleSheet.create({
     Button:{
         padding:4
     }
-});
+})};

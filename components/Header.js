@@ -1,20 +1,28 @@
-import * as React from 'react';
+import React from 'react';
 import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { responsiveHeight, responsiveWidth, responsiveFontSize} from "react-native-responsive-dimensions";
+import { ThemeContext } from 'ThemeProvider';
+import backButton from 'assets/button_back_large.png';
+import headerLogo from 'assets/header_logo.png';
+import prefButton from 'assets/prefs_light.png';
 
 export default function Header(props) {
+  const { toggleTheme } = React.useContext(ThemeContext);
   const toMainMenu = () => {
     if(props.navigation)
       props.navigation.push( "MainMenu" )
     else
       console.log("please pass 'navigation={navigation}' prop to the header called from current screen")
-  }
+  };
   const goBack = () => {
     if(props.navigation)  
       props.navigation.goBack()
     else
       console.log("please pass 'navigation={navigation}' prop to the header called from current screen")
-  }
+  };
+  const setPreferences = () => {
+    toggleTheme();
+  };
 
   const headerHeight = 70
 
@@ -27,6 +35,11 @@ export default function Header(props) {
   const backWidth = 70
   const backHeight = backWidth / backAspect
   const backTop = headerHeight - backHeight / 2 - 1  // image is not even :(
+
+  const prefAspect = 76 / 45;
+  const prefWidth = 70
+  const prefHeight = prefWidth / prefAspect
+  const prefTop = headerHeight - prefHeight / 2
 
   return (  
     <View style={[ props.style, { 
@@ -45,7 +58,7 @@ export default function Header(props) {
         ? 
           <TouchableOpacity style={{ marginTop: backTop, width: backWidth, height: backHeight }} onPress={goBack}>
             <Image
-              source={require("../assets/button_back_large.png")}
+              source={backButton}
               style={{ width: backWidth, height: backHeight }} 
             />
           </TouchableOpacity>
@@ -55,13 +68,19 @@ export default function Header(props) {
 
       <TouchableOpacity style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }} onPress={toMainMenu} >
         <Image 
-          source={require("../assets/header_logo.png")} 
+          source={headerLogo}
           style={{ width: logoWidth, height: logoHeight }} 
         />
       </TouchableOpacity>
-
       <View style={{ width: backWidth }} />
 
+      <TouchableOpacity style={{ marginTop: prefTop, width: prefWidth, height: prefHeight }} onPress={setPreferences}>
+        <Image
+          source={prefButton}
+          style={{ width: prefWidth, height: prefHeight }}
+        />
+      </TouchableOpacity>
+      <View style={{ width: backWidth }} />
     </View>
   );
 }
