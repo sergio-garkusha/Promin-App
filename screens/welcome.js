@@ -1,9 +1,9 @@
-import * as React from 'react';
-import { Text, View, StyleSheet, ScrollView } from 'react-native';
-import FullLogo from 'components/FullLogo'
-import NextButton from 'components/NextButton'
+import React from 'react';
 import { responsiveHeight} from "react-native-responsive-dimensions";
-import { ThemeContext } from 'ThemeProvider';
+import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import FullLogo from '@components/FullLogo'
+import NextButton from '@components/NextButton'
+import { ThemeContext } from '@components/ThemeProvider';
 
 const topHalfHeight = responsiveHeight(50);
 

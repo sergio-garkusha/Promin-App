@@ -1,9 +1,9 @@
 import React from 'react';
 import { Text, View, StyleSheet, ScrollView } from 'react-native';
-import Header from 'components/Header';
-import { ThemeContext } from 'ThemeProvider';
+import Header from '@components/Header';
+import { ThemeContext } from '@components/ThemeProvider';
 
-import ListItem from "components/ListItem";
+import ListItem from "@components/ListItem";
 
 var navigateAway = () => {console.log("navigation")}
 

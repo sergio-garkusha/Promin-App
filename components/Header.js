@@ -1,10 +1,10 @@
 import React from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { responsiveHeight, responsiveWidth, responsiveFontSize} from "react-native-responsive-dimensions";
-import { ThemeContext } from 'ThemeProvider';
-import backButton from 'assets/button_back_large.png';
-import headerLogo from 'assets/header_logo.png';
-import prefButton from 'assets/prefs_light.png';
+import { View, Image, TouchableOpacity } from 'react-native';
+// import { responsiveHeight, responsiveWidth, responsiveFontSize} from "react-native-responsive-dimensions";
+import { ThemeContext } from '@components/ThemeProvider';
+import backButton from '@assets/button_back_large.png';
+import headerLogo from '@assets/header_logo.png';
+// import prefButton from 'assets/prefs_light.png';
 
 export default function Header(props) {
   const { toggleTheme } = React.useContext(ThemeContext);

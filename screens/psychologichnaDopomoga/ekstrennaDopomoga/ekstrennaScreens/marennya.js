@@ -1,9 +1,9 @@
-import * as React from 'react';
-import {Text, View, ScrollView} from 'react-native';
-import { ThemeContext } from 'ThemeProvider';
-import Bullet from 'components/Bullet';
-import Header from 'components/Header';
-import resolveStyles from 'styles'
+import React from 'react';
+import { Text, View, ScrollView } from 'react-native';
+import { ThemeContext } from '@components/ThemeProvider';
+import Bullet from '@components/Bullet';
+import Header from '@components/Header';
+import resolveStyles from '@styles/subpage'
 
 export default function Marennya({ navigation }) {
     const { theme } = React.useContext(ThemeContext);

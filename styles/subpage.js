@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native';
 import React from 'react';
+import { StyleSheet } from 'react-native';
 
 const resolveStyles = (theme) => {
   const backgroundColor = theme === 'dark' ? '#18203A' : '#F3F3F3';

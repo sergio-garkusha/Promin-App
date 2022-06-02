@@ -1,13 +1,15 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { useFonts } from 'expo-font';
-import MainStack from 'Routes/MainStack';
-import ThemeProvider from 'ThemeProvider';
+import MainStack from '@Routes/MainStack';
+import ThemeProvider from '@components/ThemeProvider';
+import UbuntuR from '@assets/fonts/Ubuntu-R.ttf';
+import UbuntuM from '@assets/fonts/Ubuntu-M.ttf';
 
 export default function App() {
   const [fontsLoaded] = useFonts({  //TODO: Use 
-    'Ubuntu': require('./assets/fonts/Ubuntu-R.ttf'),
-    'Ubuntu_M': require('./assets/fonts/Ubuntu-M.ttf')
+    'Ubuntu': UbuntuR,
+    'Ubuntu_M': UbuntuM
   });
 
   if (!fontsLoaded)

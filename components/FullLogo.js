@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { View, Image } from 'react-native';
 import { responsiveHeight, responsiveWidth } from "react-native-responsive-dimensions";
-import Logo from 'assets/Logo-large.png';
+import Logo from '@assets/Logo-large.png';
 export default function FullLogo(props) {
 
   const logoAspect = 408 / 615;

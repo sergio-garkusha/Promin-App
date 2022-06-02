@@ -1,12 +1,11 @@
-import * as React from 'react';
-import {Text, View, Image, ScrollView} from 'react-native';
-import { ThemeContext } from 'ThemeProvider';
-import Bullet from 'components/Bullet';
-import Header from 'components/Header';
-import resolveStyles from 'styles';
-import ListItem from 'components/ListItem'
-
-import head from 'assets/images/head.png';
+import React from 'react';
+import { Text, View, Image, ScrollView } from 'react-native';
+import { ThemeContext } from '@components/ThemeProvider';
+import Bullet from '@components/Bullet';
+import Header from '@components/Header';
+import ListItem from '@components/ListItem';
+import resolveStyles from '@styles/subpage';
+import head from '@assets/images/head.png';
 
 export default function Perezbudzennya({ navigation }) {
     const { theme } = React.useContext(ThemeContext);

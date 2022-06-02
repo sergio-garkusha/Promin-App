@@ -1,9 +1,8 @@
-import * as React from 'react';
-import { Text, View, StyleSheet, ScrollView, Image } from 'react-native';
+import React from 'react';
+import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import ListItem from "@components/ListItem";
 
-import ListItem from "../../../../components/ListItem";
-
-var navigateAway = () => {console.log("navigation")}
+const navigateAway = () => {console.log("navigation")};
 
 export default function AntyStrestres() {
     return (
@@ -17,7 +16,8 @@ export default function AntyStrestres() {
                 <ListItem title="Підлітки" onPress={navigateAway}/>
             </View>
         </ScrollView>
-    )}
+    )};
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,

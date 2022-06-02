@@ -1,5 +1,5 @@
-import * as React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import React from 'react';
+import { Text, View, StyleSheet } from 'react-native';
 
 export default function Bullet(props) {
   return (

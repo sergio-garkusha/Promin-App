@@ -1,6 +1,7 @@
-import * as React from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { responsiveHeight, responsiveWidth, responsiveFontSize} from "react-native-responsive-dimensions";
+import React from 'react';
+import { View, Image, TouchableOpacity } from 'react-native';
+import { responsiveWidth } from "react-native-responsive-dimensions";
+import buttonNext from '@assets/button_next-large.png';
 
 export default function NextButton(props) {
   const buttonAspect = 294 / 204;
@@ -18,7 +19,7 @@ export default function NextButton(props) {
     <View style={[ props.style, { marginTop: marginTop, alignItems: 'flex-end' }] }>
       <TouchableOpacity onPress={props.onPress}>
         <Image 
-          source={require("../assets/button_next-large.png")} 
+          source={ buttonNext }
           style={{
             width: buttonWidth,
             height: buttonHeight
@@ -26,4 +27,4 @@ export default function NextButton(props) {
       </TouchableOpacity>
     </View>
   );
-}
+};

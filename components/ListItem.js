@@ -1,7 +1,7 @@
-import * as React from 'react';
+import React from 'react';
 import { Text, View, StyleSheet, TouchableOpacity, Image } from 'react-native';
-import caretLight from 'assets/caret_light_large.png';
-import { ThemeContext } from 'ThemeProvider';
+import caretLight from '@assets/caret_light_large.png';
+import { ThemeContext } from '@components/ThemeProvider';
 
 export default function ListItem(props) {
   const { theme } = React.useContext(ThemeContext);

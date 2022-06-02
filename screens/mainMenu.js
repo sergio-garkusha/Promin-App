@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { Text, View, StyleSheet, ScrollView } from 'react-native';
-import { ThemeContext } from 'ThemeProvider';
-import Header from 'components/Header'
-import ListItem from 'components/ListItem';
+import { ThemeContext } from '@components/ThemeProvider';
+import Header from '@components/Header'
+import ListItem from '@components/ListItem';
 
 export default function MainMenu({ navigation }) {
   const { theme } = React.useContext(ThemeContext);
@@ -24,7 +24,6 @@ export default function MainMenu({ navigation }) {
             <Text style={styles.title}>Надзвичайна ситуація</Text>
             <ListItem icon="🚑" roundTop title="Контакти служб порятунку" onPress={()=>navigation.push("Kontakty")}/>
             <ListItem icon="👉" roundBottom title="Дії у різних ситуаціях" onPress={()=>navigation.push("Diyi")}/>
-
           </View>
         </View>
       </ScrollView>

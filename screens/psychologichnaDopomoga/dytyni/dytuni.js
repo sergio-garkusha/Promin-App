@@ -1,8 +1,8 @@
-import * as React from 'react';
+import React from 'react';
 import { Text, View, StyleSheet, ScrollView } from 'react-native';
-import { ThemeContext } from 'ThemeProvider';
-import Header from 'components/Header';
-import ListItem from "components/ListItem";
+import { ThemeContext } from '@components/ThemeProvider';
+import Header from '@components/Header';
+import ListItem from "@components/ListItem";
 
 var navigateAway = () => {console.log("navigation")}
 
@@ -15,7 +15,7 @@ export default function Dytuni({ navigation }) {
             <ScrollView>
                 <View style={styles.container}>
                     <View style={{padding: 20}}>
-                        <Text style={styles.title}>Дитині </Text>
+                        <Text style={styles.title}>Дитині</Text>
 
                         <ListItem roundTop title="Ігри" onPress={navigateAway}/>
                         <ListItem title="Мультфільми" onPress={navigateAway}/>

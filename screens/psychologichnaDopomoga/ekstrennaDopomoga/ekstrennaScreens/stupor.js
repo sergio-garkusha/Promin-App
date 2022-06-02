@@ -1,13 +1,12 @@
-import * as React from 'react';
-import {Text, View, StyleSheet, Button, Image, ScrollView} from 'react-native';
-import { ThemeContext } from 'ThemeProvider';
-import Bullet from 'components/Bullet';
-import Header from 'components/Header';
-import resolveStyles from 'styles'
-
-import head from 'assets/images/head.png';
-import two from 'assets/images/twoGuys.png';
-import thumbs from 'assets/images/thumbs.png';
+import React from 'react';
+import { Text, View, Image, ScrollView } from 'react-native';
+import { ThemeContext } from '@components/ThemeProvider';
+import Bullet from '@components/Bullet';
+import Header from '@components/Header';
+import resolveStyles from '@styles/subpage'
+import head from '@assets/images/head.png';
+import two from '@assets/images/twoGuys.png';
+import thumbs from '@assets/images/thumbs.png';
 
 export default function Stupor({ navigation }) {
     const { theme } = React.useContext(ThemeContext);
