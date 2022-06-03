@@ -1,72 +1,98 @@
-import React from 'react';
-import { Text, View, StyleSheet, ScrollView } from 'react-native';
-import { ThemeContext } from '@components/ThemeProvider';
-import Header from '@components/Header'
-import ListItem from '@components/ListItem';
+import React from "react";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
+import { ThemeContext } from "@components/ThemeProvider";
+import Header from "@components/Header";
+import ListItem from "@components/ListItem";
 
 export default function MainMenu({ navigation }) {
   const { theme } = React.useContext(ThemeContext);
   const styles = resolveLocalStyles(theme);
   return (
     <View>
-      <Header navigation={navigation}/>
+      <Header navigation={navigation} />
       <ScrollView>
         <View style={styles.container}>
-
-          <View style={{padding: 20}}>
+          <View style={{ padding: 20 }}>
             <Text style={styles.title}>Екстрена допомога</Text>
-            <ListItem icon="🚨" roundTop roundBottom title="Екстренна психологічна допомога" onPress={()=>navigation.push("EkstrennaDopomoga")}/>
+            <ListItem
+              icon="🚨"
+              roundTop
+              roundBottom
+              title="Екстренна психологічна допомога"
+              onPress={() => navigation.push("EkstrennaDopomoga")}
+            />
 
             <Text style={styles.title}>Психічна підтримка</Text>
-            <ListItem icon="👩" roundTop title="Для себе" onPress={()=>navigation.push("DlyaSebe")}/>
-            <ListItem icon="👦" roundBottom title="Дитині" onPress={()=>navigation.push("Dytuni")}/>
+            <ListItem
+              icon="👩"
+              roundTop
+              title="Для себе"
+              onPress={() => navigation.push("DlyaSebe")}
+            />
+            <ListItem
+              icon="👦"
+              roundBottom
+              title="Дитині"
+              onPress={() => navigation.push("Dytuni")}
+            />
 
             <Text style={styles.title}>Надзвичайна ситуація</Text>
-            <ListItem icon="🚑" roundTop title="Контакти служб порятунку" onPress={()=>navigation.push("Kontakty")}/>
-            <ListItem icon="👉" roundBottom title="Дії у різних ситуаціях" onPress={()=>navigation.push("Diyi")}/>
+            <ListItem
+              icon="🚑"
+              roundTop
+              title="Контакти служб порятунку"
+              onPress={() => navigation.push("Kontakty")}
+            />
+            <ListItem
+              icon="👉"
+              roundBottom
+              title="Дії у різних ситуаціях"
+              onPress={() => navigation.push("Diyi")}
+            />
           </View>
         </View>
       </ScrollView>
     </View>
-)}
+  );
+}
 
-const resolveLocalStyles = theme => {
-  const backgroundColor = theme === 'dark' ? '#18203A' : '#F3F3F3';
-  const color = theme === 'dark' ? '#FFF' : '#000';
-  const labelColor = theme === 'dark' ? '#848EB0' : '#666';
+const resolveLocalStyles = (theme) => {
+  const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
+  const color = theme === "dark" ? "#FFF" : "#000";
+  const labelColor = theme === "dark" ? "#848EB0" : "#666";
   return StyleSheet.create({
-    container: {
-      paddingTop: 110,
-      flex: 1,
-      justifyContent: 'center',
-      backgroundColor: backgroundColor
+    Button: {
+      padding: 4,
     },
-    title: {
-      marginTop:32,
-      marginBottom:16,
-      fontFamily: 'Ubuntu',
-      fontSize: 18,
-      lineHeight: 21,
-      textAlign: 'left',
-      color: labelColor
+    container: {
+      backgroundColor,
+      flex: 1,
+      justifyContent: "center",
+      paddingTop: 110,
     },
     listGroup: {
-      borderRadius: 12
+      borderRadius: 12,
     },
     paragraph: {
-      margin: 5,
+      color,
       fontSize: 14,
-      fontWeight: 'normal',
-      textAlign: 'center',
-      color
+      fontWeight: "normal",
+      margin: 5,
+      textAlign: "center",
     },
     roundImage: {
-      width: 200,
+      borderRadius: 200 / 2,
       height: 200,
-      borderRadius: 200 / 2
+      width: 200,
     },
-    Button:{
-      padding:4
-    }
-  })
+    title: {
+      color: labelColor,
+      fontFamily: "Ubuntu",
+      fontSize: 18,
+      lineHeight: 21,
+      marginBottom: 16,
+      marginTop: 32,
+      textAlign: "left",
+    },
+  });
 };

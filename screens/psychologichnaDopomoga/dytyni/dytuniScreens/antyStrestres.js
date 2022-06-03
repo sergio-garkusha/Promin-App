@@ -1,48 +1,51 @@
-import React from 'react';
-import { Text, View, StyleSheet, ScrollView } from 'react-native';
+import React from "react";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
 import ListItem from "@components/ListItem";
 
-const navigateAway = () => {console.log("navigation")};
+const navigateAway = () => {
+  // eslint-disable-next-line no-console
+  console.log("navigation");
+};
 
 export default function AntyStrestres() {
-    return (
-        <ScrollView>
-            <View style={styles.container}>
+  return (
+    <ScrollView>
+      <View style={styles.container}>
+        <Text style={styles.paragraph}>Назад</Text>
+        <Text style={styles.header}>Антистресова активність </Text>
 
-                <Text style={styles.paragraph}>Назад</Text>
-                <Text style={styles.header}>Антистресова активність </Text>
-                
-                <ListItem title="Дітям" onPress={navigateAway}/>
-                <ListItem title="Підлітки" onPress={navigateAway}/>
-            </View>
-        </ScrollView>
-    )};
+        <ListItem title="Дітям" onPress={navigateAway} />
+        <ListItem title="Підлітки" onPress={navigateAway} />
+      </View>
+    </ScrollView>
+  );
+}
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        backgroundColor: 'paleturquoise',
-        padding: 8,
-    },
-    paragraph: {
-        margin: 5,
-        fontSize: 14,
-        fontWeight: 'normal',
-        textAlign: 'center',
-    },
-    roundImage: {
-        width: 200,
-        height: 200,
-        borderRadius: 200/ 2
-    },
-    header: {
-        margin: 5,
-        fontSize: 22,
-        fontWeight: 'normal',
-        textAlign: 'center',
-    },
-    Button:{
-        padding:4
-    }
+  Button: {
+    padding: 4,
+  },
+  container: {
+    backgroundColor: "paleturquoise",
+    flex: 1,
+    justifyContent: "center",
+    padding: 8,
+  },
+  header: {
+    fontSize: 22,
+    fontWeight: "normal",
+    margin: 5,
+    textAlign: "center",
+  },
+  paragraph: {
+    fontSize: 14,
+    fontWeight: "normal",
+    margin: 5,
+    textAlign: "center",
+  },
+  roundImage: {
+    borderRadius: 200 / 2,
+    height: 200,
+    width: 200,
+  },
 });
