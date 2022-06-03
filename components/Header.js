@@ -1,12 +1,13 @@
 import React from "react";
 import { View, Image, TouchableOpacity } from "react-native";
-// import { responsiveHeight, responsiveWidth, responsiveFontSize} from "react-native-responsive-dimensions";
 // import { ThemeContext } from "@components/ThemeProvider";
 import backButton from "@assets/button_back_large.png";
 import headerLogo from "@assets/header_logo.png";
-// import prefButton from 'assets/prefs_light.png';
+import prefButton from "@assets/prefs_light.png";
+import Preferences from "./Preferences";
 
 export default function Header(props) {
+  const [modalVisible, setModalVisible] = React.useState(false);
   // const { toggleTheme } = React.useContext(ThemeContext);
   const toMainMenu = () => {
     if (props.navigation) {
@@ -28,9 +29,10 @@ export default function Header(props) {
       );
     }
   };
-  // const setPreferences = () => {
-  //   toggleTheme();
-  // };
+  const setPreferences = () => {
+    // toggleTheme();
+    setModalVisible(true);
+  };
 
   const headerHeight = 70;
 
@@ -44,11 +46,10 @@ export default function Header(props) {
   const backHeight = backWidth / backAspect;
   const backTop = headerHeight - backHeight / 2 - 1; // image is not even :(
 
-  // Preferences Button Related
-  // const prefAspect = 76 / 45;
-  // const prefWidth = 70
-  // const prefHeight = prefWidth / prefAspect
-  // const prefTop = headerHeight - prefHeight / 2
+  const prefAspect = 76 / 45;
+  const prefWidth = 70;
+  const prefHeight = prefWidth / prefAspect;
+  const prefTop = headerHeight - prefHeight / 2;
 
   return (
     <View
@@ -91,14 +92,20 @@ export default function Header(props) {
         />
       </TouchableOpacity>
       <View style={{ width: backWidth }} />
-      {/* Preferences Button Related
-      <TouchableOpacity style={{ marginTop: prefTop, width: prefWidth, height: prefHeight }} onPress={setPreferences}>
+      <TouchableOpacity
+        style={{ marginTop: prefTop, width: prefWidth, height: prefHeight }}
+        onPress={setPreferences}
+      >
         <Image
           source={prefButton}
           style={{ width: prefWidth, height: prefHeight }}
         />
       </TouchableOpacity>
-      <View style={{ width: backWidth }} /> */}
+      <View style={{ width: backWidth }} />
+      <Preferences
+        modalVisible={modalVisible}
+        setModalVisible={setModalVisible}
+      />
     </View>
   );
 }
