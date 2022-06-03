@@ -1,63 +1,72 @@
-import React from 'react';
-import { Text, View, StyleSheet, ScrollView } from 'react-native';
-import { ThemeContext } from '@components/ThemeProvider';
-import Header from '@components/Header';
+import React from "react";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
+import { ThemeContext } from "@components/ThemeProvider";
+import Header from "@components/Header";
 import ListItem from "@components/ListItem";
 
-var navigateAway = () => {console.log("navigation")}
+const navigateAway = () => {
+  // eslint-disable-next-line no-console
+  console.log("navigation");
+};
 
 export default function Dytuni({ navigation }) {
-    const { theme } = React.useContext(ThemeContext);
-    const styles = resolveLocalStyles(theme);
-    return (
-        <View>
-            <Header backButton navigation={navigation} />
-            <ScrollView>
-                <View style={styles.container}>
-                    <View style={{padding: 20}}>
-                        <Text style={styles.title}>Дитині</Text>
+  const { theme } = React.useContext(ThemeContext);
+  const styles = resolveLocalStyles(theme);
+  return (
+    <View>
+      <Header backButton navigation={navigation} />
+      <ScrollView>
+        <View style={styles.container}>
+          <View style={{ padding: 20 }}>
+            <Text style={styles.title}>Дитині</Text>
 
-                        <ListItem roundTop title="Ігри" onPress={navigateAway}/>
-                        <ListItem title="Мультфільми" onPress={navigateAway}/>
-                        <ListItem title="Антистресова активність" onPress={navigateAway}/>
-                        <ListItem roundBottom title="Часті запитання" onPress={navigateAway}/>
-                    </View>
-                </View>
-            </ScrollView>
+            <ListItem roundTop title="Ігри" onPress={navigateAway} />
+            <ListItem title="Мультфільми" onPress={navigateAway} />
+            <ListItem title="Антистресова активність" onPress={navigateAway} />
+            <ListItem
+              roundBottom
+              title="Часті запитання"
+              onPress={navigateAway}
+            />
+          </View>
         </View>
-)};
+      </ScrollView>
+    </View>
+  );
+}
 
-const resolveLocalStyles = theme => {
-    const backgroundColor = theme === 'dark' ? '#18203A' : '#F3F3F3';
-    const color = theme === 'dark' ? '#848EB0' : '#666';
-    return StyleSheet.create({
+const resolveLocalStyles = (theme) => {
+  const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
+  const color = theme === "dark" ? "#848EB0" : "#666";
+  return StyleSheet.create({
+    Button: {
+      padding: 4,
+    },
     container: {
-        paddingTop: 110,
-        flex: 1,
-        justifyContent: 'center',
-        backgroundColor
-    },
-    title: {
-        marginTop:32,
-        marginBottom:16,
-        fontFamily: 'Ubuntu',
-        fontSize: 18,
-        lineHeight: 21,
-        textAlign: 'left',
-        color
-    },
-    roundImage: {
-        width: 200,
-        height: 200,
-        borderRadius: 200/ 2
+      backgroundColor,
+      flex: 1,
+      justifyContent: "center",
+      paddingTop: 110,
     },
     header: {
-        margin: 5,
-        fontSize: 22,
-        fontWeight: 'normal',
-        textAlign: 'center',
+      fontSize: 22,
+      fontWeight: "normal",
+      margin: 5,
+      textAlign: "center",
     },
-    Button:{
-        padding:4
-    }
-})};
+    roundImage: {
+      borderRadius: 200 / 2,
+      height: 200,
+      width: 200,
+    },
+    title: {
+      color,
+      fontFamily: "Ubuntu",
+      fontSize: 18,
+      lineHeight: 21,
+      marginBottom: 16,
+      marginTop: 32,
+      textAlign: "left",
+    },
+  });
+};

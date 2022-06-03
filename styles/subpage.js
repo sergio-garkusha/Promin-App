@@ -1,52 +1,51 @@
-import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 const resolveStyles = (theme) => {
-  const backgroundColor = theme === 'dark' ? '#18203A' : '#F3F3F3';
-  const color = theme === 'dark' ? '#FFF' : '#000';
+  const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
+  const color = theme === "dark" ? "#FFF" : "#000";
 
-  return StyleSheet.create({ 
+  return StyleSheet.create({
     container: {
-      paddingTop: 110,
+      backgroundColor,
       flex: 1,
-      justifyContent: 'center',
-      backgroundColor
+      justifyContent: "center",
+      paddingTop: 110,
+    },
+    header: {
+      color,
+      fontFamily: "Ubuntu_M",
+      fontSize: 25,
+      fontWeight: "normal",
+      margin: 15,
+      marginTop: 40,
+      textAlign: "left",
+    },
+    header2: {
+      color,
+      fontFamily: "Ubuntu_M",
+      fontSize: 19,
+      fontWeight: "normal",
+      margin: 15,
+      textAlign: "left",
     },
     paragraph: {
       color,
-      margin: 5,
-      fontFamily: 'Ubuntu',
+      fontFamily: "Ubuntu",
       fontSize: 17,
-      fontWeight: 'normal',
-      textAlign: 'left',
-      marginBottom: 15
-    },
-    header: {
-      margin: 15,
-      marginTop: 40,
-      fontFamily: 'Ubuntu_M',
-      fontSize: 25,
-      fontWeight: 'normal',
-      textAlign: 'left',
-      color
-    },
-    header2: {
-      margin: 15,
-      fontFamily: 'Ubuntu_M',
-      fontSize: 19,
-      fontWeight: 'normal',
-      textAlign: 'left',
-      color
+      fontWeight: "normal",
+      margin: 5,
+      marginBottom: 15,
+      textAlign: "left",
     },
     roundImage: {
-      width: 200,
+      borderRadius: 200 / 2,
       height: 200,
-      borderRadius: 200 / 2
+      width: 200,
     },
     spacer: {
-      height: 50
-    }
-  })
+      height: 50,
+    },
+  });
 };
 
 export default resolveStyles;

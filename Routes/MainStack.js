@@ -1,8 +1,8 @@
-import { createStackNavigator } from '@react-navigation/stack';
-import React from 'react';
-import { ThemeContext } from '@components/ThemeProvider';
-import WelcomeScreen from '@screens/welcome';
-import MainMenu from '@screens/mainMenu';
+import { createStackNavigator } from "@react-navigation/stack";
+import React from "react";
+import { ThemeContext } from "@components/ThemeProvider";
+import WelcomeScreen from "@screens/welcome";
+import MainMenu from "@screens/mainMenu";
 
 import EkstrennaDopomoga from "@screens/psychologichnaDopomoga/ekstrennaDopomoga/ekstrennaDopomoga";
 import Strah from "@screens/psychologichnaDopomoga/ekstrennaDopomoga/ekstrennaScreens/strah";
@@ -30,39 +30,40 @@ const Stack = createStackNavigator();
 // To set a test screen to be first, add below property to Stack.Navigator. TODO: PROD: remove that property
 // initialRouteName="MainMenu"
 
-const MainStack = () => {
+function MainStack() {
   const { theme } = React.useContext(ThemeContext);
-  const backgroundColor = theme === 'dark' ? '#18203A' : '#F3F3F3';
+  const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
   return (
     <Stack.Navigator
       screenOptions={{
         headerShown: false,
-        cardStyle: { backgroundColor }
-    }}>
+        cardStyle: { backgroundColor },
+      }}
+    >
       <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
-      <Stack.Screen name="MainMenu" component={MainMenu}/>
+      <Stack.Screen name="MainMenu" component={MainMenu} />
 
-      <Stack.Screen name="EkstrennaDopomoga" component={EkstrennaDopomoga}/>
-      <Stack.Screen name="Strah" component={Strah}/>
-      <Stack.Screen name="Isteryka" component={Isteryka}/>
-      <Stack.Screen name="Plach" component={Plach}/>
-      <Stack.Screen name="Stupor" component={Stupor}/>
-      <Stack.Screen name="NervoveTremtinnya" component={NervoveTremtinnya}/>
-      <Stack.Screen name="Agresiya" component={Agresiya}/>
-      <Stack.Screen name="Marennya" component={Marennya}/>
-      <Stack.Screen name="Perezbudzennya" component={Perezbudzennya}/>
+      <Stack.Screen name="EkstrennaDopomoga" component={EkstrennaDopomoga} />
+      <Stack.Screen name="Strah" component={Strah} />
+      <Stack.Screen name="Isteryka" component={Isteryka} />
+      <Stack.Screen name="Plach" component={Plach} />
+      <Stack.Screen name="Stupor" component={Stupor} />
+      <Stack.Screen name="NervoveTremtinnya" component={NervoveTremtinnya} />
+      <Stack.Screen name="Agresiya" component={Agresiya} />
+      <Stack.Screen name="Marennya" component={Marennya} />
+      <Stack.Screen name="Perezbudzennya" component={Perezbudzennya} />
 
-      <Stack.Screen name="DlyaSebe" component={DlyaSebe}/>
-      <Stack.Screen name="Techniky" component={Techniky}/>
+      <Stack.Screen name="DlyaSebe" component={DlyaSebe} />
+      <Stack.Screen name="Techniky" component={Techniky} />
 
-      <Stack.Screen name="Dytuni" component={Dytuni}/>
-      <Stack.Screen name="AntyStrestres" component={AntyStrestres}/>
-      <Stack.Screen name="Igry" component={Igry}/>
+      <Stack.Screen name="Dytuni" component={Dytuni} />
+      <Stack.Screen name="AntyStrestres" component={AntyStrestres} />
+      <Stack.Screen name="Igry" component={Igry} />
 
-      <Stack.Screen name="Kontakty" component={Kontakty}/>
-      <Stack.Screen name="Diyi" component={Diyi}/>
+      <Stack.Screen name="Kontakty" component={Kontakty} />
+      <Stack.Screen name="Diyi" component={Diyi} />
     </Stack.Navigator>
-  )
+  );
 }
 
-export default MainStack
+export default MainStack;
