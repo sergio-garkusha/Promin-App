@@ -1,8 +1,9 @@
 # Promin
 Психологічна Допомога під час війни
 
-Genereal app flow, wireframes & designs: [www.figma.com/](https://www.figma.com/file/tOHjTlZEEdiY1rdRiodocn/Promin-app)
-Settings design: [www.figma.com/](https://www.figma.com/file/rpn3Wn8UbcH8ggb6Pg8ulJ/Promin)
+[Genereal app flow, wireframes & designs](https://www.figma.com/file/tOHjTlZEEdiY1rdRiodocn/Promin-app)
+
+[Settings design](https://www.figma.com/file/rpn3Wn8UbcH8ggb6Pg8ulJ/Promin)
 
 -------
 ### Run: 
