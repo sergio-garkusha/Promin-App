@@ -1,30 +1,45 @@
 import React from "react";
-import { Modal, StyleSheet, Text, Pressable, View } from "react-native";
+import {
+  Modal,
+  StyleSheet,
+  Text,
+  Pressable,
+  View,
+  ImageBackground,
+} from "react-native";
 
 function Preferences({ modalVisible, setModalVisible }) {
   return (
-    <View style={styles.centeredView}>
-      <Modal
-        animationType="slide"
-        transparent
-        visible={modalVisible}
-        onRequestClose={() => {
-          setModalVisible(!modalVisible);
-        }}
-      >
-        <View style={styles.centeredView}>
-          <View style={styles.modalView}>
-            <Text style={styles.modalText}>Hello World!</Text>
-            <Pressable
-              style={[styles.button, styles.buttonClose]}
-              onPress={() => setModalVisible(!modalVisible)}
-            >
-              <Text style={styles.textStyle}>Hide Modal</Text>
-            </Pressable>
+    <>
+      {modalVisible && (
+        <ImageBackground
+          blurRadius={modalVisible ? 4 : 0}
+          style={styles.overlay}
+        />
+      )}
+      <View style={styles.centeredView}>
+        <Modal
+          animationType="slide"
+          transparent
+          visible={modalVisible}
+          onRequestClose={() => {
+            setModalVisible(!modalVisible);
+          }}
+        >
+          <View style={styles.centeredView}>
+            <View style={styles.modalView}>
+              <Text style={styles.modalText}>Hello World!</Text>
+              <Pressable
+                style={[styles.button, styles.buttonClose]}
+                onPress={() => setModalVisible(!modalVisible)}
+              >
+                <Text style={styles.textStyle}>Hide Modal</Text>
+              </Pressable>
+            </View>
           </View>
-        </View>
-      </Modal>
-    </View>
+        </Modal>
+      </View>
+    </>
   );
 }
 
@@ -64,6 +79,15 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 4,
+  },
+  overlay: {
+    alignItems: "center",
+    backgroundColor: "rgba(0,0,0,0.5)",
+    flex: 1,
+    height: "100vh",
+    justifyContent: "center",
+    position: "absolute",
+    width: "100vw",
   },
   textStyle: {
     color: "white",
