@@ -7,15 +7,14 @@ import {
   View,
   ImageBackground,
   Image,
-  Switch,
 } from "react-native";
-import Slider from "@react-native-community/slider";
 import lightSwitch from "@assets/light_scheme_switch_light.png";
-import knob from "@assets/Knob.png";
+import darkSwitch from "@assets/light_scheme_switch_dark.png";
+import autoSwitch from "@assets/scheme_auto_icon.png";
 
 function Preferences({ modalVisible, setModalVisible }) {
-  const isEnabled = false;
-  const toggleSwitch = () => null;
+  // const isEnabled = false;
+  // const toggleSwitch = () => null;
   return (
     <>
       {modalVisible && (
@@ -45,8 +44,37 @@ function Preferences({ modalVisible, setModalVisible }) {
                 </Pressable>
               </View>
               <View style={styles.colorScheme}>
-                <Text style={styles.label}>Тема</Text>
-                <View style={styles.colorSchemeButtons}>
+                <View style={styles.labels}>
+                  <Text style={styles.label}>Тема</Text>
+                  <Text style={styles.label}>[Яка Саме?]</Text>
+                </View>
+                <View style={styles.colorSchemeButtonsRow}>
+                  <Pressable
+                    style={[styles.schemeSwitch, styles.schemeSwitchActive]}
+                    onPress={() => setModalVisible(!modalVisible)}
+                  >
+                    <Image source={darkSwitch} style={styles.buttonImage} />
+                  </Pressable>
+                  <Pressable
+                    style={styles.schemeSwitch}
+                    onPress={() => setModalVisible(!modalVisible)}
+                  >
+                    <Image source={lightSwitch} style={styles.buttonImage} />
+                  </Pressable>
+                  <Pressable
+                    style={styles.schemeSwitch}
+                    onPress={() => setModalVisible(!modalVisible)}
+                  >
+                    <Image source={autoSwitch} style={styles.buttonImage} />
+                  </Pressable>
+                </View>
+              </View>
+              <View style={styles.fontSize}>
+                <View style={styles.labels}>
+                  <Text style={styles.label}>Розмір шрифта</Text>
+                  <Text style={styles.label}>[Який Саме?]</Text>
+                </View>
+                <View style={styles.colorSchemeButtonsRow}>
                   <Pressable
                     style={[styles.schemeSwitch, styles.schemeSwitchActive]}
                     onPress={() => setModalVisible(!modalVisible)}
@@ -59,30 +87,13 @@ function Preferences({ modalVisible, setModalVisible }) {
                   >
                     <Image source={lightSwitch} style={styles.buttonImage} />
                   </Pressable>
+                  <Pressable
+                    style={styles.schemeSwitch}
+                    onPress={() => setModalVisible(!modalVisible)}
+                  >
+                    <Image source={lightSwitch} style={styles.buttonImage} />
+                  </Pressable>
                 </View>
-                <View style={styles.colorSchemeButtons2ndRow}>
-                  <Text style={styles.label}>Обирати автоматично</Text>
-                  <Switch
-                    trackColor={{ false: "#767577", true: "#81b0ff" }}
-                    thumbColor={isEnabled ? "#f5dd4b" : "#f4f3f4"}
-                    ios_backgroundColor="#3e3e3e"
-                    onValueChange={toggleSwitch}
-                    value={isEnabled}
-                  />
-                </View>
-              </View>
-              <View style={styles.fontSize}>
-                <Text style={styles.label}>Розмір шрифта</Text>
-                <Slider
-                  style={{ height: 50 }}
-                  value={3}
-                  minimumValue={0}
-                  maximumValue={6}
-                  minimumTrackTintColor="#E6E7ED"
-                  maximumTrackTintColor="#E6E7ED"
-                  thumbImage={knob}
-                  thumbTintColor="#f4f3f4"
-                />
               </View>
             </View>
             <View />
@@ -126,25 +137,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginBottom: 20,
     marginTop: 20,
-    paddingBottom: 24,
+    paddingBottom: 16,
     paddingLeft: 16,
     paddingRight: 16,
     paddingTop: 24,
   },
-  colorSchemeButtons: {
+  colorSchemeButtonsRow: {
     backgroundColor: "rgba(116, 116, 128, 0.08)",
-    borderRadius: 64,
+    borderRadius: 16,
+    display: "flex",
     flexDirection: "row",
     height: 54,
-    marginBottom: 16,
     marginTop: 16,
-    width: "100%",
-  },
-  colorSchemeButtons2ndRow: {
-    alignContent: "center",
-    flexDirection: "row",
-    height: 51,
-    justifyContent: "space-between",
     width: "100%",
   },
   fontSize: {
@@ -152,7 +156,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     borderStyle: "solid",
     borderWidth: 1,
-    paddingBottom: 24,
+    paddingBottom: 16,
     paddingLeft: 16,
     paddingRight: 16,
     paddingTop: 24,
@@ -161,6 +165,11 @@ const styles = StyleSheet.create({
     color: "#666",
     fontFamily: "Ubuntu",
     fontSize: 16,
+  },
+  labels: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   modalText: {
     marginBottom: 15,
@@ -195,9 +204,9 @@ const styles = StyleSheet.create({
     width: "100%",
   },
   schemeSwitch: {
-    borderRadius: 64,
+    borderRadius: 16,
+    flex: 1,
     height: "100%",
-    width: "50%",
   },
   schemeSwitchActive: { backgroundColor: "#5177FF" },
   textStyle: {
