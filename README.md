@@ -5,6 +5,12 @@
 
 [Settings design](https://www.figma.com/file/rpn3Wn8UbcH8ggb6Pg8ulJ/Promin)
 
+# Мультфільми
+[https://www.youtube.com/watch?v=G_bsfhO0DpY](https://www.youtube.com/watch?v=G_bsfhO0DpY&t=6s)
+[https://www.youtube.com/watch?v=s3vXyjefxeM](https://www.youtube.com/watch?v=s3vXyjefxeM&t=11s)
+[https://www.youtube.com/watch?v=uJm62FSrhhg](https://www.youtube.com/watch?v=uJm62FSrhhg&t=8s)
+[https://www.youtube.com/watch?v=DmRCrz111Vw](https://www.youtube.com/watch?v=DmRCrz111Vw&t=36s)
+
 -------
 ### Run: 
 
