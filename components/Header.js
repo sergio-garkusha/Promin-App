@@ -59,8 +59,6 @@ export default function Header(props) {
           marginBottom: 20,
           backgroundColor: "#5177ff",
           height: headerHeight,
-          flexDirection: "row",
-          justifyContent: "space-between",
           position: "absolute",
           top: 0,
           width: "100%",
@@ -68,40 +66,42 @@ export default function Header(props) {
         },
       ]}
     >
-      {props.backButton ? (
+      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+        {props.backButton ? (
+          <TouchableOpacity
+            style={{ marginTop: backTop, width: backWidth, height: backHeight }}
+            onPress={goBack}
+          >
+            <Image
+              source={backButton}
+              style={{ width: backWidth, height: backHeight }}
+            />
+          </TouchableOpacity>
+        ) : (
+          <View style={{ width: backWidth }} />
+        )}
+
         <TouchableOpacity
-          style={{ marginTop: backTop, width: backWidth, height: backHeight }}
-          onPress={goBack}
+          style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}
+          onPress={toMainMenu}
         >
           <Image
-            source={backButton}
-            style={{ width: backWidth, height: backHeight }}
+            source={headerLogo}
+            style={{ width: logoWidth, height: logoHeight }}
           />
         </TouchableOpacity>
-      ) : (
-        <View style={{ width: backWidth }} />
-      )}
 
-      <TouchableOpacity
-        style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}
-        onPress={toMainMenu}
-      >
-        <Image
-          source={headerLogo}
-          style={{ width: logoWidth, height: logoHeight }}
-        />
-      </TouchableOpacity>
-      <View style={{ width: backWidth }} />
-      <TouchableOpacity
-        style={{ marginTop: prefTop, width: prefWidth, height: prefHeight }}
-        onPress={setPreferences}
-      >
-        <Image
-          source={prefButton}
-          style={{ width: prefWidth, height: prefHeight }}
-        />
-      </TouchableOpacity>
-      <View style={{ width: backWidth }} />
+        <TouchableOpacity
+          style={{ marginTop: prefTop, width: prefWidth, height: prefHeight }}
+          onPress={setPreferences}
+        >
+          <Image
+            source={prefButton}
+            style={{ width: prefWidth, height: prefHeight }}
+          />
+        </TouchableOpacity>
+      </View>
+
       <Preferences
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
