@@ -6,6 +6,12 @@ import headerLogo from "@assets/header_logo.png";
 import prefButton from "@assets/prefs_light.png";
 import Preferences from "./Preferences";
 
+//import { Svg as BackButtonSvg } from '@assets/svg/button_back_light.svg'
+
+import SvgComponent from '@components/SvgComponent.js';
+
+
+
 export default function Header(props) {
   const [modalVisible, setModalVisible] = React.useState(false);
   // const { toggleTheme } = React.useContext(ThemeContext);
@@ -80,6 +86,8 @@ export default function Header(props) {
         ) : (
           <View style={{ width: backWidth }} />
         )}
+
+        <SvgComponent />
 
         <TouchableOpacity
           style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}
