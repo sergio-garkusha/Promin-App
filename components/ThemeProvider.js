@@ -20,10 +20,8 @@ export default function ThemeProvider({ children }) {
     AsyncStorage.setItem("theme", derminedScheme);
     setColorScheme(derminedScheme);
   };
-
+  const values = React.useMemo(() => ({ theme: colorScheme, toggleTheme }), []);
   return (
-    <ThemeContext.Provider value={{ theme: colorScheme, toggleTheme }}>
-      {children}
-    </ThemeContext.Provider>
+    <ThemeContext.Provider value={values}>{children}</ThemeContext.Provider>
   );
 }

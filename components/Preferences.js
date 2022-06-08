@@ -1,106 +1,86 @@
 import React from "react";
-import {
-  Modal,
-  StyleSheet,
-  Text,
-  Pressable,
-  View,
-  ImageBackground,
-  Image,
-} from "react-native";
+import { Modal, StyleSheet, Text, Pressable, View, Image } from "react-native";
+import { OverlayContext } from "@components/OverlayProvider";
 import lightSwitch from "@assets/light_scheme_switch_light.png";
 import darkSwitch from "@assets/light_scheme_switch_dark.png";
 import autoSwitch from "@assets/scheme_auto_icon.png";
 
 function Preferences({ modalVisible, setModalVisible }) {
-  // const isEnabled = false;
-  // const toggleSwitch = () => null;
+  const { toggleOverlay } = React.useContext(OverlayContext);
   return (
-    <>
-      {modalVisible && (
-        <ImageBackground
-          blurRadius={modalVisible ? 4 : 0}
-          style={styles.overlay}
-        />
-      )}
-      <View style={styles.centeredView}>
-        <Modal
-          animationType="slide"
-          transparent
-          visible={modalVisible}
-          onRequestClose={() => {
-            setModalVisible(!modalVisible);
-          }}
-        >
-          <View style={styles.bottomedView}>
-            <View style={styles.modalView}>
-              <View style={styles.titleRow}>
-                <Text style={styles.title}>Налаштування</Text>
+    <View style={styles.centeredView}>
+      <Modal animationType="slide" transparent visible={modalVisible}>
+        <View style={styles.bottomedView}>
+          <View style={styles.modalView}>
+            <View style={styles.titleRow}>
+              <Text style={styles.title}>Налаштування</Text>
+              <Pressable
+                style={styles.button}
+                onPress={() => {
+                  setModalVisible(!modalVisible);
+                  toggleOverlay(false);
+                }}
+              >
+                <Text style={styles.textStyle}>✕</Text>
+              </Pressable>
+            </View>
+            <View style={styles.colorScheme}>
+              <View style={styles.labels}>
+                <Text style={styles.label}>Тема</Text>
+                <Text style={styles.label}>[Яка Саме?]</Text>
+              </View>
+              <View style={styles.colorSchemeButtonsRow}>
                 <Pressable
-                  style={styles.button}
+                  style={[styles.schemeSwitch, styles.schemeSwitchActive]}
                   onPress={() => setModalVisible(!modalVisible)}
                 >
-                  <Text style={styles.textStyle}>✕</Text>
+                  <Image source={darkSwitch} style={styles.buttonImage} />
+                </Pressable>
+                <Pressable
+                  style={styles.schemeSwitch}
+                  onPress={() => setModalVisible(!modalVisible)}
+                >
+                  <Image source={lightSwitch} style={styles.buttonImage} />
+                </Pressable>
+                <Pressable
+                  style={styles.schemeSwitch}
+                  onPress={() => setModalVisible(!modalVisible)}
+                >
+                  <Image source={autoSwitch} style={styles.buttonImage} />
                 </Pressable>
               </View>
-              <View style={styles.colorScheme}>
-                <View style={styles.labels}>
-                  <Text style={styles.label}>Тема</Text>
-                  <Text style={styles.label}>[Яка Саме?]</Text>
-                </View>
-                <View style={styles.colorSchemeButtonsRow}>
-                  <Pressable
-                    style={[styles.schemeSwitch, styles.schemeSwitchActive]}
-                    onPress={() => setModalVisible(!modalVisible)}
-                  >
-                    <Image source={darkSwitch} style={styles.buttonImage} />
-                  </Pressable>
-                  <Pressable
-                    style={styles.schemeSwitch}
-                    onPress={() => setModalVisible(!modalVisible)}
-                  >
-                    <Image source={lightSwitch} style={styles.buttonImage} />
-                  </Pressable>
-                  <Pressable
-                    style={styles.schemeSwitch}
-                    onPress={() => setModalVisible(!modalVisible)}
-                  >
-                    <Image source={autoSwitch} style={styles.buttonImage} />
-                  </Pressable>
-                </View>
+            </View>
+            <View style={styles.fontSizeSwitcher}>
+              <View style={styles.labels}>
+                <Text style={styles.label}>Розмір шрифта</Text>
+                <Text style={styles.label}>[Який Саме?]</Text>
               </View>
-              <View style={styles.fontSize}>
-                <View style={styles.labels}>
-                  <Text style={styles.label}>Розмір шрифта</Text>
-                  <Text style={styles.label}>[Який Саме?]</Text>
-                </View>
-                <View style={styles.colorSchemeButtonsRow}>
-                  <Pressable
-                    style={[styles.schemeSwitch, styles.schemeSwitchActive]}
-                    onPress={() => setModalVisible(!modalVisible)}
-                  >
-                    <Image source={lightSwitch} style={styles.buttonImage} />
-                  </Pressable>
-                  <Pressable
-                    style={styles.schemeSwitch}
-                    onPress={() => setModalVisible(!modalVisible)}
-                  >
-                    <Image source={lightSwitch} style={styles.buttonImage} />
-                  </Pressable>
-                  <Pressable
-                    style={styles.schemeSwitch}
-                    onPress={() => setModalVisible(!modalVisible)}
-                  >
-                    <Image source={lightSwitch} style={styles.buttonImage} />
-                  </Pressable>
-                </View>
+              <View style={styles.colorSchemeButtonsRow}>
+                <Pressable
+                  style={[styles.schemeSwitch, styles.schemeSwitchActive]}
+                  onPress={() => setModalVisible(!modalVisible)}
+                >
+                  <Image source={lightSwitch} style={styles.buttonImage} />
+                </Pressable>
+                <Pressable
+                  style={styles.schemeSwitch}
+                  onPress={() => setModalVisible(!modalVisible)}
+                >
+                  <Image source={lightSwitch} style={styles.buttonImage} />
+                </Pressable>
+                <Pressable
+                  style={styles.schemeSwitch}
+                  onPress={() => setModalVisible(!modalVisible)}
+                >
+                  <Image source={lightSwitch} style={styles.buttonImage} />
+                </Pressable>
               </View>
             </View>
-            <View />
           </View>
-        </Modal>
-      </View>
-    </>
+          <View />
+        </View>
+      </Modal>
+    </View>
   );
 }
 
@@ -151,7 +131,7 @@ const styles = StyleSheet.create({
     marginTop: 16,
     width: "100%",
   },
-  fontSize: {
+  fontSizeSwitcher: {
     borderColor: "#E6E7ED",
     borderRadius: 16,
     borderStyle: "solid",
@@ -171,10 +151,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  modalText: {
-    marginBottom: 15,
-    textAlign: "center",
-  },
   modalView: {
     backgroundColor: "white",
     borderRadius: 32,
@@ -192,16 +168,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 4,
     width: "90%",
-  },
-  overlay: {
-    alignItems: "center",
-    backgroundColor: "rgba(0,0,0,0.5)",
-    flex: 1,
-    height: "100%",
-    justifyContent: "center",
-    position: "absolute",
-    resizeMode: "contain",
-    width: "100%",
   },
   schemeSwitch: {
     borderRadius: 16,

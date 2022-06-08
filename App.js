@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import MainStack from "@Routes/MainStack";
 import ThemeProvider from "@components/ThemeProvider";
+import OverlayProvider from "@components/OverlayProvider";
 import UbuntuR from "@assets/fonts/Ubuntu-R.ttf";
 import UbuntuM from "@assets/fonts/Ubuntu-M.ttf";
 
@@ -18,7 +19,9 @@ export default function App() {
   return (
     <NavigationContainer>
       <ThemeProvider>
-        <MainStack />
+        <OverlayProvider>
+          <MainStack />
+        </OverlayProvider>
       </ThemeProvider>
     </NavigationContainer>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Image, TouchableOpacity } from "react-native";
-// import { ThemeContext } from "@components/ThemeProvider";
+import { OverlayContext } from "@components/OverlayProvider";
 import backButton from "@assets/button_back_large.png";
 import headerLogo from "@assets/header_logo.png";
 import prefButton from "@assets/prefs_light.png";
@@ -8,7 +8,7 @@ import Preferences from "./Preferences";
 
 export default function Header(props) {
   const [modalVisible, setModalVisible] = React.useState(false);
-  // const { toggleTheme } = React.useContext(ThemeContext);
+  const { toggleOverlay } = React.useContext(OverlayContext);
   const toMainMenu = () => {
     if (props.navigation) {
       props.navigation.push("MainMenu");
@@ -30,7 +30,7 @@ export default function Header(props) {
     }
   };
   const setPreferences = () => {
-    // toggleTheme();
+    toggleOverlay(true);
     setModalVisible(true);
   };
 
