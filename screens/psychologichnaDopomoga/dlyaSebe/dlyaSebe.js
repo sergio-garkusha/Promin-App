@@ -14,8 +14,8 @@ export default function DlyaSebe({ navigation }) {
     navigation.push(destination);
   };
 
-  const { theme } = React.useContext(ThemeContext);
-  const styles = resolveLocalStyles(theme);
+  const { computeTheme } = React.useContext(ThemeContext);
+  const styles = resolveLocalStyles(computeTheme());
   return (
     <View>
       <Header backButton navigation={navigation} />

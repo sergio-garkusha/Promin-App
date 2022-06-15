@@ -31,8 +31,8 @@ const Stack = createStackNavigator();
 // initialRouteName="MainMenu"
 
 function MainStack() {
-  const { theme } = React.useContext(ThemeContext);
-  const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
+  const { computeTheme } = React.useContext(ThemeContext);
+  const backgroundColor = computeTheme() === "dark" ? "#18203A" : "#F3F3F3";
   return (
     <Stack.Navigator
       screenOptions={{

@@ -8,8 +8,8 @@ import resolveStyles from "@styles/subpage";
 import head from "@assets/images/head.png";
 
 export default function Perezbudzennya({ navigation }) {
-  const { theme } = React.useContext(ThemeContext);
-  const styles = resolveStyles(theme);
+  const { computeTheme } = React.useContext(ThemeContext);
+  const styles = resolveStyles(computeTheme());
   return (
     <View>
       <Header backButton navigation={navigation} />
