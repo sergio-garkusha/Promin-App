@@ -6,8 +6,8 @@ import Header from "@components/Header";
 import resolveStyles from "@styles/subpage";
 
 export default function Plach({ navigation }) {
-  const { theme } = React.useContext(ThemeContext);
-  const styles = resolveStyles(theme);
+  const { computeTheme } = React.useContext(ThemeContext);
+  const styles = resolveStyles(computeTheme());
   return (
     <View>
       <Header backButton navigation={navigation} />

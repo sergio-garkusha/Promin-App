@@ -11,8 +11,8 @@ const navigateAway = () => {
 };
 
 export default function Techniky({ navigation }) {
-  const { theme } = React.useContext(ThemeContext);
-  const styles = resolveLocalStyles(theme);
+  const { computeTheme } = React.useContext(ThemeContext);
+  const styles = resolveLocalStyles(computeTheme());
 
   return (
     <View>

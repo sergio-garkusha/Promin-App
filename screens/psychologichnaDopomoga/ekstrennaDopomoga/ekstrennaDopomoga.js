@@ -5,8 +5,8 @@ import Header from "@components/Header";
 import ListItem from "@components/ListItem";
 
 export default function EkstrennaDopomoga({ navigation }) {
-  const { theme } = React.useContext(ThemeContext);
-  const styles = resolveLocalStyles(theme);
+  const { computeTheme } = React.useContext(ThemeContext);
+  const styles = resolveLocalStyles(computeTheme());
 
   return (
     <View>

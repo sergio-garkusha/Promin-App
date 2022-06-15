@@ -9,8 +9,8 @@ import two from "@assets/images/twoGuys.png";
 import thumbs from "@assets/images/thumbs.png";
 
 export default function Stupor({ navigation }) {
-  const { theme } = React.useContext(ThemeContext);
-  const styles = resolveStyles(theme);
+  const { computeTheme } = React.useContext(ThemeContext);
+  const styles = resolveStyles(computeTheme());
   return (
     <View>
       <Header backButton navigation={navigation} />

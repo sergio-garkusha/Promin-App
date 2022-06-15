@@ -12,8 +12,8 @@ function WelcomeScreen({ navigation }) {
     navigation.push("MainMenu");
   };
 
-  const { theme } = React.useContext(ThemeContext);
-  const styles = resolveStyles(theme);
+  const { computeTheme } = React.useContext(ThemeContext);
+  const styles = resolveStyles(computeTheme());
 
   return (
     <ScrollView>

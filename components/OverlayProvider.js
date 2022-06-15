@@ -16,8 +16,9 @@ export default function ModalProvider({ children }) {
   const toggleOverlay = () => changeOverlay(!overlay);
   const values = React.useMemo(
     () => ({ isOverlayShown: overlay, toggleOverlay }),
-    []
+    [overlay]
   );
+
   return (
     <OverlayContext.Provider value={values}>
       {children}

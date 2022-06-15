@@ -4,8 +4,8 @@ import caretLight from "@assets/caret_light_large.png";
 import { ThemeContext } from "@components/ThemeProvider";
 
 export default function ListItem(props) {
-  const { theme } = React.useContext(ThemeContext);
-  const styles = resolveLocalStyles(theme);
+  const { computeTheme } = React.useContext(ThemeContext);
+  const styles = resolveLocalStyles(computeTheme());
   return (
     <View style={props.padded && styles.padded}>
       <View

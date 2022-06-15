@@ -1,11 +1,64 @@
 import React from "react";
 import { Modal, StyleSheet, Text, Pressable, View, Image } from "react-native";
 import { OverlayContext } from "@components/OverlayProvider";
+import { ThemeContext } from "@components/ThemeProvider";
 import lightSwitch from "@assets/light_scheme_switch_light.png";
 import darkSwitch from "@assets/light_scheme_switch_dark.png";
 import autoSwitch from "@assets/scheme_auto_icon.png";
 
-function Preferences({ modalVisible, setModalVisible }) {
+const colorSchemeI18N = {
+  light: "Світла",
+  dark: "Темна",
+  auto: "Обирається автоматично",
+};
+
+const colorSchemeIcons = [
+  darkSwitch,
+  lightSwitch,
+  autoSwitch,
+];
+
+function ThemeButtons() {
+  const { isSys, theme, toggleTheme } = React.useContext(ThemeContext);
+
+  const switchTheme = (e, btn) => {
+    toggleTheme(btn);
+  };
+
+  const stateDisplayer = () => {
+    console.log(theme);
+    if (isSys) return "auto";
+    if (theme === "light") return "light";
+    if (theme === "dark") return "dark";
+  };
+
+  return (
+    <View style={styles.colorScheme}>
+      <View style={styles.labels}>
+        <Text style={styles.label}>Тема</Text>
+        <Text style={styles.label}>{colorSchemeI18N[stateDisplayer()]}</Text>
+      </View>
+      <View style={styles.colorSchemeButtonsRow}>
+        {Object.keys(colorSchemeI18N).map((el, idx) => {
+          const localStyles = [styles.schemeSwitch];
+          if (el === stateDisplayer())
+            localStyles.push(styles.schemeSwitchActive);
+          return (
+            <Pressable
+              key={idx}
+              style={localStyles}
+              onPress={(e) => switchTheme(e, el)}
+            >
+              <Image source={colorSchemeIcons[idx]} style={styles.buttonImage} />
+            </Pressable>
+          )
+        })}
+      </View>
+    </View>
+  );
+}
+
+export default function Preferences({ modalVisible, setModalVisible }) {
   const { toggleOverlay } = React.useContext(OverlayContext);
   return (
     <View style={styles.centeredView}>
@@ -24,32 +77,7 @@ function Preferences({ modalVisible, setModalVisible }) {
                 <Text style={styles.textStyle}>✕</Text>
               </Pressable>
             </View>
-            <View style={styles.colorScheme}>
-              <View style={styles.labels}>
-                <Text style={styles.label}>Тема</Text>
-                <Text style={styles.label}>[Яка Саме?]</Text>
-              </View>
-              <View style={styles.colorSchemeButtonsRow}>
-                <Pressable
-                  style={[styles.schemeSwitch, styles.schemeSwitchActive]}
-                  onPress={() => setModalVisible(!modalVisible)}
-                >
-                  <Image source={darkSwitch} style={styles.buttonImage} />
-                </Pressable>
-                <Pressable
-                  style={styles.schemeSwitch}
-                  onPress={() => setModalVisible(!modalVisible)}
-                >
-                  <Image source={lightSwitch} style={styles.buttonImage} />
-                </Pressable>
-                <Pressable
-                  style={styles.schemeSwitch}
-                  onPress={() => setModalVisible(!modalVisible)}
-                >
-                  <Image source={autoSwitch} style={styles.buttonImage} />
-                </Pressable>
-              </View>
-            </View>
+            <ThemeButtons />
             <View style={styles.fontSizeSwitcher}>
               <View style={styles.labels}>
                 <Text style={styles.label}>Розмір шрифта</Text>
@@ -193,5 +221,3 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
 });
-
-export default Preferences;
