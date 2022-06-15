@@ -12,7 +12,7 @@ let toggleDrawer = () => {
 
 }
 
-export default function Accordeon() {
+export default function Accordion() {
   const drawerAnim = useRef(new Animated.Value(0)).current
 
   useEffect(() => {
