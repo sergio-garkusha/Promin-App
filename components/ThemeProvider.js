@@ -36,8 +36,8 @@ export default function ThemeProvider({ children }) {
       console.log(e);
       setColorScheme(e.colorScheme);
     };
-    Appearance.addChangeListener(sysColorSchemeListener);
-    return () => Appearance.removeChangeListener(sysColorSchemeListener);
+    const listener = Appearance.addChangeListener(sysColorSchemeListener);
+    return () => listener.remove();
   });
 
   const persistSystem = (v) => {
