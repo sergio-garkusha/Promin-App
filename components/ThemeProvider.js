@@ -33,6 +33,9 @@ export default function ThemeProvider({ children }) {
     const sysColorSchemeListener = (e) => {
       setColorScheme(e.colorScheme);
     };
+    // [NB]: Appearance doesn't work properly on ANDROID
+    // [@TODO]: Fix this, see https://github.com/facebook/react-native/issues/28823 &
+    // https://stackoverflow.com/questions/65188658/react-native-appearance-addchangelistener-does-nothing
     const listener = Appearance.addChangeListener(sysColorSchemeListener);
     return () => listener.remove();
   });
@@ -48,6 +51,9 @@ export default function ThemeProvider({ children }) {
     setColorScheme(v);
   };
 
+  // [NB]: Appearance doesn't work properly on ANDROID
+  // [@TODO]: Fix this, see https://github.com/facebook/react-native/issues/28823 &
+  // https://stackoverflow.com/questions/65188658/react-native-appearance-addchangelistener-does-nothing
   const computeTheme = () => useSys ? Appearance.getColorScheme() : colorScheme;
 
   const values = React.useMemo(() => ({
