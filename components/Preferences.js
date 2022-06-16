@@ -26,7 +26,6 @@ function ThemeButtons() {
   };
 
   const stateDisplayer = () => {
-    console.log(theme);
     if (isSys) return "auto";
     if (theme === "light") return "light";
     if (theme === "dark") return "dark";
@@ -41,8 +40,9 @@ function ThemeButtons() {
       <View style={styles.colorSchemeButtonsRow}>
         {Object.keys(colorSchemeI18N).map((el, idx) => {
           const localStyles = [styles.schemeSwitch];
-          if (el === stateDisplayer())
+          if (el === stateDisplayer()) {
             localStyles.push(styles.schemeSwitchActive);
+          }
           return (
             <Pressable
               key={idx}

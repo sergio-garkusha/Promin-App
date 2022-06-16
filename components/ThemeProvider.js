@@ -16,24 +16,21 @@ export default function ThemeProvider({ children }) {
   const [useSys, setUseSys] = React.useState(null);
 
   React.useEffect(() => {
-    AsyncStorage.getItem("systemColorSchemeFlag")
-      .then(sys => {
-        if (sys === null) { // first run
-          AsyncStorage.setItem("systemColorSchemeFlag", "true");
-          AsyncStorage.setItem("userColorScheme", Appearance.getColorScheme());
-          setUseSys(true);
-        } else {
-          AsyncStorage.getItem("userColorScheme")
-            .then(theme => {
-              setColorScheme(theme);
-            });
-        }
-      });
+    Promise.all(
+      AsyncStorage.getItem("systemColorSchemeFlag"),
+      AsyncStorage.getItem("userColorScheme")
+    ).then((vals) => {
+      if (vals.length === 0) { // first run, no values were set
+        AsyncStorage.setItem("userColorScheme", "auto");
+        AsyncStorage.setItem("systemColorSchemeFlag", "true");
+        setColorScheme("auto");
+        setUseSys(true);
+      }
+    });
   }, []);
 
   React.useEffect(() => {
     const sysColorSchemeListener = (e) => {
-      console.log(e);
       setColorScheme(e.colorScheme);
     };
     const listener = Appearance.addChangeListener(sysColorSchemeListener);
@@ -46,8 +43,8 @@ export default function ThemeProvider({ children }) {
   }
 
   const toggleTheme = (v) => {
-    AsyncStorage.setItem("userColorScheme", v);
     v === "auto" ? persistSystem(true) : persistSystem(false);
+    AsyncStorage.setItem("userColorScheme", v);
     setColorScheme(v);
   };
 
