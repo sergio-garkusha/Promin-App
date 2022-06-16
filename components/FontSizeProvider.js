@@ -18,6 +18,16 @@ export const FontSizeContext = React.createContext(initFontSizeState);
 export default function FontSizeProvider({ children }) {
   const [coeff, setCoeff] = React.useState(initFontSizeState.coefficient);
 
+  // [@TODO]: Convert all fontSizes + lineHeights across the project as such:
+  // fontSize: 18, // ===> converts to computeFS(18),
+  // lineHeight: 21, // ===> computeFS(21) etc.
+
+  // [@TODO]: Add persistence to font size preferences
+  // React.useEffect(() => {
+  //   Promise.all([
+  //     AsyncStorage.getItem("..."),
+  //     ...
+
   const subtractSize = () => {
     if (coeff <= MIN) return;
     setCoeff(coeff - STEP);

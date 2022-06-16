@@ -15,11 +15,26 @@ export default function ThemeProvider({ children }) {
   const [colorScheme, setColorScheme] = React.useState("");
   const [useSys, setUseSys] = React.useState(null);
 
+  // [@TODO]: Need to create an exportable object with all colors to use in styles,
+  // Instead of current cluncky computeTheme() + resolveStyles = (theme) => {} approach.
+  // [Ex]:
+  // export const appColors = {
+  //   borderColor: theme === "dark" ? "#3D486C" : "#E6E7ED",
+  //   textColor: theme === "dark" ? "#9AA3C5" : "#666",
+  //   BtnBGColor: theme === "dark" ? "#01020633" : "#74748014",
+  //   backgroundColor: theme === "dark" ? "#27335A" : "#FFF",
+  //   titleColor: theme === "dark" ? "#FFF" : "#000",
+  // };
+  // import { borderColor, textColor } from "@components/ThemeProvider"
+  // StyleSheet.create({button: {color: textColor}...
+  // <View style={color: textColor}>...
+
   React.useEffect(() => {
-    Promise.all(
+    // [@TODO]: Fix persistence for color scheme (check out web version)
+    Promise.all([
       AsyncStorage.getItem("systemColorSchemeFlag"),
       AsyncStorage.getItem("userColorScheme")
-    ).then((vals) => {
+    ]).then((vals) => {
       if (vals.length === 0) { // first run, no values were set
         AsyncStorage.setItem("userColorScheme", "auto");
         AsyncStorage.setItem("systemColorSchemeFlag", "true");
