@@ -1,11 +1,16 @@
 import React from "react";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { ThemeContext } from "@components/ThemeProvider";
+import { FontSizeContext } from "@components/FontSizeProvider";
 import Header from "@components/Header";
 import ListItem from "@components/ListItem";
 
+let computeFS;
+
 export default function MainMenu({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
+  const { computeFontSize } = React.useContext(FontSizeContext);
+  computeFS = computeFontSize;
   const styles = resolveLocalStyles(computeTheme());
   return (
     <View>
@@ -75,7 +80,7 @@ const resolveLocalStyles = (theme) => {
     },
     paragraph: {
       color,
-      fontSize: 14,
+      fontSize: computeFS(14),
       fontWeight: "normal",
       margin: 5,
       textAlign: "center",
@@ -88,8 +93,8 @@ const resolveLocalStyles = (theme) => {
     title: {
       color: labelColor,
       fontFamily: "Ubuntu",
-      fontSize: 18,
-      lineHeight: 21,
+      fontSize: computeFS(18),
+      lineHeight: computeFS(21),
       marginBottom: 16,
       marginTop: 32,
       textAlign: "left",
