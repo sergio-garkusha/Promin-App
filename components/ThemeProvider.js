@@ -3,17 +3,17 @@ import { Appearance } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const initThemeState = {
-  isSys: null,
-  theme: "",
-  computeTheme: () => "",
+  isSys: true,
+  theme: "auto",
+  computeTheme: () => "auto",
   toggleTheme: (t) => null
 };
 
 export const ThemeContext = React.createContext(initThemeState);
 
 export default function ThemeProvider({ children }) {
-  const [colorScheme, setColorScheme] = React.useState("");
-  const [useSys, setUseSys] = React.useState(null);
+  const [colorScheme, setColorScheme] = React.useState(initThemeState.theme);
+  const [useSys, setUseSys] = React.useState(initThemeState.isSys);
 
   // [@TODO]: Need to create an exportable object with all colors to use in styles,
   // Instead of current cluncky computeTheme() + resolveStyles = (theme) => {} approach.
@@ -38,22 +38,26 @@ export default function ThemeProvider({ children }) {
       if (vals.length === 0) { // first run, no values were set
         AsyncStorage.setItem("userColorScheme", "auto");
         AsyncStorage.setItem("systemColorSchemeFlag", "true");
-        setColorScheme("auto");
-        setUseSys(true);
+      } else {
+        const [sys, scheme] = vals;
+        setUseSys(sys === "true" || false);
+        setColorScheme(scheme);
       }
     });
   }, []);
 
   React.useEffect(() => {
-    const sysColorSchemeListener = (e) => {
-      setColorScheme(e.colorScheme);
-    };
-    // [NB]: Appearance doesn't work properly on ANDROID
-    // [@TODO]: Fix this, see https://github.com/facebook/react-native/issues/28823 &
-    // https://stackoverflow.com/questions/65188658/react-native-appearance-addchangelistener-does-nothing
-    const listener = Appearance.addChangeListener(sysColorSchemeListener);
-    return () => listener.remove();
-  });
+    if (useSys) {
+      const sysColorSchemeListener = (e) => {
+        setColorScheme(e.colorScheme);
+      };
+      // [NB]: Appearance doesn't work properly on ANDROID
+      // [@TODO]: Fix this, see https://github.com/facebook/react-native/issues/28823 &
+      // https://stackoverflow.com/questions/65188658/react-native-appearance-addchangelistener-does-nothing
+      const listener = Appearance.addChangeListener(sysColorSchemeListener);
+      return () => listener.remove();
+    }
+  }, [useSys]);
 
   const persistSystem = (v) => {
     AsyncStorage.setItem("systemColorSchemeFlag", v.toString());
