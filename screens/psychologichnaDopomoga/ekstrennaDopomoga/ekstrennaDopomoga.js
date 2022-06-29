@@ -5,13 +5,10 @@ import { FontSizeContext } from "@components/FontSizeProvider";
 import Header from "@components/Header";
 import ListItem from "@components/ListItem";
 
-let computeFS;
-
 export default function EkstrennaDopomoga({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
-  computeFS = computeFontSize;
-  const styles = resolveLocalStyles(computeTheme());
+  const styles = resolveLocalStyles(computeTheme(), computeFontSize);
 
   return (
     <View>
