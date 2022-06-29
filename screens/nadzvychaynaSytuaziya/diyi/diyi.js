@@ -26,7 +26,7 @@ export default function Diyi({ navigation }) {
             <ListItem
               roundTop
               title="Вимкнули телебачення"
-              onPress={navigateAway}
+              onPress={()=>navigation.push("Telebachennya")}
             />
             <ListItem title="Повітряна тривога" onPress={navigateAway} />
             <ListItem title="Евакуація" onPress={navigateAway} />

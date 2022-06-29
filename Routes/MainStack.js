@@ -24,6 +24,7 @@ import Igry from "@screens/psychologichnaDopomoga/dytyni/dytuniScreens/igry";
 import Kontakty from "@screens/nadzvychaynaSytuaziya/kontakty/kontakty";
 
 import Diyi from "@screens/nadzvychaynaSytuaziya/diyi/diyi";
+import Telebachennya from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/telebachennya"
 
 const Stack = createStackNavigator();
 
@@ -62,6 +63,8 @@ function MainStack() {
 
       <Stack.Screen name="Kontakty" component={Kontakty} />
       <Stack.Screen name="Diyi" component={Diyi} />
+      <Stack.Screen name="Telebachennya" component={Telebachennya} />
+
     </Stack.Navigator>
   );
 }
