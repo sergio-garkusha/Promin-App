@@ -54,8 +54,8 @@ export default function ThemeProvider({ children }) {
       // [NB]: Appearance doesn't work properly on ANDROID
       // [@TODO]: Fix this, see https://github.com/facebook/react-native/issues/28823 &
       // https://stackoverflow.com/questions/65188658/react-native-appearance-addchangelistener-does-nothing
-      const listener = Appearance.addChangeListener(sysColorSchemeListener);
-      return () => listener.remove();
+      Appearance.addChangeListener(sysColorSchemeListener);
+      return () => Appearance.removeChangeListener(sysColorSchemeListener);
     }
   }, [useSys]);
 
