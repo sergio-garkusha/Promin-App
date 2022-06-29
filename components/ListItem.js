@@ -2,9 +2,14 @@ import React from "react";
 import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
 import caretLight from "@assets/caret_light_large.png";
 import { ThemeContext } from "@components/ThemeProvider";
+import { FontSizeContext } from "@components/FontSizeProvider";
+
+let computeFS;
 
 export default function ListItem(props) {
   const { computeTheme } = React.useContext(ThemeContext);
+  const { computeFontSize } = React.useContext(FontSizeContext);
+  computeFS = computeFontSize;
   const styles = resolveLocalStyles(computeTheme());
   return (
     <View style={props.padded && styles.padded}>
@@ -49,7 +54,7 @@ const resolveLocalStyles = (theme) => {
     },
     icon: {
       flex: 3,
-      fontSize: 19,
+      fontSize: computeFS(19),
       marginRight: 15,
       width: 20,
     },
@@ -72,7 +77,7 @@ const resolveLocalStyles = (theme) => {
       color,
       flex: 25,
       fontFamily: "Ubuntu",
-      fontSize: 17,
+      fontSize: computeFS(17),
       textAlign: "left",
     },
   });

@@ -1,13 +1,16 @@
 import React from "react";
 import { Text, View, ScrollView } from "react-native";
 import { ThemeContext } from "@components/ThemeProvider";
+import { FontSizeContext } from "@components/FontSizeProvider";
 import Bullet from "@components/Bullet";
 import Header from "@components/Header";
 import resolveStyles from "@styles/subpage";
 
 export default function Plach({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
-  const styles = resolveStyles(computeTheme());
+  const { computeFontSize } = React.useContext(FontSizeContext);
+  const styles = resolveStyles(computeTheme(), computeFontSize);
+
   return (
     <View>
       <Header backButton navigation={navigation} />

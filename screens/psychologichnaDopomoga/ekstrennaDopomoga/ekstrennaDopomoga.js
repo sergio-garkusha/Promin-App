@@ -1,11 +1,16 @@
 import React from "react";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { ThemeContext } from "@components/ThemeProvider";
+import { FontSizeContext } from "@components/FontSizeProvider";
 import Header from "@components/Header";
 import ListItem from "@components/ListItem";
 
+let computeFS;
+
 export default function EkstrennaDopomoga({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
+  const { computeFontSize } = React.useContext(FontSizeContext);
+  computeFS = computeFontSize;
   const styles = resolveLocalStyles(computeTheme());
 
   return (
@@ -15,7 +20,6 @@ export default function EkstrennaDopomoga({ navigation }) {
         <View style={styles.container}>
           <View style={{ padding: 20 }}>
             <Text style={styles.title}>Психологічна допомога:</Text>
-
             <ListItem
               roundTop
               title="Страх"
@@ -54,7 +58,7 @@ export default function EkstrennaDopomoga({ navigation }) {
   );
 }
 
-const resolveLocalStyles = (theme) => {
+const resolveLocalStyles = (theme, computeFS) => {
   const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
   const color = theme === "dark" ? "#848EB0" : "#666";
   return StyleSheet.create({
@@ -67,8 +71,8 @@ const resolveLocalStyles = (theme) => {
     title: {
       color,
       fontFamily: "Ubuntu",
-      fontSize: 18,
-      lineHeight: 21,
+      fontSize: computeFS(18),
+      lineHeight: computeFS(21),
       marginBottom: 16,
       marginTop: 32,
       textAlign: "left",
