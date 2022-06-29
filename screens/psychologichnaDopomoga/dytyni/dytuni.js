@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import { ThemeContext } from "@components/ThemeProvider";
+import { FontSizeContext } from "@components/FontSizeProvider";
 import Header from "@components/Header";
 import ListItem from "@components/ListItem";
 
@@ -11,7 +12,9 @@ const navigateAway = () => {
 
 export default function Dytuni({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
-  const styles = resolveLocalStyles(computeTheme());
+  const { computeFontSize } = React.useContext(FontSizeContext);
+  const styles = resolveLocalStyles(computeTheme(), computeFontSize);
+
   return (
     <View>
       <Header backButton navigation={navigation} />
@@ -35,7 +38,7 @@ export default function Dytuni({ navigation }) {
   );
 }
 
-const resolveLocalStyles = (theme) => {
+const resolveLocalStyles = (theme, computeFS) => {
   const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
   const color = theme === "dark" ? "#848EB0" : "#666";
   return StyleSheet.create({
@@ -49,7 +52,7 @@ const resolveLocalStyles = (theme) => {
       paddingTop: 110,
     },
     header: {
-      fontSize: 22,
+      fontSize: computeFS(22),
       fontWeight: "normal",
       margin: 5,
       textAlign: "center",
@@ -62,8 +65,8 @@ const resolveLocalStyles = (theme) => {
     title: {
       color,
       fontFamily: "Ubuntu",
-      fontSize: 18,
-      lineHeight: 21,
+      fontSize: computeFS(18),
+      lineHeight: computeFS(21),
       marginBottom: 16,
       marginTop: 32,
       textAlign: "left",

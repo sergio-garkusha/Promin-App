@@ -1,4 +1,5 @@
 import React from "react";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
 const DEFAULT = 1;
@@ -18,25 +19,33 @@ export const FontSizeContext = React.createContext(initFontSizeState);
 export default function FontSizeProvider({ children }) {
   const [coeff, setCoeff] = React.useState(initFontSizeState.coefficient);
 
-  // [@TODO]: Convert all fontSizes + lineHeights across the project as such:
-  // fontSize: 18, // ===> converts to computeFS(18),
-  // lineHeight: 21, // ===> computeFS(21) etc.
-
-  // [@TODO]: Add persistence to font size preferences
-  // React.useEffect(() => {
-  //   Promise.all([
-  //     AsyncStorage.getItem("..."),
-  //     ...
+  React.useEffect(() => {
+    AsyncStorage.getItem("userFontSize")
+      .then((val) => {
+        if (!val) { // first run, returs `null` when does't exist;
+          AsyncStorage.setItem("userFontSize", `${coeff}`);
+        } else {
+          setCoeff(Number(val));
+        }
+      });
+  }, []);
 
   const subtractSize = () => {
     if (coeff <= MIN) return;
     setCoeff(coeff - STEP);
-  }
+    AsyncStorage.setItem("userFontSize", `${coeff - STEP}`);
+  };
+
   const addSize = () => {
     if (coeff >= MAX) return;
     setCoeff(coeff + STEP);
-  }
-  const defaultSize = () => setCoeff(DEFAULT);
+    AsyncStorage.setItem("userFontSize", `${coeff + STEP}`);
+  };
+
+  const defaultSize = () => {
+    setCoeff(DEFAULT);
+    AsyncStorage.setItem("userFontSize", `${DEFAULT}`);
+  };
 
   const computeFontSize = (base) => {
     return base * coeff;

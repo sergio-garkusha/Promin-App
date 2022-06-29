@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, View, Image, ScrollView } from "react-native";
 import { ThemeContext } from "@components/ThemeProvider";
+import { FontSizeContext } from "@components/FontSizeProvider";
 import Bullet from "@components/Bullet";
 import Header from "@components/Header";
 import resolveStyles from "@styles/subpage";
@@ -10,7 +11,9 @@ import thumbs from "@assets/images/thumbs.png";
 
 export default function Stupor({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
-  const styles = resolveStyles(computeTheme());
+  const { computeFontSize } = React.useContext(FontSizeContext);
+  const styles = resolveStyles(computeTheme(), computeFontSize);
+
   return (
     <View>
       <Header backButton navigation={navigation} />

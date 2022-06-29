@@ -4,6 +4,7 @@ import { Text, View, StyleSheet, ScrollView } from "react-native";
 import FullLogo from "@components/FullLogo";
 import NextButton from "@components/NextButton";
 import { ThemeContext } from "@components/ThemeProvider";
+import { FontSizeContext } from "@components/FontSizeProvider";
 
 const topHalfHeight = responsiveHeight(50);
 
@@ -13,7 +14,8 @@ function WelcomeScreen({ navigation }) {
   };
 
   const { computeTheme } = React.useContext(ThemeContext);
-  const styles = resolveStyles(computeTheme());
+  const { computeFontSize } = React.useContext(FontSizeContext);
+  const styles = resolveStyles(computeTheme(), computeFontSize);
 
   return (
     <ScrollView>
@@ -41,7 +43,7 @@ function WelcomeScreen({ navigation }) {
   );
 }
 
-const resolveStyles = (theme) => {
+const resolveStyles = (theme, computeFS) => {
   const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
   const color = theme === "dark" ? "#FFF" : "#000";
 
@@ -54,9 +56,9 @@ const resolveStyles = (theme) => {
     paragraph: {
       color,
       fontFamily: "Ubuntu",
-      fontSize: 17,
+      fontSize: computeFS(17),
       fontStyle: "normal",
-      lineHeight: 24,
+      lineHeight: computeFS(24),
       marginBottom: 15,
       marginTop: 15,
       textAlign: "left",

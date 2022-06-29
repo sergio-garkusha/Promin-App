@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native";
 
-const resolveStyles = (theme) => {
+const resolveStyles = (theme, computeFS) => {
   const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
   const color = theme === "dark" ? "#FFF" : "#000";
 
@@ -14,7 +14,7 @@ const resolveStyles = (theme) => {
     header: {
       color,
       fontFamily: "Ubuntu_M",
-      fontSize: 25,
+      fontSize: computeFS(25),
       fontWeight: "normal",
       margin: 15,
       marginTop: 40,
@@ -23,7 +23,7 @@ const resolveStyles = (theme) => {
     header2: {
       color,
       fontFamily: "Ubuntu_M",
-      fontSize: 19,
+      fontSize: computeFS(19),
       fontWeight: "normal",
       margin: 15,
       textAlign: "left",
@@ -31,7 +31,7 @@ const resolveStyles = (theme) => {
     paragraph: {
       color,
       fontFamily: "Ubuntu",
-      fontSize: 17,
+      fontSize: computeFS(17),
       fontWeight: "normal",
       margin: 5,
       marginBottom: 15,

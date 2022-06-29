@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import Header from "@components/Header";
 import { ThemeContext } from "@components/ThemeProvider";
-
+import { FontSizeContext } from "@components/FontSizeProvider";
 import ListItem from "@components/ListItem";
 
 const navigateAway = () => {
@@ -12,7 +12,8 @@ const navigateAway = () => {
 
 export default function Techniky({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
-  const styles = resolveLocalStyles(computeTheme());
+  const { computeFontSize } = React.useContext(FontSizeContext);
+  const styles = resolveLocalStyles(computeTheme(), computeFontSize);
 
   return (
     <View>
@@ -35,7 +36,7 @@ export default function Techniky({ navigation }) {
   );
 }
 
-const resolveLocalStyles = (theme) => {
+const resolveLocalStyles = (theme, computeFS) => {
   const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
   const color = theme === "dark" ? "#848EB0" : "#666";
   return StyleSheet.create({
@@ -49,7 +50,7 @@ const resolveLocalStyles = (theme) => {
       paddingTop: 110,
     },
     header: {
-      fontSize: 22,
+      fontSize: computeFS(22),
       fontWeight: "normal",
       margin: 5,
       textAlign: "center",
@@ -57,9 +58,9 @@ const resolveLocalStyles = (theme) => {
     paragraph: {
       color,
       fontFamily: "Ubuntu",
-      fontSize: 17,
+      fontSize: computeFS(17),
       fontStyle: "normal",
-      lineHeight: 24,
+      lineHeight: computeFS(24),
       marginBottom: 25,
       marginTop: 15,
       textAlign: "left",
@@ -72,7 +73,7 @@ const resolveLocalStyles = (theme) => {
     title: {
       color,
       fontFamily: "Ubuntu_M",
-      fontSize: 25,
+      fontSize: computeFS(25),
       fontWeight: "normal",
       marginBottom: 15,
       marginTop: 40,
