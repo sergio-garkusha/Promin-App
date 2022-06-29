@@ -35,9 +35,9 @@ export default function ThemeProvider({ children }) {
       AsyncStorage.getItem("systemColorSchemeFlag"),
       AsyncStorage.getItem("userColorScheme")
     ]).then((vals) => {
-      if (vals.length === 0) { // first run, no values were set
-        AsyncStorage.setItem("userColorScheme", "auto");
+      if (!vals[0] && !vals[1]) { // first run, no values were set
         AsyncStorage.setItem("systemColorSchemeFlag", "true");
+        AsyncStorage.setItem("userColorScheme", "auto");
       } else {
         const [sys, scheme] = vals;
         setUseSys(sys === "true" || false);

@@ -1,7 +1,6 @@
 import React from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-
 const DEFAULT = 1;
 const STEP = 0.25;
 const MIN = 0.75;
