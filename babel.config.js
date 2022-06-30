@@ -14,6 +14,7 @@ module.exports = (api) => {
             "@Routes": "./Routes",
             "@screens": "./screens",
             "@styles": "./styles",
+            "@icons": "./icons"
           },
         },
       ],

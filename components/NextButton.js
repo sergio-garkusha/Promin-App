@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Image, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import { responsiveWidth } from "react-native-responsive-dimensions";
-import buttonNext from "@assets/button_next-large.png";
+import LetsGoButton from "@icons/LetsGoButton";
 
 export default function NextButton(props) {
   const buttonAspect = 294 / 204;
@@ -9,19 +9,16 @@ export default function NextButton(props) {
 
   if (props.widthPrecent) buttonWidth = responsiveWidth(props.widthPrecent);
   else buttonWidth = 96;
-  const buttonHeight = buttonWidth / buttonAspect;
+  const buttonHeight = buttonWidth / buttonAspect + 2;
 
   const marginTop = -buttonHeight / 2;
 
   return (
     <View style={[props.style, { marginTop, alignItems: "flex-end" }]}>
       <TouchableOpacity onPress={props.onPress}>
-        <Image
-          source={buttonNext}
-          style={{
-            width: buttonWidth,
-            height: buttonHeight,
-          }}
+        <LetsGoButton
+          width={buttonWidth}
+          height={buttonHeight}
         />
       </TouchableOpacity>
     </View>

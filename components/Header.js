@@ -1,14 +1,19 @@
 import React from "react";
-import { View, Image, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import { OverlayContext } from "@components/OverlayProvider";
-import backButton from "@assets/button_back_large.png";
-import headerLogo from "@assets/header_logo.png";
-import prefButton from "@assets/prefs_light.png";
+import { ThemeContext } from "@components/ThemeProvider";
 import Preferences from "./Preferences";
+import BackButton from "@icons/BackButton";
+import PagesLogo from "@icons/PagesLogo";
+import Prefs from "@icons/Prefs";
 
 export default function Header(props) {
   const [modalVisible, setModalVisible] = React.useState(false);
   const { toggleOverlay } = React.useContext(OverlayContext);
+  const { computeTheme } = React.useContext(ThemeContext);
+
+  const computedTheme = computeTheme();
+
   const toMainMenu = () => {
     if (props.navigation) {
       props.navigation.push("MainMenu");
@@ -19,6 +24,7 @@ export default function Header(props) {
       );
     }
   };
+
   const goBack = () => {
     if (props.navigation) {
       props.navigation.goBack();
@@ -34,22 +40,24 @@ export default function Header(props) {
     setModalVisible(true);
   };
 
-  const headerHeight = 70;
+  const headerHeight = 80;
 
-  const logoAspect = 264 / 243;
-  const logoWidth = 90;
-  const logoHeight = logoWidth / logoAspect;
-  const logoTop = headerHeight - logoHeight / 2;
+  // const logoAspect = 264 / 243;
+  const logoWidth = 132;
+  const logoHeight = 122 // logoWidth / logoAspect;
+  const logoTop = headerHeight - logoHeight / 2 + 21;
 
   const backAspect = 228 / 135;
   const backWidth = 70;
-  const backHeight = backWidth / backAspect;
+  const backHeight = backWidth / backAspect + 4;
   const backTop = headerHeight - backHeight / 2 - 1; // image is not even :(
 
   const prefAspect = 76 / 45;
   const prefWidth = 70;
-  const prefHeight = prefWidth / prefAspect;
-  const prefTop = headerHeight - prefHeight / 2;
+  const prefHeight = prefWidth / prefAspect + 4;
+  const prefTop = headerHeight - prefHeight / 2 - 1;
+
+  const prefThemeColor = computedTheme === "dark" ? "#18203A" : "#F3F3F3";
 
   return (
     <View
@@ -72,10 +80,7 @@ export default function Header(props) {
             style={{ marginTop: backTop, width: backWidth, height: backHeight }}
             onPress={goBack}
           >
-            <Image
-              source={backButton}
-              style={{ width: backWidth, height: backHeight }}
-            />
+            <BackButton prefThemeColor={prefThemeColor} width={backWidth} height={backHeight} />
           </TouchableOpacity>
         ) : (
           <View style={{ width: backWidth }} />
@@ -85,20 +90,14 @@ export default function Header(props) {
           style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}
           onPress={toMainMenu}
         >
-          <Image
-            source={headerLogo}
-            style={{ width: logoWidth, height: logoHeight }}
-          />
+          <PagesLogo width={logoWidth} height={logoHeight} />
         </TouchableOpacity>
 
         <TouchableOpacity
           style={{ marginTop: prefTop, width: prefWidth, height: prefHeight }}
           onPress={setPreferences}
         >
-          <Image
-            source={prefButton}
-            style={{ width: prefWidth, height: prefHeight }}
-          />
+          <Prefs width={prefWidth} height={prefHeight} prefThemeColor={prefThemeColor} />
         </TouchableOpacity>
       </View>
 
