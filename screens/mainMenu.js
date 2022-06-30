@@ -14,7 +14,7 @@ export default function MainMenu({ navigation }) {
   const styles = resolveLocalStyles(computeTheme());
   return (
     <View>
-      <Header navigation={navigation} />
+      <Header navigation={navigation} homeDisabled={true} />
       <ScrollView>
         <View style={styles.container}>
           <View style={{ padding: 20 }}>

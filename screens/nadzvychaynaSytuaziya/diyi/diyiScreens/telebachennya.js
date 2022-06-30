@@ -4,7 +4,6 @@ import { ThemeContext } from "/components/ThemeProvider";
 import Bullet from "/components/Bullet";
 import Header from "/components/Header";
 import resolveStyles from "/styles/subpage";
-import styles from "/components/Bullet"
 
 export default function Plach({ navigation }) {
   const { theme } = React.useContext(ThemeContext);
