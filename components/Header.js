@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TouchableOpacity } from "react-native";
+import { View, TouchableOpacity, TouchableHighlight } from "react-native";
 import { OverlayContext } from "/components/OverlayProvider";
 import { ThemeContext } from "/components/ThemeProvider";
 import Preferences from "./Preferences";
@@ -67,7 +67,7 @@ export default function Header(props) {
           marginBottom: 20,
           backgroundColor: "#5177ff",
           height: headerHeight,
-          position: "absolute",
+          position: "fixed",
           top: 0,
           width: "100%",
           zIndex: 100,
@@ -85,13 +85,21 @@ export default function Header(props) {
         ) : (
           <View style={{ width: backWidth }} />
         )}
-
-        <TouchableOpacity
-          style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}
-          onPress={toMainMenu}
-        >
-          <PagesLogo width={logoWidth} height={logoHeight} />
-        </TouchableOpacity>
+        
+        {props.homeDisabled ? 
+          (
+            <View style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}>
+              <PagesLogo width={logoWidth} height={logoHeight} />
+            </View>
+          ) : (
+            <TouchableHighlight
+              style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}
+              onPress={toMainMenu}
+            >
+              <PagesLogo width={logoWidth} height={logoHeight} />
+            </TouchableHighlight>
+          )
+        }
 
         <TouchableOpacity
           style={{ marginTop: prefTop, width: prefWidth, height: prefHeight }}
