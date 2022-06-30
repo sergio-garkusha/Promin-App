@@ -1,5 +1,5 @@
 import React from "react";
-import { Appearance } from "react-native";
+import { Appearance, Platform } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const initThemeState = {
@@ -54,8 +54,13 @@ export default function ThemeProvider({ children }) {
       // [NB]: Appearance doesn't work properly on ANDROID
       // [@TODO]: Fix this, see https://github.com/facebook/react-native/issues/28823 &
       // https://stackoverflow.com/questions/65188658/react-native-appearance-addchangelistener-does-nothing
-      Appearance.addChangeListener(sysColorSchemeListener);
-      return () => Appearance.removeChangeListener(sysColorSchemeListener);
+      if (Platform.OS === "web") {
+        Appearance.addChangeListener(sysColorSchemeListener);
+        return () => Appearance.removeChangeListener(sysColorSchemeListener);
+      } else {
+        const listener = Appearance.addChangeListener(sysColorSchemeListener);
+        return () => listener.remove();
+      }
     }
   }, [useSys]);
 

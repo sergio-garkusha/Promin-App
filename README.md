@@ -15,7 +15,7 @@
 [https://www.youtube.com/watch?v=DmRCrz111Vw](https://www.youtube.com/watch?v=DmRCrz111Vw&t=36s)
 
 -------
-### Run: 
+### Run:
 
 `npm install`
 
@@ -38,7 +38,7 @@ If you are developing a screen:
 - rename screen to what it needs to be (example: myScreen.js)
 - inside the screen file, name your screen like following: `export default function MyScreen() {`
 - in App.js, import your screen: `import MyScreen from './screens/myScreen'`
-- To display the screen on app launch, in App.js, `export default function App() {` function, return your imported component like in an example below: 
+- To display the screen on app launch, in App.js, `export default function App() {` function, return your imported component like in an example below:
 ```
 export default function App() {
   return (
@@ -135,7 +135,7 @@ You new need to navigate to your file directory by entering following command:
 If you got `cannot find path` error - do following:
 1. Make sure you are in `User` folder - run `pwd`. It will show you current directory - like `\Users\Documents`
 2. To go up in directory, use `cd ..` command, then run `pwd`
-3. Don't worry - you will get used to this soon and feel like a hacker:) 
+3. Don't worry - you will get used to this soon and feel like a hacker:)
 4. `cd` means `change directory`, `pwd` means `print working directory`, and `\` vs `/` usually don't matter.
 
 You can now skip opening VS code in last step, and just enter commands into command line.
@@ -154,6 +154,16 @@ If you get something like `'npm' is not recognized as the name ...` - it means y
 You are set! Now in Terminal, run commands from __Run__ section above
 
 --------
+
+### How to regenerate SVG icons
+
+At this point we have not many svg assets, so we can automate the creation of them a little bit via this tool [https://react-svgr.com](https://react-svgr.com/playground/?native=true). Just copy-paste and adjust accordingly.
+
+Full automation from the CLI (as shown below) is not possible at this point as well as it might not be needed.
+
+`npx @svgr/cli --out-dir icons -- assets/svg`
+
+SVGR docs: [https://react-svgr.com/docs/cli/](https://react-svgr.com/docs/cli/)
 
 ### Resources
 How to write styles for React Native

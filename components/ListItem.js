@@ -1,16 +1,16 @@
 import React from "react";
-import { Text, View, StyleSheet, TouchableOpacity, Image } from "react-native";
-import caretLight from "@assets/caret_light_large.png";
+import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 import { ThemeContext } from "@components/ThemeProvider";
 import { FontSizeContext } from "@components/FontSizeProvider";
-
-let computeFS;
+import Caret from "@icons/Caret";
 
 export default function ListItem(props) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
-  computeFS = computeFontSize;
-  const styles = resolveLocalStyles(computeTheme());
+  const computedTheme = computeTheme();
+  const styles = resolveLocalStyles(computedTheme, computeFontSize);
+  const caretColor = computedTheme === "dark" ? "#9AA3C5" : "#666";
+
   return (
     <View style={props.padded && styles.padded}>
       <View
@@ -23,14 +23,14 @@ export default function ListItem(props) {
         <TouchableOpacity style={styles.button} onPress={props.onPress}>
           {props.icon && <Text style={styles.icon}>{props.icon}</Text>}
           <Text style={styles.text}>{props.title}</Text>
-          <Image style={styles.caret} source={caretLight} />
+          <Caret style={styles.caret} prefThemeColor={caretColor} />
         </TouchableOpacity>
       </View>
     </View>
   );
 }
 
-const resolveLocalStyles = (theme) => {
+const resolveLocalStyles = (theme, computeFS) => {
   const backgroundColor = theme === "dark" ? "#27335A" : "#FFF";
   const color = theme === "dark" ? "#FFF" : "#000";
   return StyleSheet.create({

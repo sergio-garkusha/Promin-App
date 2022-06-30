@@ -1,11 +1,12 @@
 import React from "react";
-import { Modal, StyleSheet, Text, Pressable, View, Image } from "react-native";
+import { Modal, StyleSheet, Text, Pressable, View } from "react-native";
 import { OverlayContext } from "@components/OverlayProvider";
 import { ThemeContext } from "@components/ThemeProvider";
 import { FontSizeContext } from "@components/FontSizeProvider";
-import lightSwitch from "@assets/light_scheme_switch_light.png";
-import darkSwitch from "@assets/light_scheme_switch_dark.png";
-import autoSwitch from "@assets/scheme_auto_icon.png";
+
+import Sun from "@icons/Sun";
+import Moon from "@icons/Moon";
+import MoonSun from "@icons/MoonSun";
 
 const colorSchemeI18N = {
   light: "Світла",
@@ -19,11 +20,12 @@ const fontSizeI18N = {
   large: "Збільшений"
 };
 
-const colorSchemeIcons = [
-  darkSwitch,
-  lightSwitch,
-  autoSwitch,
-];
+const Icon = ({ idx, style, color }) => {
+  if (idx === 0) return <Sun style={style} prefThemeColor={color} />;
+  if (idx === 1) return <Moon style={style} prefThemeColor={color} />;
+  if (idx === 2) return <MoonSun style={style} prefThemeColor={color} />;
+  return null;
+};
 
 let computeFS;
 
@@ -82,7 +84,11 @@ function FontSizeButtons() {
 function ThemeButtons() {
   const { isSys, theme, toggleTheme } = React.useContext(ThemeContext);
   const { computeTheme } = React.useContext(ThemeContext);
-  const styles = resolveLocalStyles(computeTheme());
+  const computedTheme = computeTheme();
+  const styles = resolveLocalStyles(computedTheme);
+
+  const iconColor = "#5177FF";
+  const iconActiveColor = "#FFF";
 
   const switchTheme = (e, btn) => {
     toggleTheme(btn);
@@ -103,15 +109,23 @@ function ThemeButtons() {
       <View style={styles.colorSchemeButtonsRow}>
         {Object.keys(colorSchemeI18N).map((el, idx) => {
           const localStyles = [styles.schemeSwitch];
-          if (el === themeStateDisplayer())
+          let color = iconColor;
+          if (el === themeStateDisplayer()) {
             localStyles.push(styles.schemeSwitchActive);
+            color = iconActiveColor;
+          }
           return (
             <Pressable
               key={idx}
               style={localStyles}
               onPress={(e) => switchTheme(e, el)}
             >
-              <Image source={colorSchemeIcons[idx]} style={styles.buttonImage} />
+              <Icon
+                key={idx}
+                idx={idx}
+                style={styles.buttonImage}
+                color={color}
+              />
             </Pressable>
           )
         })}
@@ -163,7 +177,7 @@ const resolveLocalStyles = (theme) => {
       alignItems: "center",
       flex: 1,
       justifyContent: "space-evenly",
-      marginTop: "82%",
+      marginTop: "100%",
     },
     closeButton: {
       backgroundColor: closeBtnBG,
@@ -178,9 +192,9 @@ const resolveLocalStyles = (theme) => {
     },
     buttonImage: {
       alignSelf: "center",
-      height: 17,
-      marginTop: 18,
-      width: 17,
+      height: 24,
+      marginTop: 15,
+      width: 24,
     },
     centeredView: {
       alignItems: "center",
