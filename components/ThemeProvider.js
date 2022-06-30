@@ -25,7 +25,7 @@ export default function ThemeProvider({ children }) {
   //   backgroundColor: theme === "dark" ? "#27335A" : "#FFF",
   //   titleColor: theme === "dark" ? "#FFF" : "#000",
   // };
-  // import { borderColor, textColor } from "@components/ThemeProvider"
+  // import { borderColor, textColor } from "/components/ThemeProvider"
   // StyleSheet.create({button: {color: textColor}...
   // <View style={color: textColor}>...
 

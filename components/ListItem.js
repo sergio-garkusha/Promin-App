@@ -1,8 +1,8 @@
 import React from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
-import { ThemeContext } from "@components/ThemeProvider";
-import { FontSizeContext } from "@components/FontSizeProvider";
-import Caret from "@icons/Caret";
+import { ThemeContext } from "/components/ThemeProvider";
+import { FontSizeContext } from "/components/FontSizeProvider";
+import Caret from "/icons/Caret";
 
 export default function ListItem(props) {
   const { computeTheme } = React.useContext(ThemeContext);

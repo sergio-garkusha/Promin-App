@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
-import ListItem from "@components/ListItem";
+import ListItem from "/components/ListItem";
 
 const navigateAway = () => {
   // eslint-disable-next-line no-console

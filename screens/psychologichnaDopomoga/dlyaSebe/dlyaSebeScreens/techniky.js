@@ -1,9 +1,9 @@
 import React from "react";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
-import Header from "@components/Header";
-import { ThemeContext } from "@components/ThemeProvider";
-import { FontSizeContext } from "@components/FontSizeProvider";
-import ListItem from "@components/ListItem";
+import Header from "/components/Header";
+import { ThemeContext } from "/components/ThemeProvider";
+import { FontSizeContext } from "/components/FontSizeProvider";
+import ListItem from "/components/ListItem";
 
 const navigateAway = () => {
   // eslint-disable-next-line no-console

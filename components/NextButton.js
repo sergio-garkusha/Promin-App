@@ -1,7 +1,7 @@
 import React from "react";
 import { View, TouchableOpacity } from "react-native";
 import { responsiveWidth } from "react-native-responsive-dimensions";
-import LetsGoButton from "@icons/LetsGoButton";
+import LetsGoButton from "/icons/LetsGoButton";
 
 export default function NextButton(props) {
   const buttonAspect = 294 / 204;

@@ -1,9 +1,9 @@
 import React from "react";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
-import { ThemeContext } from "@components/ThemeProvider";
-import { FontSizeContext } from "@components/FontSizeProvider";
-import Header from "@components/Header";
-import ListItem from "@components/ListItem";
+import { ThemeContext } from "/components/ThemeProvider";
+import { FontSizeContext } from "/components/FontSizeProvider";
+import Header from "/components/Header";
+import ListItem from "/components/ListItem";
 
 export default function EkstrennaDopomoga({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);

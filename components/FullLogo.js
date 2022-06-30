@@ -4,7 +4,7 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from "react-native-responsive-dimensions";
-import WelcomeLogo from "@icons/WelcomeLogo";
+import WelcomeLogo from "/icons/WelcomeLogo";
 
 export default function FullLogo(props) {
   const logoAspect = 408 / 615;

@@ -9,12 +9,7 @@ module.exports = (api) => {
         {
           root: ["./"],
           alias: {
-            "@assets": "./assets",
-            "@components": "./components",
-            "@Routes": "./Routes",
-            "@screens": "./screens",
-            "@styles": "./styles",
-            "@icons": "./icons"
+            "/": "./"
           },
         },
       ],

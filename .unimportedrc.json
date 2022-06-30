@@ -23,23 +23,23 @@
         "node_modules", ".expo"
     ],
     "aliases": {
-        "@assets/*": [
+        "/assets/*": [
             "./assets",
             "./assets/*"
         ],
-        "@components/*": [
+        "/components/*": [
             "./components",
             "./components/*"
         ],
-        "@Routes/*": [
+        "/Routes/*": [
             "./Routes",
             "./Routes"
         ],
-        "@screens/*": [
+        "/screens/*": [
             "./screens",
             "./screens/*"
         ],
-        "@styles/*": [
+        "/styles/*": [
             "./styles",
             "./styles/*"
         ]

@@ -1,11 +1,11 @@
 import React from "react";
 import { View, TouchableOpacity } from "react-native";
-import { OverlayContext } from "@components/OverlayProvider";
-import { ThemeContext } from "@components/ThemeProvider";
+import { OverlayContext } from "/components/OverlayProvider";
+import { ThemeContext } from "/components/ThemeProvider";
 import Preferences from "./Preferences";
-import BackButton from "@icons/BackButton";
-import PagesLogo from "@icons/PagesLogo";
-import Prefs from "@icons/Prefs";
+import BackButton from "/icons/BackButton";
+import PagesLogo from "/icons/PagesLogo";
+import Prefs from "/icons/Prefs";
 
 export default function Header(props) {
   const [modalVisible, setModalVisible] = React.useState(false);

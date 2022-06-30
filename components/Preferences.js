@@ -1,12 +1,12 @@
 import React from "react";
 import { Modal, StyleSheet, Text, Pressable, View } from "react-native";
-import { OverlayContext } from "@components/OverlayProvider";
-import { ThemeContext } from "@components/ThemeProvider";
-import { FontSizeContext } from "@components/FontSizeProvider";
+import { OverlayContext } from "/components/OverlayProvider";
+import { ThemeContext } from "/components/ThemeProvider";
+import { FontSizeContext } from "/components/FontSizeProvider";
 
-import Sun from "@icons/Sun";
-import Moon from "@icons/Moon";
-import MoonSun from "@icons/MoonSun";
+import Sun from "/icons/Sun";
+import Moon from "/icons/Moon";
+import MoonSun from "/icons/MoonSun";
 
 const colorSchemeI18N = {
   light: "Світла",
