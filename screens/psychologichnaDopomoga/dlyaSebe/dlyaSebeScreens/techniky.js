@@ -24,11 +24,8 @@ export default function Techniky({ navigation }) {
             <Text style={styles.title}>Техніки самодопомоги</Text>
             <ListItem roundTop title="Дихальні вправи" onPress={navigateAway} />
             <ListItem title="Тілесні вправи" onPress={navigateAway} />
-            <ListItem
-              roundBottom
-              title="Когнітивні вправи"
-              onPress={navigateAway}
-            />
+            <ListItem title="Когнітивні вправи"onPress={navigateAway}/>
+            <ListItem roundBottom title="Релаксаційні вправи" onPress={navigateAway}/>
           </View>
         </View>
       </ScrollView>
