@@ -30,14 +30,10 @@ export default function Diyi({ navigation }) {
             />
             <ListItem title="Повітряна тривога" onPress={()=>navigation.push("Povitryana")} />
             <ListItem title="Евакуація" onPress={navigateAway} />
-            <ListItem
-              title="Вибухонебезпечні знахідки"
-              onPress={navigateAway}
-            />
-            <ListItem
-              roundBottom
-              title="Артилерійський обстріл"
-              onPress={navigateAway}
+            <ListItem title="Вибухонебезпечні знахідки" onPress={navigateAway}/>
+            <ListItem title="Застосування хімічної зброї" onPress={navigateAway}/>
+            
+            <ListItem roundBottom title="Артилерійський обстріл" onPress={navigateAway}
             />
           </View>
         </View>
