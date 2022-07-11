@@ -27,7 +27,7 @@ import Diyi from "/screens/nadzvychaynaSytuaziya/diyi/diyi";
 import Telebachennya from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/telebachennya"
 import Povitryana from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/povitryana"
 import VibuhonebezpechniZnahidki from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/VibuhonebezpechniZnahidki"
-import VibuhonebezpechniPredmeti from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/VibuhonebezpechniPredmeti"
+import VibuhonebezpechniPredmeti from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/VibuhonebezpechniZnahidki/VibuhonebezpechniPredmeti"
 
 const Stack = createStackNavigator();
 
