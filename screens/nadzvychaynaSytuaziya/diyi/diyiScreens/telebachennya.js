@@ -6,10 +6,11 @@ import Bullet from "/components/Bullet";
 import Header from "/components/Header";
 import resolveStyles from "/styles/subpage";
 
-export default function Strah({ navigation }) {
-  const { computeTheme } = React.useContext(ThemeContext);
+export default function Telebachennya({ navigation }) {
+ const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
+
 
   return (
     <View>
