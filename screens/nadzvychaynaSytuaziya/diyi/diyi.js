@@ -28,7 +28,7 @@ export default function Diyi({ navigation }) {
               title="Вимкнули телебачення"
               onPress={()=>navigation.push("Telebachennya")}
             />
-            <ListItem title="Повітряна тривога" onPress={navigateAway} />
+            <ListItem title="Повітряна тривога" onPress={()=>navigation.push("Povitryana")} />
             <ListItem title="Евакуація" onPress={navigateAway} />
             <ListItem
               title="Вибухонебезпечні знахідки"
