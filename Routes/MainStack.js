@@ -15,6 +15,7 @@ import Marennya from "/screens/psychologichnaDopomoga/ekstrennaDopomoga/ekstrenn
 import Perezbudzennya from "/screens/psychologichnaDopomoga/ekstrennaDopomoga/ekstrennaScreens/perezbudzennya";
 
 import DlyaSebe from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebe";
+import Shodenna from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/Shodenna";
   import Shvidkii from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Shvidkii";
   import Spokiine from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Spokiine";
   import VnutrishniiSad from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/VnutrishniiSad";
