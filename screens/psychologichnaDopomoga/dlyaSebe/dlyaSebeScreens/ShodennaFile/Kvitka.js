@@ -1,0 +1,54 @@
+Kvitka
+
+import React from "react";
+import { Text, View, ScrollView } from "react-native";
+import { ThemeContext } from "/components/ThemeProvider";
+import { FontSizeContext } from "/components/FontSizeProvider";
+import Bullet from "/components/Bullet";
+import Header from "/components/Header";
+import resolveStyles from "/styles/subpage";
+import ListItem from "/components/ListItem";
+
+export default function Kvitka({ navigation }) {
+  const { computeTheme } = React.useContext(ThemeContext);
+  const { computeFontSize } = React.useContext(FontSizeContext);
+  const styles = resolveStyles(computeTheme(), computeFontSize);
+  const navigateAway = () => {// eslint-disable-next-line no-console console.log("navigation");
+ };
+  
+ return (
+    <View>
+      <Header backButton navigation={navigation} />
+      <ScrollView>
+        <View style={styles.container}>
+          <Text style={styles.header}>Вправа “Квітка самопочуття”</Text>
+
+          <Text style={styles.header2}>Знати про свої внутрішні та зовнішні ресурси дуже важливо, щоб мати можливість використовувати їх, коли це необхідно.
+          </Text>
+          
+          <Text style={styles.header2}>Зіштовхнувшись із труднощами, навчіться негайно думати про те, який внутрішній чи зовнішній ресурс може допомогти Вам бути більш стійкими.
+          </Text>
+
+          <Bullet symbol="•" style={styles.paragraph}>
+          Створіть карту власних ресурсів добробуту, намалювавши квітку з сімома пелюстками.
+          </Bullet>
+
+          <Bullet symbol="•" style={styles.paragraph}>
+          Розфарбуйте кожну пелюстку квітки у свій улюблений колір. 
+          </Bullet>
+
+          <Bullet symbol="•" style={styles.paragraph}>
+          Далі позначте кожну пелюстку такими напрямками: Матеріальний, Соціальний, Духовний, Культурний, Розумовий, Емоційний,  Біологічний. Кожна пелюстка квітки представляє одну із областей Вашого особистого благополуччя. Вони представляють ті аспекти життя, де ми повинні відчувати себе здоровими та задоволеними.
+          </Bullet>
+
+          <Bullet symbol="•" style={styles.paragraph}>
+          Поміркуйте та запишіть приклади речей, людей або діяльності в кожному із семи напрямків, які дають Вам позитивне відчуття здорового та гарного самопочуття. Це квітка Вашого власного благополуччя.
+          </Bullet>
+
+          
+          <View style={styles.spacer} />
+        </View>
+      </ScrollView>
+    </View>
+  );
+}
