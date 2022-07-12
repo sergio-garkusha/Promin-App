@@ -28,17 +28,12 @@ export default function Diyi({ navigation }) {
               title="Вимкнули телебачення"
               onPress={()=>navigation.push("Telebachennya")}
             />
-            <ListItem title="Повітряна тривога" onPress={navigateAway} />
+            <ListItem title="Повітряна тривога" onPress={()=>navigation.push("Povitryana")} />
             <ListItem title="Евакуація" onPress={navigateAway} />
-            <ListItem
-              title="Вибухонебезпечні знахідки"
-              onPress={navigateAway}
-            />
-            <ListItem
-              roundBottom
-              title="Артилерійський обстріл"
-              onPress={navigateAway}
-            />
+            <ListItem title="Вибухонебезпечні знахідки" onPress={()=>navigation.push("VibuhonebezpechniZnahidki")}/>
+            <ListItem title="Застосування хімічної зброї" onPress={navigateAway}/>
+            
+            <ListItem roundBottom title="Артилерійський обстріл" onPress={navigateAway}/>
           </View>
         </View>
       </ScrollView>

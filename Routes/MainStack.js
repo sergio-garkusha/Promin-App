@@ -25,6 +25,9 @@ import Kontakty from "/screens/nadzvychaynaSytuaziya/kontakty/kontakty";
 
 import Diyi from "/screens/nadzvychaynaSytuaziya/diyi/diyi";
 import Telebachennya from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/telebachennya"
+import Povitryana from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/povitryana"
+import VibuhonebezpechniZnahidki from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/VibuhonebezpechniZnahidki"
+import VibuhonebezpechniPredmeti from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/VibuhonebezpechniZnahidki/VibuhonebezpechniPredmeti"
 
 const Stack = createStackNavigator();
 
@@ -64,6 +67,10 @@ function MainStack() {
       <Stack.Screen name="Kontakty" component={Kontakty} />
       <Stack.Screen name="Diyi" component={Diyi} />
       <Stack.Screen name="Telebachennya" component={Telebachennya} />
+      <Stack.Screen name="Povitryana" component={Povitryana} />
+      <Stack.Screen name="VibuhonebezpechniZnahidki" component={VibuhonebezpechniZnahidki} />
+      <Stack.Screen name="VibuhonebezpechniPredmeti" component={VibuhonebezpechniPredmeti} />
+      
 
     </Stack.Navigator>
   );
