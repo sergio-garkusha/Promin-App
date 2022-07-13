@@ -1,5 +1,3 @@
-Shvidkii
-
 import React from "react";
 import { Text, View, Image, ScrollView } from "react-native";
 import { ThemeContext } from "/components/ThemeProvider";
@@ -53,19 +51,18 @@ export default function Shvidkii({ navigation }) {
           Якщо щось смакує не так – коригуємо:
           </Bullet>
 
-----------SubBullet (needs space):
 
-          <Bullet symbol="•" style={styles.paragraph}>
-          є відчай – додаємо надії;
-          </Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>
-          паніку нейтралізуємо відвагою;
-          </Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>
-          багато смутку і болю – потребуємо співчуття…
+          <Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>
+            є відчай – додаємо надії;
+            </Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>
+            паніку нейтралізуємо відвагою;
+            </Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>багато смутку і болю – потребуємо співчуття…
+            </Bullet>
           </Bullet>
 
------------End of SubBullet
 
           <Bullet symbol="•" style={styles.paragraph}>
           Вживаємо.

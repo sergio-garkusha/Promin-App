@@ -1,5 +1,3 @@
-ChernoBilaCadr
-
 import React from "react";
 import { Text, View, ScrollView } from "react-native";
 import { ThemeContext } from "/components/ThemeProvider";
@@ -13,10 +11,9 @@ export default function ChernoBilaCadr({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-  const navigateAway = () => {// eslint-disable-next-line no-console console.log("navigation");
- };
   
- return (
+  
+  return (
     <View>
       <Header backButton navigation={navigation} />
       <ScrollView>

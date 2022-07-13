@@ -16,17 +16,18 @@ import Perezbudzennya from "/screens/psychologichnaDopomoga/ekstrennaDopomoga/ek
 
 import DlyaSebe from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebe";
 import Shodenna from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/Shodenna";
-  import Shvidkii from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Shvidkii";
-  import Spokiine from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Spokiine";
-  import VnutrishniiSad from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/VnutrishniiSad";
-  import VnutrishniiSeif from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/VnutrishniiSeif";
-  import CheroBilaFoto from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/CheroBilaFoto";
-  import ChernoBilaCadr from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/ChernoBilaCadr";
-  import Tehnika from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Tehnika";
-  import Kvitka from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Kvitka";
-  import YaMau from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/YaMau";
+// Shodenna ================>
+import Shvidkii from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Shvidkii";
+import Spokiine from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Spokiine";
+import VnutrishniiSad from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/VnutrishniiSad";
+import VnutrishniiSeif from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/VnutrishniiSeif";
+import CheroBilaFoto from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/CheroBilaFoto";
+import ChernoBilaCadr from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/ChernoBilaCadr";
+import Tehnika from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Tehnika";
+import Kvitka from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Kvitka";
+import YaMau from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/YaMau";
 import Techniky from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/techniky";
-
+//====================
 import Dytuni from "/screens/psychologichnaDopomoga/dytyni/dytuni";
 import AntyStrestres from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/antyStrestres";
 import Igry from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/igry";
@@ -69,17 +70,17 @@ function MainStack() {
 
       <Stack.Screen name="DlyaSebe" component={DlyaSebe} />
       <Stack.Screen name="Shodenna" component={Shodenna} />
-      
-        <Stack.Screen name="Shvidkii" component={Shvidkii} />
-        <Stack.Screen name="Spokiine" component={Spokiine} />
-        <Stack.Screen name="VnutrishniiSad" component={VnutrishniiSad} />
-        <Stack.Screen name="VnutrishniiSeif" component={VnutrishniiSeif} />
-        <Stack.Screen name="CheroBilaFoto" component={CheroBilaFoto} />
-        <Stack.Screen name="ChernoBilaCadr" component={ChernoBilaCadr} />
-        <Stack.Screen name="Tehnika" component={Tehnika} />
-        <Stack.Screen name="Kvitka" component={Kvitka} />
-        <Stack.Screen name="YaMau" component={YaMau} />
-
+      {/* Shodenna =====================> */}
+      <Stack.Screen name="Shvidkii" component={Shvidkii} />
+      <Stack.Screen name="Spokiine" component={Spokiine} />
+      <Stack.Screen name="VnutrishniiSad" component={VnutrishniiSad} />
+      <Stack.Screen name="VnutrishniiSeif" component={VnutrishniiSeif} />
+      <Stack.Screen name="CheroBilaFoto" component={CheroBilaFoto} />
+      <Stack.Screen name="ChernoBilaCadr" component={ChernoBilaCadr} />
+      <Stack.Screen name="Tehnika" component={Tehnika} />
+      <Stack.Screen name="Kvitka" component={Kvitka} />
+      <Stack.Screen name="YaMau" component={YaMau} />
+      {/*===================== */}  
 
       <Stack.Screen name="Techniky" component={Techniky} />
 

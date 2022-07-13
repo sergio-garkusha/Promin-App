@@ -12,8 +12,7 @@ export default function Shodenna({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-  const navigateAway = () => {// eslint-disable-next-line no-console console.log("navigation");
- };
+  
 
 
   return (
@@ -32,7 +31,7 @@ export default function Shodenna({ navigation }) {
              які направлені на підтримку в цей непростий, для кожного з нас, період. 
             </Text>
 
-            <Text style={styles.header2}>Практичні вправи </Text>
+            <Text style={styles.paragraph}>Практичні вправи </Text>
             
             <ListItem roundTop title="Швидкий рецепт психологічної стійкості" onPress={()=>navigation.push("Shvidkii")}/>
 
