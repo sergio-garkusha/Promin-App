@@ -42,17 +42,24 @@ import Dinalni from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/An
 //====================
 
 import Dytuni from "/screens/psychologichnaDopomoga/dytyni/dytuni";
+// Dytuni ================>
 import AntyStrestres from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/antyStrestres";
 import Igry from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/igry";
+import Chasti from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/Chasti";
+import Multfilmi from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/Multfilmi";
+//====================
 
 import Kontakty from "/screens/nadzvychaynaSytuaziya/kontakty/kontakty";
 
 import Diyi from "/screens/nadzvychaynaSytuaziya/diyi/diyi";
-import Telebachennya from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/telebachennya"
-import Povitryana from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/povitryana"
+// Dytuni ================>
+import Telebachennya from "/screens/nadzvychaynaSytuaziya/diyi/diyiScreens/telebachennya"
+import Povitryana from "/screens/nadzvychaynaSytuaziya/diyi/diyiScreens/povitryana"
 import VibuhonebezpechniZnahidki from "/screens/nadzvychaynaSytuaziya/diyi/diyiScreens/VibuhonebezpechniZnahidki"
 import VibuhonebezpechniPredmeti from "/screens/nadzvychaynaSytuaziya/diyi/diyiScreens/VibuhonebezpechniZnahidki/VibuhonebezpechniPredmeti"
 
+
+//====================
 const Stack = createStackNavigator();
 
 // To set a test screen to be first, add below property to Stack.Navigator. TODO: PROD: remove that property
@@ -110,8 +117,12 @@ function MainStack() {
       <Stack.Screen name="Techniky" component={Techniky} />
 
       <Stack.Screen name="Dytuni" component={Dytuni} />
+      {/* Dytuni =====================> */}
       <Stack.Screen name="AntyStrestres" component={AntyStrestres} />
       <Stack.Screen name="Igry" component={Igry} />
+      <Stack.Screen name="Chasti" component={Chasti} />
+      <Stack.Screen name="Multfilmi" component={Multfilmi} />
+      {/*===================== */}  
 
       <Stack.Screen name="Kontakty" component={Kontakty} />
       <Stack.Screen name="Diyi" component={Diyi} />
