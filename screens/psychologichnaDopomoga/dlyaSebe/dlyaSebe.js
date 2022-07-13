@@ -37,7 +37,7 @@ export default function DlyaSebe({ navigation }) {
             <ListItem
               roundTop
               title="Щоденна турбота для себе"
-              onPress={navigateAway}
+              onPress={()=>navigation.push("Shodenna")}
             />
             <ListItem
               title="Техніки самодопомоги в моменті.."

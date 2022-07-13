@@ -113,23 +113,23 @@ export default function VibuhonebezpechniPredmeti({ navigation }) {
 
           <Text style={styles.header2}> Інші вибухонебезпечні предмети:</Text>
 
-          <Bullet symbol="-" style={styles.paragraph}>
+          <Bullet symbol="•" style={styles.paragraph}>
           Бойові ракети та їх фрагменти
           </Bullet>
 
-          <Bullet symbol="-" style={styles.paragraph}>
+          <Bullet symbol="•" style={styles.paragraph}>
           Авіаційні бомби
           </Bullet>
 
-          <Bullet symbol="-" style={styles.paragraph}>
+          <Bullet symbol="•" style={styles.paragraph}>
           Освітлювальні, імітаційні, спеціальні ракети
           </Bullet>
 
-          <Bullet symbol="-" style={styles.paragraph}>
+          <Bullet symbol="•" style={styles.paragraph}>
           Вибухові пакети та петарди, сигнальні ракети
           </Bullet>
           
-          <Bullet symbol="-" style={styles.paragraph}>
+          <Bullet symbol="•" style={styles.paragraph}>
           Димові гранати та шашки.         
           </Bullet>
           
