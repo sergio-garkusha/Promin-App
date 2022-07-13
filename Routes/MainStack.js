@@ -15,19 +15,32 @@ import Marennya from "/screens/psychologichnaDopomoga/ekstrennaDopomoga/ekstrenn
 import Perezbudzennya from "/screens/psychologichnaDopomoga/ekstrennaDopomoga/ekstrennaScreens/perezbudzennya";
 
 import DlyaSebe from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebe";
+// DlyaSebe ================>
 import Shodenna from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/Shodenna";
+import Antistresova from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/Antistresova";
+
+//====================
+
 // Shodenna ================>
-import Shvidkii from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Shvidkii";
-import Spokiine from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Spokiine";
-import VnutrishniiSad from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/VnutrishniiSad";
-import VnutrishniiSeif from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/VnutrishniiSeif";
-import CheroBilaFoto from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/CheroBilaFoto";
-import ChernoBilaCadr from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/ChernoBilaCadr";
-import Tehnika from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Tehnika";
-import Kvitka from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Kvitka";
-import YaMau from "../screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/YaMau";
+import Shvidkii from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Shvidkii";
+import Spokiine from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Spokiine";
+import VnutrishniiSad from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/VnutrishniiSad";
+import VnutrishniiSeif from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/VnutrishniiSeif";
+import CheroBilaFoto from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/CheroBilaFoto";
+import ChernoBilaCadr from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/ChernoBilaCadr";
+import Tehnika from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Tehnika";
+import Kvitka from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Kvitka";
+import YaMau from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/YaMau";
 import Techniky from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/techniky";
 //====================
+
+// Antistresova ================>
+import Tilesni from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/AntistresovaFile/Tilesni";
+import Relaksaciini from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/AntistresovaFile/Relaksaciini";
+import Kognitivni from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/AntistresovaFile/Kognitivni";
+import Dinalni from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/AntistresovaFile/Dinalni";
+//====================
+
 import Dytuni from "/screens/psychologichnaDopomoga/dytyni/dytuni";
 import AntyStrestres from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/antyStrestres";
 import Igry from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/igry";
@@ -37,8 +50,8 @@ import Kontakty from "/screens/nadzvychaynaSytuaziya/kontakty/kontakty";
 import Diyi from "/screens/nadzvychaynaSytuaziya/diyi/diyi";
 import Telebachennya from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/telebachennya"
 import Povitryana from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/povitryana"
-import VibuhonebezpechniZnahidki from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/VibuhonebezpechniZnahidki"
-import VibuhonebezpechniPredmeti from "../screens/nadzvychaynaSytuaziya/diyi/diyiScreens/VibuhonebezpechniZnahidki/VibuhonebezpechniPredmeti"
+import VibuhonebezpechniZnahidki from "/screens/nadzvychaynaSytuaziya/diyi/diyiScreens/VibuhonebezpechniZnahidki"
+import VibuhonebezpechniPredmeti from "/screens/nadzvychaynaSytuaziya/diyi/diyiScreens/VibuhonebezpechniZnahidki/VibuhonebezpechniPredmeti"
 
 const Stack = createStackNavigator();
 
@@ -69,7 +82,12 @@ function MainStack() {
       <Stack.Screen name="Perezbudzennya" component={Perezbudzennya} />
 
       <Stack.Screen name="DlyaSebe" component={DlyaSebe} />
+      {/* DlyaSebe =====================> */}
+      <Stack.Screen name="Antistresova" component={Antistresova} />
       <Stack.Screen name="Shodenna" component={Shodenna} />
+
+      {/*===================== */}  
+      
       {/* Shodenna =====================> */}
       <Stack.Screen name="Shvidkii" component={Shvidkii} />
       <Stack.Screen name="Spokiine" component={Spokiine} />
@@ -81,6 +99,13 @@ function MainStack() {
       <Stack.Screen name="Kvitka" component={Kvitka} />
       <Stack.Screen name="YaMau" component={YaMau} />
       {/*===================== */}  
+
+      {/* Antistresova =====================> */}
+      <Stack.Screen name="Tilesni" component={Tilesni} />
+      <Stack.Screen name="Relaksaciini" component={Relaksaciini} />
+      <Stack.Screen name="Kognitivni" component={Kognitivni} />
+      <Stack.Screen name="Dinalni" component={Dinalni} />
+       {/*===================== */}  
 
       <Stack.Screen name="Techniky" component={Techniky} />
 
