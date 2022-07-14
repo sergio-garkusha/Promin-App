@@ -46,7 +46,7 @@ export default function DlyaSebe({ navigation }) {
             <ListItem
               roundBottom
               title="Антистресова активність"
-              onPress={navigateAway}
+              onPress={() => navigateTo("Antistresova")}
             />
           </View>
         </View>
