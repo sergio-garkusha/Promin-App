@@ -7,9 +7,9 @@ import { FontSizeContext } from "/components/FontSizeProvider";
 import Bullet from "/components/Bullet";
 import Header from "/components/Header";
 import resolveStyles from "/styles/subpage";
-import head from "/assets/images/head.png";
-import two from "/assets/images/twoGuys.png";
-import thumbs from "/assets/images/thumbs.png";
+import Mini1 from "/assets/images/Mini1.jpg";
+import Mini2 from "/assets/images/Mini2.jpg";
+import Mini3 from "/assets/images/Mini3.jpg";
 
 export default function VibuhonebezpechniPredmeti({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
@@ -25,7 +25,7 @@ export default function VibuhonebezpechniPredmeti({ navigation }) {
 
 
           <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <Image source={thumbs} style={{ width: 490, height: 242 }} />
+            <Image source={Mini1} style={{ width: 342, height: 220 }} />
           </View>
 
           <Bullet symbol="1." style={styles.paragraph}>
@@ -61,7 +61,7 @@ export default function VibuhonebezpechniPredmeti({ navigation }) {
           </Bullet>
 
           <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <Image source={head} style={{ width: 490, height: 242 }} />
+            <Image source={Mini2} style={{ width: 342, height: 220 }} />
           </View>
 
           <Bullet symbol="1." style={styles.paragraph}>
@@ -91,8 +91,7 @@ export default function VibuhonebezpechniPredmeti({ navigation }) {
           </Bullet>
 
           <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <Image source={head} style={{ width: 286, height: 352 }} />
-            <Image source={two} style={{ width: 352, height: 652 }} />
+            <Image source={Mini3} style={{ width: 342, height: 220 }} />
           </View>
 
           <Bullet symbol="1." style={styles.paragraph}>
