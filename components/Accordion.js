@@ -63,7 +63,7 @@ export default function Accordion(props) {
       <Animated.View style={[styles.bodyPanel, {height: drawerAnim}]}>
         <View style={styles.divider}/>
         <View ref={textRef} style={{height:'auto'}}>
-          <Text style={styles.bodyText}>{props.text}</Text>
+          { props.children }
         </View>
       </Animated.View>
     </View>
