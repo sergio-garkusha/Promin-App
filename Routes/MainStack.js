@@ -43,10 +43,13 @@ import Dinalni from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/An
 
 import Dytuni from "/screens/psychologichnaDopomoga/dytyni/dytuni";
 // Dytuni ================>
-import AntyStrestres from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/antyStrestres";
+
 import Igry from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/igry";
-import Chasti from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/Chasti";
 import Multfilmi from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/Multfilmi";
+import Chasti from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/Chasti";
+
+import Diti from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/Diti";
+import Pidlitki from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/Pidlitki";
 //====================
 
 import Kontakty from "/screens/nadzvychaynaSytuaziya/kontakty/kontakty";
@@ -118,10 +121,13 @@ function MainStack() {
 
       <Stack.Screen name="Dytuni" component={Dytuni} />
       {/* Dytuni =====================> */}
-      <Stack.Screen name="AntyStrestres" component={AntyStrestres} />
+      
       <Stack.Screen name="Igry" component={Igry} />
-      <Stack.Screen name="Chasti" component={Chasti} />
       <Stack.Screen name="Multfilmi" component={Multfilmi} />
+      <Stack.Screen name="Chasti" component={Chasti} />
+
+      <Stack.Screen name="Diti" component={Diti} />
+      <Stack.Screen name="Pidlitki" component={Pidlitki} />
       {/*===================== */}  
 
       <Stack.Screen name="Kontakty" component={Kontakty} />

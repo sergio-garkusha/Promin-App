@@ -23,12 +23,17 @@ export default function Dytuni({ navigation }) {
           <View style={{ padding: 20 }}>
             <Text style={styles.title}>Дитині</Text>
 
-            <ListItem roundTop title="Ігри" onPress={navigateAway} />
+            <ListItem roundTop title="Ігри" onPress={() => navigation.push("Igry")}/>
 
             <ListItem title="Мультфільми" onPress={() => navigation.push("Multfilmi")}/>
-            <ListItem title="Антистресова активність" onPress={navigateAway} />
             
             <ListItem roundBottom title="Часті запитання" onPress={() => navigation.push("Chasti")}/>
+
+            <Text style={styles.poragroph}>Антистресова активність</Text>
+
+
+            <ListItem roundTop title="Діти" onPress={() => navigation.push("Diti")}/>
+            <ListItem roundBottom title="Підлітки" onPress={() => navigation.push("Pidlitki")}/>
           
           </View>
         </View>
