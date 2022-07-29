@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
-
 import ListItem from "/components/ListItem";
+import Accordion from "../../../../components/Accordion";
 
 const navigateAway = () => {
   // eslint-disable-next-line no-console
@@ -11,6 +11,9 @@ const navigateAway = () => {
 export default function Igry() {
   return (
     <ScrollView>
+      
+      
+
       <View style={styles.container}>
         <Text style={styles.paragraph}>Назад</Text>
         <Text style={styles.header}>Ігри </Text>
