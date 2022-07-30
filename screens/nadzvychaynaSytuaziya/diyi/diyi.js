@@ -23,17 +23,19 @@ export default function Diyi({ navigation }) {
           <View style={{ padding: 20 }}>
             <Text style={styles.title}>Надзвичайна ситуація - дії</Text>
 
-            <ListItem
-              roundTop
-              title="Вимкнули телебачення"
-              onPress={()=>navigation.push("Telebachennya")}
-            />
-            <ListItem title="Повітряна тривога" onPress={()=>navigation.push("Povitryana")} />
-            <ListItem title="Евакуація" onPress={navigateAway} />
-            <ListItem title="Вибухонебезпечні знахідки" onPress={()=>navigation.push("VibuhonebezpechniZnahidki")}/>
+            <text style={styles.paragraph}> Нас не готували до війни/кризи. Але ми вміємо просити та приймати 
+            допомогу. Звернись до підготовлених кваліфікованих спеціалістів. Користуйся порадами фахівців.
+            Разом ми вистоємо у надзвичайні часи</text>
+
+            <ListItem roundTop title="Повітряна тривога" onPress={()=>navigation.push("Povitryana")} />
+
+            <ListItem title="Артилерійський обстріл" onPress={navigateAway}/>
+            <ListItem title="Вимкнули телебачення" onPress={()=>navigation.push("Telebachennya")}/>
             <ListItem title="Застосування хімічної зброї" onPress={navigateAway}/>
-            
-            <ListItem roundBottom title="Артилерійський обстріл" onPress={navigateAway}/>
+            <ListItem title="Евакуація" onPress={navigateAway} />
+
+            <ListItem roundBottom title="Вибухонебезпечні знахідки" onPress={()=>navigation.push("VibuhonebezpechniZnahidki")}/>
+
           </View>
         </View>
       </ScrollView>
