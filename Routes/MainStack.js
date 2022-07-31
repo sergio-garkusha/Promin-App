@@ -31,7 +31,24 @@ import ChernoBilaCadr from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScr
 import Tehnika from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Tehnika";
 import Kvitka from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/Kvitka";
 import YaMau from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/ShodennaFile/YaMau";
-import Techniky from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/techniky";
+//====================
+
+// Self Help Ad Hoc ================>
+import Techniky from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/SelfHelpAdHoc/Techniky";
+
+import VidchuvaySvoeTilo from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/SelfHelpAdHoc/01-TilesniTech/01-VidchuvaySvoeTilo";
+import ObiymyMetelyka from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/SelfHelpAdHoc/01-TilesniTech/02-ObiymyMetelyka";
+import BilateraPopleskuvannya from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/SelfHelpAdHoc/01-TilesniTech/03-BilateraPopleskuvannya";
+import Desensetyzatsiya from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/SelfHelpAdHoc/01-TilesniTech/04-Desensetyzatsiya";
+
+import Stabilizatsiya from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/SelfHelpAdHoc/02-DyhalnyTech/01-Stabilizatsiya";
+import TryPyatSim from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/SelfHelpAdHoc/02-DyhalnyTech/02-TryPyatSim";
+
+import ZaVidchuttyamNih from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/SelfHelpAdHoc/03-ZazemlennyaTech/01-ZaVidchuttyamNih";
+import VPolozhenniLezhachy from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/SelfHelpAdHoc/03-ZazemlennyaTech/02-VPolozhenniLezhachy";
+import VRusy from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/SelfHelpAdHoc/03-ZazemlennyaTech/03-VRusy";
+import ZVidtvorennyamRytmu from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/SelfHelpAdHoc/03-ZazemlennyaTech/04-ZVidtvorennyamRytmu";
+import CherezAktyvnyDiyi from "/screens/psychologichnaDopomoga/dlyaSebe/dlyaSebeScreens/SelfHelpAdHoc/03-ZazemlennyaTech/05-CherezAktyvnyDiyi";
 //====================
 
 // Antistresova ================>
@@ -96,8 +113,8 @@ function MainStack() {
       <Stack.Screen name="Antistresova" component={Antistresova} />
       <Stack.Screen name="Shodenna" component={Shodenna} />
 
-      {/*===================== */}  
-      
+      {/*===================== */}
+
       {/* Shodenna =====================> */}
       <Stack.Screen name="Shvidkii" component={Shvidkii} />
       <Stack.Screen name="Spokiine" component={Spokiine} />
@@ -108,27 +125,42 @@ function MainStack() {
       <Stack.Screen name="Tehnika" component={Tehnika} />
       <Stack.Screen name="Kvitka" component={Kvitka} />
       <Stack.Screen name="YaMau" component={YaMau} />
-      {/*===================== */}  
+      {/*===================== */}
 
       {/* Antistresova =====================> */}
       <Stack.Screen name="Tilesni" component={Tilesni} />
       <Stack.Screen name="Relaksaciini" component={Relaksaciini} />
       <Stack.Screen name="Kognitivni" component={Kognitivni} />
       <Stack.Screen name="Dinalni" component={Dinalni} />
-       {/*===================== */}  
+      {/*===================== */}
 
+      {/* Self Help Ad Hoc ================> */}
       <Stack.Screen name="Techniky" component={Techniky} />
+      <Stack.Screen name="VidchuvaySvoeTilo" component={VidchuvaySvoeTilo} />
+      <Stack.Screen name="ObiymyMetelyka" component={ObiymyMetelyka} />
+      <Stack.Screen name="BilateraPopleskuvannya" component={BilateraPopleskuvannya} />
+      <Stack.Screen name="Desensetyzatsiya" component={Desensetyzatsiya} />
+      <Stack.Screen name="Stabilizatsiya" component={Stabilizatsiya} />
+      <Stack.Screen name="TryPyatSim" component={TryPyatSim} />
+      <Stack.Screen name="ZaVidchuttyamNih" component={ZaVidchuttyamNih} />
+      <Stack.Screen name="VPolozhenniLezhachy" component={VPolozhenniLezhachy} />
+      <Stack.Screen name="VRusy" component={VRusy} />
+      <Stack.Screen name="ZVidtvorennyamRytmu" component={ZVidtvorennyamRytmu} />
+      <Stack.Screen name="CherezAktyvnyDiyi" component={CherezAktyvnyDiyi} />
+      {/*===================== */}
 
       <Stack.Screen name="Dytuni" component={Dytuni} />
       {/* Dytuni =====================> */}
       
       <Stack.Screen name="Igry" component={Igry} />
       <Stack.Screen name="Multfilmi" component={Multfilmi} />
+
       <Stack.Screen name="Chasti" component={Chasti} />
 
       <Stack.Screen name="Diti" component={Diti} />
       <Stack.Screen name="Pidlitki" component={Pidlitki} />
       {/*===================== */}  
+
 
       <Stack.Screen name="Kontakty" component={Kontakty} />
       <Stack.Screen name="Diyi" component={Diyi} />
@@ -136,7 +168,7 @@ function MainStack() {
       <Stack.Screen name="Povitryana" component={Povitryana} />
       <Stack.Screen name="VibuhonebezpechniZnahidki" component={VibuhonebezpechniZnahidki} />
       <Stack.Screen name="VibuhonebezpechniPredmeti" component={VibuhonebezpechniPredmeti} />
-      
+
 
     </Stack.Navigator>
   );
