@@ -7,11 +7,6 @@ import ListItem from "/components/ListItem";
 import Accordion from "/components/Accordion";
 import Bullet from "/components/Bullet";
 
-// const navigateAway = () => {
-//   // eslint-disable-next-line no-console
-//   console.log("navigation");
-// };
-
 export default function Techniky({ navigation }) {
   const navigateTo = (destination) => {
     navigation.push(destination);
@@ -53,7 +48,6 @@ export default function Techniky({ navigation }) {
               <Bullet symbol="•" style={styles.paragraph}>
                 Тримайтеся подалі від катастрофічних думок (свідомо переключайте свої думки з катастрофічних),
                 не розмовляйте з думками яких ви “не запрошували” </Bullet>
-
             </Accordion>
 
             <Accordion title="Техніка роботи з тривожними переживаннями">
@@ -125,9 +119,6 @@ const resolveLocalStyles = (theme, computeFS) => {
     },
     container: {
       backgroundColor,
-      flex: 1,
-      justifyContent: "center",
-      paddingTop: 110,
     },
     header: {
       fontSize: computeFS(22),

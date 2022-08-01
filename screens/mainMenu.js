@@ -71,9 +71,6 @@ const resolveLocalStyles = (theme) => {
     },
     container: {
       backgroundColor,
-      flex: 1,
-      justifyContent: "center",
-      paddingTop: 110,
     },
     listGroup: {
       borderRadius: 12,

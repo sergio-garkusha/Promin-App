@@ -64,9 +64,6 @@ const resolveLocalStyles = (theme, computeFS) => {
     },
     container: {
       backgroundColor,
-      flex: 1,
-      justifyContent: "center",
-      paddingTop: 110,
     },
     header: {
       fontSize: computeFS(22),
