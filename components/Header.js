@@ -1,5 +1,5 @@
 import React from "react";
-import { View, TouchableOpacity, TouchableHighlight } from "react-native";
+import { View, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
 import { OverlayContext } from "/components/OverlayProvider";
 import { ThemeContext } from "/components/ThemeProvider";
 import Preferences from "./Preferences";
@@ -90,12 +90,11 @@ export default function Header(props) {
               <PagesLogo width={logoWidth} height={logoHeight} />
             </View>
           ) : (
-            <TouchableHighlight
-              style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}
-              onPress={toMainMenu}
-            >
-              <PagesLogo width={logoWidth} height={logoHeight} />
-            </TouchableHighlight>
+            <TouchableWithoutFeedback onPress={toMainMenu}>
+              <View style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}>
+                <PagesLogo width={logoWidth} height={logoHeight} />
+              </View>
+            </TouchableWithoutFeedback>
           )
         }
 
