@@ -61,9 +61,6 @@ const resolveLocalStyles = (theme, computeFS) => {
   return StyleSheet.create({
     container: {
       backgroundColor,
-      flex: 1,
-      justifyContent: "center",
-      paddingTop: 110,
     },
     title: {
       color,

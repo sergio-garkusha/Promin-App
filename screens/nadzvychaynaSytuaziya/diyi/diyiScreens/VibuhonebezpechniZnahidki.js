@@ -6,23 +6,20 @@ import Bullet from "/components/Bullet";
 import Header from "/components/Header";
 import resolveStyles from "/styles/subpage";
 import ListItem from "/components/ListItem";
-import Accordion from "../../../../components/Accordion";
+import Accordion from "/components/Accordion";
 
 export default function VibuhonebezpechniZnahidki({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-  const navigateAway = () => {// eslint-disable-next-line no-console console.log("navigation");
- };
-  
- return (
+  return (
     <View>
       <Header backButton navigation={navigation} />
       <ScrollView>
         <View style={styles.container}>
           <Text style={styles.header}>Вибухонебезпечні знахідки</Text>
 
-          <Accordion title= "Дії">
+          <Accordion title="Дії">
 
             <Text style={styles.paragraph}>1.Негайно повідомте чергові служби органів внутрішніх справ, цивільного захисту 101 або 102</Text>
             <Text style={styles.paragraph}>2.Заборонено:</Text>
@@ -39,18 +36,18 @@ export default function VibuhonebezpechniZnahidki({ navigation }) {
             <Text style={styles.paragraph}>5. Дочекайтеся прибуття фахівців, вкажіть місце знахідки та повідомте час її виявлення.</Text>
 
             <Text style={styles.header}>Пам’ятайте! </Text>
-            
-            <Text style={styles.paragraph}>Одна з основних причин нещасних випадків з вибуховими пристроями – грубе 
-            порушення елементарних правил безпеки.</Text>
-            <Text style={styles.paragraph}>Практично всі вибухові речовини отруйні, чутливі до механічних дій і 
-            нагрівання. Поводження з ними вимагає граничної уваги і обережності!</Text>
-            <Text style={styles.paragraph}>Розмінуванням, знешкодженням або знищенням вибухонебезпечних предметів 
-            займаються тільки підготовлені фахівці-сапери, допущені до цього виду робіт.</Text>
+
+            <Text style={styles.paragraph}>Одна з основних причин нещасних випадків з вибуховими пристроями – грубе
+              порушення елементарних правил безпеки.</Text>
+            <Text style={styles.paragraph}>Практично всі вибухові речовини отруйні, чутливі до механічних дій і
+              нагрівання. Поводження з ними вимагає граничної уваги і обережності!</Text>
+            <Text style={styles.paragraph}>Розмінуванням, знешкодженням або знищенням вибухонебезпечних предметів
+              займаються тільки підготовлені фахівці-сапери, допущені до цього виду робіт.</Text>
 
           </Accordion>
 
-          <ListItem roundTop roundBottom title="Вибухонебезпечні предмети" onPress={()=>navigation.push("VibuhonebezpechniPredmeti")}/>
-      
+          <ListItem roundTop roundBottom title="Вибухонебезпечні предмети" onPress={() => navigation.push("VibuhonebezpechniPredmeti")} />
+
 
           <View style={styles.spacer} />
         </View>
@@ -65,9 +62,6 @@ const resolveLocalStyles = (theme, computeFS) => {
   return StyleSheet.create({
     container: {
       backgroundColor,
-      flex: 1,
-      justifyContent: "center",
-      paddingTop: 110,
     },
     title: {
       color,

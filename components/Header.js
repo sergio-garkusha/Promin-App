@@ -67,8 +67,6 @@ export default function Header(props) {
           marginBottom: 20,
           backgroundColor: "#5177ff",
           height: headerHeight,
-          position: "fixed",
-          top: 0,
           width: "100%",
           zIndex: 100,
         },
@@ -85,8 +83,8 @@ export default function Header(props) {
         ) : (
           <View style={{ width: backWidth }} />
         )}
-        
-        {props.homeDisabled ? 
+
+        {props.homeDisabled ?
           (
             <View style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}>
               <PagesLogo width={logoWidth} height={logoHeight} />

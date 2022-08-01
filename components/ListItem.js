@@ -47,6 +47,7 @@ const resolveLocalStyles = (theme, computeFS) => {
       flex: 1,
       height: 15,
       width: 2,
+      marginRight: 8
     },
     container: {
       alignItems: "center",
@@ -55,7 +56,7 @@ const resolveLocalStyles = (theme, computeFS) => {
     icon: {
       flex: 3,
       fontSize: computeFS(19),
-      marginRight: 15,
+      marginRight: 16,
       width: 20,
     },
     padded: {

@@ -50,8 +50,6 @@ const resolveStyles = (theme, computeFS) => {
   return StyleSheet.create({
     container: {
       backgroundColor,
-      flex: 1,
-      justifyContent: "center",
     },
     paragraph: {
       color,
