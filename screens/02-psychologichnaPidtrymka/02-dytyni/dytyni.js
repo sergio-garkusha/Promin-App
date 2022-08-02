@@ -5,12 +5,7 @@ import { FontSizeContext } from "/components/FontSizeProvider";
 import Header from "/components/Header";
 import ListItem from "/components/ListItem";
 
-const navigateAway = () => {
-  // eslint-disable-next-line no-console
-  console.log("navigation");
-};
-
-export default function Dytuni({ navigation }) {
+export default function Dytyni({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveLocalStyles(computeTheme(), computeFontSize);
@@ -24,14 +19,10 @@ export default function Dytuni({ navigation }) {
             <Text style={styles.title}>Дитині</Text>
 
             <ListItem roundTop title="Ігри" onPress={() => navigation.push("Igry")} />
-
             <ListItem title="Мультфільми" onPress={() => navigation.push("Multfilmi")} />
-
             <ListItem roundBottom title="Часті запитання" onPress={() => navigation.push("Chasti")} />
 
             <Text style={styles.poragroph}>Антистресова активність</Text>
-
-
             <ListItem roundTop title="Діти" onPress={() => navigation.push("Diti")} />
             <ListItem roundBottom title="Підлітки" onPress={() => navigation.push("Pidlitki")} />
 

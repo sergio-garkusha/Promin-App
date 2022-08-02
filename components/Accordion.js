@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 import { StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
 import Collapsible from "react-native-collapsible";
 import { ThemeContext } from "/components/ThemeProvider";

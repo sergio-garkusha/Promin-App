@@ -11,10 +11,8 @@ export default function FullLogo(props) {
   let logoWidth;
 
   if (props.widthPercent)
-    // responsive
-    logoWidth = responsiveWidth(props.widthPercent);
-  // static
-  else logoWidth = 136;
+    logoWidth = responsiveWidth(props.widthPercent); // responsive
+  else logoWidth = 136; // static
 
   const logoHeight = 205 || logoWidth / logoAspect + 7;
   const logoMarginTop = (responsiveHeight(50) - logoHeight) / 2;

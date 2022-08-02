@@ -12,6 +12,7 @@ export default function MainMenu({ navigation }) {
   const { computeFontSize } = React.useContext(FontSizeContext);
   computeFS = computeFontSize;
   const styles = resolveLocalStyles(computeTheme());
+
   return (
     <View>
       <Header navigation={navigation} homeDisabled={true} />
@@ -27,7 +28,7 @@ export default function MainMenu({ navigation }) {
               onPress={() => navigation.push("EkstrennaDopomoga")}
             />
 
-            <Text style={styles.title}>Психічна підтримка</Text>
+            <Text style={styles.title}>Психологічна підтримка</Text>
             <ListItem
               icon="👩"
               roundTop
@@ -38,7 +39,7 @@ export default function MainMenu({ navigation }) {
               icon="👦"
               roundBottom
               title="Дитині"
-              onPress={() => navigation.push("Dytuni")}
+              onPress={() => navigation.push("Dytyni")}
             />
 
             <Text style={styles.title}>Надзвичайна ситуація</Text>
