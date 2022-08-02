@@ -37,7 +37,7 @@ export default function DlyaSebe({ navigation }) {
             <ListItem
               roundTop
               title="Щоденна турбота для себе"
-              onPress={()=>navigation.push("Shodenna")}
+              onPress={() => navigation.push("Shodenna")}
             />
             <ListItem
               title="Техніки самодопомоги в моменті.."
@@ -64,9 +64,6 @@ const resolveLocalStyles = (theme, computeFS) => {
     },
     container: {
       backgroundColor,
-      flex: 1,
-      justifyContent: "center",
-      paddingTop: 110,
     },
     header: {
       fontSize: computeFS(22),

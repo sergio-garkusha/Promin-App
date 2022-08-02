@@ -23,18 +23,18 @@ export default function Dytuni({ navigation }) {
           <View style={{ padding: 20 }}>
             <Text style={styles.title}>Дитині</Text>
 
-            <ListItem roundTop title="Ігри" onPress={() => navigation.push("Igry")}/>
+            <ListItem roundTop title="Ігри" onPress={() => navigation.push("Igry")} />
 
-            <ListItem title="Мультфільми" onPress={() => navigation.push("Multfilmi")}/>
-            
-            <ListItem roundBottom title="Часті запитання" onPress={() => navigation.push("Chasti")}/>
+            <ListItem title="Мультфільми" onPress={() => navigation.push("Multfilmi")} />
+
+            <ListItem roundBottom title="Часті запитання" onPress={() => navigation.push("Chasti")} />
 
             <Text style={styles.poragroph}>Антистресова активність</Text>
 
 
-            <ListItem roundTop title="Діти" onPress={() => navigation.push("Diti")}/>
-            <ListItem roundBottom title="Підлітки" onPress={() => navigation.push("Pidlitki")}/>
-          
+            <ListItem roundTop title="Діти" onPress={() => navigation.push("Diti")} />
+            <ListItem roundBottom title="Підлітки" onPress={() => navigation.push("Pidlitki")} />
+
           </View>
         </View>
       </ScrollView>
@@ -51,9 +51,6 @@ const resolveLocalStyles = (theme, computeFS) => {
     },
     container: {
       backgroundColor,
-      flex: 1,
-      justifyContent: "center",
-      paddingTop: 110,
     },
     header: {
       fontSize: computeFS(22),

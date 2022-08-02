@@ -23,18 +23,18 @@ export default function Diyi({ navigation }) {
           <View style={{ padding: 20 }}>
             <Text style={styles.title}>Надзвичайна ситуація - дії</Text>
 
-            <Text style={styles.paragraph}> Нас не готували до війни/кризи. Але ми вміємо просити та приймати 
-            допомогу. Звернись до підготовлених кваліфікованих спеціалістів. Користуйся порадами фахівців.
-            Разом ми вистоємо у надзвичайні часи</Text>
+            <Text style={styles.paragraph}> Нас не готували до війни/кризи. Але ми вміємо просити та приймати
+              допомогу. Звернись до підготовлених кваліфікованих спеціалістів. Користуйся порадами фахівців.
+              Разом ми вистоємо у надзвичайні часи</Text>
 
-            <ListItem roundTop title="Повітряна тривога" onPress={()=>navigation.push("Povitryana")} />
-
+            <ListItem roundTop title="Повітряна тривога" onPress={() => navigation.push("Povitryana")} />
             <ListItem title="Артилерійський обстріл" onPress={()=>navigation.push("Artileriickii")}/>
             <ListItem title="Вимкнули телебачення" onPress={()=>navigation.push("Telebachennya")}/>
             <ListItem title="Застосування хімічної зброї" onPress={()=>navigation.push("Zastosuvannya")}/>
             <ListItem title="Евакуація" onPress={()=>navigation.push("Evakuachiya")}/>
 
-            <ListItem roundBottom title="Вибухонебезпечні знахідки" onPress={()=>navigation.push("VibuhonebezpechniZnahidki")}/>
+
+            <ListItem roundBottom title="Вибухонебезпечні знахідки" onPress={() => navigation.push("VibuhonebezpechniZnahidki")} />
 
           </View>
         </View>
@@ -49,9 +49,6 @@ const resolveLocalStyles = (theme, computeFS) => {
   return StyleSheet.create({
     container: {
       backgroundColor,
-      flex: 1,
-      justifyContent: "center",
-      paddingTop: 110,
     },
     title: {
       color,
