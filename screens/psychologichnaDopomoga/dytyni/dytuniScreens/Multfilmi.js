@@ -39,7 +39,7 @@ export default function Multfilmi({ navigation }) {
           </Accordion>
 
           
-          {/* All Text files below need to be silver :36-44 */}
+          {/* All Text files below need to be silver :42-51 */}
           <Text style={styles.paragraph}>Що робити коли лунає сирена</Text>
 
           <Text style={styles.paragraph}>Руханка “РЕ”</Text>
