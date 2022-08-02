@@ -12,6 +12,7 @@ export default function VibuhonebezpechniZnahidki({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
+
   return (
     <View>
       <Header backButton navigation={navigation} />
@@ -20,16 +21,13 @@ export default function VibuhonebezpechniZnahidki({ navigation }) {
           <Text style={styles.header}>Вибухонебезпечні знахідки</Text>
 
           <Accordion title="Дії">
-
             <Text style={styles.paragraph}>1.Негайно повідомте чергові служби органів внутрішніх справ, цивільного захисту 101 або 102</Text>
             <Text style={styles.paragraph}>2.Заборонено:</Text>
-
-            <Bullet symbol="•" Style={styles.poragraph}>Наближатися до предмету;   </Bullet>
-            <Bullet symbol="•" Style={styles.poragraph}>Пересувати його або брати в руки; </Bullet>
+            <Bullet symbol="•" Style={styles.poragraph}>Наближатися до предмету;</Bullet>
+            <Bullet symbol="•" Style={styles.poragraph}>Пересувати його або брати в руки;</Bullet>
             <Bullet symbol="•" Style={styles.poragraph}>Розряджати, кидати, ударяти по ньому;</Bullet>
             <Bullet symbol="•" Style={styles.poragraph}>Розпалювати поряд багаття або кидати в нього предмет;</Bullet>
             <Bullet symbol="•" Style={styles.poragraph}>Приносити предмет до дому, у табір, школу.</Bullet>
-
 
             <Text style={styles.paragraph}>3. Відмітье підручними предметами місцезнаходження підозрілої знахідки. Не допускайте до знахідки інших людей.</Text>
             <Text style={styles.paragraph}>4. Припиніть всі види робіт в районі виявлення вибухонебезпечного предмету.</Text>
@@ -43,12 +41,14 @@ export default function VibuhonebezpechniZnahidki({ navigation }) {
               нагрівання. Поводження з ними вимагає граничної уваги і обережності!</Text>
             <Text style={styles.paragraph}>Розмінуванням, знешкодженням або знищенням вибухонебезпечних предметів
               займаються тільки підготовлені фахівці-сапери, допущені до цього виду робіт.</Text>
-
           </Accordion>
 
-          <ListItem roundTop roundBottom title="Вибухонебезпечні предмети" onPress={() => navigation.push("VibuhonebezpechniPredmeti")} />
-
-
+          <ListItem
+            roundTop
+            roundBottom
+            title="Вибухонебезпечні предмети"
+            onPress={() => navigation.push("VibuhonebezpechniPredmeti")}
+          />
           <View style={styles.spacer} />
         </View>
       </ScrollView>

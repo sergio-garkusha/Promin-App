@@ -9,13 +9,13 @@ import { FontSizeContext } from "/components/FontSizeProvider";
 const topHalfHeight = responsiveHeight(50);
 
 function WelcomeScreen({ navigation }) {
-  const toMainMenu = () => {
-    navigation.push("MainMenu");
-  };
-
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
+
+  const toMainMenu = () => {
+    navigation.push("MainMenu");
+  };
 
   return (
     <ScrollView>
@@ -26,7 +26,7 @@ function WelcomeScreen({ navigation }) {
 
         <NextButton onPress={toMainMenu} />
 
-        <View style={{ padding: 32, marginTop: 5 }}>
+        <View style={styles.bottomHalf}>
           <Text style={styles.paragraph}>👋 Вітаємо вас, любі!</Text>
           <Text style={styles.paragraph}>
             Промінь - це ваш кишеньковий довідник психологічної допомоги у
@@ -48,9 +48,7 @@ const resolveStyles = (theme, computeFS) => {
   const color = theme === "dark" ? "#FFF" : "#000";
 
   return StyleSheet.create({
-    container: {
-      backgroundColor,
-    },
+    container: { backgroundColor },
     paragraph: {
       color,
       fontFamily: "Ubuntu",
@@ -59,12 +57,17 @@ const resolveStyles = (theme, computeFS) => {
       lineHeight: computeFS(24),
       marginBottom: 15,
       marginTop: 15,
-      textAlign: "left",
+      textAlign: "left"
     },
     topHalf: {
       backgroundColor: "#5177ff",
-      height: topHalfHeight,
+      height: topHalfHeight
     },
+    bottomHalf: {
+      paddingTop: 12,
+      paddingLeft: 32,
+      paddingRight: 32
+    }
   });
 };
 

@@ -12,11 +12,8 @@
     }
   },
   "rules": {
-    "prettier/prettier": [
-      {
-        "endOfLine": "auto"
-      }
-    ],
+    "prettier/prettier": 1,
+    "no-absolute-path": false,
     "react/jsx-filename-extension": [
       1,
       {

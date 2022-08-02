@@ -5,14 +5,13 @@ import { FontSizeContext } from "/components/FontSizeProvider";
 import Bullet from "/components/Bullet";
 import Header from "/components/Header";
 import resolveStyles from "/styles/subpage";
-import ListItem from "/components/ListItem";
 
-export default function YaMau({ navigation }) {
+export default function YaMaiu({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-  
-  
+
+
   return (
     <View>
       <Header backButton navigation={navigation} />
@@ -22,7 +21,7 @@ export default function YaMau({ navigation }) {
 
           <Text style={styles.header2}>Час від часу корисно подумати про свої ресурси.
           </Text>
-          
+
           <Text style={styles.header2}>Робити це означає пам’ятати про свою стійкість і нагадувати про неї. Ця вправа для тих, кому може знадобитися розумовий заряд і нагадування про те, що мотивує Вас у повсякденному житті.
           </Text>
 
@@ -30,30 +29,30 @@ export default function YaMau({ navigation }) {
           </Text>
 
           <Bullet symbol="•" style={styles.paragraph}>
-          Спочатку широко розкрийте долоню і пальці. Покладіть руку на аркуш паперу і обведіть руку.
+            Спочатку широко розкрийте долоню і пальці. Покладіть руку на аркуш паперу і обведіть руку.
           </Bullet>
 
           <Bullet symbol="•" style={styles.paragraph}>
-          Напишіть одним пальцем «Я МАЮ» і перерахуйте імена, людей, зображення, місця, тварин, на яких ви можете покластися в підтримці.
+            Напишіть одним пальцем «Я МАЮ» і перерахуйте імена, людей, зображення, місця, тварин, на яких ви можете покластися в підтримці.
           </Bullet>
 
           <Bullet symbol="•" style={styles.paragraph}>
-          Напишіть «Я Є» на іншому пальці і напишіть те, чим ви пишаєтеся.
+            Напишіть «Я Є» на іншому пальці і напишіть те, чим ви пишаєтеся.
           </Bullet>
 
           <Bullet symbol="•" style={styles.paragraph}>
-          Напишіть на іншому пальці «Я МОЖУ» і напишіть навички, вміння, види діяльності, якими ви займаєтесь.
+            Напишіть на іншому пальці «Я МОЖУ» і напишіть навички, вміння, види діяльності, якими ви займаєтесь.
           </Bullet>
 
           <Bullet symbol="•" style={styles.paragraph}>
-          Напишіть на іншому пальці «Я БУДУ» і напишіть, що ви будете робити, щоб заспокоїти себе у важкі часи.
+            Напишіть на іншому пальці «Я БУДУ» і напишіть, що ви будете робити, щоб заспокоїти себе у важкі часи.
           </Bullet>
 
           <Bullet symbol="•" style={styles.paragraph}>
-          Поставте собі великий палець вгору (вподобайку) в кінці вправи!
+            Поставте собі великий палець вгору (вподобайку) в кінці вправи!
           </Bullet>
 
-          
+
           <View style={styles.spacer} />
         </View>
       </ScrollView>
