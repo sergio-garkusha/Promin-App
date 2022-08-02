@@ -55,11 +55,16 @@ import Pidlitki from "/screens/psychologichnaDopomoga/dytyni/dytuniScreens/Pidli
 import Kontakty from "/screens/nadzvychaynaSytuaziya/kontakty/kontakty";
 
 import Diyi from "/screens/nadzvychaynaSytuaziya/diyi/diyi";
-// Dytuni ================>
-import Telebachennya from "/screens/nadzvychaynaSytuaziya/diyi/diyiScreens/telebachennya"
+// Diyi ================>
 import Povitryana from "/screens/nadzvychaynaSytuaziya/diyi/diyiScreens/povitryana"
+import Artileriickii from "/screens/nadzvychaynaSytuaziya/diyi/diyiScreens/Artileriickii";
+import Telebachennya from "/screens/nadzvychaynaSytuaziya/diyi/diyiScreens/telebachennya"
+import Zastosuvannya from "/screens/nadzvychaynaSytuaziya/diyi/diyiScreens/Zastosuvannya";
+import Evakuachiya from "/screens/nadzvychaynaSytuaziya/diyi/diyiScreens/Evakuachiya";
 import VibuhonebezpechniZnahidki from "/screens/nadzvychaynaSytuaziya/diyi/diyiScreens/VibuhonebezpechniZnahidki"
 import VibuhonebezpechniPredmeti from "/screens/nadzvychaynaSytuaziya/diyi/diyiScreens/VibuhonebezpechniZnahidki/VibuhonebezpechniPredmeti"
+
+
 
 
 //====================
@@ -131,13 +136,19 @@ function MainStack() {
       {/*===================== */}  
 
       <Stack.Screen name="Kontakty" component={Kontakty} />
+
+
       <Stack.Screen name="Diyi" component={Diyi} />
-      <Stack.Screen name="Telebachennya" component={Telebachennya} />
+      {/* Dytuni =====================> */}
       <Stack.Screen name="Povitryana" component={Povitryana} />
+      <Stack.Screen name="Artileriickii" component={Artileriickii} />
+      <Stack.Screen name="Telebachennya" component={Telebachennya} />
+      <Stack.Screen name="Zastosuvannya" component={Zastosuvannya} />
+      <Stack.Screen name="Evakuachiya" component={Evakuachiya} />
       <Stack.Screen name="VibuhonebezpechniZnahidki" component={VibuhonebezpechniZnahidki} />
       <Stack.Screen name="VibuhonebezpechniPredmeti" component={VibuhonebezpechniPredmeti} />
       
-
+      {/*===================== */}  
     </Stack.Navigator>
   );
 }

@@ -29,10 +29,10 @@ export default function Diyi({ navigation }) {
 
             <ListItem roundTop title="Повітряна тривога" onPress={()=>navigation.push("Povitryana")} />
 
-            <ListItem title="Артилерійський обстріл" onPress={navigateAway}/>
+            <ListItem title="Артилерійський обстріл" onPress={()=>navigation.push("Artileriickii")}/>
             <ListItem title="Вимкнули телебачення" onPress={()=>navigation.push("Telebachennya")}/>
-            <ListItem title="Застосування хімічної зброї" onPress={navigateAway}/>
-            <ListItem title="Евакуація" onPress={navigateAway} />
+            <ListItem title="Застосування хімічної зброї" onPress={()=>navigation.push("Zastosuvannya")}/>
+            <ListItem title="Евакуація" onPress={()=>navigation.push("Evakuachiya")}/>
 
             <ListItem roundBottom title="Вибухонебезпечні знахідки" onPress={()=>navigation.push("VibuhonebezpechniZnahidki")}/>
 
