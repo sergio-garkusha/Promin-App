@@ -23,9 +23,9 @@ export default function Diyi({ navigation }) {
           <View style={{ padding: 20 }}>
             <Text style={styles.title}>Надзвичайна ситуація - дії</Text>
 
-            <text style={styles.paragraph}> Нас не готували до війни/кризи. Але ми вміємо просити та приймати 
+            <Text style={styles.paragraph}> Нас не готували до війни/кризи. Але ми вміємо просити та приймати 
             допомогу. Звернись до підготовлених кваліфікованих спеціалістів. Користуйся порадами фахівців.
-            Разом ми вистоємо у надзвичайні часи</text>
+            Разом ми вистоємо у надзвичайні часи</Text>
 
             <ListItem roundTop title="Повітряна тривога" onPress={()=>navigation.push("Povitryana")} />
 
