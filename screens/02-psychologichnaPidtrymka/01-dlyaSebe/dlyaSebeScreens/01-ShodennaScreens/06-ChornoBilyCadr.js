@@ -2,17 +2,14 @@ import React from "react";
 import { Text, View, ScrollView } from "react-native";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
-import Bullet from "/components/Bullet";
 import Header from "/components/Header";
 import resolveStyles from "/styles/subpage";
-import ListItem from "/components/ListItem";
 
-export default function ChernoBilaCadr({ navigation }) {
+export default function ChornoBilyCadr({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-  
-  
+
   return (
     <View>
       <Header backButton navigation={navigation} />

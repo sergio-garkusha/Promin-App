@@ -66,7 +66,8 @@ const resolveLocalStyles = (theme, computeFS) => {
     },
     divider: {
       height: 1,
-      backgroundColor: dividerColor
+      backgroundColor: dividerColor,
+      marginBottom: 15
     },
     body: {
       paddingLeft: 16,

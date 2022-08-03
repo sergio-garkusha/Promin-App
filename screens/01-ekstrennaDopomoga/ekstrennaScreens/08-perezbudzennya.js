@@ -58,18 +58,15 @@ export default function Perezbudzennya({ navigation }) {
           </Text>
 
           <ListItem
-            padded
             roundTop
             title="Нервове тремтіння"
             onPress={() => navigation.push("NervoveTremtinnya")}
           />
           <ListItem
-            padded
             title="Плач"
             onPress={() => navigation.push("Plach")}
           />
           <ListItem
-            padded
             roundBottom
             title="Aгресивну поведінку"
             onPress={() => navigation.push("Agresiya")}

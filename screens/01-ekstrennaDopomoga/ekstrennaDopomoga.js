@@ -69,7 +69,7 @@ const resolveLocalStyles = (theme, computeFS) => {
       lineHeight: computeFS(21),
       marginBottom: 16,
       marginTop: 32,
-      textAlign: "left",
+      textAlign: "left"
     },
   });
 };

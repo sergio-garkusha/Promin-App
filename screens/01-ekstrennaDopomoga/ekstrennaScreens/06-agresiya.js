@@ -51,15 +51,14 @@ export default function Agresiya({ navigation }) {
             Можна погасити агресію страхом покарання:
           </Bullet>
 
-          <Bullet>
+          <View style={styles.subBullet}>
             <Bullet symbol="а)" style={styles.paragraph}>
               якщо нема цілі отримати вигоду від агресивної поведінки;
             </Bullet>
             <Bullet symbol="б)" style={styles.paragraph}>
-              якщо покарання строге і є велика імовірність що воно буде
-              виконане.
+              якщо покарання строге і є велика імовірність що воно буде виконане.
             </Bullet>
-          </Bullet>
+          </View>
 
           <Bullet symbol="8." style={styles.paragraph}>
             Якщо не допомогти розгніваній людині це призведе до небезпечних
