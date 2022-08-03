@@ -5,11 +5,6 @@ import { FontSizeContext } from "/components/FontSizeProvider";
 import Header from "/components/Header";
 import ListItem from "/components/ListItem";
 
-const navigateAway = () => {
-  // eslint-disable-next-line no-console
-  console.log("navigation");
-};
-
 export default function DlyaSebe({ navigation }) {
   const navigateTo = (destination) => {
     navigation.push(destination);
@@ -24,31 +19,26 @@ export default function DlyaSebe({ navigation }) {
       <Header backButton navigation={navigation} />
       <ScrollView>
         <View style={styles.container}>
-          <View style={{ padding: 20 }}>
-            <Text style={styles.title}>Для Себе </Text>
-            <Text style={styles.paragraph}>
-              Ми сильні. Ми разом. Ми справимось. Допоможи собі у складні часи.
-              Турбуйся про себе плануючи поточні щоденні справи, тримай свою
-              психологічну стійкість на поготові завдяки технікам самодопомоги,
-              долай стрес активністю. Дослідження свідчать, що людська психіка
-              здатна здолати найскладніші перешкоди за умови підтримки та
-              піклування.
-            </Text>
-            <ListItem
-              roundTop
-              title="Щоденна турбота для себе"
-              onPress={() => navigation.push("Shodenna")}
-            />
-            <ListItem
-              title="Техніки самодопомоги в моменті.."
-              onPress={() => navigateTo("Techniky")}
-            />
-            <ListItem
-              roundBottom
-              title="Антистресова активність"
-              onPress={() => navigateTo("Antistresova")}
-            />
-          </View>
+          {/* <View style={{ padding: 20 }}> */}
+          <Text style={styles.title}>Для Себе</Text>
+          <Text style={styles.paragraph}>
+            Ми сильні. Ми разом. Ми впораємось. Допоможи собі у складні часи. Турбуйся про себе плануючи поточні щоденні справи, тримай свою психологічну стійкість на поготові завдяки технікам самодопомоги, долай стрес активністю.Дослідження свідчать, що людська психіка здатна здолати найскладніші перешкоди за умови підтримки та піклування.
+          </Text>
+          <ListItem
+            roundTop
+            title="Щоденна турбота для себе"
+            onPress={() => navigation.push("Shodenna")}
+          />
+          <ListItem
+            title="Техніки самодопомоги в моменті.."
+            onPress={() => navigateTo("Techniky")}
+          />
+          <ListItem
+            roundBottom
+            title="Антистресова активність"
+            onPress={() => navigateTo("Antistresova")}
+          />
+          {/* </View> */}
         </View>
       </ScrollView>
     </View>

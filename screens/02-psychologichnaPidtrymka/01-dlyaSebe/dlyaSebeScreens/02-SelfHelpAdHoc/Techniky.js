@@ -105,6 +105,7 @@ export default function Techniky({ navigation }) {
 
           </View>
         </View>
+        <View style={styles.spacer} />
       </ScrollView>
     </View>
   );

@@ -5,9 +5,6 @@ import { FontSizeContext } from "/components/FontSizeProvider";
 import Bullet from "/components/Bullet";
 import Header from "/components/Header";
 import resolveStyles from "/styles/subpage";
-import head from "/assets/images/head.png";
-import two from "/assets/images/twoGuys.png";
-import thumbs from "/assets/images/thumbs.png";
 
 export default function Shvidkii({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
@@ -21,7 +18,7 @@ export default function Shvidkii({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Швидкий рецепт психологічної стійкості</Text>
 
-          <Text style={styles.header2}> Цей «рецепт» спрямований на формування внутрішньої опори через усвідомлення можливості вистояти перед випробуваннями життя.</Text>
+          <Text style={styles.header2}>Цей «рецепт» спрямований на формування внутрішньої опори через усвідомлення можливості вистояти перед випробуваннями життя.</Text>
 
           <Text style={styles.header2}>Інгредієнти:</Text>
 
@@ -51,21 +48,19 @@ export default function Shvidkii({ navigation }) {
             Якщо щось смакує не так – коригуємо:
           </Bullet>
 
-
-          <Bullet>
+          <View style={styles.subBullet}>
             <Bullet symbol="-" style={styles.paragraph}>
-              є відчай – додаємо надії;
+              є відчай – додаємо надії
             </Bullet>
             <Bullet symbol="-" style={styles.paragraph}>
-              паніку нейтралізуємо відвагою;
+              паніку нейтралізуємо відвагою
             </Bullet>
             <Bullet symbol="-" style={styles.paragraph}>багато смутку і болю – потребуємо співчуття…
             </Bullet>
-          </Bullet>
-
+          </View>
 
           <Bullet symbol="•" style={styles.paragraph}>
-            Вживаємо.
+            Вживаємо!
           </Bullet>
 
           <Text style={styles.header2}>Підказки:</Text>

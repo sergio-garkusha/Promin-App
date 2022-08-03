@@ -18,7 +18,6 @@ import DlyaSebe from "/screens/02-psychologichnaPidtrymka/01-dlyaSebe/dlyaSebe";
 // DlyaSebe ================>
 import Shodenna from "/screens/02-psychologichnaPidtrymka/01-dlyaSebe/dlyaSebeScreens/Shodenna";
 import Antistresova from "/screens/02-psychologichnaPidtrymka/01-dlyaSebe/dlyaSebeScreens/Antistresova";
-
 //====================
 
 // Shodenna ================>
@@ -26,8 +25,8 @@ import Shvydkiy from "/screens/02-psychologichnaPidtrymka/01-dlyaSebe/dlyaSebeSc
 import Spokiyne from "/screens/02-psychologichnaPidtrymka/01-dlyaSebe/dlyaSebeScreens/01-ShodennaScreens/02-Spokiyne";
 import VnutrishnySad from "/screens/02-psychologichnaPidtrymka/01-dlyaSebe/dlyaSebeScreens/01-ShodennaScreens/03-VnutrishnySad";
 import VnutrishnySeif from "/screens/02-psychologichnaPidtrymka/01-dlyaSebe/dlyaSebeScreens/01-ShodennaScreens/04-VnutrishnySeif";
-import ChernoBileFoto from "/screens/02-psychologichnaPidtrymka/01-dlyaSebe/dlyaSebeScreens/01-ShodennaScreens/05-ChornoBileFoto";
-import ChernoBilaCadr from "/screens/02-psychologichnaPidtrymka/01-dlyaSebe/dlyaSebeScreens/01-ShodennaScreens/06-ChernoBilaCadr";
+import ChornoBileFoto from "/screens/02-psychologichnaPidtrymka/01-dlyaSebe/dlyaSebeScreens/01-ShodennaScreens/05-ChornoBileFoto";
+import ChornoBilyCadr from "/screens/02-psychologichnaPidtrymka/01-dlyaSebe/dlyaSebeScreens/01-ShodennaScreens/06-ChornoBilyCadr";
 import Tehnika from "/screens/02-psychologichnaPidtrymka/01-dlyaSebe/dlyaSebeScreens/01-ShodennaScreens/07-Tehnika";
 import Kvitka from "/screens/02-psychologichnaPidtrymka/01-dlyaSebe/dlyaSebeScreens/01-ShodennaScreens/08-Kvitka";
 import YaMaiu from "/screens/02-psychologichnaPidtrymka/01-dlyaSebe/dlyaSebeScreens/01-ShodennaScreens/09-YaMaiu";
@@ -118,8 +117,8 @@ export default function MainStack() {
       <Stack.Screen name="Spokiyne" component={Spokiyne} />
       <Stack.Screen name="VnutrishnySad" component={VnutrishnySad} />
       <Stack.Screen name="VnutrishnySeif" component={VnutrishnySeif} />
-      <Stack.Screen name="ChernoBileFoto" component={ChernoBileFoto} />
-      <Stack.Screen name="ChernoBilaCadr" component={ChernoBilaCadr} />
+      <Stack.Screen name="ChornoBileFoto" component={ChornoBileFoto} />
+      <Stack.Screen name="ChornoBilyCadr" component={ChornoBilyCadr} />
       <Stack.Screen name="Tehnika" component={Tehnika} />
       <Stack.Screen name="Kvitka" component={Kvitka} />
       <Stack.Screen name="YaMaiu" component={YaMaiu} />

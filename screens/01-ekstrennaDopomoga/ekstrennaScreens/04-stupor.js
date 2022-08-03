@@ -5,6 +5,8 @@ import { FontSizeContext } from "/components/FontSizeProvider";
 import Bullet from "/components/Bullet";
 import Header from "/components/Header";
 import resolveStyles from "/styles/subpage";
+
+// [@TODO]: Replace this images with proper ones
 import head from "/assets/images/head.png";
 import two from "/assets/images/twoGuys.png";
 import thumbs from "/assets/images/thumbs.png";
@@ -45,7 +47,7 @@ export default function Stupor({ navigation }) {
 
           <Bullet symbol="3." style={styles.paragraph}>
             Долоню вільної руки покладіть на грудну клітину постраждалої.
-            Підлаштуйте ритм свого дихання під дихання постраждалої.{" "}
+            Підлаштуйте ритм свого дихання під дихання постраждалої.
           </Bullet>
 
           <Bullet symbol="4." style={styles.paragraph}>

@@ -7,7 +7,7 @@ import BackButton from "/icons/BackButton";
 import PagesLogo from "/icons/PagesLogo";
 import Prefs from "/icons/Prefs";
 
-export default function Header(props) {
+export default function Header({ navigation, backButton, homeDisabled }) {
   const [modalVisible, setModalVisible] = React.useState(false);
   const { toggleOverlay } = React.useContext(OverlayContext);
   const { computeTheme } = React.useContext(ThemeContext);
@@ -15,34 +15,20 @@ export default function Header(props) {
   const computedTheme = computeTheme();
 
   const toMainMenu = () => {
-    if (props.navigation) {
-      props.navigation.push("MainMenu");
-    } else {
-      // eslint-disable-next-line no-console
-      console.log(
-        "please pass 'navigation={navigation}' prop to the header called from current screen"
-      );
-    }
+    navigation.push("MainMenu");
   };
 
   const goBack = () => {
-    if (props.navigation) {
-      props.navigation.goBack();
-    } else {
-      // eslint-disable-next-line no-console
-      console.log(
-        "please pass 'navigation={navigation}' prop to the header called from current screen"
-      );
-    }
+    navigation.goBack();
   };
+
   const setPreferences = () => {
     toggleOverlay(true);
     setModalVisible(true);
   };
 
-  const headerHeight = 80;
+  const headerHeight = 88;
 
-  // const logoAspect = 264 / 243;
   const logoWidth = 132;
   const logoHeight = 122 // logoWidth / logoAspect;
   const logoTop = headerHeight - logoHeight / 2 + 21;
@@ -61,30 +47,27 @@ export default function Header(props) {
 
   return (
     <View
-      style={[
-        props.style,
-        {
-          marginBottom: 20,
-          backgroundColor: "#5177ff",
-          height: headerHeight,
-          width: "100%",
-          zIndex: 100,
-        },
-      ]}
+      style={{
+        marginBottom: 20,
+        backgroundColor: "#5177ff",
+        height: headerHeight,
+        width: "100%",
+        zIndex: 100,
+      }}
     >
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-        {props.backButton ? (
+        {backButton ? (
           <TouchableOpacity
             style={{ marginTop: backTop, width: backWidth, height: backHeight }}
             onPress={goBack}
           >
-            <BackButton prefThemeColor={prefThemeColor} width={backWidth} height={backHeight} />
+            <BackButton prefThemeColor={prefThemeColor} />
           </TouchableOpacity>
         ) : (
           <View style={{ width: backWidth }} />
         )}
 
-        {props.homeDisabled ?
+        {homeDisabled ?
           (
             <View style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}>
               <PagesLogo width={logoWidth} height={logoHeight} />
@@ -99,7 +82,7 @@ export default function Header(props) {
         }
 
         <TouchableOpacity
-          style={{ marginTop: prefTop, width: prefWidth, height: prefHeight }}
+          style={{ marginTop: prefTop }}
           onPress={setPreferences}
         >
           <Prefs width={prefWidth} height={prefHeight} prefThemeColor={prefThemeColor} />
