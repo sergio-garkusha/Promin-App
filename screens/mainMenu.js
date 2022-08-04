@@ -24,7 +24,7 @@ export default function MainMenu({ navigation }) {
               icon="🚨"
               roundTop
               roundBottom
-              title="Екстренна психологічна допомога"
+              title="Екстрена психологічна допомога"
               onPress={() => navigation.push("EkstrennaDopomoga")}
             />
 
