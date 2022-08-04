@@ -10,7 +10,6 @@ export default function Kvitka({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-
   return (
     <View>
       <Header backButton navigation={navigation} />
@@ -33,7 +32,19 @@ export default function Kvitka({ navigation }) {
           </Bullet>
 
           <Bullet symbol="•" style={styles.paragraph}>
-            Далі позначте кожну пелюстку такими напрямками: Матеріальний, Соціальний, Духовний, Культурний, Розумовий, Емоційний,  Біологічний. Кожна пелюстка квітки представляє одну із областей Вашого особистого благополуччя. Вони представляють ті аспекти життя, де ми повинні відчувати себе здоровими та задоволеними.
+            Далі позначте кожну пелюстку такими напрямками:
+          </Bullet>
+          <View style={styles.subBullet}>
+            <Bullet symbol="-" style={styles.paragraph}>Матеріальний</Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>Соціальний</Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>Духовний</Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>Культурний</Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>Розумовий</Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>Емоційний</Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>Біологічний</Bullet>
+          </View>
+          <Bullet symbol="•" style={styles.paragraph}>
+            Кожна пелюстка квітки представляє одну із областей Вашого особистого благополуччя. Вони представляють ті аспекти життя, де ми повинні відчувати себе здоровими та задоволеними.
           </Bullet>
 
           <Bullet symbol="•" style={styles.paragraph}>

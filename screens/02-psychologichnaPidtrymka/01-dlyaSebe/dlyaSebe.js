@@ -6,7 +6,7 @@ import Header from "/components/Header";
 import ListItem from "/components/ListItem";
 
 export default function DlyaSebe({ navigation }) {
-  const navigateTo = (destination) => {
+  const goTo = (destination) => {
     navigation.push(destination);
   };
 
@@ -31,12 +31,12 @@ export default function DlyaSebe({ navigation }) {
           />
           <ListItem
             title="Техніки самодопомоги в моменті.."
-            onPress={() => navigateTo("Techniky")}
+            onPress={() => goTo("Techniky")}
           />
           <ListItem
             roundBottom
             title="Антистресова активність"
-            onPress={() => navigateTo("Antistresova")}
+            onPress={() => goTo("Antistresova")}
           />
           {/* </View> */}
         </View>

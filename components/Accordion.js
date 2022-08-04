@@ -41,7 +41,7 @@ const resolveLocalStyles = (theme, computeFS) => {
     accordion: {
       borderRadius: 12,
       backgroundColor: backgroundColor,
-      marginBottom: 3
+      marginBottom: 8
     },
     titleBox: {
       paddingLeft: 16,
@@ -52,6 +52,7 @@ const resolveLocalStyles = (theme, computeFS) => {
     },
     title: {
       fontSize: computeFS(17),
+      fontWeight: "bold",
       backgroundColor: backgroundColor,
       color,
       flex: 1

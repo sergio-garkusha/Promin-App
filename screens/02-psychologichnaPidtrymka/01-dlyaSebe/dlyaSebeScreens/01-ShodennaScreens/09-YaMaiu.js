@@ -10,8 +10,6 @@ export default function YaMaiu({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-
-
   return (
     <View>
       <Header backButton navigation={navigation} />
@@ -51,7 +49,6 @@ export default function YaMaiu({ navigation }) {
           <Bullet symbol="•" style={styles.paragraph}>
             Поставте собі великий палець вгору (вподобайку) в кінці вправи!
           </Bullet>
-
 
           <View style={styles.spacer} />
         </View>

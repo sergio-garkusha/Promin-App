@@ -83,7 +83,7 @@ export default function Shodenna({ navigation }) {
             </Bullet>
           </Accordion>
 
-          <Text style={styles.subsectionTitle}>Практичні вправи</Text>
+          <Text style={styles.sectionHeader}>Практичні вправи</Text>
           <ListItem
             roundTop
             title="Швидкий рецепт психологічної стійкості"
