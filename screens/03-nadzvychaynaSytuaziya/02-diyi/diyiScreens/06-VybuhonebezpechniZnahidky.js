@@ -2,53 +2,77 @@ import React from "react";
 import { Text, View, ScrollView } from "react-native";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
+import Accordion from "/components/Accordion";
 import Bullet from "/components/Bullet";
 import Header from "/components/Header";
-import resolveStyles from "/styles/subpage";
 import ListItem from "/components/ListItem";
-import Accordion from "/components/Accordion";
+import resolveStyles from "/styles/subpage";
 
 export default function VibuhonebezpechniZnahidki({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-
   return (
     <View>
       <Header backButton navigation={navigation} />
       <ScrollView>
         <View style={styles.container}>
           <Text style={styles.header}>Вибухонебезпечні знахідки</Text>
-
           <Accordion title="Дії">
-            <Text style={styles.paragraph}>1.Негайно повідомте чергові служби органів внутрішніх справ, цивільного захисту 101 або 102</Text>
-            <Text style={styles.paragraph}>2.Заборонено:</Text>
-            <Bullet symbol="•" Style={styles.poragraph}>Наближатися до предмету;</Bullet>
-            <Bullet symbol="•" Style={styles.poragraph}>Пересувати його або брати в руки;</Bullet>
-            <Bullet symbol="•" Style={styles.poragraph}>Розряджати, кидати, ударяти по ньому;</Bullet>
-            <Bullet symbol="•" Style={styles.poragraph}>Розпалювати поряд багаття або кидати в нього предмет;</Bullet>
-            <Bullet symbol="•" Style={styles.poragraph}>Приносити предмет до дому, у табір, школу.</Bullet>
+            <Bullet symbol="1." style={styles.paragraph}>
+              Негайно повідомте чергові служби органів внутрішніх справ, цивільного захисту 101 або 102
+            </Bullet>
+            <Bullet symbol="2." style={styles.paragraph}>Заборонено:</Bullet>
+            <View style={styles.subBullet}>
+              <Bullet symbol="•" style={styles.paragraph}>
+                Наближатися до предмету;
+              </Bullet>
+              <Bullet symbol="•" style={styles.paragraph}>
+                Пересувати його або брати в руки;
+              </Bullet>
+              <Bullet symbol="•" style={styles.paragraph}>
+                Розряджати, кидати, ударяти по ньому;
+              </Bullet>
+              <Bullet symbol="•" style={styles.paragraph}>
+                Розпалювати поряд багаття або кидати в нього предмет;
+              </Bullet>
+              <Bullet symbol="•" style={styles.paragraph}>
+                Приносити предмет до дому, у табір, школу.
+              </Bullet>
+            </View>
 
-            <Text style={styles.paragraph}>3. Відмітье підручними предметами місцезнаходження підозрілої знахідки. Не допускайте до знахідки інших людей.</Text>
-            <Text style={styles.paragraph}>4. Припиніть всі види робіт в районі виявлення вибухонебезпечного предмету.</Text>
-            <Text style={styles.paragraph}>5. Дочекайтеся прибуття фахівців, вкажіть місце знахідки та повідомте час її виявлення.</Text>
+            <Bullet symbol="3." style={styles.paragraph}>
+              Відмітье підручними предметами місцезнаходження підозрілої знахідки. Не допускайте до знахідки інших людей.
+            </Bullet>
+            <Bullet symbol="4." style={styles.paragraph}>
+              Припиніть всі види робіт в районі виявлення вибухонебезпечного предмету.
+            </Bullet>
+            <Bullet symbol="5." style={[styles.paragraph, { paddingBottom: 20 }]}>
+              Дочекайтеся прибуття фахівців, вкажіть місце знахідки та повідомте час її виявлення.
+            </Bullet>
 
-            <Text style={styles.header}>Пам’ятайте! </Text>
-
-            <Text style={styles.paragraph}>Одна з основних причин нещасних випадків з вибуховими пристроями – грубе
-              порушення елементарних правил безпеки.</Text>
-            <Text style={styles.paragraph}>Практично всі вибухові речовини отруйні, чутливі до механічних дій і
-              нагрівання. Поводження з ними вимагає граничної уваги і обережності!</Text>
-            <Text style={styles.paragraph}>Розмінуванням, знешкодженням або знищенням вибухонебезпечних предметів
-              займаються тільки підготовлені фахівці-сапери, допущені до цього виду робіт.</Text>
+            <Text style={styles.header2}>Пам’ятайте!</Text>
+            <Bullet symbol="•" style={styles.paragraph}>
+              Одна з основних причин нещасних випадків з вибуховими пристроями – грубе
+              порушення елементарних правил безпеки.
+            </Bullet>
+            <Bullet symbol="•" style={styles.paragraph}>
+              Практично всі вибухові речовини отруйні, чутливі до механічних дій і
+              нагрівання. Поводження з ними вимагає граничної уваги і обережності!
+            </Bullet>
+            <Bullet symbol="•" style={styles.paragraph}>
+              Розмінуванням, знешкодженням або знищенням вибухонебезпечних предметів
+              займаються тільки підготовлені фахівці-сапери, допущені до цього виду робіт.
+            </Bullet>
           </Accordion>
 
           <ListItem
             roundTop
-            roundBottom
             title="Вибухонебезпечні предмети"
-            onPress={() => navigation.push("VibuhonebezpechniPredmeti")}
+            onPress={() => navigation.push("VybuhonebezpechniPredmety")}
+            roundBottom
           />
+
           <View style={styles.spacer} />
         </View>
       </ScrollView>

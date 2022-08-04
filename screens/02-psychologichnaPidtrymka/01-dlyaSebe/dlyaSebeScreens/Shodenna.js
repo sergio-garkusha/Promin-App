@@ -13,7 +13,6 @@ export default function Shodenna({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-
   return (
     <View>
       <Header backButton navigation={navigation} />

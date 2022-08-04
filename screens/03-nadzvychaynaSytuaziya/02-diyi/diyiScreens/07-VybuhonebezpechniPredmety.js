@@ -14,8 +14,7 @@ export default function VybuhonebezpechniPredmety({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-  const imgStyles = { width: 342, height: 220 };
-
+  const imgStyles = { width: 342, height: 220, marginBottom: 20 };
   return (
     <View>
       <Header backButton navigation={navigation} />
@@ -26,6 +25,7 @@ export default function VybuhonebezpechniPredmety({ navigation }) {
           <View style={{ justifyContent: "center", alignItems: "center" }}>
             <Image source={Miny1} style={imgStyles} />
           </View>
+
           <Bullet symbol="1." style={styles.paragraph}>
             Осколочна мінометна міна
           </Bullet>
@@ -47,8 +47,8 @@ export default function VybuhonebezpechniPredmety({ navigation }) {
           <Bullet symbol="7." style={styles.paragraph}>
             Протипіхотна міна «ПМН» (фугасна)
           </Bullet>
-          <Bullet symbol="8." style={styles.paragraph}>
-            Протипіхотна міна «ПФМ – 1» (фугасна) {" "}
+          <Bullet symbol="8." style={[styles.paragraph, { marginBottom: 60 }]}>
+            Протипіхотна міна «ПФМ-1» (фугасна)
           </Bullet>
 
           <View style={{ justifyContent: "center", alignItems: "center" }}>
@@ -66,14 +66,20 @@ export default function VybuhonebezpechniPredmety({ navigation }) {
           <Bullet symbol="4." style={styles.paragraph}>
             Постріл гранатометний (осколковий боєприпас для підствольних гранатометів)
           </Bullet>
-          <Bullet symbol="5,6,7." style={styles.paragraph}>
-            Ручні гранати
+          <Bullet symbol="5." style={styles.paragraph}>
+            Ручна граната «РГО»
+          </Bullet>
+          <Bullet symbol="6." style={styles.paragraph}>
+            Ручна граната «Ф-1»
+          </Bullet>
+          <Bullet symbol="7." style={styles.paragraph}>
+            Ручна граната «РГД-5»
           </Bullet>
           <Bullet symbol="8." style={styles.paragraph}>
             Протипіхотна міна
           </Bullet>
-          <Bullet symbol="9." style={styles.paragraph}>
-            Гранатометний снаряд
+          <Bullet symbol="9." style={[styles.paragraph, { marginBottom: 60 }]}>
+            Гранатометний постріл
           </Bullet>
 
           <View style={{ justifyContent: "center", alignItems: "center" }}>
@@ -88,7 +94,7 @@ export default function VybuhonebezpechniPredmety({ navigation }) {
           <Bullet symbol="3." style={styles.paragraph}>
             Осколковий бойовий елемент
           </Bullet>
-          <Bullet symbol="4." style={styles.paragraph}>
+          <Bullet symbol="4." style={[styles.paragraph, { marginBottom: 60 }]}>
             Протитанкова кумулятивна міна
           </Bullet>
 
@@ -106,10 +112,10 @@ export default function VybuhonebezpechniPredmety({ navigation }) {
             Вибухові пакети та петарди, сигнальні ракети
           </Bullet>
           <Bullet symbol="•" style={styles.paragraph}>
-            Димові гранати та шашки.
+            Димові гранати та шашки
           </Bullet>
-          <View style={styles.spacer} />
 
+          <View style={styles.spacer} />
         </View>
       </ScrollView>
     </View>
