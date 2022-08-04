@@ -10,7 +10,6 @@ export default function Shvidkii({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-
   return (
     <View>
       <Header backButton navigation={navigation} />
@@ -80,13 +79,6 @@ export default function Shvidkii({ navigation }) {
           <Bullet symbol="•" style={styles.paragraph}>
             І пам’ятайте – це для усієї родини – і дітей, і дорослих!
           </Bullet>
-
-
-
-
-
-
-
 
           <View style={styles.spacer} />
         </View>

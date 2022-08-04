@@ -13,7 +13,6 @@ export default function Shodenna({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-
   return (
     <View>
       <Header backButton navigation={navigation} />
@@ -83,7 +82,7 @@ export default function Shodenna({ navigation }) {
             </Bullet>
           </Accordion>
 
-          <Text style={styles.subsectionTitle}>Практичні вправи</Text>
+          <Text style={styles.sectionHeader}>Практичні вправи</Text>
           <ListItem
             roundTop
             title="Швидкий рецепт психологічної стійкості"

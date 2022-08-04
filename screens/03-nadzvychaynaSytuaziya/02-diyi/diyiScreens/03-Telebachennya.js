@@ -10,19 +10,16 @@ export default function Telebachennya({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-
   return (
     <View>
       <Header backButton navigation={navigation} />
       <ScrollView>
         <View style={styles.container}>
           <Text style={styles.header}>Вимкнули телебачення</Text>
-
           <Text style={styles.header2}>
             Крім ефірного мовлення отримати безкоштовний доступ до українських
             телеканалів можна кількома способами:
           </Text>
-
           <Bullet symbol="1." style={styles.paragraph}>
             Через супутник. Українські телеканали розкодовані на супутнику. Це
             означає, що доступ до мовлення безкоштовний. Щоб дивитися

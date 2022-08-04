@@ -5,12 +5,11 @@ import { FontSizeContext } from "/components/FontSizeProvider";
 import Bullet from "/components/Bullet";
 import Header from "/components/Header";
 import resolveStyles from "/styles/subpage";
-// VidchuvaySvoeTilo
+
 export default function ContentPage({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-
   return (
     <View>
       <Header backButton navigation={navigation} />

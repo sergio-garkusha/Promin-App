@@ -3,7 +3,8 @@ import { StyleSheet } from "react-native";
 const resolveStyles = (theme, computeFS) => {
   const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
   const color = theme === "dark" ? "#FFF" : "#000";
-  const labelColor = theme === "dark" ? "#FFF" : "#666";
+  const sectHCol = theme === "dark" ? "#9AA3C5" : "#666";
+  const labelCol = theme === "dark" ? "#FFF" : "#666";
 
   const HEADER_SIZE = 88;
   const H1_TOP_MARGIN = 40;
@@ -21,15 +22,15 @@ const resolveStyles = (theme, computeFS) => {
       textAlign: "left"
     },
     header2: {
-      color: labelColor,
+      color: labelCol,
       fontFamily: "Ubuntu_M",
       fontSize: computeFS(19),
       fontWeight: "normal",
       marginBottom: 32,
       textAlign: "left"
     },
-    subsectionTitle: {
-      color,
+    sectionHeader: {
+      color: sectHCol,
       fontFamily: "Ubuntu",
       fontSize: computeFS(18),
       lineHeight: computeFS(21),

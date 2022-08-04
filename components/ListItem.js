@@ -39,7 +39,7 @@ const resolveLocalStyles = (theme, computeFS) => {
       flexDirection: "row",
       minHeight: 60,
       padding: 5,
-      paddingLeft: 10,
+      paddingLeft: 16,
       paddingRight: 10,
       width: "100%",
     },

@@ -8,6 +8,5 @@ export default function Bullet({ children, style }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-
   return <Text style={[styles.paragraph, style]}>{children}</Text>
 }
