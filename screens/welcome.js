@@ -5,6 +5,7 @@ import FullLogo from "/components/FullLogo";
 import NextButton from "/components/NextButton";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
+import Accordion from "../components/Accordion";
 
 const topHalfHeight = responsiveHeight(50);
 
@@ -25,6 +26,28 @@ function WelcomeScreen({ navigation }) {
         </View>
 
         <NextButton onPress={toMainMenu} />
+
+        <Accordion title="hehe">
+          <Text style={styles.bodyText}>
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+           Lorem ipsum dolor sit amet consectetur adapliscing elit. 
+          </Text>
+        </Accordion>
 
         <View style={{ padding: 32, marginTop: 5 }}>
           <Text style={styles.paragraph}>👋 Вітаємо вас, любі!</Text>

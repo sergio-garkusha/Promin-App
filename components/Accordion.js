@@ -4,9 +4,10 @@ import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import Caret from "/icons/Caret";
 
-export default function Accordion(props) {
+export default function accordion(props) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
+
   const computedTheme = computeTheme();
   const styles = resolveLocalStyles(computedTheme, computeFontSize);
   const caretColor = computedTheme === "dark" ? "#9AA3C5" : "#666";
@@ -20,8 +21,9 @@ export default function Accordion(props) {
   useEffect(() => {
     textRef.current.measure((fx, fy, width, height, px, py) => {
       textHeight.current = height
+      console.log("height:", height)
     });
-  });
+  }, []);
 
   const openDrawer = () => {
     Animated.timing(
@@ -52,13 +54,13 @@ export default function Accordion(props) {
   }
 
   return (
-    <View style={styles.accordeon}>
-      <View style={styles.headerPanel}>
-        <Text style={styles.headerText}>{props.title}</Text>
-        <TouchableOpacity style={styles.downIcon} onPress={toggleDrawer}>
+    <View style={styles.accordion}>
+      <TouchableOpacity style={styles.downIcon} onPress={toggleDrawer}>
+        <View style={styles.headerPanel}>
+          <Text style={styles.headerText}>{props.title}</Text>
           <Caret style={styles.caret} prefThemeColor={caretColor} />
-        </TouchableOpacity>
-      </View>
+        </View>
+      </TouchableOpacity>
       
       <Animated.View style={[styles.bodyPanel, {height: drawerAnim}]}>
         <View style={styles.divider}/>
@@ -77,7 +79,7 @@ const resolveLocalStyles = (theme, computeFS) => {
   const bodyFontSize = computeFS(17);
 
   return StyleSheet.create({
-    accordeon:{
+    accordion:{
       borderRadius:12,
       padding:4,
       backgroundColor: backgroundColor
