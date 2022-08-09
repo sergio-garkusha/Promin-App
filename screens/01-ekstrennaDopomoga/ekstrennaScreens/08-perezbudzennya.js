@@ -8,12 +8,12 @@ import ListItem from "/components/ListItem";
 import resolveStyles from "/styles/subpage";
 
 import Head from "/assets/images/head.jpg";
+import Zahvat from "/assets/images/zahvat-zzadu.jpg";
 
 export default function Perezbudzennya({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-
   return (
     <View>
       <Header backButton navigation={navigation} />
@@ -28,6 +28,10 @@ export default function Perezbudzennya({ navigation }) {
             просуньте руки під пахви постраждалого, притисніть його до себе і
             злегка перекиньте його на себе.
           </Bullet>
+
+          <View style={[styles.paragraph, { justifyContent: "center", alignItems: "center" }]}>
+            <Image source={Zahvat} style={{ width: 293, height: 300 }} />
+          </View>
 
           <Bullet symbol="2." style={styles.paragraph}>
             Ізолюйте постраждалого від оточуючих.
