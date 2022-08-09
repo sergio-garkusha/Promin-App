@@ -4,7 +4,14 @@ import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import Header from "/components/Header";
 import resolveStyles from "/styles/subpage";
+import { Video } from "expo-av";
 import Accordion from "/components/Accordion";
+
+import Syrena from "/assets/videos/01-syrena.mp4";
+import RE from "/assets/videos/02-re.mp4";
+import Nudno from "/assets/videos/03-nudno.mp4";
+import Neposeda from "/assets/videos/04-neposeda.mp4";
+import Strashno from "/assets/videos/05-strashno.mp4";
 
 export default function Multfilmi({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
@@ -33,19 +40,46 @@ export default function Multfilmi({ navigation }) {
             </Text>
           </Accordion>
 
-
           {/* All Text files below need to be silver :42-51 */}
-          <Text style={styles.paragraph}>Що робити коли лунає сирена</Text>
+          <Text style={styles.sectionHeader}>Що робити коли лунає сирена</Text>
+          <Video
+            style={{ height: 188 }}
+            resizeMode="contain"
+            source={Syrena}
+            useNativeControls
+          />
 
-          <Text style={styles.paragraph}>Руханка “РЕ”</Text>
+          <Text style={styles.sectionHeader}>Руханка “РЕ”</Text>
+          <Video
+            style={{ height: 188 }}
+            resizeMode="contain"
+            source={RE}
+            useNativeControls
+          />
 
-          <Text style={styles.paragraph}>Що робити колі тобі нудно</Text>
+          <Text style={styles.sectionHeader}>Що робити колі тобі нудно</Text>
+          <Video
+            style={{ height: 188 }}
+            resizeMode="contain"
+            source={Nudno}
+            useNativeControls
+          />
 
-          <Text style={styles.paragraph}>Гімнастика для тих кому складно сидіти на одному місці</Text>
+          <Text style={styles.sectionHeader}>Гімнастика для тих кому складно сидіти на одному місці</Text>
+          <Video
+            style={{ height: 188 }}
+            resizeMode="contain"
+            source={Neposeda}
+            useNativeControls
+          />
 
-          <Text style={styles.paragraph}>Що робити колі тобі страшно</Text>
-
-          {/* Between every text from :36 to 44 should be video(Multfilmi) */}
+          <Text style={styles.sectionHeader}>Що робити колі тобі страшно</Text>
+          <Video
+            style={{ height: 188 }}
+            resizeMode="contain"
+            source={Strashno}
+            useNativeControls
+          />
 
           <View style={styles.spacer} />
         </View>
