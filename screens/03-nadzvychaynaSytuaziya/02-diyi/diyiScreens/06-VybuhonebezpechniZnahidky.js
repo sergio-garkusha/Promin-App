@@ -86,6 +86,7 @@ const resolveLocalStyles = (theme, computeFS) => {
   return StyleSheet.create({
     container: {
       backgroundColor,
+      marginTop: 100
     },
     title: {
       color,

@@ -11,7 +11,7 @@ const resolveStyles = (theme, computeFS) => {
 
   return StyleSheet.create({
     accordeonTop: { marginLeft: 15, marginRight: 15 },
-    container: { backgroundColor, margin: 20 },
+    container: { backgroundColor, margin: 20, marginTop: 100 },
     header: {
       color,
       fontFamily: "Ubuntu_M",

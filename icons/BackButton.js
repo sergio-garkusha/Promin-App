@@ -3,14 +3,15 @@ import Svg, { Path } from "react-native-svg";
 
 export default (props) => (
   <Svg
-    width={props.width}
-    height={props.height}
+    width={150}
+    height={70}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    {...props}
   >
     <Path
-      fillRule="evenodd"
-      clipRule="evenodd"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
       d="M76 6a6 6 0 0 0-6-6H6a6 6 0 0 0-6 6v11a6 6 0 0 0 6 6h4c3.314 0 5.917 2.736 6.808 5.928C19.396 38.198 27.904 45 38 45s18.604-6.801 21.192-16.072C60.083 25.736 62.686 23 66 23h4a6 6 0 0 0 6-6V6Z"
       fill="#5177FF"
     />
