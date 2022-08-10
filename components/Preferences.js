@@ -176,8 +176,9 @@ const resolveLocalStyles = (theme) => {
     bottomedView: {
       alignItems: "center",
       flex: 1,
-      justifyContent: "space-evenly",
-      marginTop: "100%",
+      flexGrow: 1,
+      justifyContent: 'center',
+      flexDirection: 'column',
     },
     closeButton: {
       backgroundColor: closeBtnBG,
