@@ -6,9 +6,9 @@ import Bullet from "/components/Bullet";
 import Header from "/components/Header";
 import resolveStyles from "/styles/subpage";
 
-import Miny1 from "/assets/images/Mini1.jpg";
-import Miny2 from "/assets/images/Mini2.jpg";
-import Miny3 from "/assets/images/Mini3.jpg";
+import Miny1 from "/assets/images/Miny1.jpg";
+import Miny2 from "/assets/images/Miny2.jpg";
+import Miny3 from "/assets/images/Miny3.jpg";
 
 export default function VybuhonebezpechniPredmety({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);

@@ -6,16 +6,14 @@ import Bullet from "/components/Bullet";
 import Header from "/components/Header";
 import resolveStyles from "/styles/subpage";
 
-// [@TODO]: Replace this images with proper ones
-import head from "/assets/images/head.png";
-import two from "/assets/images/twoGuys.png";
-import thumbs from "/assets/images/thumbs.png";
+import Head from "/assets/images/head.jpg";
+import Thumbs from "/assets/images/thumbs.jpg";
+import Two from "/assets/images/twoPeople.jpg";
 
 export default function Stupor({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-
   return (
     <View>
       <Header backButton navigation={navigation} />
@@ -30,8 +28,8 @@ export default function Stupor({ navigation }) {
             пальці мають бути виставлені назовні.{" "}
           </Bullet>
 
-          <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <Image source={thumbs} style={{ width: 490, height: 242 }} />
+          <View style={[styles.paragraph, { justifyContent: "center", alignItems: "center" }]}>
+            <Image source={Thumbs} style={{ width: 293, height: 200 }} />
           </View>
 
           <Bullet symbol="2." style={styles.paragraph}>
@@ -40,9 +38,9 @@ export default function Stupor({ navigation }) {
             росту волосся і бровами, чітко над зіницями.
           </Bullet>
 
-          <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <Image source={head} style={{ width: 286, height: 352 }} />
-            <Image source={two} style={{ width: 352, height: 652 }} />
+          <View style={[styles.paragraph, { justifyContent: "center", alignItems: "center" }]}>
+            <Image source={Head} style={{ width: 293, height: 250 }} />
+            <Image source={Two} style={{ width: 293, height: 250 }} />
           </View>
 
           <Bullet symbol="3." style={styles.paragraph}>

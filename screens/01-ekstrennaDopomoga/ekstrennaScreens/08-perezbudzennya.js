@@ -6,13 +6,14 @@ import Bullet from "/components/Bullet";
 import Header from "/components/Header";
 import ListItem from "/components/ListItem";
 import resolveStyles from "/styles/subpage";
-import head from "/assets/images/head.png";
+
+import Head from "/assets/images/head.jpg";
+import Zahvat from "/assets/images/zahvat-zzadu.jpg";
 
 export default function Perezbudzennya({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
-
   return (
     <View>
       <Header backButton navigation={navigation} />
@@ -28,6 +29,10 @@ export default function Perezbudzennya({ navigation }) {
             злегка перекиньте його на себе.
           </Bullet>
 
+          <View style={[styles.paragraph, { justifyContent: "center", alignItems: "center" }]}>
+            <Image source={Zahvat} style={{ width: 293, height: 300 }} />
+          </View>
+
           <Bullet symbol="2." style={styles.paragraph}>
             Ізолюйте постраждалого від оточуючих.
           </Bullet>
@@ -39,8 +44,8 @@ export default function Perezbudzennya({ navigation }) {
             відбувається?” ).
           </Bullet>
 
-          <View style={{ justifyContent: "center", alignItems: "center" }}>
-            <Image source={head} style={{ width: 286, height: 352 }} />
+          <View style={[styles.paragraph, { justifyContent: "center", alignItems: "center" }]}>
+            <Image source={Head} style={{ width: 293, height: 250 }} />
           </View>
 
           <Bullet symbol="4." style={styles.paragraph}>
