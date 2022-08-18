@@ -279,9 +279,9 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
                 </>)}
               <ListItem
                 roundTop
-                icon="❤️"
+                icon="💗"
                 title="Про нас"
-                onPress={() => goTo("Strah")}
+                onPress={() => goTo("AboutUs")}
                 roundBottom
               />
               <ListItem
