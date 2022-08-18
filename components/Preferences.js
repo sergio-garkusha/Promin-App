@@ -194,7 +194,14 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
   const { computeTheme } = React.useContext(ThemeContext);
   const styles = resolveLocalStyles(computeTheme());
 
+  console.log(navigation)
+
   const goTo = (dest) => {
+    // close preferences
+    setModalVisible(!modalVisible);
+    toggleOverlay(false);
+
+    // navigate
     navigation.push(dest);
   };
 

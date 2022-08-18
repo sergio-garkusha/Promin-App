@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, View, StyleSheet, ScrollView } from "react-native";
+import { Text, View, StyleSheet, ScrollView, Image } from "react-native";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import Header from "/components/Header";
@@ -15,14 +15,16 @@ export default function AboutUs({ navigation }) {
 
   return (
     <ScrollView>
+      <Header navigation={navigation} />
+      
       <Text>Про нас</Text>
-        <ListItem style={styles.card}>
-            <Image source={Denys} style={photo} />
-            <View style={copy}>
+        <TouchableOpacity style={styles.card}>
+            <Image source={Denys} style={styles.photo} />
+            <View style={styles.copy}>
                 <Text>Hehe</Text>
                 <Text>Hehe</Text>
             </View>
-        </ListItem>
+        </TouchableOpacity>
     </ScrollView>
     )
 }
@@ -35,7 +37,8 @@ const resolveLocalStyles = (theme, computeFS) => {
             width:'90%', 
             padding:16, 
             backgroundColor:"rgba(10,20,30,0.3)", 
-            flexDirection: "row"
+            flexDirection: "row",
+            borderRadius: 10
         },
         photo:{
             width:64,
