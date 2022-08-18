@@ -90,6 +90,7 @@ export default function Header({ navigation, backButton, homeDisabled }) {
       </View>
 
       <Preferences
+        navigation
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
       />

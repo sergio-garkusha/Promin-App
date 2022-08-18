@@ -1,8 +1,13 @@
 import React from "react";
+import * as Device from "expo-device";
+import * as Linking from 'expo-linking';
+import { Share } from 'react-native';
+// import * as StoreReview from 'expo-store-review'; // Call to Review dep
 import { Modal, StyleSheet, Text, Pressable, View } from "react-native";
 import { OverlayContext } from "/components/OverlayProvider";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
+import ListItem from "/components/ListItem";
 
 import Sun from "/icons/Sun";
 import Moon from "/icons/Moon";
@@ -134,10 +139,99 @@ function ThemeButtons() {
   );
 }
 
-export default function Preferences({ modalVisible, setModalVisible }) {
+function isIOS() {
+  return Device.osName === "iOS"
+    || Device.osName === "iPadOS";
+}
+
+function isMobile() {
+  return Device.osName === "Android"
+    || Device.osName === "iOS"
+    || Device.osName === "iPadOS";
+}
+
+function getStoreLink() {
+  // StoreReview.storeUrl()
+  if (Device.osName === "Android") {
+    const androidPackageName = 'host.exp.exponent';
+    // Opens the Android Play Store directly
+    Linking.openURL(`market://details?id=${androidPackageName}&showAllReviews=true`);
+  } else if (Device.osName === "iOS" || Device.osName === "iPadOS") {
+    // Opens the iOS App Store directly
+    const itunesItemId = 982107779;
+    Linking.openURL(
+      `itms-apps://itunes.apple.com/app/viewContentsUserReviews/id${itunesItemId}?action=write-review`
+    );
+  }
+}
+
+function getStoreText() {
+  if (Device.osName === "Android")
+    return "Оціни в Google Play";
+  if (Device.osName === "iOS" || Device.osName === "iPadOS")
+    return "Оціни в App Store"
+  return false;
+}
+
+const url = "https://promin.app/";
+const title = "Завантажуй Промінь";
+const message = "Промінь - твій кишеньковий довідник з психологічної допомоги у кризових ситуаціях";
+
+const options = {
+  title,
+  url,
+  message,
+};
+
+if (isIOS()) {
+  options.url = `${title}\n${url}\n${message}`
+}
+
+options.message = `${title}\n${url}\n${message}`
+
+export default function Preferences({ navigation, modalVisible, setModalVisible }) {
   const { toggleOverlay } = React.useContext(OverlayContext);
   const { computeTheme } = React.useContext(ThemeContext);
   const styles = resolveLocalStyles(computeTheme());
+
+  const goTo = (dest) => {
+    navigation.push(dest);
+  };
+
+  const sharePromin = async (customOptions = options) => {
+    try {
+      const result = await Share.share(customOptions);
+      if (result.action === Share.sharedAction) {
+        if (result.activityType) {
+          console.log("shared with activity type of result.activityType");
+        } else {
+          console.log("shared");
+        }
+      } else if (result.action === Share.dismissedAction) {
+        console.log("dismissed");
+      }
+    } catch (error) {
+      console.log("Share Error:", err);
+    }
+  };
+
+  /*
+   * Little Call to Review Modal
+   *
+   * For future releases
+   */
+  // React.useEffect(() => {
+  //   StoreReview.hasAction()
+  //     .then(hasAction => {
+  //       StoreReview.isAvailableAsync()
+  //         .then(isAvailable => {
+  //           if (hasAction && isAvailable) {
+  //             StoreReview.requestReview()
+  //           }
+  //         })
+  //     })
+  // });
+
   return (
     <View style={styles.centeredView}>
       <Modal animationType="slide" transparent visible={modalVisible}>
@@ -157,6 +251,48 @@ export default function Preferences({ modalVisible, setModalVisible }) {
             </View>
             <ThemeButtons />
             <FontSizeButtons />
+
+            <View>
+              {isMobile() && (
+                <>
+                  <ListItem
+                    roundTop
+                    icon="🛟"
+                    title="Підтримка"
+                    onPress={() => goTo("Strah")}
+                    roundBottom
+                  />
+                  <ListItem
+                    roundTop
+                    icon="💬"
+                    title="Розкажи друзям"
+                    onPress={async () => await sharePromin()}
+                    roundBottom
+                  />
+                  <ListItem
+                    roundTop
+                    icon="⭐️"
+                    title={getStoreText()}
+                    onPress={getStoreLink}
+                    roundBottom
+                  />
+                </>)}
+              <ListItem
+                roundTop
+                icon="❤️"
+                title="Про нас"
+                onPress={() => goTo("Strah")}
+                roundBottom
+              />
+              <ListItem
+                roundTop
+                icon="🔗"
+                title="Корисні посилання"
+                onPress={() => goTo("Strah")}
+                roundBottom
+              />
+            </View>
+
           </View>
           <View />
         </View>
