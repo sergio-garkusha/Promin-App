@@ -3,10 +3,11 @@ import Svg, { Path } from "react-native-svg";
 
 export default (props) => (
   <Svg
-    width={props.width}
-    height={props.height}
+    width={150}
+    height={70}
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
+    {...props}
   >
     <Path
       fillRule="evenodd"

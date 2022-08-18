@@ -17,7 +17,7 @@ export default function Spokiyne({ navigation }) {
       <Header backButton navigation={navigation} />
       <ScrollView>
         <View style={styles.container}>
-          <Text style={styles.header}>Вправа “Спокійне місце””</Text>
+          <Text style={styles.header}>Вправа “Спокійне місце”</Text>
 
           <Text style={styles.header2}>Вправа «Спокійне місце» спрямована на залучення нашої уяви до відновлення почуття спокою та впевненості.
           </Text>

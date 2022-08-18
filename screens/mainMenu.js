@@ -72,6 +72,7 @@ const resolveLocalStyles = (theme) => {
     },
     container: {
       backgroundColor,
+      marginTop: 100
     },
     listGroup: {
       borderRadius: 12,
