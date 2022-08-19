@@ -81,13 +81,13 @@ export default function AboutUs({ navigation }) {
   console.log(styles)
   return (
     <View>
-      <Header navigation={navigation} />
+      <Header backButton navigation={navigation} />
       
       <ScrollView style={styles.container}>
 
         <Text style={styles.header}>Наша команда</Text>
 
-        <View style={{flex:1}}>
+        <View style={{flex:1, marginBottom: 150}}>
           <View style={styles.team}>
 
             {teamMembers.map(member => (
@@ -120,14 +120,18 @@ const resolveLocalStyles = (theme) => {
   return StyleSheet.create({
     container: { 
       backgroundColor: backgroundColor,
-      marginTop: 100,
-      padding: 10,
+      marginTop: 0,
+      paddingLeft: 10,
+      paddingRight: 10,
+      //paddingTop:0
     },
     header:{
       color: titleColor,
       fontSize: computeFS(24),
       fontFamily: "Ubuntu",
-      marginBottom: 32
+      marginBottom: 32,
+      marginTop:60,
+      marginLeft: 8
     },
     team: {
       flexDirection: "row",
@@ -157,11 +161,13 @@ const resolveLocalStyles = (theme) => {
       color: titleColor,
       fontSize: computeFS(16),
       marginBottom: 4,
+      textAlign:"center", 
     },
     subTitle: {
       fontFamily: "Ubuntu",
       color: subtitleColor,
       fontSize: computeFS(14),
+      textAlign:"center", 
     }
   })
 }
