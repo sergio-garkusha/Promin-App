@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завантажуй Промінь</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        header {
+            min-width: 50%;
+            max-width: 50%;
+            min-height: 100vh;
+            background-color: #5177FF;
+        }
+
+        #content {
+            min-width: 50%;
+            max-width: 50%;
+            min-height: 100vh;
+            background-color: #FFF;
+            overflow: hidden;
+        }
+
+        #logo {
+            padding: calc(50% - 68px);
+            margin: 0 auto 0;
+            /* logo size: 136px - (136px / 2) */
+            display: block;
+        }
+
+        #content p {
+            text-align: center;
+            font-family: "Helvetica Neue", Helvetica, sans-serif;
+            font-size: 1.3rem;
+        }
+
+        #content p a {
+            color: #5177FF;
+            /* text-decoration: none; */
+        }
+
+        #downloads {
+            display: flex;
+            padding: calc(50% - 80px) calc(50% - 250px) 0;
+        }
+
+        #downloads a {
+            width: 250px;
+            height: 97px;
+            display: block;
+        }
+
+        #downloads a:first-child {
+            background-image: url("assets/app-store-badge.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        #downloads a:last-child {
+            background-image: url("assets/google-play-badge.png");
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <img id="logo" src="assets/logo.svg" alt="Promin' Logo">
+    </header>
+    <section id="content">
+        <div id="downloads">
+            <a target="_blank" href="https://www.apple.com/app-store"></a>
+            <a target="_blank" href="https://play.google.com/store/apps"></a>
+        </div>
+        <p>або</p>
+        <p>
+            <a href="https://promin.app/web">Перейти до web версії »</a>
+        </p>
+    </section>
+</body>
+
+</html>
