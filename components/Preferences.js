@@ -194,7 +194,14 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
   const { computeTheme } = React.useContext(ThemeContext);
   const styles = resolveLocalStyles(computeTheme());
 
+  console.log(navigation)
+
   const goTo = (dest) => {
+    // close preferences
+    setModalVisible(!modalVisible);
+    toggleOverlay(false);
+
+    // navigate
     navigation.push(dest);
   };
 
@@ -279,9 +286,9 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
                 </>)}
               <ListItem
                 roundTop
-                icon="❤️"
+                icon="💗"
                 title="Про нас"
-                onPress={() => goTo("Strah")}
+                onPress={() => goTo("AboutUs")}
                 roundBottom
               />
               <ListItem

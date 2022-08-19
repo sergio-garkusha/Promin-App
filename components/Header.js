@@ -52,11 +52,11 @@ export default function Header({ navigation, backButton, homeDisabled }) {
         backgroundColor: "#5177ff",
         height: headerHeight,
         width: "100%",
-        position:'absolute',
         zIndex: 100,
       }}
     >
       <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+      
         {backButton ? (
           <TouchableOpacity
             style={{ marginTop: backTop, width: backWidth, height: backHeight }}
@@ -91,7 +91,7 @@ export default function Header({ navigation, backButton, homeDisabled }) {
       </View>
 
       <Preferences
-        navigation
+        navigation={navigation}
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
       />
