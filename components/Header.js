@@ -30,8 +30,8 @@ export default function Header({ navigation, backButton, homeDisabled }) {
   const headerHeight = 88;
 
   const logoWidth = 132;
-  const logoHeight = 122 // logoWidth / logoAspect;
-  const logoTop = headerHeight - logoHeight / 2 + 21;
+  const logoHeight = 79.4 // logoWidth / logoAspect;
+  const logoTop = headerHeight - logoHeight / 2 - 1;
 
   const backAspect = 228 / 135;
   const backWidth = 70;
@@ -48,7 +48,7 @@ export default function Header({ navigation, backButton, homeDisabled }) {
   return (
     <View
       style={{
-        marginBottom: 20,
+        marginBottom: 0,
         backgroundColor: "#5177ff",
         height: headerHeight,
         width: "100%",
@@ -74,11 +74,11 @@ export default function Header({ navigation, backButton, homeDisabled }) {
               <PagesLogo width={logoWidth} height={logoHeight} />
             </View>
           ) : (
-            <TouchableWithoutFeedback onPress={toMainMenu}>
+            <TouchableOpacity onPress={toMainMenu}>
               <View style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}>
                 <PagesLogo width={logoWidth} height={logoHeight} />
               </View>
-            </TouchableWithoutFeedback>
+            </TouchableOpacity>
           )
         }
 
