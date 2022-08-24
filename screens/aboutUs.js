@@ -78,16 +78,16 @@ export default function AboutUs({ navigation }) {
   computeFS = computeFontSize;
   const styles = resolveLocalStyles(computeTheme());
 
-  console.log(styles)
+  // console.log(styles)
   return (
     <View>
       <Header backButton navigation={navigation} />
-      
+
       <ScrollView style={styles.container}>
 
         <Text style={styles.header}>Наша команда</Text>
 
-        <View style={{flex:1, marginBottom: 150}}>
+        <View style={{ flex: 1, marginBottom: 150 }}>
           <View style={styles.team}>
 
             {teamMembers.map(member => (
@@ -115,45 +115,45 @@ const resolveLocalStyles = (theme) => {
   const subtitleColor = theme === "dark" ? "#DDD" : "#666"
   const labelColor = theme === "dark" ? "#848EB0" : "#666";
 
-  console.log(responsiveWidth(100))
+  // console.log(responsiveWidth(100))
 
   return StyleSheet.create({
-    container: { 
+    container: {
       backgroundColor: backgroundColor,
       marginTop: 0,
       paddingLeft: 10,
       paddingRight: 10,
       //paddingTop:0
     },
-    header:{
+    header: {
       color: titleColor,
       fontSize: computeFS(24),
       fontFamily: "Ubuntu",
       marginBottom: 32,
-      marginTop:60,
+      marginTop: 60,
       marginLeft: 8
     },
     team: {
       flexDirection: "row",
       flexWrap: "wrap"
     },
-    card:{
+    card: {
       margin: 8,
       padding: 16,
       width: (responsiveWidth(50) - 8 - 20),
       height: 180,
-      backgroundColor: cardBackground, 
+      backgroundColor: cardBackground,
       borderRadius: 10,
       alignItems: 'center'
     },
-    photo:{
-      width:80,
-      height:80,
-      borderRadius:40
+    photo: {
+      width: 80,
+      height: 80,
+      borderRadius: 40
     },
-    copy:{
+    copy: {
       marginTop: 12,
-      textAlign:"center", 
+      textAlign: "center",
       justifyContent: 'center',
     },
     title: {
@@ -161,13 +161,13 @@ const resolveLocalStyles = (theme) => {
       color: titleColor,
       fontSize: computeFS(16),
       marginBottom: 4,
-      textAlign:"center", 
+      textAlign: "center",
     },
     subTitle: {
       fontFamily: "Ubuntu",
       color: subtitleColor,
       fontSize: computeFS(14),
-      textAlign:"center", 
+      textAlign: "center",
     }
   })
 }
