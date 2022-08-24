@@ -194,7 +194,7 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
   const { computeTheme } = React.useContext(ThemeContext);
   const styles = resolveLocalStyles(computeTheme());
 
-  console.log(navigation)
+  // console.log(navigation)
 
   const goTo = (dest) => {
     // close preferences

@@ -23,14 +23,14 @@ export default function Kontakty({ navigation }) {
           <View style={{ padding: 20 }}>
             <Text style={styles.title}>Контакти служб порятунку</Text>
 
-            <ListItem roundTop title="Пожежна" onPress={navigateAway} />
-            <ListItem title="Поліція" onPress={navigateAway} />
-            <ListItem title="Швидка допомога" onPress={navigateAway} />
-            <ListItem title="Аварійна служба газу" onPress={navigateAway} />
+            <ListItem roundTop title="Пожежна" onPress={() => navigateAway()} />
+            <ListItem title="Поліція" onPress={() => navigateAway()} />
+            <ListItem title="Швидка допомога" onPress={() => navigateAway()} />
+            <ListItem title="Аварійна служба газу" onPress={() => navigateAway()} />
             <ListItem
               roundBottom
               title="Екстренна психолог допомога"
-              onPress={navigateAway}
+              onPress={() => navigateAway()}
             />
           </View>
         </View>
