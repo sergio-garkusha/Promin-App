@@ -9,8 +9,9 @@ export default function ListItem(props) {
   const { computeFontSize } = React.useContext(FontSizeContext);
   const computedTheme = computeTheme();
   const styles = resolveLocalStyles(computedTheme, computeFontSize);
-  const caretColor = computedTheme === "dark" ? "#9AA3C5" : "#666";
-
+  const caretColor = computedTheme === "dark" ?
+    props.isButton && "#27335A" || "#9AA3C5" :
+    props.isButton && "#FFF" || "#666";
   return (
     <View style={props.padded && styles.padded}>
       <View
@@ -20,8 +21,16 @@ export default function ListItem(props) {
           props.roundBottom ? styles.roundBottom : styles.spacer,
         ]}
       >
-        <TouchableOpacity style={styles.button} onPress={props.onPress}>
-          {props.icon && <Text style={styles.icon}>{props.icon}</Text>}
+        <TouchableOpacity style={
+          [props.context && styles.button || styles.listItem,
+          props.context && !props.last && styles.buttonLast]
+        }
+          onPress={props.onPress}
+        >
+          {props.icon && (typeof styles.text === 'function'
+            ? props.icon
+            : <Text style={styles.icon}>{props.icon}</Text>
+          )}
           <Text style={styles.text}>{props.title}</Text>
           <Caret style={styles.caret} prefThemeColor={caretColor} />
         </TouchableOpacity>
@@ -31,17 +40,31 @@ export default function ListItem(props) {
 }
 
 const resolveLocalStyles = (theme, computeFS) => {
+  const borderColor = theme === "dark" ? "#3D486C" : "#E6E7ED";
   const backgroundColor = theme === "dark" ? "#27335A" : "#FFF";
   const color = theme === "dark" ? "#FFF" : "#000";
   return StyleSheet.create({
-    button: {
+    listItem: {
       alignItems: "center",
       flexDirection: "row",
       minHeight: 60,
       padding: 5,
       paddingLeft: 16,
       paddingRight: 10,
-      width: "100%",
+      width: "100%"
+    },
+    button: {
+      alignItems: "center",
+      flexDirection: "row",
+      minHeight: 60,
+      padding: 5,
+      paddingLeft: 0,
+      paddingRight: 0,
+      width: "100%"
+    },
+    buttonLast: {
+      borderBottomColor: borderColor,
+      borderBottomWidth: 1
     },
     caret: {
       flex: 1,

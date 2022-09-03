@@ -8,7 +8,7 @@ import Header from "/components/Header";
 import ListItem from "/components/ListItem";
 import resolveStyles from "/styles/subpage";
 
-export default function VibuhonebezpechniZnahidki({ navigation }) {
+export default function VybuhonebezpechniZnahidky({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
@@ -86,7 +86,7 @@ const resolveLocalStyles = (theme, computeFS) => {
   return StyleSheet.create({
     container: {
       backgroundColor,
-      marginTop: 100
+      marginTop: 26
     },
     title: {
       color,

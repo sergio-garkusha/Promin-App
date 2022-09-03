@@ -1,6 +1,8 @@
 import React from "react"
 import { StyleSheet, Text, TouchableWithoutFeedback, View } from "react-native";
 import Collapsible from "react-native-collapsible";
+
+import { isMobile } from "/helpers/utils";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import Caret from "/icons/Caret";
@@ -60,7 +62,7 @@ const resolveLocalStyles = (theme, computeFS) => {
     caret: {
       height: 20,
       width: 20,
-      marginTop: 'auto',
+      marginTop: !isMobile() ? 22 : 'auto',
       marginBottom: 'auto',
       transform: [{ rotate: '90deg' }],
       color: caretColor

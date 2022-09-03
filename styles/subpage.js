@@ -1,4 +1,5 @@
 import { StyleSheet } from "react-native";
+import { isMobile } from "/helpers/utils";
 
 const resolveStyles = (theme, computeFS) => {
   const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
@@ -11,7 +12,14 @@ const resolveStyles = (theme, computeFS) => {
 
   return StyleSheet.create({
     accordeonTop: { marginLeft: 15, marginRight: 15 },
-    container: { backgroundColor, margin: 20, marginTop: 100 },
+    container: {
+      width: !isMobile() ? 420 : "auto",
+      backgroundColor,
+      marginBottom: 20,
+      marginTop: 26,
+      marginLeft: !isMobile() ? "auto" : 20,
+      marginRight: !isMobile() ? "auto" : 20
+    },
     header: {
       color,
       fontFamily: "Ubuntu_M",

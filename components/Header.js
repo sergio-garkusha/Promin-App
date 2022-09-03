@@ -1,5 +1,7 @@
 import React from "react";
 import { View, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
+
+import { isMobile } from "/helpers/utils";
 import { OverlayContext } from "/components/OverlayProvider";
 import { ThemeContext } from "/components/ThemeProvider";
 import Preferences from "./Preferences";
@@ -46,55 +48,59 @@ export default function Header({ navigation, backButton, homeDisabled }) {
   const prefThemeColor = computedTheme === "dark" ? "#18203A" : "#F3F3F3";
 
   return (
-    <View
-      style={{
-        marginBottom: 0,
-        backgroundColor: "#5177ff",
-        height: headerHeight,
-        width: "100%",
-        zIndex: 100,
-      }}
-    >
-      <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
-      
-        {backButton ? (
-          <TouchableOpacity
-            style={{ marginTop: backTop, width: backWidth, height: backHeight }}
-            onPress={goBack}
-          >
-            <BackButton prefThemeColor={prefThemeColor} />
-          </TouchableOpacity>
-        ) : (
-          <View style={{ width: backWidth }} />
-        )}
+    <>
+      <View
+        style={{
+          position: !isMobile() ? "fixed" : "absolute",
+          marginBottom: 0,
+          backgroundColor: "#5177ff",
+          height: headerHeight,
+          width: "100%",
+          zIndex: 100,
+        }}
+      >
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
 
-        {homeDisabled ?
-          (
-            <View style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}>
-              <PagesLogo width={logoWidth} height={logoHeight} />
-            </View>
+          {backButton ? (
+            <TouchableOpacity
+              style={{ marginTop: backTop, width: backWidth, height: backHeight }}
+              onPress={goBack}
+            >
+              <BackButton prefThemeColor={prefThemeColor} />
+            </TouchableOpacity>
           ) : (
-            <TouchableOpacity onPress={toMainMenu}>
+            <View style={{ width: backWidth }} />
+          )}
+
+          {homeDisabled ?
+            (
               <View style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}>
                 <PagesLogo width={logoWidth} height={logoHeight} />
               </View>
-            </TouchableOpacity>
-          )
-        }
+            ) : (
+              <TouchableOpacity onPress={toMainMenu}>
+                <View style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}>
+                  <PagesLogo width={logoWidth} height={logoHeight} />
+                </View>
+              </TouchableOpacity>
+            )
+          }
 
-        <TouchableOpacity
-          style={{ marginTop: prefTop }}
-          onPress={setPreferences}
-        >
-          <Prefs width={prefWidth} height={prefHeight} prefThemeColor={prefThemeColor} />
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={{ marginTop: prefTop }}
+            onPress={setPreferences}
+          >
+            <Prefs width={prefWidth} height={prefHeight} prefThemeColor={prefThemeColor} />
+          </TouchableOpacity>
+        </View>
+
+        <Preferences
+          navigation={navigation}
+          modalVisible={modalVisible}
+          setModalVisible={setModalVisible}
+        />
       </View>
-
-      <Preferences
-        navigation={navigation}
-        modalVisible={modalVisible}
-        setModalVisible={setModalVisible}
-      />
-    </View>
+      <View style={{ height: headerHeight }} />
+    </>
   );
 }

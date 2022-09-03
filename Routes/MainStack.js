@@ -4,6 +4,7 @@ import { ThemeContext } from "/components/ThemeProvider";
 import WelcomeScreen from "/screens/welcome";
 import MainMenu from "/screens/mainMenu";
 import AboutUs from "/screens/aboutUs";
+import UsefulLinks from "/screens/usefulLinks";
 
 import EkstrennaDopomoga from "/screens/01-ekstrennaDopomoga/ekstrennaDopomoga";
 import Strah from "/screens/01-ekstrennaDopomoga/ekstrennaScreens/01-strah";
@@ -96,6 +97,7 @@ export default function MainStack() {
       <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
       <Stack.Screen name="MainMenu" component={MainMenu} />
       <Stack.Screen name="AboutUs" component={AboutUs} />
+      <Stack.Screen name="UsefulLinks" component={UsefulLinks} />
 
       <Stack.Screen name="EkstrennaDopomoga" component={EkstrennaDopomoga} />
       <Stack.Screen name="Strah" component={Strah} />

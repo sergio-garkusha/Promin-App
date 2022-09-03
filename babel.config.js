@@ -13,6 +13,7 @@ module.exports = (api) => {
           },
         },
       ],
+      ["module:react-native-dotenv"]
     ],
   };
 };

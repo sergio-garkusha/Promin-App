@@ -14,3 +14,6 @@ web-build/
 .DS_Store
 .idea/
 .vscode/
+
+# config
+.env

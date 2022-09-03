@@ -1,12 +1,15 @@
 import React from "react";
 import { responsiveHeight } from "react-native-responsive-dimensions";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
+
+import { isMobile } from "/helpers/utils";
 import FullLogo from "/components/FullLogo";
 import NextButton from "/components/NextButton";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 
 const topHalfHeight = responsiveHeight(50);
+const IS_WEB = !isMobile();
 
 function WelcomeScreen({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
@@ -26,7 +29,7 @@ function WelcomeScreen({ navigation }) {
 
         <NextButton onPress={toMainMenu} />
 
-        <View style={styles.bottomHalf}>
+        <View style={[styles.bottomHalf, IS_WEB && styles.web]}>
           <Text style={styles.paragraph}>👋 Вітаємо вас, любі!</Text>
           <Text style={styles.paragraph}>
             Промінь - це ваш кишеньковий довідник психологічної допомоги у
@@ -48,6 +51,11 @@ const resolveStyles = (theme, computeFS) => {
   const color = theme === "dark" ? "#FFF" : "#000";
 
   return StyleSheet.create({
+    web: {
+      maxWidth: 420,
+      marginLeft: "auto",
+      marginRight: "auto"
+    },
     container: { backgroundColor },
     paragraph: {
       color,

@@ -1,5 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
+
+import { isMobile } from "/helpers/utils";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import Header from "/components/Header";
@@ -61,7 +63,10 @@ const resolveLocalStyles = (theme, computeFS) => {
   return StyleSheet.create({
     container: {
       backgroundColor,
-      marginTop: 100
+      marginTop: 26,
+      width: !isMobile() ? 420 : "auto",
+      marginLeft: !isMobile() ? "auto" : 0,
+      marginRight: !isMobile() ? "auto" : 0
     },
     title: {
       color,

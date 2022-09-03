@@ -1,9 +1,11 @@
 import React from "react";
-import * as Device from "expo-device";
-import * as Linking from 'expo-linking';
-import { Share } from 'react-native';
-// import * as StoreReview from 'expo-store-review'; // Call to Review dep
+import * as Linking from "expo-linking";
+import { Share } from "react-native";
+import { EMAIL, ITUNES_ID, ANDROID_PKG_NAME, WEBSITE } from "@env";
+// import * as StoreReview from "expo-store-review"; // Call to Review dep
 import { Modal, StyleSheet, Text, Pressable, View } from "react-native";
+
+import { isIOS, isAndroid, isMobile } from "/helpers/utils";
 import { OverlayContext } from "/components/OverlayProvider";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
@@ -12,6 +14,12 @@ import ListItem from "/components/ListItem";
 import Sun from "/icons/Sun";
 import Moon from "/icons/Moon";
 import MoonSun from "/icons/MoonSun";
+
+import HelpBtn from "/icons/buttons/01-help";
+import ShareItBtn from "/icons/buttons/02-share";
+import RateItBtn from "/icons/buttons/03-rate";
+import AboutUsBtn from "/icons/buttons/04-about-us";
+import LinksBtn from "/icons/buttons/05-useful-links";
 
 const colorSchemeI18N = {
   light: "Світла",
@@ -139,68 +147,55 @@ function ThemeButtons() {
   );
 }
 
-function isIOS() {
-  return Device.osName === "iOS"
-    || Device.osName === "iPadOS";
-}
-
-function isMobile() {
-  return Device.osName === "Android"
-    || Device.osName === "iOS"
-    || Device.osName === "iPadOS";
+function getSupportLink() {
+  Linking.openURL(`mailto:${EMAIL}`);
 }
 
 function getStoreLink() {
-  // StoreReview.storeUrl()
-  if (Device.osName === "Android") {
-    const androidPackageName = 'host.exp.exponent';
+  if (isAndroid()) {
     // Opens the Android Play Store directly
-    Linking.openURL(`market://details?id=${androidPackageName}&showAllReviews=true`);
-  } else if (Device.osName === "iOS" || Device.osName === "iPadOS") {
+    Linking.openURL(`market://details?id=${ANDROID_PKG_NAME}&showAllReviews=true`);
+  } else if (isIOS()) {
     // Opens the iOS App Store directly
-    const itunesItemId = 982107779;
     Linking.openURL(
-      `itms-apps://itunes.apple.com/app/viewContentsUserReviews/id${itunesItemId}?action=write-review`
+      `itms-apps://itunes.apple.com/app/viewContentsUserReviews/id${ITUNES_ID}?action=write-review`
     );
   }
 }
 
 function getStoreText() {
-  if (Device.osName === "Android")
+  if (isAndroid())
     return "Оціни в Google Play";
-  if (Device.osName === "iOS" || Device.osName === "iPadOS")
+  if (isIOS())
     return "Оціни в App Store"
   return false;
 }
 
-const url = "https://promin.app/";
 const title = "Завантажуй Промінь";
 const message = "Промінь - твій кишеньковий довідник з психологічної допомоги у кризових ситуаціях";
-
 const options = {
   title,
-  url,
+  url: WEBSITE,
   message,
 };
 
 if (isIOS()) {
-  options.url = `${title}\n${url}\n${message}`
+  options.url = `${title}\n${WEBSITE}\n${message}`
 }
 
-options.message = `${title}\n${url}\n${message}`
+options.message = `${title}\n${WEBSITE}\n${message}`
 
 export default function Preferences({ navigation, modalVisible, setModalVisible }) {
   const { toggleOverlay } = React.useContext(OverlayContext);
   const { computeTheme } = React.useContext(ThemeContext);
-  const styles = resolveLocalStyles(computeTheme());
-
-  // console.log(navigation)
+  const computedTheme = computeTheme();
+  const styles = resolveLocalStyles(computedTheme);
+  const iconsColor = computedTheme === "dark" ? "#FFF" : "#666";
 
   const goTo = (dest) => {
     // close preferences
     setModalVisible(!modalVisible);
     toggleOverlay(false);
-
     // navigate
     navigation.push(dest);
   };
@@ -210,12 +205,12 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
       const result = await Share.share(customOptions);
       if (result.action === Share.sharedAction) {
         if (result.activityType) {
-          console.log("shared with activity type of result.activityType");
+          // console.log("shared with activity type of result.activityType");
         } else {
-          console.log("shared");
+          // console.log("shared");
         }
       } else if (result.action === Share.dismissedAction) {
-        console.log("dismissed");
+        // console.log("dismissed");
       }
     } catch (error) {
       console.log("Share Error:", err);
@@ -259,26 +254,32 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
             <ThemeButtons />
             <FontSizeButtons />
 
-            <View>
+            <View style={styles.buttonsList}>
               {isMobile() && (
                 <>
                   <ListItem
                     roundTop
-                    icon="🛟"
+                    context
+                    icon={<HelpBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
+                    isButton
                     title="Підтримка"
-                    onPress={() => goTo("Strah")}
+                    onPress={getSupportLink}
                     roundBottom
                   />
                   <ListItem
                     roundTop
-                    icon="💬"
+                    context
+                    icon={<ShareItBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
+                    isButton
                     title="Розкажи друзям"
                     onPress={async () => await sharePromin()}
                     roundBottom
                   />
                   <ListItem
                     roundTop
-                    icon="⭐️"
+                    context
+                    icon={<RateItBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
+                    isButton
                     title={getStoreText()}
                     onPress={getStoreLink}
                     roundBottom
@@ -286,17 +287,20 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
                 </>)}
               <ListItem
                 roundTop
-                icon="💗"
+                context
+                icon={<AboutUsBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
                 title="Про нас"
                 onPress={() => goTo("AboutUs")}
                 roundBottom
               />
               <ListItem
                 roundTop
-                icon="🔗"
+                context
+                icon={<LinksBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
                 title="Корисні посилання"
-                onPress={() => goTo("Strah")}
+                onPress={() => goTo("UsefulLinks")}
                 roundBottom
+                last
               />
             </View>
 
@@ -377,6 +381,15 @@ const resolveLocalStyles = (theme) => {
       paddingRight: 16,
       paddingTop: 24,
     },
+    buttonsList: {
+      borderColor: borderColor,
+      borderRadius: 16,
+      borderStyle: "solid",
+      borderWidth: 1,
+      marginTop: 20,
+      paddingLeft: 10,
+      paddingRight: 10
+    },
     label: {
       color: closeBtnColor,
       fontFamily: "Ubuntu",
@@ -404,6 +417,7 @@ const resolveLocalStyles = (theme) => {
       shadowOpacity: 0.25,
       shadowRadius: 4,
       width: "90%",
+      maxWidth: 350
     },
     schemeSwitch: {
       borderRadius: 16,
@@ -431,5 +445,9 @@ const resolveLocalStyles = (theme) => {
       height: 30,
       justifyContent: "space-between",
     },
+    iconBtn: {
+      flex: 3,
+      marginBottom: -8
+    }
   });
 }

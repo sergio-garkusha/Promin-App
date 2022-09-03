@@ -1,10 +1,13 @@
 import React from "react";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
+
+import { isMobile } from "/helpers/utils";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import Header from "/components/Header";
 import ListItem from "/components/ListItem";
 
+const IS_WEB = !isMobile();
 let computeFS;
 
 export default function MainMenu({ navigation }) {
@@ -12,12 +15,11 @@ export default function MainMenu({ navigation }) {
   const { computeFontSize } = React.useContext(FontSizeContext);
   computeFS = computeFontSize;
   const styles = resolveLocalStyles(computeTheme());
-
   return (
     <View>
       <Header navigation={navigation} homeDisabled={true} />
       <ScrollView>
-        <View style={styles.container}>
+        <View style={[styles.container, IS_WEB && styles.web]}>
           <View style={{ padding: 20 }}>
             <Text style={styles.title}>Екстрена допомога</Text>
             <ListItem
@@ -67,12 +69,17 @@ const resolveLocalStyles = (theme) => {
   const color = theme === "dark" ? "#FFF" : "#000";
   const labelColor = theme === "dark" ? "#848EB0" : "#666";
   return StyleSheet.create({
+    web: {
+      maxWidth: 420,
+      marginLeft: "auto",
+      marginRight: "auto"
+    },
     Button: {
       padding: 4,
     },
     container: {
       backgroundColor,
-      marginTop: 100
+      marginTop: 26
     },
     listGroup: {
       borderRadius: 12,
