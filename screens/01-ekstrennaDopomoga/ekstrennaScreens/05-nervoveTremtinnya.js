@@ -29,7 +29,7 @@ export default function NervoveTremtinnya({ navigation }) {
             10-15 секунд.
           </Bullet>
           <Bullet symbol="3." style={styles.paragraph}>
-            Продовжуйте говорити з потерпілим щоб він не сприйняв ваші дії як
+            Продовжуйте говорити з потерпілим, щоб він не сприйняв ваші дії як
             напад.
           </Bullet>
           <Bullet symbol="4." style={styles.paragraph}>
@@ -40,10 +40,10 @@ export default function NervoveTremtinnya({ navigation }) {
           <Text style={styles.header2}>Не можна:</Text>
 
           <Bullet symbol="•" style={styles.paragraph}>
-            Обіймати постраждалого або притискати до себе;
+            Обіймати постраждалого або притискати до себе.
           </Bullet>
           <Bullet symbol="•" style={styles.paragraph}>
-            Накривати постраждалого чимось теплим;
+            Накривати постраждалого чимось теплим.
           </Bullet>
           <Bullet symbol="•" style={styles.paragraph}>
             Заспокоювати постраждалого, казати, щоб він взяв себе в руки.

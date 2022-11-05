@@ -45,13 +45,12 @@ function handleExtlLink(l) {
 }
 
 const IS_WEB = !isMobile();
-let computeFS;
 
 export default function UsefulLinks({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
-  computeFS = computeFontSize;
-  const styles = resolveLocalStyles(computeTheme());
+  const styles = resolveLocalStyles(computeTheme(), computeFontSize);
+
   return (
     <View>
       <Header backButton navigation={navigation} />
@@ -59,8 +58,8 @@ export default function UsefulLinks({ navigation }) {
         <Text style={styles.header}>Корисні посилання</Text>
 
         <View style={IS_WEB && styles.web}>
-          <Text style={styles.sub}>Наші Партнери</Text>
-          <View style={{ flex: 1, marginBottom: 32 }}>
+          <View style={{ paddingBottom: 32 }}>
+            <Text style={styles.sub}>Наші Партнери</Text>
             <View style={styles.links}>
               {partners.map(card => (
                 <TouchableOpacity
@@ -78,8 +77,8 @@ export default function UsefulLinks({ navigation }) {
             </View>
           </View>
 
-          <Text style={styles.sub}>Волонтерські Організації</Text>
-          <View style={{ flex: 1, marginBottom: 150 }}>
+          <View style={{ paddingBottom: 150 }}>
+            <Text style={styles.sub}>Волонтерські Організації</Text>
             <View style={styles.links}>
               {orgs.map(card => (
                 <TouchableOpacity
@@ -102,7 +101,7 @@ export default function UsefulLinks({ navigation }) {
   )
 }
 
-const resolveLocalStyles = (theme) => {
+const resolveLocalStyles = (theme, computeFS) => {
   const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
   const cardBackground = theme === "dark" ? "#27335A" : "#FFF";
   const titleColor = theme === "dark" ? "#FFF" : "#000";
@@ -110,24 +109,24 @@ const resolveLocalStyles = (theme) => {
   const labelColor = theme === "dark" ? "#848EB0" : "#666";
   return StyleSheet.create({
     web: {
-      maxWidth: 420,
+      maxWidth: 540,
+      minWidth: 540,
       marginLeft: "auto",
       marginRight: "auto"
     },
     container: {
       backgroundColor: backgroundColor,
       marginTop: 0,
-      paddingLeft: 10,
-      paddingRight: 10,
+      paddingLeft: 24,
+      paddingRight: 24
     },
     header: {
       color: titleColor,
       fontSize: computeFS(24),
       fontFamily: "Ubuntu",
       marginBottom: 32,
-      marginLeft: 8,
       marginTop: 60,
-      textAlign: !isMobile() ? "center" : "left"
+      textAlign: IS_WEB ? "center" : "left"
     },
     sub: {
       color: labelColor,
@@ -136,23 +135,23 @@ const resolveLocalStyles = (theme) => {
       lineHeight: computeFS(21),
       marginBottom: 16,
       marginTop: 32,
-      marginLeft: 8,
       textAlign: "left",
     },
     links: {
       flexDirection: "row",
       flexWrap: "wrap",
-      justifyContent: "space-between"
+      justifyContent: IS_WEB ? "flex-start" : "space-between",
     },
     card: {
-      margin: 8,
       padding: 16,
-      width: (responsiveWidth(50) - 8 - 20),
+      width: (responsiveWidth(50) - 8 - 24),
       maxWidth: 160,
       height: 200,
       backgroundColor: cardBackground,
       borderRadius: 10,
-      alignItems: 'center'
+      alignItems: 'center',
+      marginBottom: 16,
+      marginRight: IS_WEB ? 16 : 0
     },
     logo: {
       width: "100%",

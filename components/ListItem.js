@@ -1,5 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
+
+import { isMobile } from "/helpers/utils";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import Caret from "/icons/Caret";
@@ -12,6 +14,9 @@ export default function ListItem(props) {
   const caretColor = computedTheme === "dark" ?
     props.isButton && "#27335A" || "#9AA3C5" :
     props.isButton && "#FFF" || "#666";
+
+  const caretWebQFix = !isMobile() && props.prefsCtx && { marginLeft: -20 };
+
   return (
     <View style={props.padded && styles.padded}>
       <View
@@ -22,8 +27,8 @@ export default function ListItem(props) {
         ]}
       >
         <TouchableOpacity style={
-          [props.context && styles.button || styles.listItem,
-          props.context && !props.last && styles.buttonLast]
+          [props.prefsCtx && styles.button || styles.listItem,
+          props.prefsCtx && !props.last && styles.buttonLast]
         }
           onPress={props.onPress}
         >
@@ -32,7 +37,7 @@ export default function ListItem(props) {
             : <Text style={styles.icon}>{props.icon}</Text>
           )}
           <Text style={styles.text}>{props.title}</Text>
-          <Caret style={styles.caret} prefThemeColor={caretColor} />
+          <Caret style={[styles.caret, caretWebQFix]} prefThemeColor={caretColor} />
         </TouchableOpacity>
       </View>
     </View>

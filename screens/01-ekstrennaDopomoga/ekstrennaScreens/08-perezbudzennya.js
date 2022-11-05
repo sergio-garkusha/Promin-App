@@ -24,7 +24,7 @@ export default function Perezbudzennya({ navigation }) {
           <Text style={styles.header2}>В цій ситуації: </Text>
 
           <Bullet symbol="1." style={styles.paragraph}>
-            Використовуйте прийом “захват”: станьте позаду постраждалого,
+            Використовуйте прийом «захват»: станьте позаду постраждалого,
             просуньте руки під пахви постраждалого, притисніть його до себе і
             злегка перекиньте його на себе.
           </Bullet>
@@ -38,10 +38,10 @@ export default function Perezbudzennya({ navigation }) {
           </Bullet>
 
           <Bullet symbol="3." style={styles.paragraph}>
-            Массуйте “позитивні точки” на чолі постраждалого. Спокійним голосом
-            обговорюйте почуття які він відчуває. (“Тобі хочеться щось зробити
-            щоб це припинилось?” Ти хочеш втікти, сховатись від того що
-            відбувається?” ).
+            Массуйте «позитивні точки» на чолі постраждалого. Спокійним голосом
+            обговорюйте почуття, які він відчуває. («Тобі хочеться щось зробити,
+            щоб це припинилось?» Ти хочеш втікти, сховатись від того, що
+            відбувається?» ).
           </Bullet>
 
           <View style={[styles.paragraph, { justifyContent: "center", alignItems: "center" }]}>
@@ -50,12 +50,12 @@ export default function Perezbudzennya({ navigation }) {
 
           <Bullet symbol="4." style={styles.paragraph}>
             Не сперечайтесь із постраждалим, нічого не питайте, в розмові
-            уникайте частки “не” якщо це стосується небажаних дій (наприклад:
-            “Не біжи”, “Не розмахуй руками”, “Не кричи”).
+            уникайте частки «не», якщо це стосується небажаних дій
+            (наприклад: замість «не біжи» – «зупинись», «не розмахуй руками» – «опусти руки», «не кричи» – «говори тихіше»).
           </Bullet>
 
           <Bullet symbol="5." style={styles.paragraph}>
-            Пам’ятайте що постраждалий може завдати шкоди собі та оточуючим.
+            Пам’ятайте, що постраждалий може завдати шкоди собі та оточуючим.
           </Bullet>
 
           <Text style={styles.header2}>
@@ -64,16 +64,16 @@ export default function Perezbudzennya({ navigation }) {
 
           <ListItem
             roundTop
-            title="Нервове тремтіння"
+            title="нервове тремтіння"
             onPress={() => navigation.push("NervoveTremtinnya")}
           />
           <ListItem
-            title="Плач"
+            title="плач"
             onPress={() => navigation.push("Plach")}
           />
           <ListItem
             roundBottom
-            title="Aгресивну поведінку"
+            title="агресивну поведінку"
             onPress={() => navigation.push("Agresiya")}
           />
 

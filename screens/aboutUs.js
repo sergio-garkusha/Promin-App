@@ -104,17 +104,13 @@ function handleExtlLink(l) {
   l && Linking.openURL(l);
 }
 
-let computeFS;
-
 export default function AboutUs({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
 
-  computeFS = computeFontSize;
-
   const computedTheme = computeTheme();
   const iconsColor = computedTheme === "dark" ? "#FFF" : "#666";
-  const styles = resolveLocalStyles(computedTheme);
+  const styles = resolveLocalStyles(computedTheme, computeFontSize);
 
   return (
     <View>
@@ -166,7 +162,7 @@ export default function AboutUs({ navigation }) {
   )
 }
 
-const resolveLocalStyles = (theme) => {
+const resolveLocalStyles = (theme, computeFS) => {
   const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
   const cardBackground = theme === "dark" ? "#27335A" : "#FFF";
   const titleColor = theme === "dark" ? "#FFF" : "#000";
@@ -182,8 +178,8 @@ const resolveLocalStyles = (theme) => {
     container: {
       backgroundColor: backgroundColor,
       marginTop: 0,
-      paddingLeft: 10,
-      paddingRight: 10
+      paddingLeft: 24,
+      paddingRight: 24,
     },
     header: {
       color: titleColor,
@@ -191,8 +187,7 @@ const resolveLocalStyles = (theme) => {
       fontFamily: "Ubuntu",
       marginBottom: 32,
       marginTop: 60,
-      marginLeft: 8,
-      textAlign: !isMobile() ? "center" : "left",
+      textAlign: IS_WEB ? "center" : "left",
     },
     sub: {
       color: labelColor,
@@ -201,18 +196,19 @@ const resolveLocalStyles = (theme) => {
       lineHeight: computeFS(21),
       marginBottom: 16,
       marginTop: 32,
-      textAlign: !isMobile() ? "center" : "left",
+      textAlign: IS_WEB ? "center" : "left",
     },
     team: {
       flexDirection: "row",
       flexWrap: "wrap",
-      justifyContent: "space-evenly"
+      justifyContent: IS_WEB ? "space-evenly" : "space-between"
     },
     card: {
       margin: 8,
-      marginBottom: 16,
+      marginLeft: 0,
+      marginRight: 0,
       padding: 16,
-      width: (responsiveWidth(50) - 8 - 20),
+      width: (responsiveWidth(50) - 8 - 24),
       maxWidth: 160,
       height: 180,
       backgroundColor: cardBackground,
@@ -245,7 +241,8 @@ const resolveLocalStyles = (theme) => {
     contacts: {
       paddingLeft: 10,
       paddingRight: 10,
-      marginBottom: 150
+      marginBottom: 150,
+      width: IS_WEB ? 420 : "auto"
     },
     iconBtn: {
       flex: 3,

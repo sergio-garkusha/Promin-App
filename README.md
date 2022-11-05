@@ -178,3 +178,13 @@ https://medium.com/soluto-engineering/size-matters-5aeeb462900a
 
 
 
+https://expo.dev/accounts/cu7ious/projects/snack-b633f0e7-a078-4a93-8bfc-a380d9b0faf8/builds/7fe1bc4f-d35e-4355-b7be-acf59199879f
+https://exp-shell-app-assets.s3.us-west-1.amazonaws.com/android/%40cu7ious/snack-b633f0e7-a078-4a93-8bfc-a380d9b0faf8-f37d92ba62b94e1fbf34968c574f2e65-signed.apk
+
+app.promin.7fe1bc4f-d35e-4355-b7be-acf59199879f
+
+
+malyarinka@gmail.com
+dnevozhai@gmail.com
+emiliia.kostiukevych@gmail.com
+gary.sedletsky@gmail.com

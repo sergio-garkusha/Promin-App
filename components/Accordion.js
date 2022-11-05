@@ -39,6 +39,7 @@ const resolveLocalStyles = (theme, computeFS) => {
   const color = theme === "dark" ? "#FFF" : "#000";
   const caretColor = theme === "dark" ? "#9AA3C5" : "#666";
   const dividerColor = theme === "dark" ? "#3D486C" : "#E6E7ED";
+
   return StyleSheet.create({
     accordion: {
       borderRadius: 12,

@@ -17,7 +17,7 @@ export default function Telebachennya({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Вимкнули телебачення</Text>
           <Text style={styles.header2}>
-            Крім ефірного мовлення отримати безкоштовний доступ до українських
+            Крім ефірного мовлення, отримати безкоштовний доступ до українських
             телеканалів можна кількома способами:
           </Text>
           <Bullet symbol="1." style={styles.paragraph}>
@@ -30,8 +30,7 @@ export default function Telebachennya({ navigation }) {
             Youtube. Якщо у вас є швидкий інтернет, знайдіть в мобільному
             додатку або на веб-сторінці на Youtube бажаний канал. Якщо швидкість
             інтернету невисока, виберіть в налаштуваннях відео розширення нижче
-            (три точки у верхній частині відео - якість - 360р або 480р - цього
-            буде достатньо).
+            (якість відео: 360р або 480р).
           </Bullet>
           <Bullet symbol="3." style={styles.paragraph}>
             Доступ на ОТТ-сервісах. На платформах YouTV, Sweet TV, Omega TV,

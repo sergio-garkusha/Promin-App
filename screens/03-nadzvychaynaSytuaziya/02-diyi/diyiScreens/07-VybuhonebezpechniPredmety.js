@@ -27,92 +27,92 @@ export default function VybuhonebezpechniPredmety({ navigation }) {
           </View>
 
           <Bullet symbol="1." style={styles.paragraph}>
-            Осколочна мінометна міна
+            Осколочна мінометна міна.
           </Bullet>
           <Bullet symbol="2." style={styles.paragraph}>
-            Великокаліберний набій
+            Великокаліберний набій.
           </Bullet>
           <Bullet symbol="3." style={styles.paragraph}>
-            Гранатометний набій (являє собою осколкову гранату)
+            Гранатометний набій (являє собою осколкову гранату).
           </Bullet>
           <Bullet symbol="4." style={styles.paragraph}>
-            Протипіхотна вистрибуюча осколкова міна кругового ураження
+            Протипіхотна вистрибуюча осколкова міна кругового ураження.
           </Bullet>
           <Bullet symbol="5." style={styles.paragraph}>
-            Протитанкова міна
+            Протитанкова міна.
           </Bullet>
           <Bullet symbol="6." style={styles.paragraph}>
-            Осколочно-фугасний артилерійський снаряд
+            Осколочно-фугасний артилерійський снаряд.
           </Bullet>
           <Bullet symbol="7." style={styles.paragraph}>
-            Протипіхотна міна «ПМН» (фугасна)
+            Протипіхотна міна «ПМН» (фугасна).
           </Bullet>
           <Bullet symbol="8." style={[styles.paragraph, { marginBottom: 60 }]}>
-            Протипіхотна міна «ПФМ-1» (фугасна)
+            Протипіхотна міна «ПФМ-1» (фугасна).
           </Bullet>
 
           <View style={{ justifyContent: "center", alignItems: "center" }}>
             <Image source={Miny2} style={imgStyles} />
           </View>
           <Bullet symbol="1." style={styles.paragraph}>
-            Касетна протитанкова міна
+            Касетна протитанкова міна.
           </Bullet>
           <Bullet symbol="2." style={styles.paragraph}>
-            Кумулятивний танковий снаряд
+            Кумулятивний танковий снаряд.
           </Bullet>
           <Bullet symbol="3." style={styles.paragraph}>
-            Протипіхотна міна «ПОМЗ-2М» (являє собою осколкову гранату)
+            Протипіхотна міна «ПОМЗ-2М» (являє собою осколкову гранату).
           </Bullet>
           <Bullet symbol="4." style={styles.paragraph}>
-            Постріл гранатометний (осколковий боєприпас для підствольних гранатометів)
+            Постріл гранатометний (осколковий боєприпас для підствольних гранатометів).
           </Bullet>
           <Bullet symbol="5." style={styles.paragraph}>
-            Ручна граната «РГО»
+            Ручна граната «РГО».
           </Bullet>
           <Bullet symbol="6." style={styles.paragraph}>
-            Ручна граната «Ф-1»
+            Ручна граната «Ф-1».
           </Bullet>
           <Bullet symbol="7." style={styles.paragraph}>
-            Ручна граната «РГД-5»
+            Ручна граната «РГД-5».
           </Bullet>
           <Bullet symbol="8." style={styles.paragraph}>
-            Протипіхотна міна
+            Протипіхотна міна.
           </Bullet>
           <Bullet symbol="9." style={[styles.paragraph, { marginBottom: 60 }]}>
-            Гранатометний постріл
+            Гранатометна граната.
           </Bullet>
 
           <View style={{ justifyContent: "center", alignItems: "center" }}>
             <Image source={Miny3} style={imgStyles} />
           </View>
           <Bullet symbol="1." style={styles.paragraph}>
-            Протипіхотна міна «МОН – 50»
+            Протипіхотна міна «МОН – 50».
           </Bullet>
           <Bullet symbol="2." style={styles.paragraph}>
-            Протипіхотна міна«МОН – 100»
+            Протипіхотна міна «МОН – 100».
           </Bullet>
           <Bullet symbol="3." style={styles.paragraph}>
-            Осколковий бойовий елемент
+            Осколковий бойовий елемент.
           </Bullet>
           <Bullet symbol="4." style={[styles.paragraph, { marginBottom: 60 }]}>
-            Протитанкова кумулятивна міна
+            Протитанкова кумулятивна міна.
           </Bullet>
 
-          <Text style={styles.header2}> Інші вибухонебезпечні предмети:</Text>
+          <Text style={styles.header2}> Інші вибухонебезпечні предмети</Text>
           <Bullet symbol="•" style={styles.paragraph}>
-            Бойові ракети та їх фрагменти
+            Бойові ракети та їх фрагменти.
           </Bullet>
           <Bullet symbol="•" style={styles.paragraph}>
-            Авіаційні бомби
+            Авіаційні бомби.
           </Bullet>
           <Bullet symbol="•" style={styles.paragraph}>
-            Освітлювальні, імітаційні, спеціальні ракети
+            Освітлювальні, імітаційні, спеціальні ракети.
           </Bullet>
           <Bullet symbol="•" style={styles.paragraph}>
-            Вибухові пакети та петарди, сигнальні ракети
+            Вибухові пакети та петарди, сигнальні ракети.
           </Bullet>
           <Bullet symbol="•" style={styles.paragraph}>
-            Димові гранати та шашки
+            Димові гранати та шашки.
           </Bullet>
 
           <View style={styles.spacer} />

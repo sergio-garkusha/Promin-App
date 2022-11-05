@@ -26,12 +26,11 @@ export default function Marennya({ navigation }) {
           </Bullet>
 
           <Bullet symbol="2. " style={styles.paragraph}>
-            До прибуття спеціалістів слідкуйте за тим щоб постраждалий не
-            зашкодив собі та оточуючим.
+            До прибуття спеціалістів слідкуйте за тим, щоб постраждалий не зашкодив собі та оточуючим.
           </Bullet>
 
           <Bullet symbol="3. " style={styles.paragraph}>
-            Ізолюйте постраждалого але не залишайте наодинці.
+            Ізолюйте постраждалого, але не залишайте наодинці.
           </Bullet>
 
           <Bullet symbol="4. " style={styles.paragraph}>

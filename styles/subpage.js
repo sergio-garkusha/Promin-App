@@ -1,6 +1,8 @@
 import { StyleSheet } from "react-native";
 import { isMobile } from "/helpers/utils";
 
+const IS_WEB = !isMobile();
+
 const resolveStyles = (theme, computeFS) => {
   const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
   const color = theme === "dark" ? "#FFF" : "#000";
@@ -13,12 +15,12 @@ const resolveStyles = (theme, computeFS) => {
   return StyleSheet.create({
     accordeonTop: { marginLeft: 15, marginRight: 15 },
     container: {
-      width: !isMobile() ? 420 : "auto",
+      width: IS_WEB ? 420 : "auto",
       backgroundColor,
       marginBottom: 20,
       marginTop: 26,
-      marginLeft: !isMobile() ? "auto" : 20,
-      marginRight: !isMobile() ? "auto" : 20
+      marginLeft: IS_WEB ? "auto" : 24,
+      marginRight: IS_WEB ? "auto" : 24
     },
     header: {
       color,
@@ -28,6 +30,9 @@ const resolveStyles = (theme, computeFS) => {
       marginTop: 40,
       marginBottom: 32,
       textAlign: "left"
+    },
+    withoutHeader: {
+      paddingTop: 20
     },
     header2: {
       color: labelCol,

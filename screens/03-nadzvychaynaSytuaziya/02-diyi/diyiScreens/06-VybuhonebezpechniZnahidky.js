@@ -1,5 +1,6 @@
 import React from "react";
 import { Text, View, ScrollView } from "react-native";
+
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import Accordion from "/components/Accordion";
@@ -12,6 +13,7 @@ export default function VybuhonebezpechniZnahidky({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
+
   return (
     <View>
       <Header backButton navigation={navigation} />
@@ -20,29 +22,29 @@ export default function VybuhonebezpechniZnahidky({ navigation }) {
           <Text style={styles.header}>Вибухонебезпечні знахідки</Text>
           <Accordion title="Дії">
             <Bullet symbol="1." style={styles.paragraph}>
-              Негайно повідомте чергові служби органів внутрішніх справ, цивільного захисту 101 або 102
+              Негайно повідомте черговій служби органів внутрішніх справ, цивільного захисту 101 або 102.
             </Bullet>
             <Bullet symbol="2." style={styles.paragraph}>Заборонено:</Bullet>
             <View style={styles.subBullet}>
               <Bullet symbol="•" style={styles.paragraph}>
-                Наближатися до предмету;
+                наближатися до предмету;
               </Bullet>
               <Bullet symbol="•" style={styles.paragraph}>
-                Пересувати його або брати в руки;
+                пересувати його або брати в руки;
               </Bullet>
               <Bullet symbol="•" style={styles.paragraph}>
-                Розряджати, кидати, ударяти по ньому;
+                розряджати, кидати, ударяти по ньому;
               </Bullet>
               <Bullet symbol="•" style={styles.paragraph}>
-                Розпалювати поряд багаття або кидати в нього предмет;
+                розпалювати поряд багаття або кидати в нього предмет;
               </Bullet>
               <Bullet symbol="•" style={styles.paragraph}>
-                Приносити предмет до дому, у табір, школу.
+                приносити предмет до дому, у табір, школу.
               </Bullet>
             </View>
 
             <Bullet symbol="3." style={styles.paragraph}>
-              Відмітье підручними предметами місцезнаходження підозрілої знахідки. Не допускайте до знахідки інших людей.
+              Позначте підручними предметами місцезнаходження підозрілої знахідки. Не допускайте до знахідки інших людей.
             </Bullet>
             <Bullet symbol="4." style={styles.paragraph}>
               Припиніть всі види робіт в районі виявлення вибухонебезпечного предмету.
@@ -58,7 +60,7 @@ export default function VybuhonebezpechniZnahidky({ navigation }) {
             </Bullet>
             <Bullet symbol="•" style={styles.paragraph}>
               Практично всі вибухові речовини отруйні, чутливі до механічних дій і
-              нагрівання. Поводження з ними вимагає граничної уваги і обережності!
+              нагрівання. Поводження з ними вимагає особливої уваги та обережності!
             </Bullet>
             <Bullet symbol="•" style={styles.paragraph}>
               Розмінуванням, знешкодженням або знищенням вибухонебезпечних предметів
@@ -79,23 +81,3 @@ export default function VybuhonebezpechniZnahidky({ navigation }) {
     </View>
   );
 }
-
-const resolveLocalStyles = (theme, computeFS) => {
-  const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
-  const color = theme === "dark" ? "#848EB0" : "#666";
-  return StyleSheet.create({
-    container: {
-      backgroundColor,
-      marginTop: 26
-    },
-    title: {
-      color,
-      fontFamily: "Ubuntu",
-      fontSize: computeFS(18),
-      lineHeight: computeFS(21),
-      marginBottom: 16,
-      marginTop: 32,
-      textAlign: "left",
-    },
-  });
-};

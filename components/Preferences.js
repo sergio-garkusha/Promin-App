@@ -40,13 +40,10 @@ const Icon = ({ idx, style, color }) => {
   return null;
 };
 
-let computeFS;
-
 function FontSizeButtons() {
   const { coefficient, subtractSize, defaultSize, addSize, computeFontSize } = React.useContext(FontSizeContext);
   const { computeTheme } = React.useContext(ThemeContext);
-  const styles = resolveLocalStyles(computeTheme());
-  computeFS = computeFontSize;
+  const styles = resolveLocalStyles(computeTheme(), computeFontSize);
 
   const changeFontSize = (e, btn) => {
     if (btn === "default") defaultSize();
@@ -259,7 +256,7 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
                 <>
                   <ListItem
                     roundTop
-                    context
+                    prefsCtx
                     icon={<HelpBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
                     isButton
                     title="Підтримка"
@@ -268,7 +265,7 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
                   />
                   <ListItem
                     roundTop
-                    context
+                    prefsCtx
                     icon={<ShareItBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
                     isButton
                     title="Розкажи друзям"
@@ -277,7 +274,7 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
                   />
                   <ListItem
                     roundTop
-                    context
+                    prefsCtx
                     icon={<RateItBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
                     isButton
                     title={getStoreText()}
@@ -287,7 +284,7 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
                 </>)}
               <ListItem
                 roundTop
-                context
+                prefsCtx
                 icon={<AboutUsBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
                 title="Про нас"
                 onPress={() => goTo("AboutUs")}
@@ -295,7 +292,7 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
               />
               <ListItem
                 roundTop
-                context
+                prefsCtx
                 icon={<LinksBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
                 title="Корисні посилання"
                 onPress={() => goTo("UsefulLinks")}
@@ -312,7 +309,7 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
   );
 }
 
-const resolveLocalStyles = (theme) => {
+const resolveLocalStyles = (theme, computeFS) => {
   const borderColor = theme === "dark" ? "#3D486C" : "#E6E7ED";
   const closeBtnColor = theme === "dark" ? "#9AA3C5" : "#666";
   const closeBtnBG = theme === "dark" ? "#01020633" : "#74748014";

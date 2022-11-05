@@ -36,7 +36,7 @@ function WelcomeScreen({ navigation }) {
             кризових ситуаціях.
           </Text>
           <Text style={styles.paragraph}>
-            Тут ви можете знайти поради та перевірені техніки як покращити свій
+            Тут ви можете знайти поради та перевірені техніки, які допоможуть покращити свій
             психологічний стан та стан людей навколо вас.
           </Text>
           <Text style={styles.paragraph}>Тримаймося.</Text>
@@ -53,6 +53,7 @@ const resolveStyles = (theme, computeFS) => {
   return StyleSheet.create({
     web: {
       maxWidth: 420,
+      width: 420,
       marginLeft: "auto",
       marginRight: "auto"
     },
