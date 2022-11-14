@@ -21,7 +21,7 @@ export default function Perezbudzennya({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Перезбудження </Text>
 
-          <Text style={styles.header2}>В цій ситуації: </Text>
+          <Text style={styles.Subtitle}>В цій ситуації: </Text>
 
           <Bullet symbol="1." style={styles.paragraph}>
             Використовуйте прийом «захват»: станьте позаду постраждалого,
@@ -58,7 +58,7 @@ export default function Perezbudzennya({ navigation }) {
             Пам’ятайте, що постраждалий може завдати шкоди собі та оточуючим.
           </Bullet>
 
-          <Text style={styles.header2}>
+          <Text style={styles.Subtitle}>
             Перезбудження зазвичай триває недовго і може перейти у:
           </Text>
 

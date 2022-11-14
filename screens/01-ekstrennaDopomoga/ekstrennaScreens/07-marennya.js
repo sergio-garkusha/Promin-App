@@ -18,7 +18,7 @@ export default function Marennya({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Марення і галюцинації</Text>
 
-          <Text style={styles.header2}>В цій ситуації:</Text>
+          <Text style={styles.Subtitle}>В цій ситуації:</Text>
 
           <Bullet symbol="1. " style={styles.paragraph}>
             Зверніться до медичних працівників, викличте бригаду швидкої

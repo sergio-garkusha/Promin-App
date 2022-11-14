@@ -17,9 +17,9 @@ export default function Shvidkii({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Швидкий рецепт психологічної стійкості</Text>
 
-          <Text style={styles.header2}>Цей «рецепт» спрямований на формування внутрішньої опори через усвідомлення можливості вистояти перед випробуваннями життя.</Text>
+          <Text style={styles.Subtitle}>Цей «рецепт» спрямований на формування внутрішньої опори через усвідомлення можливості вистояти перед випробуваннями життя.</Text>
 
-          <Text style={styles.header2}>Інгредієнти:</Text>
+          <Text style={styles.Subtitle}>Інгредієнти:</Text>
 
           <Bullet symbol="1." style={styles.paragraph}>
             Цінності. Наші цінності є основою, у них будемо занурювати все інше; це те, що найголовніше, заради чого вся наша боротьба – любові, дітей, майбутнього і т.д. Цінності дають відчуття сенсу, правди, незламну підтримку та відданість йти до кінця.
@@ -33,7 +33,7 @@ export default function Shvidkii({ navigation }) {
             Мудрі, світлі думки. Додаємо при потребі світлі думки, насправді, їх треба не багато – але рівно стільки, щоби скерувати наші дії та мудро сприймати виклики. Надихаючі вислови, молитви, бойові мантри, поезія – різні форми, але наповнені тим самим – мудрістю й світлом.
           </Bullet>
 
-          <Text style={styles.header2}>Приготування:</Text>
+          <Text style={styles.Subtitle}>Приготування:</Text>
 
           <Bullet symbol="•" style={styles.paragraph}>
             Змішуємо інгредієнти, даємо трішки настоятися, думкам і діям просочитися цінностями.
@@ -62,7 +62,7 @@ export default function Shvidkii({ navigation }) {
             Вживаємо!
           </Bullet>
 
-          <Text style={styles.header2}>Підказки:</Text>
+          <Text style={styles.Subtitle}>Підказки:</Text>
 
           <Bullet symbol="•" style={styles.paragraph}>
             Найкраще готувати разом з іншими, тоді виходить дуже гарна композиція.

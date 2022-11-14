@@ -17,7 +17,7 @@ export default function CheroBilaFoto({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Вправа «Чорно-біла фотографія»</Text>
 
-          <Text style={styles.header2}>
+          <Text style={styles.Subtitle}>
             Ця вправа спрямована на зменшення інтенсивності впливу травматичних спогадів та на те, щоб локалізувати їх.
           </Text>
 

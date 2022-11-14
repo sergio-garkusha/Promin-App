@@ -17,13 +17,13 @@ export default function YaMaiu({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Вправа «Я маю, я є, я можу і я буду»</Text>
 
-          <Text style={styles.header2}>Час від часу корисно подумати про свої ресурси.
+          <Text style={styles.Subtitle}>Час від часу корисно подумати про свої ресурси.
           </Text>
 
-          <Text style={styles.header2}>Робити це означає пам’ятати про свою стійкість і нагадувати про неї. Ця вправа для тих, кому може знадобитися розумовий заряд і нагадування про те, що мотивує Вас у повсякденному житті.
+          <Text style={styles.Subtitle}>Робити це означає пам’ятати про свою стійкість і нагадувати про неї. Ця вправа для тих, кому може знадобитися розумовий заряд і нагадування про те, що мотивує Вас у повсякденному житті.
           </Text>
 
-          <Text style={styles.header2}>Для виконання вправи знадобиться папір і ручка.
+          <Text style={styles.Subtitle}>Для виконання вправи знадобиться папір і ручка.
           </Text>
 
           <Bullet symbol="•" style={styles.paragraph}>

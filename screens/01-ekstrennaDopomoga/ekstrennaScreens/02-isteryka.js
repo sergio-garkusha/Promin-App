@@ -18,7 +18,7 @@ export default function Isteryka({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Істерика</Text>
 
-          <Text style={styles.header2}>В цій ситуації:</Text>
+          <Text style={styles.Subtitle}>В цій ситуації:</Text>
 
           <Bullet symbol="1. " style={styles.paragraph}>
             Попросіть глядачів піти. Залишіться з потерпілим наодинці, якщо це

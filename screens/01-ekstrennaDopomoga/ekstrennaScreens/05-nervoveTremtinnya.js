@@ -18,7 +18,7 @@ export default function NervoveTremtinnya({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Нервове тремтіння </Text>
 
-          <Text style={styles.header2}>В цій ситуації:</Text>
+          <Text style={styles.Subtitle}>В цій ситуації:</Text>
 
           <Bullet symbol="1." style={styles.paragraph}>
             Потрібно посилити тремтіння.
@@ -37,7 +37,7 @@ export default function NervoveTremtinnya({ navigation }) {
             відпочити. Бажано вкласти спати.
           </Bullet>
 
-          <Text style={styles.header2}>Не можна:</Text>
+          <Text style={styles.Subtitle}>Не можна:</Text>
 
           <Bullet symbol="•" style={styles.paragraph}>
             Обіймати постраждалого або притискати до себе.

@@ -17,7 +17,7 @@ export default function EkstrennaDopomoga({ navigation }) {
       <Header backButton navigation={navigation} />
       <ScrollView>
         <View style={[styles.container, styles.withoutHeader]}>
-          <Text style={styles.sectionHeader}>Екстрена психологічна допомога:</Text>
+          <Text style={[styles.sectionHeader, styles.Subtitle]}>Екстрена психологічна допомога:</Text>
           <ListItem
             roundTop
             icon="😱"

@@ -16,7 +16,7 @@ export default function Telebachennya({ navigation }) {
       <ScrollView>
         <View style={styles.container}>
           <Text style={styles.header}>Вимкнули телебачення</Text>
-          <Text style={styles.header2}>
+          <Text style={styles.Subtitle}>
             Крім ефірного мовлення, отримати безкоштовний доступ до українських
             телеканалів можна кількома способами:
           </Text>

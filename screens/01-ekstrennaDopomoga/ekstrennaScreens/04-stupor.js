@@ -21,7 +21,7 @@ export default function Stupor({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Ступор</Text>
 
-          <Text style={styles.header2}>В цій ситуації:</Text>
+          <Text style={styles.Subtitle}>В цій ситуації:</Text>
 
           <Bullet symbol="1." style={styles.paragraph}>
             Загніть постраждалій усі пальці на руках окрім великих. Великі

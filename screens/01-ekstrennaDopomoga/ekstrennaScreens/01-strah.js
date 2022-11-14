@@ -18,7 +18,7 @@ export default function Strah({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Страх</Text>
 
-          <Text style={styles.header2}>В цій ситуації:</Text>
+          <Text style={styles.Subtitle}>В цій ситуації:</Text>
 
           <Bullet symbol="1." style={styles.paragraph}>
             Покладіть руку постраждалого собі на зап’ястя, щоб він відчув ваш

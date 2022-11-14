@@ -98,7 +98,7 @@ export default function VybuhonebezpechniPredmety({ navigation }) {
             Протитанкова кумулятивна міна.
           </Bullet>
 
-          <Text style={styles.header2}> Інші вибухонебезпечні предмети</Text>
+          <Text style={styles.Subtitle}> Інші вибухонебезпечні предмети</Text>
           <Bullet symbol="•" style={styles.paragraph}>
             Бойові ракети та їх фрагменти.
           </Bullet>

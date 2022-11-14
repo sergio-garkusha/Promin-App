@@ -17,7 +17,7 @@ export default function VnutrishnySeif({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Вправа «Внутрішній сейф»</Text>
 
-          <Text style={styles.header2}>Вправа  спрямована на залучення нашої уяви до «зберігання» небезпечних і обтяжливих спогадів на час неможливості звернення до психотерапевта.
+          <Text style={styles.Subtitle}>Вправа  спрямована на залучення нашої уяви до «зберігання» небезпечних і обтяжливих спогадів на час неможливості звернення до психотерапевта.
           </Text>
 
           <Bullet symbol="•" style={styles.paragraph}>

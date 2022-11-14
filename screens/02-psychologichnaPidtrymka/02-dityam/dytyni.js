@@ -15,7 +15,7 @@ export default function Dytyni({ navigation }) {
       <Header backButton navigation={navigation} />
       <ScrollView>
         <View style={styles.container}>
-          <Text style={styles.sectionHeader}>Дітям</Text>
+          <Text style={[styles.sectionHeader, styles.Subtitle]}>Дітям</Text>
 
           <ListItem
             icon="🧩"

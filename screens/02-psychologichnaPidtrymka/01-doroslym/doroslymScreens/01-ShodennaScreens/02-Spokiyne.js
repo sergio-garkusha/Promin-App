@@ -19,7 +19,7 @@ export default function Spokiyne({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Вправа «Спокійне місце»</Text>
 
-          <Text style={styles.header2}>Вправа «Спокійне місце» спрямована на залучення нашої уяви до відновлення почуття спокою та впевненості.
+          <Text style={styles.Subtitle}>Вправа «Спокійне місце» спрямована на залучення нашої уяви до відновлення почуття спокою та впевненості.
           </Text>
           <Bullet symbol="•" style={styles.paragraph}>
             Займіть зручну розслаблену позу тіла: або сидячи, або лежачи.

@@ -53,7 +53,7 @@ export default function VybuhonebezpechniZnahidky({ navigation }) {
               Дочекайтеся прибуття фахівців, вкажіть місце знахідки та повідомте час її виявлення.
             </Bullet>
 
-            <Text style={styles.header2}>Пам’ятайте!</Text>
+            <Text style={styles.Subtitle}>Пам’ятайте!</Text>
             <Bullet symbol="•" style={styles.paragraph}>
               Одна з основних причин нещасних випадків з вибуховими пристроями – грубе
               порушення елементарних правил безпеки.

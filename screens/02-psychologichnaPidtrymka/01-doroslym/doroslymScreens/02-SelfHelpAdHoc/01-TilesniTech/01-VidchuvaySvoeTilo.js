@@ -16,7 +16,7 @@ export default function ContentPage({ navigation }) {
       <ScrollView>
         <View style={styles.container}>
           <Text style={styles.header}>Відчуваю своє тіло</Text>
-          <Text style={styles.header2}>Прислухайтесь до своїх відчуттів. Запишіть «почуте»:</Text>
+          <Text style={styles.Subtitle}>Прислухайтесь до своїх відчуттів. Запишіть «почуте»:</Text>
           <Bullet symbol="•" style={styles.paragraph}>мої стопи відчувають…</Bullet>
           <Bullet symbol="•" style={styles.paragraph}>мої коліна відчувають…</Bullet>
           <Bullet symbol="•" style={styles.paragraph}>мої стегна відчувають…</Bullet>

@@ -18,7 +18,7 @@ export default function Plach({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Плач </Text>
 
-          <Text style={styles.header2}>В цій ситуації:</Text>
+          <Text style={styles.Subtitle}>В цій ситуації:</Text>
 
           <Bullet symbol="1." style={styles.paragraph}>
             Не залишайте потерпілого одного.

@@ -17,7 +17,7 @@ export default function VnutrishnySad({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Вправа «Внутрішній сад»</Text>
 
-          <Text style={styles.header2}>Вправа «Внутрішній сад» спрямована на залучення нашої уяви до збільшення внутрішнього ресурсу та почуття контролю.
+          <Text style={styles.Subtitle}>Вправа «Внутрішній сад» спрямована на залучення нашої уяви до збільшення внутрішнього ресурсу та почуття контролю.
           </Text>
 
           <Bullet symbol="•" style={styles.paragraph}>
