@@ -32,18 +32,18 @@ export default function Header({ navigation, backButton, homeDisabled }) {
   const headerHeight = 88;
 
   const logoWidth = 132;
-  const logoHeight = 79.4 // logoWidth / logoAspect;
+  const logoHeight = 77.68  // logoWidth / logoAspect;
   const logoTop = headerHeight - logoHeight / 2 - 1;
 
   const backAspect = 228 / 135;
   const backWidth = 70;
   const backHeight = backWidth / backAspect + 4;
-  const backTop = headerHeight - backHeight / 2 - 1; // image is not even :(
+  const backTop = headerHeight - backHeight / 1.98; // image is not even :(
 
   const prefAspect = 76 / 45;
   const prefWidth = 70;
   const prefHeight = prefWidth / prefAspect + 4;
-  const prefTop = headerHeight - prefHeight / 2 - 1;
+  const prefTop = headerHeight - prefHeight / 1.98;
 
   const prefThemeColor = computedTheme === "dark" ? "#18203A" : "#F3F3F3";
 

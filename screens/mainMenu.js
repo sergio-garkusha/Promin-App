@@ -19,7 +19,7 @@ export default function MainMenu({ navigation }) {
         <View style={[styles.container, styles.withoutHeader]}>
           <Text style={styles.sectionHeader}>Екстрена допомога</Text>
           <ListItem
-            icon="🚨"
+            icon="🆘"
             roundTop
             roundBottom
             title="Екстрена психологічна допомога"
