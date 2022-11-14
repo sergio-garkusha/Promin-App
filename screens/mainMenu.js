@@ -1,73 +1,60 @@
-import * as React from 'react';
-import { Text, View, StyleSheet, ScrollView } from 'react-native';
-import { ThemeContext } from 'ThemeProvider';
-import Header from 'components/Header'
-import ListItem from 'components/ListItem';
+import React from "react";
+import { Text, View, ScrollView } from "react-native";
+
+import { ThemeContext } from "/components/ThemeProvider";
+import { FontSizeContext } from "/components/FontSizeProvider";
+import Header from "/components/Header";
+import ListItem from "/components/ListItem";
+import resolveStyles from "/styles/subpage";
 
 export default function MainMenu({ navigation }) {
-  const { theme } = React.useContext(ThemeContext);
-  const styles = resolveLocalStyles(theme);
+  const { computeTheme } = React.useContext(ThemeContext);
+  const { computeFontSize } = React.useContext(FontSizeContext);
+  const styles = resolveStyles(computeTheme(), computeFontSize);
+
   return (
     <View>
-      <Header navigation={navigation}/>
+      <Header navigation={navigation} homeDisabled />
       <ScrollView>
-        <View style={styles.container}>
+        <View style={[styles.container, styles.withoutHeader]}>
+          <Text style={styles.sectionHeader}>Екстрена допомога</Text>
+          <ListItem
+            icon="🆘"
+            roundTop
+            roundBottom
+            title="Екстрена психологічна допомога"
+            onPress={() => navigation.push("EkstrennaDopomoga")}
+          />
 
-          <View style={{padding: 20}}>
-            <Text style={styles.title}>Екстрена допомога</Text>
-            <ListItem icon="🚨" roundTop roundBottom title="Екстренна психологічна допомога" onPress={()=>navigation.push("EkstrennaDopomoga")}/>
+          <Text style={styles.sectionHeader}>Психологічна підтримка</Text>
+          <ListItem
+            icon="👩"
+            roundTop
+            title="Дорослим"
+            onPress={() => navigation.push("Doroslym")}
+          />
+          <ListItem
+            icon="👦"
+            roundBottom
+            title="Дітям"
+            onPress={() => navigation.push("Dytyni")}
+          />
 
-            <Text style={styles.title}>Психічна підтримка</Text>
-            <ListItem icon="👩" roundTop title="Для себе" onPress={()=>navigation.push("DlyaSebe")}/>
-            <ListItem icon="👦" roundBottom title="Дитині" onPress={()=>navigation.push("Dytuni")}/>
-
-            <Text style={styles.title}>Надзвичайна ситуація</Text>
-            <ListItem icon="🚑" roundTop title="Контакти служб порятунку" onPress={()=>navigation.push("Kontakty")}/>
-            <ListItem icon="👉" roundBottom title="Дії у різних ситуаціях" onPress={()=>navigation.push("Diyi")}/>
-
-          </View>
+          <Text style={styles.sectionHeader}>Надзвичайна ситуація</Text>
+          <ListItem
+            icon="🚑"
+            roundTop
+            title="Контакти служб порятунку"
+            onPress={() => navigation.push("Kontakty")}
+          />
+          <ListItem
+            icon="👉"
+            title="Дії в надзвичайних ситуаціях"
+            onPress={() => navigation.push("Diyi")}
+            roundBottom
+          />
         </View>
       </ScrollView>
     </View>
-)}
-
-const resolveLocalStyles = theme => {
-  const backgroundColor = theme === 'dark' ? '#18203A' : '#F3F3F3';
-  const color = theme === 'dark' ? '#FFF' : '#000';
-  const labelColor = theme === 'dark' ? '#848EB0' : '#666';
-  return StyleSheet.create({
-    container: {
-      paddingTop: 110,
-      flex: 1,
-      justifyContent: 'center',
-      backgroundColor: backgroundColor
-    },
-    title: {
-      marginTop:32,
-      marginBottom:16,
-      fontFamily: 'Ubuntu',
-      fontSize: 18,
-      lineHeight: 21,
-      textAlign: 'left',
-      color: labelColor
-    },
-    listGroup: {
-      borderRadius: 12
-    },
-    paragraph: {
-      margin: 5,
-      fontSize: 14,
-      fontWeight: 'normal',
-      textAlign: 'center',
-      color
-    },
-    roundImage: {
-      width: 200,
-      height: 200,
-      borderRadius: 200 / 2
-    },
-    Button:{
-      padding:4
-    }
-  })
-};
+  );
+}

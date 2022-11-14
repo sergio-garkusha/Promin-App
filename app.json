@@ -1,8 +1,9 @@
 {
   "expo": {
-    "name": "Promin App",
+    "name": "Promin",
     "slug": "snack-b633f0e7-a078-4a93-8bfc-a380d9b0faf8",
-    "version": "1.0.0",
+    "version": "0.0.69",
+    "privacy": "unlisted",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -17,13 +18,15 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "app.promin"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "app.promin"
     },
     "web": {
       "favicon": "./assets/favicon.png"

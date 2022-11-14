@@ -1,87 +1,106 @@
-import React from 'react';
-import { Text, View, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { responsiveHeight, responsiveWidth, responsiveFontSize} from "react-native-responsive-dimensions";
-import { ThemeContext } from 'ThemeProvider';
-import backButton from 'assets/button_back_large.png';
-import headerLogo from 'assets/header_logo.png';
-import prefButton from 'assets/prefs_light.png';
+import React from "react";
+import { View, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
 
-export default function Header(props) {
-  const { toggleTheme } = React.useContext(ThemeContext);
+import { isMobile } from "/helpers/utils";
+import { OverlayContext } from "/components/OverlayProvider";
+import { ThemeContext } from "/components/ThemeProvider";
+import Preferences from "./Preferences";
+import BackButton from "/icons/BackButton";
+import PagesLogo from "/icons/PagesLogo";
+import Prefs from "/icons/Prefs";
+
+export default function Header({ navigation, backButton, homeDisabled }) {
+  const [modalVisible, setModalVisible] = React.useState(false);
+  const { toggleOverlay } = React.useContext(OverlayContext);
+  const { computeTheme } = React.useContext(ThemeContext);
+
+  const computedTheme = computeTheme();
+
   const toMainMenu = () => {
-    if(props.navigation)
-      props.navigation.push( "MainMenu" )
-    else
-      console.log("please pass 'navigation={navigation}' prop to the header called from current screen")
+    navigation.push("MainMenu");
   };
+
   const goBack = () => {
-    if(props.navigation)  
-      props.navigation.goBack()
-    else
-      console.log("please pass 'navigation={navigation}' prop to the header called from current screen")
+    navigation.goBack();
   };
+
   const setPreferences = () => {
-    toggleTheme();
+    toggleOverlay(true);
+    setModalVisible(true);
   };
 
-  const headerHeight = 70
+  const headerHeight = 88;
 
-  const logoAspect = 264 / 243;
-  const logoWidth = 90
-  const logoHeight = logoWidth / logoAspect
-  const logoTop = headerHeight - logoHeight / 2
+  const logoWidth = 132;
+  const logoHeight = 77.68  // logoWidth / logoAspect;
+  const logoTop = headerHeight - logoHeight / 2 - 1;
 
   const backAspect = 228 / 135;
-  const backWidth = 70
-  const backHeight = backWidth / backAspect
-  const backTop = headerHeight - backHeight / 2 - 1  // image is not even :(
+  const backWidth = 70;
+  const backHeight = backWidth / backAspect + 4;
+  const backTop = headerHeight - backHeight / 1.98; // image is not even :(
 
-  // Preferences Button Related
-  // const prefAspect = 76 / 45;
-  // const prefWidth = 70
-  // const prefHeight = prefWidth / prefAspect
-  // const prefTop = headerHeight - prefHeight / 2
+  const prefAspect = 76 / 45;
+  const prefWidth = 70;
+  const prefHeight = prefWidth / prefAspect + 4;
+  const prefTop = headerHeight - prefHeight / 1.98;
 
-  return (  
-    <View style={[ props.style, { 
-      marginBottom: 20,
-      backgroundColor: '#5177ff', 
-      height: headerHeight, 
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      position:'absolute',
-      top:0,
-      width: '100%',
-      zIndex: 100,
-    }]}>
+  const prefthemecolor = computedTheme === "dark" ? "#18203A" : "#F3F3F3";
 
-      { props.backButton
-        ? 
-          <TouchableOpacity style={{ marginTop: backTop, width: backWidth, height: backHeight }} onPress={goBack}>
-            <Image
-              source={backButton}
-              style={{ width: backWidth, height: backHeight }} 
-            />
+  return (
+    <>
+      <View
+        style={{
+          position: !isMobile() ? "fixed" : "absolute",
+          marginBottom: 0,
+          backgroundColor: "#5177ff",
+          height: headerHeight,
+          width: "100%",
+          zIndex: 100,
+        }}
+      >
+        <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
+
+          {backButton ? (
+            <TouchableOpacity
+              style={{ marginTop: backTop, width: backWidth, height: backHeight }}
+              onPress={goBack}
+            >
+              <BackButton prefthemecolor={prefthemecolor} />
+            </TouchableOpacity>
+          ) : (
+            <View style={{ width: backWidth }} />
+          )}
+
+          {homeDisabled ?
+            (
+              <View style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}>
+                <PagesLogo width={logoWidth} height={logoHeight} />
+              </View>
+            ) : (
+              <TouchableOpacity onPress={toMainMenu}>
+                <View style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }}>
+                  <PagesLogo width={logoWidth} height={logoHeight} />
+                </View>
+              </TouchableOpacity>
+            )
+          }
+
+          <TouchableOpacity
+            style={{ marginTop: prefTop }}
+            onPress={setPreferences}
+          >
+            <Prefs width={prefWidth} height={prefHeight} prefthemecolor={prefthemecolor} />
           </TouchableOpacity>
-        :
-          <View style={{ width: backWidth }} />
-      }
+        </View>
 
-      <TouchableOpacity style={{ marginTop: logoTop, width: logoWidth, height: logoHeight }} onPress={toMainMenu} >
-        <Image 
-          source={headerLogo}
-          style={{ width: logoWidth, height: logoHeight }} 
+        <Preferences
+          navigation={navigation}
+          modalVisible={modalVisible}
+          setModalVisible={setModalVisible}
         />
-      </TouchableOpacity>
-      <View style={{ width: backWidth }} />
-      {/* Preferences Button Related
-      <TouchableOpacity style={{ marginTop: prefTop, width: prefWidth, height: prefHeight }} onPress={setPreferences}>
-        <Image
-          source={prefButton}
-          style={{ width: prefWidth, height: prefHeight }}
-        />
-      </TouchableOpacity>
-      <View style={{ width: backWidth }} /> */}
-    </View>
+      </View>
+      <View style={{ height: headerHeight }} />
+    </>
   );
 }

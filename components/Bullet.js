@@ -1,22 +1,11 @@
-import * as React from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
+import React from "react";
+import { Text, View } from "react-native";
 
 export default function Bullet(props) {
   return (
-    <View style={styles.container}>
-      <Text style={[props.style, {flex:5}]}>
-        {props.symbol}
-      </Text>
-      <Text style={[props.style, {flex:95}]}>
-        {props.children}
-      </Text>
+    <View style={{ flexDirection: "row" }}>
+      <Text style={[props.style, { flex: 6 }]}>{props.symbol}</Text>
+      <Text style={[props.style, { flex: 94 }]}>{props.children}</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    justifyContent: 'center',
-    flexDirection: 'row'
-  }
-});

@@ -1,0 +1,48 @@
+{
+    "entry": [
+        "App.js"
+    ],
+    "extensions": [
+        ".js",
+        ".jsx"
+    ],
+    "ignorePatterns": [
+        "**/node_modules/**"
+    ],
+    "ignoreUnresolved": [
+        "some-npm-dependency"
+    ],
+    "ignoreUnimported": [
+        "babel.config.js"
+    ],
+    "ignoreUnused": [
+        "bcrypt",
+        "create-emotion"
+    ],
+    "moduleDirectory": [
+        "node_modules", ".expo"
+    ],
+    "aliases": {
+        "/assets/*": [
+            "./assets",
+            "./assets/*"
+        ],
+        "/components/*": [
+            "./components",
+            "./components/*"
+        ],
+        "/Routes/*": [
+            "./Routes",
+            "./Routes"
+        ],
+        "/screens/*": [
+            "./screens",
+            "./screens/*"
+        ],
+        "/styles/*": [
+            "./styles",
+            "./styles/*"
+        ]
+    },
+    "rootDir": "./"
+}

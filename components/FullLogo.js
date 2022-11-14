@@ -1,29 +1,37 @@
-import * as React from 'react';
-import { View, Image } from 'react-native';
-import { responsiveHeight, responsiveWidth } from "react-native-responsive-dimensions";
-import Logo from 'assets/Logo-large.png';
+import React from "react";
+import { View } from "react-native";
+import {
+  responsiveHeight,
+  responsiveWidth,
+} from "react-native-responsive-dimensions";
+import WelcomeLogo from "/icons/WelcomeLogo";
+
 export default function FullLogo(props) {
+  const logoAspect = 114 / 171;
+  let logoWidth;
 
-  const logoAspect = 408 / 615;
-  var logoWidth
+  if (props.widthPercent)
+    logoWidth = responsiveWidth(props.widthPercent); // responsive
+  else logoWidth = 114; // static
 
-  if(props.widthPercent)  // responsive
-    logoWidth = responsiveWidth(props.widthPercent);
-  else // static
-    logoWidth = 128
-
-  const logoHeight = logoWidth / logoAspect
-
-  const logoMarginTop = (responsiveHeight(50) - logoHeight) / 2
+  const logoHeight = 171 || logoWidth / logoAspect + 7;
+  const logoMarginTop = (responsiveHeight(40) - logoHeight) / 2;
 
   return (
-    <View style={[ props.style, { marginTop: logoMarginTop, justifyContent: 'center', alignItems: 'center'}]}>
-      <Image 
-        source={Logo} 
-        style={{
-          width: logoWidth,
-          height: logoHeight
-        }} />
+    <View
+      style={[
+        props.style,
+        {
+          marginTop: logoMarginTop,
+          justifyContent: "center",
+          alignItems: "center",
+        },
+      ]}
+    >
+      <WelcomeLogo
+        width={logoWidth}
+        height={logoHeight}
+      />
     </View>
   );
 }

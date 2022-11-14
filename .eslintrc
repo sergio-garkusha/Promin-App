@@ -1,0 +1,34 @@
+{
+  "extends": [
+    "airbnb",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-native/all",
+    "plugin:prettier/recommended"
+  ],
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
+  },
+  "rules": {
+    "prettier/prettier": 1,
+    "no-absolute-path": false,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "react/destructuring-assignment": 0,
+    "react/prop-types": 0,
+    "no-use-before-define": 0,
+    "react-native/no-inline-styles": 0,
+    "react-native/no-unused-styles": 0,
+    "react-native/no-color-literals": 0,
+    "react-native/no-raw-text": 0
+  }
+}
