@@ -45,7 +45,7 @@ export default function Header({ navigation, backButton, homeDisabled }) {
   const prefHeight = prefWidth / prefAspect + 4;
   const prefTop = headerHeight - prefHeight / 1.98;
 
-  const prefThemeColor = computedTheme === "dark" ? "#18203A" : "#F3F3F3";
+  const prefthemecolor = computedTheme === "dark" ? "#18203A" : "#F3F3F3";
 
   return (
     <>
@@ -66,7 +66,7 @@ export default function Header({ navigation, backButton, homeDisabled }) {
               style={{ marginTop: backTop, width: backWidth, height: backHeight }}
               onPress={goBack}
             >
-              <BackButton prefThemeColor={prefThemeColor} />
+              <BackButton prefthemecolor={prefthemecolor} />
             </TouchableOpacity>
           ) : (
             <View style={{ width: backWidth }} />
@@ -90,7 +90,7 @@ export default function Header({ navigation, backButton, homeDisabled }) {
             style={{ marginTop: prefTop }}
             onPress={setPreferences}
           >
-            <Prefs width={prefWidth} height={prefHeight} prefThemeColor={prefThemeColor} />
+            <Prefs width={prefWidth} height={prefHeight} prefthemecolor={prefthemecolor} />
           </TouchableOpacity>
         </View>
 

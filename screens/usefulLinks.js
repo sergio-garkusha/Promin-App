@@ -58,8 +58,8 @@ export default function UsefulLinks({ navigation }) {
         <Text style={styles.header}>Корисні посилання</Text>
 
         <View style={IS_WEB && styles.web}>
-          <View style={{ paddingBottom: 32 }}>
-            <Text style={styles.sub}>Наші Партнери</Text>
+          <View>
+            <Text style={[styles.sub, { marginTop: 0 }]}>Наші Партнери</Text>
             <View style={styles.links}>
               {partners.map(card => (
                 <TouchableOpacity
@@ -96,8 +96,8 @@ export default function UsefulLinks({ navigation }) {
             </View>
           </View>
         </View>
-      </ScrollView>
-    </View>
+      </ScrollView >
+    </View >
   )
 }
 
@@ -126,7 +126,7 @@ const resolveLocalStyles = (theme, computeFS) => {
       fontFamily: "Ubuntu",
       marginBottom: 32,
       marginTop: 60,
-      textAlign: IS_WEB ? "center" : "left"
+      textAlign: "left"
     },
     sub: {
       color: labelColor,
@@ -134,7 +134,7 @@ const resolveLocalStyles = (theme, computeFS) => {
       fontSize: computeFS(18),
       lineHeight: computeFS(21),
       marginBottom: 16,
-      marginTop: 32,
+      marginTop: 16,
       textAlign: "left",
     },
     links: {
@@ -149,12 +149,12 @@ const resolveLocalStyles = (theme, computeFS) => {
       height: 200,
       backgroundColor: cardBackground,
       borderRadius: 10,
-      alignItems: 'center',
+      // alignItems: 'center',
       marginBottom: 16,
       marginRight: IS_WEB ? 16 : 0
     },
     logo: {
-      width: "100%",
+      // width: "100%",
       minHeight: 42,
       marginTop: 10,
       marginBottom: 10
@@ -168,22 +168,22 @@ const resolveLocalStyles = (theme, computeFS) => {
     },
     copy: {
       marginTop: 12,
-      textAlign: "center",
-      justifyContent: 'center',
+      textAlign: "left",
+      justifyContent: 'left',
     },
     title: {
       fontFamily: "Ubuntu",
       color: titleColor,
       fontSize: computeFS(16),
       marginBottom: 4,
-      textAlign: "center",
+      textAlign: "left",
     },
     subTitle: {
       marginTop: 2,
       fontFamily: "Ubuntu",
       color: subtitleColor,
       fontSize: computeFS(14),
-      textAlign: "center",
+      textAlign: "left",
     }
   })
 }

@@ -20,7 +20,7 @@ export default function Accordion({ title, children }) {
       <TouchableWithoutFeedback onPress={() => setIsCollapsed(!isCollapsed)}>
         <View style={styles.titleBox}>
           <Text style={styles.title}>{title}</Text>
-          <Caret style={styles.caret} prefThemeColor={caretColor} />
+          <Caret style={styles.caret} prefthemecolor={caretColor} />
         </View>
       </TouchableWithoutFeedback>
       <Collapsible
@@ -55,7 +55,6 @@ const resolveLocalStyles = (theme, computeFS) => {
     },
     title: {
       fontSize: computeFS(17),
-      fontWeight: "bold",
       backgroundColor: backgroundColor,
       color,
       flex: 1

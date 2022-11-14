@@ -13,7 +13,7 @@ export default function NextButton(props) {
   else buttonWidth = 96;
   const buttonHeight = buttonWidth / buttonAspect + 2;
 
-  const marginTop = -buttonHeight / 2;
+  const marginTop = -buttonHeight / 1.98;
   const alignment = !isMobile() ? "center" : "flex-end";
   return (
     <View style={[props.style, { marginTop, alignItems: alignment }]}>

@@ -3,7 +3,7 @@ import * as Linking from "expo-linking";
 import { Share } from "react-native";
 import { EMAIL, ITUNES_ID, ANDROID_PKG_NAME, WEBSITE } from "@env";
 // import * as StoreReview from "expo-store-review"; // Call to Review dep
-import { Modal, StyleSheet, Text, Pressable, View } from "react-native";
+import { Modal, StyleSheet, Text, Pressable, View, ScrollView } from "react-native";
 
 import { isIOS, isAndroid, isMobile } from "/helpers/utils";
 import { OverlayContext } from "/components/OverlayProvider";
@@ -34,9 +34,9 @@ const fontSizeI18N = {
 };
 
 const Icon = ({ idx, style, color }) => {
-  if (idx === 0) return <Sun style={style} prefThemeColor={color} />;
-  if (idx === 1) return <Moon style={style} prefThemeColor={color} />;
-  if (idx === 2) return <MoonSun style={style} prefThemeColor={color} />;
+  if (idx === 0) return <Sun style={style} prefthemecolor={color} />;
+  if (idx === 1) return <Moon style={style} prefthemecolor={color} />;
+  if (idx === 2) return <MoonSun style={style} prefthemecolor={color} />;
   return null;
 };
 
@@ -234,7 +234,7 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
   return (
     <View style={styles.centeredView}>
       <Modal animationType="slide" transparent visible={modalVisible}>
-        <View style={styles.bottomedView}>
+        <ScrollView contentContainerStyle={styles.bottomedView}>
           <View style={styles.modalView}>
             <View style={styles.titleRow}>
               <Text style={styles.title}>Налаштування</Text>
@@ -257,7 +257,7 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
                   <ListItem
                     roundTop
                     prefsCtx
-                    icon={<HelpBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
+                    icon={<HelpBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
                     isButton
                     title="Підтримка"
                     onPress={getSupportLink}
@@ -266,7 +266,7 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
                   <ListItem
                     roundTop
                     prefsCtx
-                    icon={<ShareItBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
+                    icon={<ShareItBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
                     isButton
                     title="Розкажи друзям"
                     onPress={async () => await sharePromin()}
@@ -275,7 +275,7 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
                   <ListItem
                     roundTop
                     prefsCtx
-                    icon={<RateItBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
+                    icon={<RateItBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
                     isButton
                     title={getStoreText()}
                     onPress={getStoreLink}
@@ -285,7 +285,7 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
               <ListItem
                 roundTop
                 prefsCtx
-                icon={<AboutUsBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
+                icon={<AboutUsBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
                 title="Про нас"
                 onPress={() => goTo("AboutUs")}
                 roundBottom
@@ -293,17 +293,17 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
               <ListItem
                 roundTop
                 prefsCtx
-                icon={<LinksBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
+                icon={<LinksBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
                 title="Корисні посилання"
                 onPress={() => goTo("UsefulLinks")}
                 roundBottom
                 last
               />
             </View>
-
           </View>
           <View />
-        </View>
+        </ScrollView>
+        {/* </View> */}
       </Modal>
     </View>
   );

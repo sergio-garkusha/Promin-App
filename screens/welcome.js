@@ -8,7 +8,7 @@ import NextButton from "/components/NextButton";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 
-const topHalfHeight = responsiveHeight(50);
+const topHalfHeight = responsiveHeight(40);
 const IS_WEB = !isMobile();
 
 function WelcomeScreen({ navigation }) {

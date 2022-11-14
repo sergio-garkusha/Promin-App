@@ -34,7 +34,7 @@ const resolveStyles = (theme, computeFS) => {
     withoutHeader: {
       paddingTop: 20
     },
-    header2: {
+    Subtitle: {
       color: labelCol,
       fontFamily: "Ubuntu_M",
       fontSize: computeFS(19),

@@ -7,15 +7,15 @@ import {
 import WelcomeLogo from "/icons/WelcomeLogo";
 
 export default function FullLogo(props) {
-  const logoAspect = 408 / 615;
+  const logoAspect = 114 / 171;
   let logoWidth;
 
   if (props.widthPercent)
     logoWidth = responsiveWidth(props.widthPercent); // responsive
-  else logoWidth = 136; // static
+  else logoWidth = 114; // static
 
-  const logoHeight = 205 || logoWidth / logoAspect + 7;
-  const logoMarginTop = (responsiveHeight(50) - logoHeight) / 2;
+  const logoHeight = 171 || logoWidth / logoAspect + 7;
+  const logoMarginTop = (responsiveHeight(40) - logoHeight) / 2;
 
   return (
     <View

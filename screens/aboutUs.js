@@ -144,13 +144,13 @@ export default function AboutUs({ navigation }) {
           <Text style={styles.sub}>Контакти</Text>
           <ListItem
             roundTop
-            icon={<EmailBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
+            icon={<EmailBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
             isButton
             title={EMAIL}
             onPress={() => handleExtlLink(`mailto:${EMAIL}`)}
           />
           <ListItem
-            icon={<WebsiteBtn style={styles.iconBtn} prefThemeColor={iconsColor} />}
+            icon={<WebsiteBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
             isButton
             title={WEBSITE}
             onPress={() => handleExtlLink(WEBSITE)}
@@ -195,7 +195,7 @@ const resolveLocalStyles = (theme, computeFS) => {
       fontSize: computeFS(18),
       lineHeight: computeFS(21),
       marginBottom: 16,
-      marginTop: 32,
+      marginTop: 0,
       textAlign: IS_WEB ? "center" : "left",
     },
     team: {

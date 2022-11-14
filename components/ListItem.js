@@ -37,7 +37,7 @@ export default function ListItem(props) {
             : <Text style={styles.icon}>{props.icon}</Text>
           )}
           <Text style={styles.text}>{props.title}</Text>
-          <Caret style={[styles.caret, caretWebQFix]} prefThemeColor={caretColor} />
+          <Caret style={[styles.caret, caretWebQFix]} prefthemecolor={caretColor} />
         </TouchableOpacity>
       </View>
     </View>

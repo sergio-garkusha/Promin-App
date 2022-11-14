@@ -33,25 +33,25 @@ export default function Kontakty({ navigation }) {
           <Text style={styles.sectionHeader}>Телефони служб порятунку в Україні</Text>
           <ListItem
             roundTop
-            icon="📞"
+            icon="🚒"
             isButton
             title={"Пожежна" + (IS_WEB ? ` - ${FIREFIGHTERS}` : "")}
             onPress={() => phoneCall(FIREFIGHTERS)}
           />
           <ListItem
-            icon="📞"
+            icon="🚓"
             isButton
             title={"Поліція" + (IS_WEB ? ` - ${POLICE}` : "")}
             onPress={() => phoneCall(POLICE)}
           />
           <ListItem
-            icon="📞"
+            icon="🚑"
             isButton
             title={"Швидка допомога" + (IS_WEB ? ` - ${EMERGENCY}` : "")}
             onPress={() => phoneCall(EMERGENCY)}
           />
           <ListItem
-            icon="📞"
+            icon="🦺"
             isButton
             title={"Аварійна служба газу" + (IS_WEB ? ` - ${GASSERVICE}` : "")}
             onPress={() => phoneCall(GASSERVICE)}

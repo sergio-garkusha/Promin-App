@@ -17,7 +17,7 @@ export default function Shvidkii({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Швидкий рецепт психологічної стійкості</Text>
 
-          <Text style={styles.Subtitle}>Цей «рецепт» спрямований на формування внутрішньої опори через усвідомлення можливості вистояти перед випробуваннями життя.</Text>
+          <Text style={styles.paragraph}>Цей «рецепт» спрямований на формування внутрішньої опори через усвідомлення можливості вистояти перед випробуваннями життя.</Text>
 
           <Text style={styles.Subtitle}>Інгредієнти:</Text>
 
