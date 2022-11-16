@@ -41,7 +41,7 @@ export default function Multfilmi({ navigation }) {
           </Accordion>
 
           {/* All Text files below need to be silver :42-51 */}
-          <Text style={styles.sectionHeader}>Що робити коли лунає сирена</Text>
+          <Text style={styles.sectionHeader}>Що робити, коли лунає сирена</Text>
           <Video
             style={{ height: 188 }}
             resizeMode="contain"
@@ -57,7 +57,7 @@ export default function Multfilmi({ navigation }) {
             useNativeControls
           />
 
-          <Text style={styles.sectionHeader}>Що робити колі тобі нудно</Text>
+          <Text style={styles.sectionHeader}>Що робити, колі тобі нудно</Text>
           <Video
             style={{ height: 188 }}
             resizeMode="contain"
@@ -65,7 +65,9 @@ export default function Multfilmi({ navigation }) {
             useNativeControls
           />
 
-          <Text style={styles.sectionHeader}>Гімнастика для тих кому складно сидіти на одному місці</Text>
+          <Text style={styles.sectionHeader}>
+            Гімнастика для тих, кому складно сидіти на одному місці
+          </Text>
           <Video
             style={{ height: 188 }}
             resizeMode="contain"
@@ -73,7 +75,7 @@ export default function Multfilmi({ navigation }) {
             useNativeControls
           />
 
-          <Text style={styles.sectionHeader}>Що робити колі тобі страшно</Text>
+          <Text style={styles.sectionHeader}>Що робити, колі тобі страшно</Text>
           <Video
             style={{ height: 188 }}
             resizeMode="contain"

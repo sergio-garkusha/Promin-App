@@ -27,7 +27,7 @@ export default function ContentPage({ navigation }) {
           <Bullet symbol="•" style={styles.paragraph}>мої руки відчувають…</Bullet>
           <Bullet symbol="•" style={styles.paragraph}>мої пальці відчувають…</Bullet>
           <Bullet symbol="•" style={styles.paragraph}>моя шия відчуває…</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>моє лице відчуває…</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>моє обличчя відчуває…</Bullet>
           <Bullet symbol="•" style={styles.paragraph}>моє чоло відчуває…</Bullet>
           <Bullet symbol="•" style={styles.paragraph}>моя потилиця відчуває…</Bullet>
           <View style={styles.spacer} />
