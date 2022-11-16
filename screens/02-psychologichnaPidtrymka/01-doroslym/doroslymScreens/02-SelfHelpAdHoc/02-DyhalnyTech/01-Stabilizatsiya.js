@@ -18,23 +18,20 @@ export default function ContentPage({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Дихальна техніка стабілізації</Text>
           <Bullet symbol="1." style={styles.paragraph}>
-            Прискорене дихання
+            Прискорене дихання.
           </Bullet>
           <View style={styles.subBullet}>
-            <Bullet symbol="•" style={styles.paragraph}>Займіть зручну позу</Bullet>
-            <Bullet symbol="•" style={styles.paragraph}>Опустіть нижню щелепу та висуньте язик (як песик)</Bullet>
+            <Bullet symbol="•" style={styles.paragraph}>Займіть зручну позу.</Bullet>
+            <Bullet symbol="•" style={styles.paragraph}>Опустіть нижню щелепу та висуньте язик (як песик).</Bullet>
             <Bullet symbol="•" style={styles.paragraph}>
-              Зробіть 7-10 коротких поверхневих вдихи-видихи
-              (Не більше 5 секунд!!!)
-            </Bullet>
+              Зробіть 7-10 коротких поверхневих вдихів-видихів (Не більше 5 секунд!!!)</Bullet>
           </View>
 
           <Bullet symbol="2." style={styles.paragraph}>
             Спокійне дихання
-          </Bullet>
+            .</Bullet>
           <View style={styles.subBullet}>
-            <Bullet symbol="•" style={styles.paragraph}>Залишаючись у зручній позі</Bullet>
-            <Bullet symbol="•" style={styles.paragraph}>Зробіть вдих носом, а видих ротом – 3 рази</Bullet>
+            <Text style={styles.paragraph}>Залишаючись у зручній позі, зробіть вдих носом, а видих ротом – три рази.</Text>
           </View>
 
           <View style={styles.spacer} />

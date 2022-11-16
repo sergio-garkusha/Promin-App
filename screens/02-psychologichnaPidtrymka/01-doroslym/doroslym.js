@@ -39,7 +39,7 @@ export default function DlyaSebe({ navigation }) {
           />
           <ListItem
             icon="💪"
-            title="Техніки самодопомоги в моменті"
+            title="Техніки самодопомоги тут і зараз"
             onPress={() => goTo("Techniky")}
           />
           <ListItem

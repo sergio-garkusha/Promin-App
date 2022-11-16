@@ -32,16 +32,16 @@ export default function Kvitka({ navigation }) {
           </Bullet>
 
           <Bullet symbol="•" style={styles.paragraph}>
-            Далі позначте кожну пелюстку такими напрямками:
+            Далі позначте кожну пелюстку одним із напрямків:
           </Bullet>
           <View style={styles.subBullet}>
-            <Bullet symbol="-" style={styles.paragraph}>Матеріальний</Bullet>
-            <Bullet symbol="-" style={styles.paragraph}>Соціальний</Bullet>
-            <Bullet symbol="-" style={styles.paragraph}>Духовний</Bullet>
-            <Bullet symbol="-" style={styles.paragraph}>Культурний</Bullet>
-            <Bullet symbol="-" style={styles.paragraph}>Розумовий</Bullet>
-            <Bullet symbol="-" style={styles.paragraph}>Емоційний</Bullet>
-            <Bullet symbol="-" style={styles.paragraph}>Біологічний</Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>матеріальний;</Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>соціальний;</Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>духовний;</Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>культурний;</Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>розумовий;</Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>емоційний;</Bullet>
+            <Bullet symbol="-" style={styles.paragraph}>біологічний.</Bullet>
           </View>
           <Bullet symbol="•" style={styles.paragraph}>
             Кожна пелюстка квітки представляє одну із областей Вашого особистого благополуччя. Вони представляють ті аспекти життя, де ми повинні відчувати себе здоровими та задоволеними.

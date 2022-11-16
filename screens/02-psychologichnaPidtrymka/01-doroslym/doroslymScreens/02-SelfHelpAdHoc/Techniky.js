@@ -23,7 +23,7 @@ export default function Techniky({ navigation }) {
       <Header backButton navigation={navigation} />
       <ScrollView>
         <View style={styles.container}>
-          <Text style={styles.header}>Техніки самодопомоги в моменті</Text>
+          <Text style={styles.header}>Техніки самодопомоги тут і зараз</Text>
           <Paragraph style={{ paddingBottom: 20 }}>
             У важкі часи кожна людина потребує повернення до внутрішньої опори та саморозуміння. Пропонуємо техніки та методи саморозуміння та самодопомоги.
           </Paragraph>
@@ -39,7 +39,7 @@ export default function Techniky({ navigation }) {
               Створюйте рутину.
             </Bullet>
             <Bullet symbol="•" style={styles.paragraph}>
-              Проводьте якомога більше часу з тими кого ви любите .
+              Проводьте якомога більше часу з тими, кого ви любите.
             </Bullet>
             <Bullet symbol="•" style={styles.paragraph}>
               Ліміт на новини.
@@ -56,7 +56,7 @@ export default function Techniky({ navigation }) {
           <Accordion title="Робота з тривожними переживаннями">
             <Text style={styles.paragraph}>Відповідайте на питання, рухаючись за схемою:</Text>
             <Bullet symbol="1." style={styles.paragraph}>
-              Про що саме я переживаю?.
+              Про що саме я переживаю?
             </Bullet>
 
             <Bullet symbol="2." style={styles.paragraph}>
@@ -64,7 +64,7 @@ export default function Techniky({ navigation }) {
             </Bullet>
             <View style={styles.subBullet}>
               <Bullet symbol="•" style={styles.paragraph}>
-                якщо ТАК - розробити покроковий план вирішення проблеми.
+                якщо ТАК - розробити покроковий план вирішення проблеми;
               </Bullet>
 
               <Bullet symbol="•" style={styles.paragraph}>
@@ -77,12 +77,11 @@ export default function Techniky({ navigation }) {
             </Bullet>
             <View style={styles.subBullet}>
               <Bullet symbol="•" style={styles.paragraph}>
-                якщо МОЖУ зробити крок з плану - виконайте цей крок та переведіть увагу на корисну активність.
+                якщо МОЖЕТЕ зробити крок з плану - виконайте цей крок та переведіть увагу на корисну активність;
               </Bullet>
 
               <Bullet symbol="•" style={styles.paragraph}>
-                якщо НЕ МОЖУ зробити крок з плану - заплануйте коли і як Ви зможете його зробити та та переведіть
-                увагу на корисну активність.
+                якщо НЕ МОЖЕТЕ зробити крок з плану - заплануйте коли і як Ви зможете його зробити та переведіть увагу на корисну активність.
               </Bullet>
             </View>
 
@@ -106,7 +105,7 @@ export default function Techniky({ navigation }) {
             onPress={() => goTo("BilateraPopleskuvannya")}
           />
           <ListItem
-            title="Техніка «Десенситизація»"
+            title="Тілесна техніка для зниження напруги"
             onPress={() => goTo("Desensetyzatsiya")}
             roundBottom
           />
@@ -114,11 +113,11 @@ export default function Techniky({ navigation }) {
           <Text style={styles.sectionHeader}>Дихальні техніки</Text>
           <ListItem
             roundTop
-            title="Техніка стабілізації"
+            title="Дихальна техніка стабілізації"
             onPress={() => goTo("Stabilizatsiya")}
           />
           <ListItem
-            title="Техніка «3-5-7»"
+            title="Дихальна техніка «3-5-7»"
             onPress={() => goTo("TryPyatSim")}
             roundBottom
           />

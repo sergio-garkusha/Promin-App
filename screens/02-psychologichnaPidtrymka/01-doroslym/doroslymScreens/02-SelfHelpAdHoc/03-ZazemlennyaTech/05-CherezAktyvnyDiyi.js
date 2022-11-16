@@ -18,10 +18,10 @@ export default function ContentPage({ navigation }) {
         <View style={styles.container}>
           <Text style={styles.header}>Техніка заземлення через активні дії</Text>
           <Bullet symbol="•" style={styles.paragraph}>Займіться активністю, яка б залучала всі частини тіла.</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>Зробть генеральне прибирання.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>Зробіть генеральне прибирання.</Bullet>
           <Bullet symbol="•" style={styles.paragraph}>Займіться роботою на ділянці.</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>Складіть та пересортуйте шафи.</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>Спробуйте щось нове з рукоділля - вишивка або в’язання.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>Складіть та пересортуйте речі.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>Спробуйте щось нове з рукоділля: вишивка, в’язання та інше.</Bullet>
           <View style={styles.spacer} />
         </View>
       </ScrollView>

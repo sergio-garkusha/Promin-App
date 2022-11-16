@@ -17,13 +17,13 @@ export default function ContentPage({ navigation }) {
       <ScrollView>
         <View style={styles.container}>
           <Text style={styles.header}>Дихальна техніка «3-5-7»</Text>
-          <Bullet symbol="•" style={styles.paragraph}>Займіть зручну позу</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>Розгорніть плечі та «розкрийте» грудну клітину</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>Слідкуйте, щоб плечі не були підняті вище рівня ключиці</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>Розслабте м’язи живота</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>На рахунок 1-2-3 зробіть вдих</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>На рахунок 1-2-3-4-5 затримайте дихання</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>На рахунок 1-2-3-4-5-6-7 зробіть видих</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>Займіть зручну позу.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>Розгорніть плечі та «розкрийте» грудну клітину.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>Слідкуйте, щоб плечі не були підняті вище рівня ключиці.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>Розслабте м’язи живота.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>На рахунок 1-2-3 зробіть вдих.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>На рахунок 1-2-3-4-5 затримайте дихання.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>На рахунок 1-2-3-4-5-6-7 зробіть видих.</Bullet>
           <Text style={styles.paragraph}>Повторіть «трикутник 3-5-7» 3-5 разів</Text>
           <View style={styles.spacer} />
         </View>

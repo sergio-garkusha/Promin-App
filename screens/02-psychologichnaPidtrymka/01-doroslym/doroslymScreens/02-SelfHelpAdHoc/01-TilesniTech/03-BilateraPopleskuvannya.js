@@ -16,16 +16,17 @@ export default function ContentPage({ navigation }) {
       <Header backButton navigation={navigation} />
       <ScrollView>
         <View style={styles.container}>
-          <Text style={styles.header}>Техніка білатеральної стабілізації – білатеральні поплескування</Text>
-          <Bullet symbol="•" style={styles.paragraph}>Оберіть безпечне або умовно безпечне місце</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>Займіть зручну позу</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>Знайдіть опору для ваших стоп</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>Прикрийте або закрийте очі</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>Покладіть праву долонь на праве коліно та ліву долоню на ліве коліно</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>Почергово правою та лівою долонями м’яко та відчутно плескайте свої коліна протягом 20-60 сек</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>Зупиніть поплескування та залиште долоні на колінах</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>Зробіть 3 /три/ зосереджених вдихи та видихи</Bullet>
-          <Bullet symbol="•" style={styles.paragraph}>Повторіть сет почергового поплескування 20-60 сек та 3-х свідомих вдихів - видихів ще 3-4 рази</Bullet>
+          <Text style={styles.header}>Білатеральні поплескування</Text>
+          <Bullet symbol="•" style={styles.paragraph}>Оберіть безпечне або умовно безпечне місце.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>Займіть зручну позу.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>Знайдіть опору для ваших стоп.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>Прикрийте або закрийте очі.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>Покладіть праву долонь на праве коліно та ліву долоню на ліве коліно.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>Почергово правою та лівою долонями м’яко та відчутно плескайте свої коліна протягом 20-60 сек.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>Зупиніть поплескування та залиште долоні на колінах.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>Зробіть три зосереджених вдихи та видихи.</Bullet>
+          <Bullet symbol="•" style={styles.paragraph}>Повторіть сет почергового поплескування 20-60 сек
+            та трьох свідомих вдихів - видихів ще 3-4 рази.</Bullet>
           <Text style={styles.paragraph}>Загальна рекомендована кількість сетів – 4-6</Text>
           <View style={styles.spacer} />
         </View>
