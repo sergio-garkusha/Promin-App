@@ -40,7 +40,7 @@ const teamMembers = [
     fname: "Єгор",
     lname: "Седлецький",
     title: "Розробка",
-    link: null
+    link: "https://www.linkedin.com/in/gary-sedletsky-7368959a/"
   },
   {
     photo: Denys,
