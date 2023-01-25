@@ -60,10 +60,10 @@ Let's adopt simplified GitHub Flow to develop our app in team. Please make yours
 2. I will add react-navigation component later ✔️
 3. Let's use hard-coded text, then we can source it from somewhere ✔️
 4. Use designs and graphics similar to official Ukrainian sites ✔️
-5. Finish all the screens ⬅️ YOU ARE HERE
-6. Caching and sourcing for texts
-7. 🔜 Release 1 - iOS and Android
-8. Videos for kids
+5. Finish all the screens ✔️
+6. Caching and sourcing for texts 
+7. Videos for kids ✔️
+8. Release 1 - iOS and Android ⬅️ YOU ARE HERE
 9. Reliable CMS integration
 10. Adding more articles and partner websites
 
