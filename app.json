@@ -2,14 +2,14 @@
   "expo": {
     "name": "Promin",
     "slug": "snack-b633f0e7-a078-4a93-8bfc-a380d9b0faf8",
-    "version": "0.0.69",
+    "version": "0.0.73",
     "privacy": "unlisted",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#5177ff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -18,18 +18,20 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "bundleIdentifier": "app.promin"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
+        "foregroundImage": "./assets/icon.png",
+        "backgroundColor": "#5177ff"
       },
       "package": "app.promin"
     },
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "extra": {
+      "eas": {
+        "projectId": "a9b4ad2a-1180-472b-b42b-084f0aae536f"
+      }
     }
   }
 }
