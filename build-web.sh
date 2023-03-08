@@ -75,4 +75,4 @@ do
     esac
 done
 
-Help && exit;;
+Help && exit;
