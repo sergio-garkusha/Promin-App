@@ -67,6 +67,8 @@ const resolveStyles = (theme, computeFS) => {
     subBullet: {
       marginLeft: 30, marginRight: 30
     },
+    b: { fontWeight: "bold" },
+    i: { fontStyle: "italic" },
     spacer: { height: HEADER_SIZE + H1_TOP_MARGIN }
   });
 };
