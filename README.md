@@ -39,7 +39,7 @@ If you are developing a screen:
 - inside the screen file, name your screen like following: `export default function MyScreen() {`
 - in App.js, import your screen: `import MyScreen from './screens/myScreen'`
 - To display the screen on app launch, in App.js, `export default function App() {` function, return your imported component like in an example below:
-```
+```jsx
 export default function App() {
   return (
     <MyScreen/>
