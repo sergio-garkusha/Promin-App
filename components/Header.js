@@ -31,8 +31,8 @@ export default function Header({ navigation, backButton, homeDisabled }) {
 
   const headerHeight = 88;
 
-  const logoWidth = 132;
-  const logoHeight = 77.68  // logoWidth / logoAspect;
+  const logoWidth = 100;
+  const logoHeight = 78  // logoWidth / logoAspect;
   const logoTop = headerHeight - logoHeight / 2 - 1;
 
   const backAspect = 228 / 135;
