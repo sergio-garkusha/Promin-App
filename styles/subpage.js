@@ -1,7 +1,9 @@
 import { StyleSheet } from "react-native";
 import { isMobile } from "/helpers/utils";
+import { responsiveHeight } from "react-native-responsive-dimensions";
 
 const IS_WEB = !isMobile();
+const topHalfHeight = responsiveHeight(40);
 
 const resolveStyles = (theme, computeFS) => {
   const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
@@ -13,6 +15,22 @@ const resolveStyles = (theme, computeFS) => {
   const H1_TOP_MARGIN = 40;
 
   return StyleSheet.create({
+    wContainer: {
+      backgroundColor
+    },
+    topHalf: {
+      backgroundColor: "#5177ff",
+      height: topHalfHeight
+    },
+    bottomHalf: {
+      paddingTop: 12,
+      paddingLeft: 32,
+      paddingRight: 32
+    },
+    extLink: {
+      color: "#5177ff",
+      textDecorationLine: "underline"
+    },
     accordeonTop: { marginLeft: 15, marginRight: 15 },
     container: {
       width: IS_WEB ? 420 : "auto",
@@ -57,6 +75,16 @@ const resolveStyles = (theme, computeFS) => {
       fontSize: computeFS(17),
       fontWeight: "normal",
       marginBottom: 15,
+      textAlign: "left"
+    },
+    wParagraph: {
+      color,
+      fontFamily: "Ubuntu",
+      fontSize: computeFS(17),
+      fontStyle: "normal",
+      lineHeight: computeFS(24),
+      marginBottom: 15,
+      marginTop: 15,
       textAlign: "left"
     },
     roundImage: {

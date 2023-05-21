@@ -2,7 +2,7 @@
   "expo": {
     "name": "Promin",
     "slug": "snack-b633f0e7-a078-4a93-8bfc-a380d9b0faf8",
-    "version": "0.0.73",
+    "version": "0.0.74",
     "privacy": "unlisted",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -26,7 +26,8 @@
         "foregroundImage": "./assets/icon.png",
         "backgroundColor": "#5177ff"
       },
-      "package": "app.promin"
+      "package": "app.promin",
+      "versionCode": "2"
     },
     "extra": {
       "eas": {

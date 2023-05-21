@@ -1,6 +1,7 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import { ThemeContext } from "/components/ThemeProvider";
+import DisclaimerScreen from "/screens/disclaimer";
 import WelcomeScreen from "/screens/welcome";
 import MainMenu from "/screens/mainMenu";
 import AboutUs from "/screens/aboutUs";
@@ -98,6 +99,7 @@ export default function MainStack() {
       }}
     >
       <Stack.Screen name="WelcomeScreen" component={WelcomeScreen} />
+      <Stack.Screen name="DisclaimerScreen" component={DisclaimerScreen} />
       <Stack.Screen name="MainMenu" component={MainMenu} />
       <Stack.Screen name="AboutUs" component={AboutUs} />
       <Stack.Screen name="UsefulLinks" component={UsefulLinks} />

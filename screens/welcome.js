@@ -1,12 +1,15 @@
 import React from "react";
 import { responsiveHeight } from "react-native-responsive-dimensions";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
+import ListItem from "/components/ListItem";
 
 import { isMobile } from "/helpers/utils";
 import FullLogo from "/components/FullLogo";
 import NextButton from "/components/NextButton";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
+
+import resolveStyles from "/styles/subpage";
 
 const topHalfHeight = responsiveHeight(40);
 const IS_WEB = !isMobile();
@@ -22,7 +25,7 @@ function WelcomeScreen({ navigation }) {
 
   return (
     <ScrollView>
-      <View style={styles.container}>
+      <View style={styles.wContainer}>
         <View style={styles.topHalf}>
           <FullLogo />
         </View>
@@ -35,49 +38,24 @@ function WelcomeScreen({ navigation }) {
             Промінь - це ваш кишеньковий довідник психологічної допомоги у
             кризових ситуаціях.
           </Text>
-          <Text style={styles.paragraph}>
+          <Text style={styles.wParagraph}>
             Тут ви можете знайти поради та перевірені техніки, які допоможуть покращити свій
             психологічний стан та стан людей навколо вас.
           </Text>
           <Text style={styles.paragraph}>Тримаймося.</Text>
+
+          <View style={styles.spacer} />
+          <ListItem
+            icon="⚠️"
+            roundTop
+            roundBottom
+            title="Медичний Дисклеймер"
+            onPress={() => navigation.push("DisclaimerScreen")}
+          />
         </View>
       </View>
     </ScrollView>
   );
 }
-
-const resolveStyles = (theme, computeFS) => {
-  const backgroundColor = theme === "dark" ? "#18203A" : "#F3F3F3";
-  const color = theme === "dark" ? "#FFF" : "#000";
-
-  return StyleSheet.create({
-    web: {
-      maxWidth: 420,
-      width: 420,
-      marginLeft: "auto",
-      marginRight: "auto"
-    },
-    container: { backgroundColor },
-    paragraph: {
-      color,
-      fontFamily: "Ubuntu",
-      fontSize: computeFS(17),
-      fontStyle: "normal",
-      lineHeight: computeFS(24),
-      marginBottom: 15,
-      marginTop: 15,
-      textAlign: "left"
-    },
-    topHalf: {
-      backgroundColor: "#5177ff",
-      height: topHalfHeight
-    },
-    bottomHalf: {
-      paddingTop: 12,
-      paddingLeft: 32,
-      paddingRight: 32
-    }
-  });
-};
 
 export default WelcomeScreen;
