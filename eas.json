@@ -23,6 +23,10 @@
     }
   },
   "submit": {
-    "production": {}
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "../pc-api-4794537996411822097-49-a56858019aed.json"
+      }
+    }
   }
 }

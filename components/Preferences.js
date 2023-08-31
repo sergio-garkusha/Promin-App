@@ -252,17 +252,26 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
             <FontSizeButtons />
 
             <View style={styles.buttonsList}>
+              {/* <ListItem
+                roundTop
+                prefsCtx
+                icon={<HelpBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
+                isButton
+                title="Підтримка"
+                onPress={getSupportLink}
+                roundBottom
+              /> */}
+              <ListItem
+                roundTop
+                prefsCtx
+                icon={<HelpBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
+                isButton
+                title="Медичний дисклеймер"
+                onPress={() => goTo("DisclaimerScreen")}
+                roundBottom
+              />
               {isMobile() && (
                 <>
-                  <ListItem
-                    roundTop
-                    prefsCtx
-                    icon={<HelpBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
-                    isButton
-                    title="Підтримка"
-                    onPress={getSupportLink}
-                    roundBottom
-                  />
                   <ListItem
                     roundTop
                     prefsCtx
