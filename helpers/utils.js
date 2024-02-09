@@ -1,18 +1,6 @@
-import * as Device from "expo-device";
+import { Platform } from 'react-native';
 
-// console.log(Device);
-
-export const isIOS = () =>
-  Device.osName === "iOS"
-  || Device.osName === "iPadOS";
-
-export const isAndroid = () => Device.osName === "Android";
-
-// export const isMobileOS = () =>
-export const isMobile = () =>
-  Device.osName === "Android"
-  || Device.osName === "iOS"
-  || Device.osName === "iPadOS";
-
-// export const isBrowser = () =>
-  // navigator &&
+export const IS_IOS = Platform.OS === 'ios';
+export const IS_ANDROID = Platform.OS === 'android';
+export const IS_MOBILE = Platform.OS === 'ios' || Platform.OS === 'android';
+export const IS_WEB = !IS_MOBILE;

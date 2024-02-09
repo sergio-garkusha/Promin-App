@@ -1,8 +1,8 @@
 import { StyleSheet } from "react-native";
-import { isMobile } from "/helpers/utils";
+import { IS_WEB } from "/helpers/utils";
 import { responsiveHeight } from "react-native-responsive-dimensions";
 
-const IS_WEB = !isMobile();
+
 const topHalfHeight = responsiveHeight(40);
 
 const resolveStyles = (theme, computeFS) => {
@@ -26,6 +26,12 @@ const resolveStyles = (theme, computeFS) => {
       paddingTop: 12,
       paddingLeft: 32,
       paddingRight: 32
+    },
+    web: {
+      maxWidth: 420,
+      marginTop: 45,
+      marginLeft: "auto",
+      marginRight: "auto"
     },
     extLink: {
       color: "#5177ff",

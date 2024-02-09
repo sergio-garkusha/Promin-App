@@ -5,7 +5,7 @@ import { EMAIL, ITUNES_ID, ANDROID_PKG_NAME, WEBSITE } from "@env";
 // import * as StoreReview from "expo-store-review"; // Call to Review dep
 import { Modal, StyleSheet, Text, Pressable, View, ScrollView } from "react-native";
 
-import { isIOS, isAndroid, isMobile } from "/helpers/utils";
+import { IS_IOS, IS_ANDROID, IS_MOBILE } from "/helpers/utils";
 import { OverlayContext } from "/components/OverlayProvider";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
@@ -15,8 +15,8 @@ import Sun from "/icons/Sun";
 import Moon from "/icons/Moon";
 import MoonSun from "/icons/MoonSun";
 
-import MedBtn from "/icons/buttons/01-medical-disclaimer";
-// import HelpBtn from "/icons/buttons/01-help";
+// import MedBtn from "/icons/buttons/01-medical-disclaimer";
+import HelpBtn from "/icons/buttons/01-help";
 import ShareItBtn from "/icons/buttons/02-share";
 import RateItBtn from "/icons/buttons/03-rate";
 import AboutUsBtn from "/icons/buttons/04-about-us";
@@ -150,10 +150,10 @@ function getSupportLink() {
 }
 
 function getStoreLink() {
-  if (isAndroid()) {
+  if (IS_ANDROID) {
     // Opens the Android Play Store directly
     Linking.openURL(`market://details?id=${ANDROID_PKG_NAME}&showAllReviews=true`);
-  } else if (isIOS()) {
+  } else if (IS_IOS) {
     // Opens the iOS App Store directly
     Linking.openURL(
       `itms-apps://itunes.apple.com/app/viewContentsUserReviews/id${ITUNES_ID}?action=write-review`
@@ -162,9 +162,9 @@ function getStoreLink() {
 }
 
 function getStoreText() {
-  if (isAndroid())
+  if (IS_ANDROID)
     return "Оціни в Google Play";
-  if (isIOS())
+  if (IS_IOS)
     return "Оціни в App Store"
   return false;
 }
@@ -177,7 +177,7 @@ const options = {
   message,
 };
 
-if (isIOS()) {
+if (IS_IOS) {
   options.url = `${title}\n${WEBSITE}\n${message}`
 }
 
@@ -253,7 +253,7 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
             <FontSizeButtons />
 
             <View style={styles.buttonsList}>
-              {/* <ListItem
+              <ListItem
                 roundTop
                 prefsCtx
                 icon={<HelpBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
@@ -261,17 +261,8 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
                 title="Підтримка"
                 onPress={getSupportLink}
                 roundBottom
-              /> */}
+              />
               {/* <ListItem
-                roundTop
-                prefsCtx
-                icon={<HelpBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
-                isButton
-                title="Медичний дисклеймер"
-                onPress={() => goTo("DisclaimerScreen")}
-                roundBottom
-              /> */}
-              <ListItem
                 roundTop
                 prefsCtx
                 icon={<MedBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
@@ -279,8 +270,18 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
                 title="Медичний дисклеймер"
                 onPress={() => goTo("DisclaimerScreen")}
                 roundBottom
-              />
-              {isMobile() && (
+              /> */}
+              {IS_IOS &&
+              <ListItem
+                roundTop
+                prefsCtx
+                icon="⚠️"
+                isButton
+                title="Медичний дисклеймер"
+                onPress={() => goTo("DisclaimerScreen")}
+                roundBottom
+              />}
+              {IS_MOBILE && (
                 <>
                   <ListItem
                     roundTop

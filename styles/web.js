@@ -1,2 +1,2 @@
-import { isMobile } from "/helpers/utils";
-const IS_WEB = !isMobile();
+import { IS_MOBILE } from "/helpers/utils";
+

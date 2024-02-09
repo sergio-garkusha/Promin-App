@@ -1,9 +1,9 @@
 import React from "react";
 import { responsiveHeight } from "react-native-responsive-dimensions";
-import { Text, View, StyleSheet, ScrollView } from "react-native";
+import { Text, View, ScrollView } from "react-native";
 import ListItem from "/components/ListItem";
 
-import { isAndroid, isMobile } from "/helpers/utils";
+import { IS_ANDROID, IS_MOBILE, IS_WEB } from "/helpers/utils";
 import FullLogo from "/components/FullLogo";
 import NextButton from "/components/NextButton";
 import { ThemeContext } from "/components/ThemeProvider";
@@ -12,17 +12,17 @@ import { FontSizeContext } from "/components/FontSizeProvider";
 import resolveStyles from "/styles/subpage";
 
 const topHalfHeight = responsiveHeight(40);
-const IS_WEB = !isMobile();
+
 
 function WelcomeScreen({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
 
-  console.log(topHalfHeight);
+  // console.log(topHalfHeight);
 
   const computeDisclaimerPosition = () => {
-    if (isAndroid())
+    if (IS_ANDROID)
       return { height: topHalfHeight / 4 };
     return styles.spacer;
   }
@@ -52,14 +52,16 @@ function WelcomeScreen({ navigation }) {
           </Text>
           <Text style={styles.paragraph}>Тримаймося.</Text>
 
-          <View style={computeDisclaimerPosition()} />
-          <ListItem
-            icon="⚠️"
-            roundTop
-            roundBottom
-            title="Медичний Дисклеймер"
-            onPress={() => navigation.push("DisclaimerScreen")}
-          />
+          {IS_MOBILE && <>
+            <View style={computeDisclaimerPosition()} />
+            <ListItem
+              icon="⚠️"
+              roundTop
+              roundBottom
+              title="Медичний Дисклеймер"
+              onPress={() => navigation.push("DisclaimerScreen")}
+            />
+          </>}
         </View>
       </View>
     </ScrollView>

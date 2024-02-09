@@ -4,7 +4,7 @@ import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import Header from "/components/Header";
 import resolveStyles from "/styles/subpage";
-import { Video } from "expo-av";
+import { Video, ResizeMode } from "expo-av";
 import Accordion from "/components/Accordion";
 
 import Syrena from "/assets/videos/01-syrena.mp4";
@@ -12,6 +12,8 @@ import RE from "/assets/videos/02-re.mp4";
 import Nudno from "/assets/videos/03-nudno.mp4";
 import Neposeda from "/assets/videos/04-neposeda.mp4";
 import Strashno from "/assets/videos/05-strashno.mp4";
+
+const VID_HEIGHT = 236;
 
 export default function Multfilmi({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
@@ -43,8 +45,9 @@ export default function Multfilmi({ navigation }) {
           {/* All Text files below need to be silver :42-51 */}
           <Text style={styles.sectionHeader}>Що робити, коли лунає сирена</Text>
           <Video
-            style={{ height: 188 }}
-            resizeMode="contain"
+            style={{ height: VID_HEIGHT }}
+            videoStyle={{ height: VID_HEIGHT }}
+            resizeMode={ResizeMode.CONTAIN}
             source={Syrena}
             useNativeControls
           />
@@ -52,7 +55,7 @@ export default function Multfilmi({ navigation }) {
           <Text style={styles.sectionHeader}>Руханка «РЕ»</Text>
           <Video
             style={{ height: 188 }}
-            resizeMode="contain"
+            resizeMode={ResizeMode.CONTAIN}
             source={RE}
             useNativeControls
           />
@@ -60,7 +63,7 @@ export default function Multfilmi({ navigation }) {
           <Text style={styles.sectionHeader}>Що робити, колі тобі нудно</Text>
           <Video
             style={{ height: 188 }}
-            resizeMode="contain"
+            resizeMode={ResizeMode.CONTAIN}
             source={Nudno}
             useNativeControls
           />
@@ -70,7 +73,7 @@ export default function Multfilmi({ navigation }) {
           </Text>
           <Video
             style={{ height: 188 }}
-            resizeMode="contain"
+            resizeMode={ResizeMode.CONTAIN}
             source={Neposeda}
             useNativeControls
           />
@@ -78,7 +81,7 @@ export default function Multfilmi({ navigation }) {
           <Text style={styles.sectionHeader}>Що робити, колі тобі страшно</Text>
           <Video
             style={{ height: 188 }}
-            resizeMode="contain"
+            resizeMode={ResizeMode.CONTAIN}
             source={Strashno}
             useNativeControls
           />

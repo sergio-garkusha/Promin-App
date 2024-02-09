@@ -2,8 +2,8 @@ import React from "react";
 import * as Linking from "expo-linking";
 import { Text, View, StyleSheet, ScrollView, Image } from "react-native";
 
+import { IS_WEB } from "/helpers/utils";
 import { EMAIL, WEBSITE } from "@env";
-import { isMobile } from "/helpers/utils";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import Header from "/components/Header";
@@ -24,8 +24,6 @@ import Iryna from "/assets/images/team/Iryna.png";
 import Maryna from "/assets/images/team/Maryna.png";
 import Kostyantyn from "/assets/images/team/Kostyantyn.png";
 import Vladyslav from "/assets/images/team/Vladyslav.png";
-
-const IS_WEB = !isMobile();
 
 const teamMembers = [
   {

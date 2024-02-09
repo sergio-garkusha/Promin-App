@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 
-import { isMobile } from "/helpers/utils";
+import { IS_MOBILE } from "/helpers/utils";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import Caret from "/icons/Caret";
@@ -15,7 +15,7 @@ export default function ListItem(props) {
     props.isButton && "#27335A" || "#9AA3C5" :
     props.isButton && "#FFF" || "#666";
 
-  const caretWebQFix = !isMobile() && props.prefsCtx && { marginLeft: -20 };
+  const caretWebQFix = !IS_MOBILE && props.prefsCtx && { marginLeft: -20 };
 
   return (
     <View style={props.padded && styles.padded}>

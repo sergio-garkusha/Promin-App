@@ -2,14 +2,14 @@ import React from "react";
 import { Text, View, ScrollView } from "react-native";
 import * as Linking from "expo-linking";
 
-import { isMobile } from "/helpers/utils";
+import { IS_MOBILE } from "/helpers/utils";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import resolveStyles from "/styles/subpage";
 import Header from "/components/Header";
 import ListItem from "/components/ListItem";
 
-const IS_WEB = !isMobile();
+
 
 const phoneCall = p => {
   Linking.openURL(`tel:${p}`);

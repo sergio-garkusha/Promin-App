@@ -1,7 +1,7 @@
 import React from "react";
 import { View, TouchableOpacity } from "react-native";
 
-import { isMobile } from "/helpers/utils"
+import { IS_MOBILE } from "/helpers/utils"
 import { responsiveWidth } from "react-native-responsive-dimensions";
 import LetsGoButton from "/icons/LetsGoButton";
 
@@ -14,7 +14,7 @@ export default function NextButton(props) {
   const buttonHeight = buttonWidth / buttonAspect + 2;
 
   const marginTop = -buttonHeight / 1.98;
-  const alignment = !isMobile() ? "center" : "flex-end";
+  const alignment = !IS_MOBILE ? "center" : "flex-end";
   return (
     <View style={[props.style, { marginTop, alignItems: alignment }]}>
       <TouchableOpacity onPress={props.onPress}>
