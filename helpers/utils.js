@@ -1,6 +1,6 @@
 import * as Device from "expo-device";
 
-// console.log(Device.osName);
+// console.log(Device);
 
 export const isIOS = () =>
   Device.osName === "iOS"

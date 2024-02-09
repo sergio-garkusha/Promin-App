@@ -3,7 +3,7 @@ import { responsiveHeight } from "react-native-responsive-dimensions";
 import { Text, View, StyleSheet, ScrollView } from "react-native";
 import ListItem from "/components/ListItem";
 
-import { isMobile } from "/helpers/utils";
+import { isAndroid, isMobile } from "/helpers/utils";
 import FullLogo from "/components/FullLogo";
 import NextButton from "/components/NextButton";
 import { ThemeContext } from "/components/ThemeProvider";
@@ -18,6 +18,14 @@ function WelcomeScreen({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
+
+  console.log(topHalfHeight);
+
+  const computeDisclaimerPosition = () => {
+    if (isAndroid())
+      return { height: topHalfHeight / 4 };
+    return styles.spacer;
+  }
 
   const toMainMenu = () => {
     navigation.push("MainMenu");
@@ -44,7 +52,7 @@ function WelcomeScreen({ navigation }) {
           </Text>
           <Text style={styles.paragraph}>Тримаймося.</Text>
 
-          <View style={styles.spacer} />
+          <View style={computeDisclaimerPosition()} />
           <ListItem
             icon="⚠️"
             roundTop

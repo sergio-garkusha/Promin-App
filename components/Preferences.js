@@ -15,7 +15,8 @@ import Sun from "/icons/Sun";
 import Moon from "/icons/Moon";
 import MoonSun from "/icons/MoonSun";
 
-import HelpBtn from "/icons/buttons/01-help";
+import MedBtn from "/icons/buttons/01-medical-disclaimer";
+// import HelpBtn from "/icons/buttons/01-help";
 import ShareItBtn from "/icons/buttons/02-share";
 import RateItBtn from "/icons/buttons/03-rate";
 import AboutUsBtn from "/icons/buttons/04-about-us";
@@ -261,10 +262,19 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
                 onPress={getSupportLink}
                 roundBottom
               /> */}
-              <ListItem
+              {/* <ListItem
                 roundTop
                 prefsCtx
                 icon={<HelpBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
+                isButton
+                title="Медичний дисклеймер"
+                onPress={() => goTo("DisclaimerScreen")}
+                roundBottom
+              /> */}
+              <ListItem
+                roundTop
+                prefsCtx
+                icon={<MedBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
                 isButton
                 title="Медичний дисклеймер"
                 onPress={() => goTo("DisclaimerScreen")}
