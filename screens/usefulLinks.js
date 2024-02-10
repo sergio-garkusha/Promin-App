@@ -2,7 +2,7 @@ import React from "react";
 import * as Linking from "expo-linking";
 import { Text, View, StyleSheet, ScrollView, Image } from "react-native";
 
-import { isMobile } from "/helpers/utils";
+import { IS_WEB } from "/helpers/utils";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import Header from "/components/Header";
@@ -43,8 +43,6 @@ const orgs = [
 function handleExtlLink(l) {
   Linking.openURL(l)
 }
-
-const IS_WEB = !isMobile();
 
 export default function UsefulLinks({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);

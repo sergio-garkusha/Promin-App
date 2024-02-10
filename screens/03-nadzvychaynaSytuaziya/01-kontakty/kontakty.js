@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, ScrollView } from "react-native";
 import * as Linking from "expo-linking";
 
-import { isMobile } from "/helpers/utils";
+import { IS_MOBILE, IS_WEB } from "/helpers/utils";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import resolveStyles from "/styles/subpage";
@@ -14,11 +14,8 @@ const POLICE = 102;
 const EMERGENCY = 103;
 const GASSERVICE = 104;
 
-const IS_WEB = !isMobile();
-
-const phoneCall = p => {
-  !IS_WEB && Linking.openURL(`tel:${p}`);
-};
+const phoneCall = p =>
+  IS_MOBILE && Linking.openURL(`tel:${p}`);
 
 export default function Kontakty({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);

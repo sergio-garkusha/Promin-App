@@ -1,7 +1,7 @@
 import React from "react";
 import { View, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
 
-import { isMobile } from "/helpers/utils";
+import { IS_MOBILE } from "/helpers/utils";
 import { OverlayContext } from "/components/OverlayProvider";
 import { ThemeContext } from "/components/ThemeProvider";
 import Preferences from "./Preferences";
@@ -51,7 +51,7 @@ export default function Header({ navigation, backButton, homeDisabled }) {
     <>
       <View
         style={{
-          position: !isMobile() ? "fixed" : "absolute",
+          position: !IS_MOBILE ? "fixed" : "absolute",
           marginBottom: 0,
           backgroundColor: "#5177ff",
           height: headerHeight,
