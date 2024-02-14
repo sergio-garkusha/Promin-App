@@ -54,7 +54,8 @@ export default function Multfilmi({ navigation }) {
 
           <Text style={styles.sectionHeader}>Руханка «РЕ»</Text>
           <Video
-            style={{ height: 188 }}
+                        style={{ height: VID_HEIGHT }}
+            videoStyle={{ height: VID_HEIGHT }}
             resizeMode={ResizeMode.CONTAIN}
             source={RE}
             useNativeControls
@@ -62,7 +63,8 @@ export default function Multfilmi({ navigation }) {
 
           <Text style={styles.sectionHeader}>Що робити, колі тобі нудно</Text>
           <Video
-            style={{ height: 188 }}
+                        style={{ height: VID_HEIGHT }}
+            videoStyle={{ height: VID_HEIGHT }}
             resizeMode={ResizeMode.CONTAIN}
             source={Nudno}
             useNativeControls
@@ -72,7 +74,8 @@ export default function Multfilmi({ navigation }) {
             Гімнастика для тих, кому складно сидіти на одному місці
           </Text>
           <Video
-            style={{ height: 188 }}
+                        style={{ height: VID_HEIGHT }}
+            videoStyle={{ height: VID_HEIGHT }}
             resizeMode={ResizeMode.CONTAIN}
             source={Neposeda}
             useNativeControls
@@ -80,7 +83,8 @@ export default function Multfilmi({ navigation }) {
 
           <Text style={styles.sectionHeader}>Що робити, колі тобі страшно</Text>
           <Video
-            style={{ height: 188 }}
+                        style={{ height: VID_HEIGHT }}
+            videoStyle={{ height: VID_HEIGHT }}
             resizeMode={ResizeMode.CONTAIN}
             source={Strashno}
             useNativeControls
