@@ -15,7 +15,7 @@ import Sun from "/icons/Sun";
 import Moon from "/icons/Moon";
 import MoonSun from "/icons/MoonSun";
 
-// import MedBtn from "/icons/buttons/01-medical-disclaimer";
+import MedBtn from "/icons/buttons/01-medical-disclaimer";
 import HelpBtn from "/icons/buttons/01-help";
 import ShareItBtn from "/icons/buttons/02-share";
 import RateItBtn from "/icons/buttons/03-rate";
@@ -260,58 +260,39 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
                 isButton
                 title="Підтримка"
                 onPress={getSupportLink}
-                roundBottom
               />
-              {/* <ListItem
-                roundTop
-                prefsCtx
-                icon={<MedBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
-                isButton
-                title="Медичний дисклеймер"
-                onPress={() => goTo("DisclaimerScreen")}
-                roundBottom
-              /> */}
-              {IS_IOS &&
-              <ListItem
-                roundTop
-                prefsCtx
-                icon="⚠️"
-                isButton
-                title="Медичний дисклеймер"
-                onPress={() => goTo("DisclaimerScreen")}
-                roundBottom
-              />}
               {IS_MOBILE && (
-                <>
-                  <ListItem
-                    roundTop
-                    prefsCtx
-                    icon={<ShareItBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
-                    isButton
-                    title="Розкажи друзям"
-                    onPress={async () => await sharePromin()}
-                    roundBottom
-                  />
-                  <ListItem
-                    roundTop
-                    prefsCtx
-                    icon={<RateItBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
-                    isButton
-                    title={getStoreText()}
-                    onPress={getStoreLink}
-                    roundBottom
-                  />
+              <>
+                <ListItem
+                  prefsCtx
+                  icon={<MedBtn style={[styles.iconBtn]} prefthemecolor={iconsColor} />}
+
+                  isButton
+                  title="Медичний дисклеймер"
+                  onPress={() => goTo("DisclaimerScreen")}
+                />
+                <ListItem
+                  prefsCtx
+                  icon={<ShareItBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
+                  isButton
+                  title="Розкажи друзям"
+                  onPress={async () => await sharePromin()}
+                />
+                <ListItem
+                  prefsCtx
+                  icon={<RateItBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
+                  isButton
+                  title={getStoreText()}
+                  onPress={getStoreLink}
+                />
                 </>)}
               <ListItem
-                roundTop
                 prefsCtx
                 icon={<AboutUsBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
                 title="Про нас"
                 onPress={() => goTo("AboutUs")}
-                roundBottom
               />
               <ListItem
-                roundTop
                 prefsCtx
                 icon={<LinksBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
                 title="Корисні посилання"
@@ -463,7 +444,6 @@ const resolveLocalStyles = (theme, computeFS) => {
       justifyContent: "space-between",
     },
     iconBtn: {
-      flex: 3,
       marginBottom: -8
     }
   });

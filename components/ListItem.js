@@ -18,7 +18,7 @@ export default function ListItem(props) {
   const caretWebQFix = !IS_MOBILE && props.prefsCtx && { marginLeft: -20 };
 
   return (
-    <View style={props.padded && styles.padded}>
+    <View>
       <View
         style={[
           styles.container,

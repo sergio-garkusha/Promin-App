@@ -6,6 +6,7 @@ import ListItem from "/components/ListItem";
 import { IS_ANDROID, IS_MOBILE, IS_WEB } from "/helpers/utils";
 import FullLogo from "/components/FullLogo";
 import NextButton from "/components/NextButton";
+import MedBtn from "/icons/buttons/01-medical-disclaimer";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 
@@ -18,6 +19,7 @@ function WelcomeScreen({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
+  const iconsColor = computeTheme() === "light" ? "#666": "#FFF";
 
   // console.log(topHalfHeight);
 
@@ -52,16 +54,22 @@ function WelcomeScreen({ navigation }) {
           </Text>
           <Text style={styles.paragraph}>Тримаймося.</Text>
 
-          {IS_MOBILE && <>
-            <View style={computeDisclaimerPosition()} />
-            <ListItem
-              icon="⚠️"
-              roundTop
-              roundBottom
-              title="Медичний Дисклеймер"
-              onPress={() => navigation.push("DisclaimerScreen")}
-            />
-          </>}
+          {IS_MOBILE && (
+            <>
+              <View style={computeDisclaimerPosition()} />
+              <ListItem
+                roundTop
+                icon={
+                  <MedBtn
+                    style={[styles.iconBtn, {marginBottom: -8}]}
+                    prefthemecolor={iconsColor}
+                  />}
+                title="Медичний Дисклеймер"
+                onPress={() => navigation.push("DisclaimerScreen")}
+                roundBottom
+              />
+            </>
+          )}
         </View>
       </View>
     </ScrollView>
