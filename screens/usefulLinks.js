@@ -124,7 +124,7 @@ const resolveLocalStyles = (theme, computeFS) => {
       fontFamily: "Ubuntu",
       marginBottom: 32,
       marginTop: 60,
-      textAlign: "left"
+      textAlign: IS_WEB ? "center" : "left",
     },
     sub: {
       color: labelColor,

@@ -1,11 +1,12 @@
 import React from "react";
-import { Text, View, StyleSheet, ScrollView } from "react-native";
+import { Text, View, ScrollView } from "react-native";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import Header from "/components/Header";
 import Paragraph from "/components/Paragraph";
 import ListItem from "/components/ListItem";
 import resolveStyles from "/styles/subpage";
+import { crossPlatformNav } from "/helpers/utils";
 
 export default function DlyaSebe({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
@@ -13,7 +14,7 @@ export default function DlyaSebe({ navigation }) {
   const styles = resolveStyles(computeTheme(), computeFontSize);
 
   const goTo = (destination) => {
-    navigation.push(destination);
+    crossPlatformNav(destination, navigation);
   };
 
   return (
@@ -35,17 +36,17 @@ export default function DlyaSebe({ navigation }) {
             icon="🫶"
             roundTop
             title="Щоденна турбота для себе"
-            onPress={() => goTo("Shodenna")}
+            onPress={() => goTo("Дорослим/Щоденна турбота для себе")}
           />
           <ListItem
             icon="💪"
             title="Техніки самодопомоги тут і зараз"
-            onPress={() => goTo("Techniky")}
+            onPress={() => goTo("Дорослим/Техніки самодопомоги тут і зараз")}
           />
           <ListItem
             icon="🧘"
             title="Антистресова активність"
-            onPress={() => goTo("Antistresova")}
+            onPress={() => goTo("Дорослим/Антистресова активність")}
             roundBottom
           />
         </View>

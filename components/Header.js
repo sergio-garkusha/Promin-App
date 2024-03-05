@@ -1,7 +1,7 @@
 import React from "react";
 import { View, TouchableOpacity, TouchableWithoutFeedback } from "react-native";
 
-import { IS_MOBILE } from "/helpers/utils";
+import { IS_MOBILE, IS_WEB, crossPlatformNav } from "/helpers/utils";
 import { OverlayContext } from "/components/OverlayProvider";
 import { ThemeContext } from "/components/ThemeProvider";
 import Preferences from "./Preferences";
@@ -17,11 +17,12 @@ export default function Header({ navigation, backButton, homeDisabled }) {
   const computedTheme = computeTheme();
 
   const toMainMenu = () => {
-    navigation.push("MainMenu");
+    crossPlatformNav("Головне Меню", navigation);
   };
 
   const goBack = () => {
     navigation.goBack();
+    if (IS_WEB) history.back();
   };
 
   const setPreferences = () => {

@@ -6,14 +6,15 @@ import Header from "/components/Header";
 import Paragraph from "/components/Paragraph";
 import resolveStyles from "/styles/subpage";
 import ListItem from "/components/ListItem";
+import { crossPlatformNav } from "/helpers/utils";
 
 export default function Antistresova({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
 
-  const goTo = (dest) => {
-    navigation.push(dest);
+  const goTo = (destination) => {
+    crossPlatformNav(destination, navigation);
   };
 
   return (
@@ -29,10 +30,24 @@ export default function Antistresova({ navigation }) {
             негативного впливу стресогенної ситуації, знижується рівень негативного впливу стресу на організм людини.
           </Paragraph>
 
-          <ListItem roundTop title="Тілесні вправи" onPress={() => goTo("Tilesni")} />
-          <ListItem title="Релаксаційні вправи" onPress={() => goTo("Relaksaciini")} />
-          <ListItem title="Когнітивні вправи" onPress={() => goTo("Kognitivni")} />
-          <ListItem roundBottom title="Дихальні вправи" onPress={() => goTo("Dinalni")} />
+          <ListItem
+            roundTop
+            title="Тілесні вправи"
+            onPress={() => goTo("Дорослим/Антистресова активність/Тілесні вправи")}
+          />
+          <ListItem
+            title="Релаксаційні вправи"
+            onPress={() => goTo("Дорослим/Антистресова активність/Релаксаційні вправи")}
+          />
+          <ListItem
+            title="Когнітивні вправи"
+            onPress={() => goTo("Дорослим/Антистресова активність/Когнітивні вправи")}
+          />
+          <ListItem
+            title="Дихальні вправи"
+            onPress={() => goTo("Дорослим/Антистресова активність/Дихальні вправи")}
+            roundBottom
+          />
 
           <View style={styles.spacer} />
         </View>

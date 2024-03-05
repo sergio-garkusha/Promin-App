@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View, ScrollView } from "react-native";
-
+import { crossPlatformNav } from "/helpers/utils";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
 import Header from "/components/Header";
@@ -23,7 +23,7 @@ export default function MainMenu({ navigation }) {
             roundTop
             roundBottom
             title="Екстрена психологічна допомога"
-            onPress={() => navigation.push("EkstrennaDopomoga")}
+            onPress={() => crossPlatformNav("Екстрена психологічна допомога", navigation)}
           />
 
           <Text style={styles.sectionHeader}>Психологічна підтримка</Text>
@@ -31,13 +31,13 @@ export default function MainMenu({ navigation }) {
             icon="👩"
             roundTop
             title="Дорослим"
-            onPress={() => navigation.push("Doroslym")}
+            onPress={() => crossPlatformNav("Дорослим", navigation)}
           />
           <ListItem
             icon="👦"
             roundBottom
             title="Дітям"
-            onPress={() => navigation.push("Dytyni")}
+            onPress={() => crossPlatformNav("Дітям", navigation)}
           />
 
           <Text style={styles.sectionHeader}>Надзвичайна ситуація</Text>
@@ -45,12 +45,12 @@ export default function MainMenu({ navigation }) {
             icon="🚑"
             roundTop
             title="Контакти служб порятунку"
-            onPress={() => navigation.push("Kontakty")}
+            onPress={() => crossPlatformNav("Контакти служб порятунку", navigation)}
           />
           <ListItem
             icon="👉"
             title="Дії в надзвичайних ситуаціях"
-            onPress={() => navigation.push("Diyi")}
+            onPress={() => crossPlatformNav("Дії в надзвичайних ситуаціях", navigation)}
             roundBottom
           />
         </View>

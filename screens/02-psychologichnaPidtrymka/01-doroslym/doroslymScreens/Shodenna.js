@@ -8,11 +8,17 @@ import Header from "/components/Header";
 import resolveStyles from "/styles/subpage";
 import ListItem from "/components/ListItem";
 import Accordion from "/components/Accordion";
+import { crossPlatformNav } from "/helpers/utils";
 
 export default function Shodenna({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
+
+  const goTo = (destination) => {
+    crossPlatformNav(destination, navigation);
+  };
+  
   return (
     <View>
       <Header backButton navigation={navigation} />
@@ -84,39 +90,39 @@ export default function Shodenna({ navigation }) {
           <ListItem
             roundTop
             title="Швидкий рецепт психологічної стійкості"
-            onPress={() => navigation.push("Shvydkiy")}
+            onPress={() => goTo("Дорослим/Щоденна турбота для себе/Швидкий рецепт психологічної стійкості")}
           />
           <ListItem
             title="Вправа «Внутрішній сад»"
-            onPress={() => navigation.push("VnutrishnySad")}
+            onPress={() => goTo("Дорослим/Щоденна турбота для себе/Вправа «Внутрішній сад»")}
           />
           <ListItem
             title="Вправа «Спокійне місце»"
-            onPress={() => navigation.push("Spokiyne")}
+            onPress={() => goTo("Дорослим/Щоденна турбота для себе/Вправа «Спокійне місце»")}
           />
           <ListItem
             title="Вправа «Внутрішній сейф»"
-            onPress={() => navigation.push("VnutrishnySeif")}
+            onPress={() => goTo("Дорослим/Щоденна турбота для себе/Вправа «Внутрішній сейф»")}
           />
           <ListItem
             title="Вправа «Чорно-біла фотографія»"
-            onPress={() => navigation.push("ChornoBileFoto")}
+            onPress={() => goTo("Дорослим/Щоденна турбота для себе/Вправа «Чорно-біла фотографія»")}
           />
           <ListItem
             title="Вправа «Чорно-білий кадр»"
-            onPress={() => navigation.push("ChornoBilyCadr")}
+            onPress={() => goTo("Дорослим/Щоденна турбота для себе/Вправа «Чорно-білий кадр»")}
           />
           <ListItem
             title="Техніка самостійних обіймів"
-            onPress={() => navigation.push("Tehnika")}
+            onPress={() => goTo("Дорослим/Щоденна турбота для себе/Техніка самостійних обіймів")}
           />
           <ListItem
             title="Вправа «Квітка самопочуття»"
-            onPress={() => navigation.push("Kvitka")}
+            onPress={() => goTo("Дорослим/Щоденна турбота для себе/Вправа «Квітка самопочуття»")}
           />
           <ListItem
             roundBottom title="Вправа «Я маю, я є, я можу і я буду»"
-            onPress={() => navigation.push("YaMaiu")}
+            onPress={() => goTo("Дорослим/Щоденна турбота для себе/Вправа «Я маю, я є, я можу і я буду»")}
           />
 
           <View style={styles.spacer} />

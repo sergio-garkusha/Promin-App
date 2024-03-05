@@ -6,6 +6,7 @@ import Bullet from "/components/Bullet";
 import Header from "/components/Header";
 import ListItem from "/components/ListItem";
 import resolveStyles from "/styles/subpage";
+import { crossPlatformNav } from "/helpers/utils";
 
 import Head from "/assets/images/head.jpg";
 import Zahvat from "/assets/images/zahvat-zzadu.jpg";
@@ -58,23 +59,23 @@ export default function Perezbudzennya({ navigation }) {
             Пам’ятайте, що постраждалий може завдати шкоди собі та оточуючим.
           </Bullet>
 
+          <Text style={styles.Subtitle}> </Text>
           <Text style={styles.Subtitle}>
             Перезбудження зазвичай триває недовго і може перейти у:
           </Text>
-
           <ListItem
             roundTop
             title="нервове тремтіння"
-            onPress={() => navigation.push("NervoveTremtinnya")}
+            onPress={() => crossPlatformNav("Екстрена психологічна допомога/Нервове Тремтіння", navigation)}
           />
           <ListItem
             title="плач"
-            onPress={() => navigation.push("Plach")}
+            onPress={() => crossPlatformNav("Екстрена психологічна допомога/Плач", navigation)}
           />
           <ListItem
             roundBottom
             title="агресивну поведінку"
-            onPress={() => navigation.push("Agresiya")}
+            onPress={() => crossPlatformNav("Екстрена психологічна допомога/Агресія", navigation)}
           />
 
           <View style={styles.spacer} />

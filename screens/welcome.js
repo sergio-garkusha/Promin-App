@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { responsiveHeight } from "react-native-responsive-dimensions";
 import { Text, View, ScrollView } from "react-native";
 import ListItem from "/components/ListItem";
 
-import { IS_ANDROID, IS_MOBILE, IS_WEB } from "/helpers/utils";
+import { IS_ANDROID, IS_MOBILE, IS_WEB, crossPlatformNav } from "/helpers/utils";
 import FullLogo from "/components/FullLogo";
 import NextButton from "/components/NextButton";
 import MedBtn from "/icons/buttons/01-medical-disclaimer";
@@ -12,8 +12,9 @@ import { FontSizeContext } from "/components/FontSizeProvider";
 
 import resolveStyles from "/styles/subpage";
 
-const topHalfHeight = responsiveHeight(40);
+import { Names } from "/Routes/NamesMap";
 
+const topHalfHeight = responsiveHeight(40);
 
 function WelcomeScreen({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
@@ -23,6 +24,23 @@ function WelcomeScreen({ navigation }) {
 
   // console.log(topHalfHeight);
 
+  const goTo = (destination) => {
+    crossPlatformNav(destination, navigation);
+  };
+
+  useEffect(() => {
+    if (IS_WEB) {
+      const hash = window.location.hash;
+      if (hash) {
+        const url = decodeURI(hash.split("#/")[1]);
+        if (typeof(Names[url]) !== "undefined") {
+          crossPlatformNav(Names[url].name, navigation);
+        }
+      }
+    }
+    return;
+  }, []);
+
   const computeDisclaimerPosition = () => {
     if (IS_ANDROID)
       return { height: topHalfHeight / 4 };
@@ -30,7 +48,7 @@ function WelcomeScreen({ navigation }) {
   }
 
   const toMainMenu = () => {
-    navigation.push("MainMenu");
+    crossPlatformNav("Головне Меню", navigation);
   };
 
   return (
@@ -65,7 +83,7 @@ function WelcomeScreen({ navigation }) {
                     prefthemecolor={iconsColor}
                   />}
                 title="Медичний Дисклеймер"
-                onPress={() => navigation.push("DisclaimerScreen")}
+                onPress={() => goTo("Медичний Дисклеймер")}
                 roundBottom
               />
             </>

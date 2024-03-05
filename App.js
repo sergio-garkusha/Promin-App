@@ -10,7 +10,6 @@ import UbuntuM from "/assets/fonts/Ubuntu-M.ttf";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
-    // TODO: Use
     Ubuntu: UbuntuR,
     Ubuntu_M: UbuntuM,
   });
