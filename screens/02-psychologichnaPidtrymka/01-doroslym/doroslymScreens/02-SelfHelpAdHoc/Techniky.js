@@ -8,6 +8,7 @@ import Accordion from "/components/Accordion";
 import Bullet from "/components/Bullet";
 import Paragraph from "/components/Paragraph";
 import resolveStyles from "/styles/subpage";
+import { crossPlatformNav } from "/helpers/utils";
 
 export default function Techniky({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
@@ -15,7 +16,7 @@ export default function Techniky({ navigation }) {
   const styles = resolveStyles(computeTheme(), computeFontSize);
 
   const goTo = (destination) => {
-    navigation.push(destination);
+    crossPlatformNav(destination, navigation);
   };
 
   return (
@@ -94,19 +95,19 @@ export default function Techniky({ navigation }) {
           <ListItem
             roundTop
             title="Відчуваю своє тіло"
-            onPress={() => goTo("VidchuvaySvoeTilo")}
+            onPress={() => goTo("Дорослим/Техніки самодопомоги тут і зараз/Відчуваю своє тіло")}
           />
           <ListItem
             title="Техніка «Обійми метелика»"
-            onPress={() => goTo("ObiymyMetelyka")}
+            onPress={() => goTo("Дорослим/Техніки самодопомоги тут і зараз/Техніка «Обійми метелика»")}
           />
           <ListItem
             title="Білатеральні поплескування"
-            onPress={() => goTo("BilateraPopleskuvannya")}
+            onPress={() => goTo("Дорослим/Техніки самодопомоги тут і зараз/Білатеральні поплескування")}
           />
           <ListItem
             title="Тілесна техніка для зниження напруги"
-            onPress={() => goTo("Desensetyzatsiya")}
+            onPress={() => goTo("Дорослим/Техніки самодопомоги тут і зараз/Тілесна техніка для зниження напруги")}
             roundBottom
           />
 
@@ -114,11 +115,11 @@ export default function Techniky({ navigation }) {
           <ListItem
             roundTop
             title="Дихальна техніка стабілізації"
-            onPress={() => goTo("Stabilizatsiya")}
+            onPress={() => goTo("Дорослим/Техніки самодопомоги тут і зараз/Дихальна техніка стабілізації")}
           />
           <ListItem
             title="Дихальна техніка «3-5-7»"
-            onPress={() => goTo("TryPyatSim")}
+            onPress={() => goTo("Дорослим/Техніки самодопомоги тут і зараз/Дихальна техніка «3-5-7»")}
             roundBottom
           />
 
@@ -126,23 +127,23 @@ export default function Techniky({ navigation }) {
           <ListItem
             roundTop
             title="Заземлення за відчуттями ніг"
-            onPress={() => goTo("ZaVidchuttyamNih")}
+            onPress={() => goTo("Дорослим/Техніки самодопомоги тут і зараз/Заземлення за відчуттями ніг")}
           />
           <ListItem
             title="Заземлення в положенні лежачи"
-            onPress={() => goTo("VPolozhenniLezhachy")}
+            onPress={() => goTo("Дорослим/Техніки самодопомоги тут і зараз/Заземлення в положенні лежачи")}
           />
           <ListItem
             title="Заземлення в русі"
-            onPress={() => goTo("VRusy")}
+            onPress={() => goTo("Дорослим/Техніки самодопомоги тут і зараз/Заземлення в русі")}
           />
           <ListItem
             title="Заземлення з відтворенням ритму"
-            onPress={() => goTo("ZVidtvorennyamRytmu")}
+            onPress={() => goTo("Дорослим/Техніки самодопомоги тут і зараз/Заземлення з відтворенням ритму")}
           />
           <ListItem
             title="Заземлення через активні дії"
-            onPress={() => goTo("CherezAktyvnyDiyi")}
+            onPress={() => goTo("Дорослим/Техніки самодопомоги тут і зараз/Заземлення через активні дії")}
             roundBottom
           />
         </View>

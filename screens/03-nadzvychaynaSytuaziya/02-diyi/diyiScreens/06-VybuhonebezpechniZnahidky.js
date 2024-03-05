@@ -1,9 +1,9 @@
 import React from "react";
 import { Text, View, ScrollView } from "react-native";
-
+import { crossPlatformNav } from "/helpers/utils";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
-import Accordion from "/components/Accordion";
+// import Accordion from "/components/Accordion";
 import Bullet from "/components/Bullet";
 import Header from "/components/Header";
 import ListItem from "/components/ListItem";
@@ -13,6 +13,10 @@ export default function VybuhonebezpechniZnahidky({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
+
+  const goTo = (destination) => {
+    crossPlatformNav(destination, navigation);
+  };
 
   return (
     <View>
@@ -71,7 +75,7 @@ export default function VybuhonebezpechniZnahidky({ navigation }) {
           <ListItem
             roundTop
             title="Вибухонебезпечні предмети"
-            onPress={() => navigation.push("VybuhonebezpechniPredmety")}
+            onPress={() => goTo("Дії в надзвичайних ситуаціях/Вибухонебезпечні знахідки/Вибухонебезпечні предмети")}
             roundBottom
           />
 

@@ -17,7 +17,7 @@ export default function Pidlitki({ navigation }) {
       <Header backButton navigation={navigation} />
       <ScrollView>
         <View style={styles.container}>
-          <Text style={styles.header}>Підлітки</Text>
+          <Text style={styles.header}>Антистресова активність для підлітків</Text>
           <Paragraph>
             Для проживання цього непростого періоду кожній людині потрібна підтримка. Для підлітків це теж дуже важливо. Вони можуть цього не визнавати або демонструвати невизнання, та батькам тут важливо бути уважними.
           </Paragraph>

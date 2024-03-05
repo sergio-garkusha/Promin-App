@@ -17,7 +17,7 @@ export default function Diti({ navigation }) {
       <Header backButton navigation={navigation} />
       <ScrollView>
         <View style={styles.container}>
-          <Text style={styles.header}>Діти</Text>
+          <Text style={styles.header}>Антистресова активність для дітей</Text>
           <Paragraph style={{ paddingBottom: 20 }}>
             Одразу після того, як питання збереження життя та здоров’я є вирішеним,
             виникає наступне – як допомогти малечі впоратися з таким емоційним навантаженням, до якого вона не готова. У цьому розділі ви побачите вправи та ігри, які допоможуть краще зрозуміти та підтримати вашу дитину в її, не менш важливих, ніж у дорослого, переживаннях.

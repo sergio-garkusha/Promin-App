@@ -6,14 +6,15 @@ import Header from "/components/Header";
 import ListItem from "/components/ListItem";
 import Paragraph from "/components/Paragraph";
 import resolveStyles from "/styles/subpage";
+import { crossPlatformNav } from "/helpers/utils";
 
 export default function Diyi({ navigation }) {
   const { computeTheme } = React.useContext(ThemeContext);
   const { computeFontSize } = React.useContext(FontSizeContext);
   const styles = resolveStyles(computeTheme(), computeFontSize);
 
-  const goTo = (dest) => {
-    navigation.push(dest);
+  const goTo = (destination) => {
+    crossPlatformNav(destination, navigation);
   };
 
   return (
@@ -36,32 +37,32 @@ export default function Diyi({ navigation }) {
             roundTop
             icon="🚨"
             title="Повітряна тривога"
-            onPress={() => goTo("Povitryana")}
+            onPress={() => goTo("Дії в надзвичайних ситуаціях/Повітряна тривога")}
           />
           <ListItem
             icon="🖌"
             title="Артилерійський обстріл"
-            onPress={() => goTo("Artyleriycky")}
+            onPress={() => goTo("Дії в надзвичайних ситуаціях/Артилерійський обстріл")}
           />
           <ListItem
             icon="📺"
             title="Вимкнули телебачення"
-            onPress={() => goTo("Telebachennya")}
+            onPress={() => goTo("Дії в надзвичайних ситуаціях/Вимкнули телебачення")}
           />
           <ListItem
             icon="🧪"
             title="Застосування хімічної зброї"
-            onPress={() => goTo("Zastosuvannya")}
+            onPress={() => goTo("Дії в надзвичайних ситуаціях/Застосування хімічної зброї")}
           />
           <ListItem
             icon="🚌"
             title="Евакуація"
-            onPress={() => goTo("Evakuatciya")}
+            onPress={() => goTo("Дії в надзвичайних ситуаціях/Евакуація")}
           />
           <ListItem
             icon="🧨"
             title="Вибухонебезпечні знахідки"
-            onPress={() => goTo("VybuhonebezpechniZnahidky")}
+            onPress={() => goTo("Дії в надзвичайних ситуаціях/Вибухонебезпечні знахідки")}
             roundBottom
           />
 

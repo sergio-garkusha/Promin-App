@@ -5,7 +5,7 @@ import { EMAIL, ITUNES_ID, ANDROID_PKG_NAME, WEBSITE } from "@env";
 // import * as StoreReview from "expo-store-review"; // Call to Review dep
 import { Modal, StyleSheet, Text, Pressable, View, ScrollView } from "react-native";
 
-import { IS_IOS, IS_ANDROID, IS_MOBILE } from "/helpers/utils";
+import { IS_IOS, IS_ANDROID, IS_MOBILE, IS_WEB, crossPlatformNav } from "/helpers/utils";
 import { OverlayContext } from "/components/OverlayProvider";
 import { ThemeContext } from "/components/ThemeProvider";
 import { FontSizeContext } from "/components/FontSizeProvider";
@@ -195,7 +195,7 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
     setModalVisible(!modalVisible);
     toggleOverlay(false);
     // navigate
-    navigation.push(dest);
+    crossPlatformNav(dest, navigation);
   };
 
   const sharePromin = async (customOptions = options) => {
@@ -216,8 +216,10 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
   };
 
   /*
-   * Little Call to Review Modal
+   * Little Call to Review Modal [@NB:] For Android ????
    *
+   * @TODO: Figure out android implementation of app theme, etc
+   * 
    * For future releases
    */
   // React.useEffect(() => {
@@ -268,14 +270,14 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
                   icon={<MedBtn style={[styles.iconBtn]} prefthemecolor={iconsColor} />}
 
                   isButton
-                  title="Медичний дисклеймер"
-                  onPress={() => goTo("DisclaimerScreen")}
+                  title="Медичний Дисклеймер"
+                  onPress={() => goTo("Медичний Дисклеймер")}
                 />
                 <ListItem
                   prefsCtx
                   icon={<ShareItBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
                   isButton
-                  title="Розкажи друзям"
+                  title="Розкажи Друзям"
                   onPress={async () => await sharePromin()}
                 />
                 <ListItem
@@ -289,14 +291,14 @@ export default function Preferences({ navigation, modalVisible, setModalVisible 
               <ListItem
                 prefsCtx
                 icon={<AboutUsBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
-                title="Про нас"
-                onPress={() => goTo("AboutUs")}
+                title="Про Нас"
+                onPress={() => goTo("Про Нас")}
               />
               <ListItem
                 prefsCtx
                 icon={<LinksBtn style={styles.iconBtn} prefthemecolor={iconsColor} />}
-                title="Корисні посилання"
-                onPress={() => goTo("UsefulLinks")}
+                title="Корисні Посилання"
+                onPress={() => goTo("Корисні Посилання")}
                 roundBottom
                 last
               />
